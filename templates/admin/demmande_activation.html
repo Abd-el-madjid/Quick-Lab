@@ -1,0 +1,507 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/homedashboard.css' %}" rel="stylesheet">
+    <link href="{% static 'css/portal.css' %}" rel="stylesheet">
+    <link href="{% static 'css/table1.css' %}" rel="stylesheet">
+    <link href="{% static 'css/native_form.css' %}" rel="stylesheet">
+	<link href="{% static 'css/libs.css' %}" rel="stylesheet">
+
+	<link href="{% static 'css/form.css' %}" rel="stylesheet">
+
+     <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+    <!---->
+    <script  src="{% static 'js/jquery.min.js' %}"></script>
+    <!---->
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/homedashboard.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/admin/lab_managment.js' %}"></script>
+
+    <!---->
+    <!---->
+    <!---->
+
+
+    <!---->
+    <!---->
+    <script src="https://kit.fontawesome.com/4f846c2c5f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+
+    <title>Document</title>
+</head>
+
+<body onload="init()">
+
+    <!---->
+
+    <div class="general-container">
+
+        <aside class="menu-panel" role="complementary">
+            <div class="hide-since-tablet" psi-proxy-user-popup="">
+                <a id="profile_head-secound" aria-label="profile menu"
+                    class="dark-link profile-link profile-menu profile-link--in-menu" role="link" tabindex="0">
+
+                    <ins class="nav-menu-icon nav-menu-icon--user">
+                        <span id="profile-circle" class=" material-symbols-outlined">
+                            account_circle
+                        </span>
+                    </ins>
+
+                    <div class="profile-link__user">abd el madjid kahoul</div>
+
+                    <!---->
+
+
+                    <ins class="profile-link__trigger">
+                        <span id="profile-arrow-2" class=" material-symbols-outlined">
+                            expand_more
+                        </span>
+                    </ins>
+                </a>
+
+
+
+                <div class="side-account-profil none">
+                    <ul class="contenait">
+                       
+                        <li>
+                            <a id="sign_out"href="{% url 'admin_logout' %}" role="link" tabindex="0">
+
+                                <ins class="">
+                                    <span class="material-symbols-outlined">
+                                        logout
+                                    </span>
+                                </ins>
+
+                                <div class="">sign out</div>
+
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="menu-panel__content">
+                <div class="menu-panel__content_header">
+                    <a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/" title="Homepage"
+                        >
+                        <img alt="Logo"
+                            src="/media/image/logo sans bg.png"
+                            width="70" height="55">
+                    </a>
+                    <div>
+                        <a class="side-menu-logo-title" >
+                            <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                data-animation-direction=""
+                                style="will-change: transform, opacity; animation-duration: 1000ms;">Quick </p>
+                            <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                data-lang-en="Lab" style="will-change: transform, opacity; animation-duration: 1000ms;">
+                                Lab</p>
+                        </a>
+                    </div>
+                </div>
+                <!---->
+                <p-panelmenu aria-label="Main Menu" aria-labelledby="Main Menu" role="navigation" tabindex="0"
+                    class="ng-tns-c15-13">
+                    <div class="ng-tns-c15-13 side-menu ui-panelmenu ui-widget">
+                        <!---->
+
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+                >
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"
+                                href="{% url 'lab_management' %}" >
+
+                                    <span class="icons material-symbols-outlined">
+                                        manage_accounts
+                                    </span>
+                                    <span class="ui-menuitem-text">Lab management</span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13"                 style="background-color: #46807F;border:1px solid white ;border-radius: 15px;">
+                            <div
+                                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"
+                                href="{% url 'validation' %}" style="font-weight: 700;color: white;">
+                                    <!---->
+                                    <!---->
+                                    <span class="icons material-symbols-outlined">
+                                        stress_management
+                                    </span>
+                                    <span class="ui-menuitem-text">request validation</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+
+
+
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div
+                                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'statistique_admin' %}">
+                                    <!---->
+                                    <!---->
+                                    <span class="icons material-symbols-outlined">
+                                        monitoring
+                                    </span>
+                                    <span class="ui-menuitem-text">statistique</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        
+
+                    </div>
+                </p-panelmenu>
+            </div>
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <div class="flex-push"></div> <!----><!----><!----><!----><!----><!----><!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <ul class="menu-panel__additional-info additional-info" role="contentinfo">
+               
+            </ul>
+        </aside>
+        <div psi-menu-overlay="">
+            <div class="menu-panel-overlay">
+
+            </div>
+        </div>
+
+        <section class="content-panel" role="main">
+
+            <header class="header hide-on-print">
+                <div class="header-wrapper">
+                    <div class="header__panel">
+                        <ul class="header-menu-bar">
+
+                            <li class="header-menu-bar__item hide-since-desktop hide-on-print" psi-menu-trigger="">
+                                <a id="menu-link_button" class="profile-link hamburger-link hide-since-desktop">
+
+                                    <ins class="nav-menu-icon nav-menu-icon--hamburger">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+                                            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                            class="icon-svg icon-svg__size--24 " xml:space="preserve">
+                                            <g>
+                                                <path
+                                                    d="M85 341l342 0c11,0 21,10 21,22l0 0c0,11 -10,21 -21,21l-342 0c-11,0 -21,-10 -21,-21l0 0c0,-12 10,-22 21,-22z">
+                                                </path>
+                                                <path
+                                                    d="M85 235l342 0c11,0 21,9 21,21l0 0c0,12 -10,21 -21,21l-342 0c-11,0 -21,-9 -21,-21l0 0c0,-12 10,-21 21,-21z">
+                                                </path>
+                                                <path
+                                                    d="M85 128l342 0c11,0 21,10 21,21l0 0c0,12 -10,22 -21,22l-342 0c-11,0 -21,-10 -21,-22l0 0c0,-11 10,-21 21,-21z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </ins>
+
+                                    <h6>Menu</h6>
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <!---->
+                            </li>
+
+                            <!---->
+                            <p-tabmenu>
+                                <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+                                    <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
+                                        role="tablist">
+                                        <!---->
+                                    </ul>
+                                </div>
+                            </p-tabmenu>
+                        </ul>
+                    </div>
+                    <div class="header__panel header__panel--spacer hide-on-print"></div>
+                    <div class="header__panel hide-on-print">
+                        <ul class="header-menu-bar header-menu-bar--main">
+                          
+                            <li id="profile-info-1"
+                                class="header-menu-bar__item header-menu-bar__item--main hide-up-to-tablet"
+                                psi-proxy-user-popup="" psieventtracker="">
+                                <a id="profile_head-main" aria-label="profile menu"
+                                    class="dark-link profile-link profile-menu" role="link" tabindex="0">
+
+                                    <ins class="nav-menu-icon nav-menu-icon--user">
+                                        <span id="profile-circle" class=" material-symbols-outlined">
+                                            account_circle
+                                        </span>
+                                    </ins>
+
+                                    <div class="profile-link__user">abd el madjid kahoul</div>
+
+                                    <!---->
+
+                                    <ins class="profile-link__trigger">
+                                        <span id="profile-arrow" class=" material-symbols-outlined">
+                                            expand_more
+                                        </span>
+                                    </ins>
+
+                                </a>
+
+                                <p-overlaypanel>
+
+                                </p-overlaypanel>
+
+                                <!---->
+                            </li>
+                            <!---->
+                        
+                        </ul>
+                    </div>
+                </div>
+
+               
+
+                <div id="user-menu" class="user-menu">
+
+                    <!---->
+                    <div class="">
+                        <div class="profile-pane">
+                            <ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+                                ae
+                            </ins>
+
+                            <div class="profile-pane__data">
+                                <div class="profile-pane__user">abd el madjid kahoul</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---->
+
+                    <!---->
+                    <p-accordion styleclass="ui-accordion-user-menu" class="">
+                        <div class="ui-accordion-user-menu ui-accordion ui-widget ui-helper-reset">
+
+
+                            <!---->
+
+                            <!---->
+
+                            <!---->
+
+
+                        </div>
+                    </p-accordion>
+
+                    <div class="user-menu__item">
+                        <a class="user-menu__control" psimsg="proxyUser.logout" tabindex="0" href="{% url 'admin_logout' %}">Sign Out</a>
+                    </div>
+
+                </div>
+            </header>
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <div id="main_element" class="content content--dashboard">
+                <div class="content__wrapper">
+                    <!---->
+
+                    <div class="app-card shadow-sm mb-4   border-left-decoration">
+                        <div class="inner">
+                            <div class="app-card-body p-4">
+
+                                <div class="col-auto">
+                                    <div class="page-utilities">
+                                        <div class=" flex-sm-nowrap flex-sm-row d-sm-flex row g-2 justify-content-start justify-content-md-end align-items-center"
+                                            style="
+                                                    width: 100%;
+                                                ">
+                                            <div class="col-auto" style="
+                                                    display: flex;
+                                                    width: 100%;
+                                                    justify-content: center;
+                                                    flex-wrap: wrap;
+                                                ">
+                                                <div class=" search_bar_4 table-search-form row gx-1 align-items-center"
+                                                    style="
+  
+">
+                                                    <div class="col-auto" style="
+    max-width: 100%;
+    min-width: 84%;
+">
+                                                        <input type="text" id="search-orders" name="searchorders"
+                                                            class="form-control search-orders" placeholder="Search">
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <button type="submit" id="search_button"
+                                                            class="btn app-btn-secondary">Search</button>
+                                                    </div>
+
+                                                </div>
+                                              
+
+                                            </div><!--//col-->
+
+
+                                        </div><!--//row-->
+                                    </div><!--//table-utilities-->
+                                </div>
+
+
+                            </div><!--//app-card-body-->
+
+                        </div><!--//inner-->
+                    </div>
+
+
+
+                    <div class="table_element">
+                        <div class="container-table100">
+                            <div class="wrap-table100">
+                                <div class="table100">
+                                    <div class="row100 header100">
+                                        <div class="cell100" hidden >
+                                            id_lab
+                                        </div>
+                                        <div class="cell100">
+                                            lab manager
+                                        </div>
+                                        <div class="cell100">
+                                            lab name
+                                        </div>
+                                        
+                                        <div class="cell100">
+                                            date fin aboonment
+                                        </div>
+                                        
+                                        <div class="cell100">
+                                            Action
+                                        </div>
+                    
+                                    </div>
+                                    {% for lab in labs %}
+                                    
+                                   
+                                    <div class="row100 row101 ">
+                                        <div class="cell100 " data-title="id_der" hidden>{{lab.id_der}} </div>
+                                            <div class="cell100 " data-title="id_lab" hidden>{{lab.lab_id}} </div>
+                                            <div class="cell100" data-title="lab manager">
+                                            {{ lab.prenom}}  {{lab.nom}}
+                                            </div>
+                                        <div class="cell100" data-title="lab name">
+                                            {{lab.lab_name}}
+                                        </div>
+                                        
+                                        <div class="cell100" data-title="abbonment">
+                                            {{lab.date}}
+                                        </div>
+
+                                        <div class="cell100" data-title="state">
+                                            <input type="submit" id="" class="button_action button"
+                                                value="consulte"
+                                                onclick="toggleForm('request');lab_name('{{lab.lab_name}}','{{lab.lab_id}}');">
+                                        </div>
+
+                                       
+
+                                    </div>
+                                    {% endfor %}
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                   
+
+                    <div id="form_request" class="none">
+                        <div class="delet_form_container">
+                            <div class="background_term_bluer"></div>
+                            <div class="form-container-global">
+                                <div class="container">
+                                    <div class="title">etude request</div>
+                                    <button class="delet_form_button_container"
+                                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;"
+                                        onclick="toggleForm('request')">
+                                        <div class="delet_form_button">
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+                                        </div>
+                                    </button>
+                                    <div class="content_form">
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <input type="text" name="lab_id" class="lab_id"
+                                                placeholder="Enter your name" hidden>
+                                        <div class="user-details">
+                                            <input type="text" name="lab_id" class="lab_id" placeholder="Enter your name" hidden>
+                                            <div class="input-box">
+                                                <span class="details">lab Name</span>
+                                                <input type="text" name="lab_name" placeholder="" hidden>
+                                                <p class="p" id="lab_name"></p>
+                                            </div>
+                                        
+                                        </div>
+                                        <input type="hidden" name="branche_id" id="branche_id" >
+                                            <div class="button">
+                                                
+                                                <input type="submit" value="reject" name="reject" >
+                                                <input type="submit" value="accepte" name="accepte">
+                                                
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+
+
+                </div>
+            </div>
+            <!---->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,1244 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/homedashboard.css' %}" rel="stylesheet">
+    <link href="{% static 'css/libs.css' %}" rel="stylesheet">
+    <!---->
+     <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+    <!---->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/homedashboard.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/account.js' %}"></script>
+    <script src="{% static 'js/general/notification_pannel.js' %}"></script>
+    <script src="{% static 'js/general/notification.js' %}"></script>
+    <!---->
+    <!---->
+    <script src="https://kit.fontawesome.com/4f846c2c5f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- jquery cdn link  -->
+
+
+    <title>Document</title>
+</head>
+
+<body onload="init()">
+
+	
+	<!---->
+	
+    <div class="general-container">
+			
+        <aside class="menu-panel" role="complementary">
+            <div class="hide-since-tablet" psi-proxy-user-popup="">
+                <a id="profile_head-secound" aria-label="profile menu" class="dark-link profile-link profile-menu profile-link--in-menu" role="link" tabindex="0">
+
+                    <ins class="nav-menu-icon nav-menu-icon--user">
+                        <span id="profile-circle" class=" material-symbols-outlined">
+                            account_circle
+                            </span>
+                    </ins>
+
+                    <div class="profile-link__user">{{name}}</div>
+
+                    <!---->
+
+
+                    <ins class="profile-link__trigger">
+                        <span id="profile-arrow-2" class=" material-symbols-outlined">
+                            expand_more
+                            </span>
+                    </ins>
+                </a>
+        
+
+                
+                <div class="side-account-profil none">
+                    <ul class="contenait">
+                        <li>
+                <a id="account" role="link" tabindex="0" href="{% url 'account_directeur' %}">
+                    <ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+                        {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+                    </ins>
+                    
+
+                    <div class="">account</div>
+
+                </a>
+            </li>
+                <li>
+                <a href="{% url 'logout' %}" id="sign_out"  role="link" tabindex="0">
+
+                    <ins class="">
+                        <span class="material-symbols-outlined">
+                            logout
+                            </span>
+                    </ins>
+
+                    <div class="">sign out</div>
+
+
+                </a>
+            </li>
+            </ul>
+            </div>
+            </div> 
+            
+
+            <div class="menu-panel__content">
+                <div class="menu-panel__content_header">
+                <a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/" title="Homepage" href="{% url 'home' %}">
+                    <img alt="Logo" src="/media/image/logo sans bg.png"  width="70" height="55">
+                </a>
+                <div >
+                    <a class="side-menu-logo-title" href="{% url 'home' %}">
+                <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="" style="will-change: transform, opacity; animation-duration: 1000ms;">Quick </p>
+                <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1000" data-lang-en="Lab" style="will-change: transform, opacity; animation-duration: 1000ms;">Lab</p>
+                </a>
+            </div>
+               </div>
+                <!---->
+                <p-panelmenu aria-label="Main Menu" aria-labelledby="Main Menu" role="navigation" tabindex="0" class="ng-tns-c15-13">
+                    <div class="ng-tns-c15-13 side-menu ui-panelmenu ui-widget">
+                        <!---->
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13" >
+                                                        <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default ui-corner-top">
+                                                            <!---->
+                                                            <!---->
+                                                            <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon ui-state-active" href="{% url 'homedirecteur' %}" >
+                                                                <!---->
+                                                                <!---->
+                                                                
+                                                                <span class="icons material-symbols-outlined">
+                                                                    home
+                                                                    </span>
+                                                                
+                                                                <span class="ui-menuitem-text">Home</span>
+                                                            </a>
+                                                        </div>
+                                                        <!---->
+                                                    </div>
+                                                    <div class="menu-element ui-panelmenu-panel ng-tns-c15-13" >
+                                                        <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default" >
+                                                            <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"  href="{% url 'gestionemp' %}">
+                                
+                                                                <span class="icons material-symbols-outlined">
+                                                                    manage_accounts
+                                                                    </span>
+                                                          <span class="ui-menuitem-text">employes management</span>
+                                                        </a>
+                                                        </div>
+                                                        
+                                                      </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13" >
+                            <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'gestclient' %}" >
+                                    <!---->
+                                    <!---->
+                                    <span class="icons material-symbols-outlined">
+                                        stress_management
+                                        </span>
+                                    <span class="ui-menuitem-text">client management</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'gestanalyse' %}">
+                                    <!---->
+                                    <!---->
+                                    <span class="icons material-symbols-outlined">
+                                        folder_managed
+                                        </span>
+                                    <span class="ui-menuitem-text">analyse management</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'gestbranch' %}">
+                                    <!---->
+                                    <!---->
+                                    <span class="material-symbols-outlined">
+                                        account_tree
+                                        </span>
+                                    <span class="ui-menuitem-text">Branche management</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+                            >
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'reclamation' %}"  >
+                                    <!---->
+                                    <!---->
+                                    <span class="icons material-symbols-outlined">
+                                        mark_as_unread
+                                        </span>
+                                    <span class="ui-menuitem-text">Reclamation</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'blood_bank' %}">
+                                    <!---->
+                                    <!---->
+                                    <span class="icons material-symbols-outlined">
+                                        bloodtype
+                                        </span>
+                                    <span class="ui-menuitem-text">blood bank</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'statistique' %}">
+                                    <!---->
+                                    <!---->
+                                    <span class="icons material-symbols-outlined">
+                                        monitoring
+                                        </span>
+                                    <span class="ui-menuitem-text">statistique</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div class="ng-tns-c15-13 ui-menu-separator ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <a class="ng-tns-c15-13" href="#">
+                                    <!---->
+                                    <!---->
+                                    <span class="ui-menuitem-text"></span>
+                                </a>
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+                    
+                    </div>
+                </p-panelmenu>
+            </div>
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <div class="flex-push"></div> <!----><!----><!----><!----><!----><!----><!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <ul class="menu-panel__additional-info additional-info" role="contentinfo">
+                <div>
+                    <li class="additional-info__disc"></li>
+                    <li class="additional-info__item">
+                        <a psimsg="content.terms.menuTitle" rel="noopener" target="_blank" href="{% url 'term' %}">Terms of Use</a>
+                    </li>
+                    <li class="additional-info__disc"></li>
+                    <li class="additional-info__item">
+                        <a psimsg="content.privacy.menuTitle" rel="noopener" target="_blank" href="{% url 'privecy' %}">Privacy Policy</a>
+                    </li>
+                </div>
+            </ul>
+        </aside>
+        <div psi-menu-overlay="">
+            <div class="menu-panel-overlay">
+
+            </div>
+        </div>
+    
+    <section class="content-panel" role="main">
+        
+            <header class="header hide-on-print">
+            <div class="header-wrapper">
+                <div class="header__panel">
+                    <ul class="header-menu-bar">
+
+                        <li class="header-menu-bar__item hide-since-desktop hide-on-print" psi-menu-trigger="">
+                            <a id="menu-link_button" class="profile-link hamburger-link hide-since-desktop">
+
+                                <ins class="nav-menu-icon nav-menu-icon--hamburger">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" class="icon-svg icon-svg__size--24 " xml:space="preserve">
+                                        <g>
+                                            <path d="M85 341l342 0c11,0 21,10 21,22l0 0c0,11 -10,21 -21,21l-342 0c-11,0 -21,-10 -21,-21l0 0c0,-12 10,-22 21,-22z"></path>
+                                            <path d="M85 235l342 0c11,0 21,9 21,21l0 0c0,12 -10,21 -21,21l-342 0c-11,0 -21,-9 -21,-21l0 0c0,-12 10,-21 21,-21z"></path><path d="M85 128l342 0c11,0 21,10 21,21l0 0c0,12 -10,22 -21,22l-342 0c-11,0 -21,-10 -21,-22l0 0c0,-11 10,-21 21,-21z"></path>
+                                        </g>
+                                    </svg>
+                                </ins>
+
+                                <h6>Menu</h6>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <!---->
+                        </li>
+
+                        <!---->
+                        <p-tabmenu>
+                            <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+                                <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                                    <!---->
+                                </ul>
+                            </div>
+                        </p-tabmenu>
+                    </ul>
+                </div>
+                <div class="header__panel header__panel--spacer hide-on-print"></div>
+                <div class="header__panel hide-on-print">
+                    <ul class="header-menu-bar header-menu-bar--main">
+                        
+                        <li id="profile-info-1" class="header-menu-bar__item header-menu-bar__item--main hide-up-to-tablet" psi-proxy-user-popup="" psieventtracker="">
+                            <a id="profile_head-main" aria-label="profile menu" class="dark-link profile-link profile-menu" role="link" tabindex="0">
+
+                            <ins class="nav-menu-icon nav-menu-icon--user">
+                                <span id="profile-circle" class=" material-symbols-outlined">
+                                    account_circle
+                                    </span>
+                        </ins>
+
+                        <div class="profile-link__user">{{name}}</div>
+
+                        <!---->
+
+                        <ins class="profile-link__trigger">
+                            <span id="profile-arrow" class=" material-symbols-outlined">
+                                expand_more
+                                </span>
+                        </ins>
+
+                    </a>
+
+                    <p-overlaypanel>
+
+                    </p-overlaypanel>
+
+                    <!---->
+                </li>
+                    <!---->
+                    <li id="notification"
+                                                    class="header-menu-bar__item header-menu-bar__item--main header-menu-bar__item--last"
+                                                    psi-alert-popup="" psieventtracker="">
+                                
+                                
+                                                    <span class="notifications-overlay-arrow__hidden"></span>
+                                                    <a>
+                                                        <ins class="nav-menu-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                version="1.1" x="0px" y="0px" viewBox="0 0 512 512"
+                                                                style="enable-background:new 0 0 512 512;"
+                                                                class="icon-svg icon-svg__size--24 icon-svg__color--darker-blue" xml:space="preserve">
+                                                                <path
+                                                                    d="M483,433l-38-86V181C445,81,361,0,256,0C152,0,67,81,67,181v166l-38,85c-2,4-2,9,1,12c2,4,6,6,11,6h131 c7,36,40,62,78,62s70-26,77-62h144c5,0,9-2,11-6C485,441,485,436,483,433z M250,487c-24,0-45-15-51-37h101C294,472,273,487,250,487z ">
+                                                                </path>
+                                                            </svg>
+                                                        </ins>
+                                                        <!---->
+                                                        <span class="notification-bubble" id="notification-bubble">
+                                                            0
+                                                        </span>
+                                                    </a>
+                                                </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="notification_panel"
+                                        class="  notifications-overlay false ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow"
+                                        style=" z-index: 1007; visibility: visible; top: 180.719px; left: 703.333px; opacity: 1.048;    transform: scale(0)">
+                                        <div class="ui-overlaypanel-content">
+                                
+                                            <h6 class="linked-heading indent-bottom">
+                                                <span psimsg="alert.title">Recent Notifications</span>
+                                                <a class="text-style--bold" psimsg="alert.showAll" href="{% url 'notification_directeur' %}">show All</a>
+                                              
+                                
+                                            </h6>
+                                            <ul style="position: relative;" id="notification_dashboard" data-patient="0nlbop5f1e">
+                                                <!---->
+                                
+                                
+                                            </ul>
+                                
+                                
+                                        </div>
+                                        <!---->
+                                    </div>
+
+        <div id="user-menu" class="user-menu">
+
+            <!---->
+            <div class="">
+                <div class="profile-pane">
+                    <ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+                        {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+                    </ins>
+        
+                    <div class="profile-pane__data">
+                        <div class="profile-pane__user">{{name}}</div>
+        
+                        <!----><a class="link--blue text-style--bold proxy-user-account-link" psimsg="proxyUser.accountLink" role="link" tabindex="0" aria-label="abd el madjid kahoul account" href="{% url 'account_directeur' %}">Account</a>
+                    </div>
+                </div>
+            </div>
+        
+            <!---->
+        
+            <!---->
+            <p-accordion styleclass="ui-accordion-user-menu" class="">
+                <div class="ui-accordion-user-menu ui-accordion ui-widget ui-helper-reset">
+                    
+        
+                <!---->
+        
+                <!---->
+        
+                <!---->
+        
+            
+                </div>
+            </p-accordion>
+        
+            <div class="user-menu__item">
+                <a href="{% url 'logout' %}" class="user-menu__control" psimsg="proxyUser.logout" tabindex="0">Sign Out</a>
+            </div>
+        
+        </div>
+    </header>
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+
+
+            <!---->
+            <!---->
+
+            <div class="account-tabs" id="account-tabs">
+                <div class="RRT__container">
+                    <div class="RRT__tabs" role="navigation" tabindex="0" aria-labelledby="Account Settings Menu"
+                        aria-label="Account Settings Menu">
+                        <div role="tab" class="RRT__tab RRT__tab--first RRT__tab--selected" id="tab-0"
+                            aria-selected="true" aria-expanded="true" aria-disabled="false" aria-controls="panel-0"
+                            tabindex="0">
+                            Account details
+                        </div>
+                        <div role="tab" class="RRT__tab" id="tab-1" aria-selected="false" aria-expanded="false"
+                            aria-disabled="false" aria-controls="panel-1" tabindex="0">
+                            Personal details
+                        </div>
+
+                        <div role="tab" class="RRT__tab " id="tab-3" aria-selected="true" aria-expanded="true"
+                            aria-disabled="false" aria-controls="panel-3" tabindex="0">
+                            Communication preferences
+                        </div>
+                    </div>
+                    <div class="RRT__panel " role="tabpanel" id="panel-0" aria-labelledby="tab-0" aria-hidden="false">
+                        <div class="account-settingswrapper">
+                            <div class="account-header-wrapper">
+                                <h1 tabindex="0" class="account-header-title">
+                                    Account details
+                                </h1>
+                                <div tabindex="0" class="account-header-description">
+                                    Please ensure this information is up to date.
+                                </div>
+                            </div>
+                            <div class="account-section-wrapper">
+                                <h2 tabindex="0">
+                                    Sign in details
+                                </h2>
+                                <div class="ui-kit-card ui-kit-card-one ui-kit-card-generic">
+                                    <div class="account-details-wrapper account-cards-wrapper">
+                                        <p tabindex="0" class="account-link-desc account-settings-desc">
+                                            Please ensure your account has a valid email address and a valid mobile
+                                            number. If you forget your password or Memorable Word, you will need this
+                                            email address and mobile number to reset your password or Memorable Word and
+                                            keep the access to your account.
+                                        </p>
+                                        <div>
+                                            <div tabindex="0">
+                                                <p class="account-details-label">Email</p>
+                                                <p class="account-details-field">
+                                                    {{ email }}
+
+                                                </p>
+                                            </div>
+                                            <div tabindex="0">
+                                                <p class="account-details-label">Mobile number</p>
+                                                <p class="account-details-field">{{ num }}</p>
+                                            </div>
+                                        </div>
+                                        <a id="Update_sign"> Update sign in details </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-section-wrapper">
+                                <h2 tabindex="0">Password </h2>
+                                <div class="ui-kit-card ui-kit-card-one ui-kit-card-generic">
+                                    <div class="account-memworddetails list-style account-cards-wrapper">
+                                        <p tabindex="0">Follow these simple rules to keep your information safe:</p>
+                                        <ul tabindex="0">
+                                            <li>Never share your password with anyone else.</li>
+                                            <li>Never write down this information.</li>
+                                        </ul>
+                                        <a id="Change_password">Change password</a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="account-section-wrapper">
+                                <h2 tabindex="0">Account usage</h2>
+                                <div class="ui-kit-card ui-kit-card-one ui-kit-card-generic">
+                                    <div class="account-usagedetails account-cards-wrapper">
+                                        <div tabindex="0">
+                                            <p>Last log in</p>
+                                            <p>{{ last_login }}</p>
+                                        </div>
+                                        <div tabindex="0">
+                                            <p>Quick Lab creation</p>
+                                            <p>{{ date_cretion }}</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-section-wrapper">
+                                <h2 tabindex="0">Account deletion</h2>
+                                <div class="ui-kit-card ui-kit-card-one ui-kit-card-generic">
+                                    <div class="account-link-inline account-cards-wrapper" tabindex="0">
+                                        <p>Find out how to delete your account
+                                            <a id="delet_account">here</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="RRT__panel none" role="tabpanel" id="panel-1" aria-labelledby="tab-1"
+                        aria-hidden="false">
+                        <div>
+                            <div class="account-contactdetails">
+                                <div class="account-header-wrapper">
+                                    <h1 tabindex="0" class="account-header-title">Personal details</h1>
+                                    <div tabindex="0" class="account-header-description">Please ensure this information
+                                        is up to date.</div>
+                                </div>
+                            </div>
+                            <div class="account-content">
+                                <div class="account-contactdetails-wrapper">
+                                    <div tabindex="0" class="account-content-wrapper">
+                                        <div class="account-content-data">
+                                            <div class="account-content-header">
+                                                <p class="account-content-label" data-id="account.contact.header.name">
+                                                    Name</p>
+                                                <div class="account-content-icon"></div>
+                                            </div>
+                                        </div>
+                                        <div class="account-content-data">{{ name }}</div>
+                                    </div>
+                                    <div tabindex="0" class="account-content-wrapper">
+                                        <div class="account-content-data">
+                                            <div class="account-content-header">
+                                                <p class="account-content-label" data-id="account.contact.header.dob">
+                                                    Date of birth</p>
+                                                <div class="account-content-icon">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="account-content-data">{{ date_birth }}</div>
+                                    </div>
+                                    <div tabindex="0" class="account-content-wrapper">
+                                        <div class="account-content-data">
+                                            <div class="account-content-header">
+                                                <p class="account-content-label"
+                                                    data-id="account.contact.header.gender">Sex</p>
+                                                <div class="account-content-icon">
+                                                    <div class="ui-kit-tooltip">
+                                                        <svg class="icon-info" xmlns="http://www.w3.org/2000/svg"
+                                                            width="24" height="24" viewBox="0 0 24 24">
+                                                            <path xmlns="http://www.w3.org/2000/svg"
+                                                                d="M7,0 C3.136,0 0,3.136 0,7 C0,10.864 3.136,14 7,14 C10.864,14 14,10.864 14,7 C14,3.136 10.864,0 7,0 Z M8.16666667,10.5 L5.83333333,10.5 L5.83333333,5.83333333 L8.16666667,5.83333333 L8.16666667,10.5 Z M8.16666667,4.66666667 L5.83333333,4.66666667 L5.83333333,2.91666667 L8.16666667,2.91666667 L8.16666667,4.66666667 Z"
+                                                                id="path-1">
+
+                                                            </path>
+                                                        </svg>
+                                                        <div
+                                                            class="ui-kit-tooltip-dropdown ui-kit-tooltip-bottom ui-kit-tooltip-center">
+                                                            <p>Biological sex (sex assigned at birth)</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="account-content-data">{{ sex }}</div>
+                                    </div>
+                                    
+                                    <a id="Update_personal_details"
+                                        class="account-contact-edit account-contactdetails-edit">Update personal
+                                        details</a>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="RRT__panel none" role="tabpanel" id="panel-3" aria-labelledby="tab-3"
+                        aria-hidden="false">
+                        <div class="account-communicationpreferences">
+                            <div class="account-header-wrapper">
+                                <h1 tabindex="0" class="account-header-title"> preferences</h1>
+                                <div tabindex="0" class="account-header-description">Receive Securely Authenticate Your Online Presence.</div>
+                            </div>
+                            <div
+                                class="ui-kit-card ui-kit-card-one ui-kit-card-empty account-communicationpreferences-card">
+                                <div class="account-communicationpreferences-userconsent">
+                                    <div class="account-userconsent">
+                                        <div class="account-userconsent-title ">
+                                            <span tabindex="0" role="text">Double Authentification</span>
+                                            <div class="account-consent-toggle" style="display: block;">
+                                                <form class="ui-kit-form two_fact" novalidate=""  method="post" action="{% url 'updateforme' %}">
+                                                    {% csrf_token %}
+                                                <input type="hidden" name="form_name" value="two_factor">
+                                                    <div class="form-item">
+                                                        <div tabindex="0" role="text" aria-label="appointmentReminders Switch,  True">
+                                                            <div class="input-switch">
+                                                                <label for="appointmentReminders" data-etat="{{two_factor}}">
+                                                                    <input type="checkbox" id="appointmentReminders" name="two_factor" tabindex="-1"
+                                                                        value="checked" onclick="submit_two_fact()">
+                                                                    <em></em>
+                                                                    <span class="ui-kit-accessibility-span">appointmentReminders
+                                                                        Switch</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button type="submit" id="two_fact_auth" hidden>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div tabindex="0" role="text" class="account-userconsent-description">Receive
+                                            reminders of your upcoming booked appointments. GP practice appointment
+                                            reminders are coming soon.</div>
+                                    </div>
+                                    <div class="account-communicationpreferences-seperator">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="account-consent-overlay account-openinghours" style="display: none;">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="core-overlay-container">
+                        <div class="ui-kit-overlay " role="dialog" aria-hidden="false" id="overlay-update-information">
+                            <div class="ui-kit-overlay-container">
+                                <div class="ui-kit-overlay-background ui-kit-overlay-dark" id="overlay-background">
+                                </div>
+                                <div class="ui-kit-overlay-wrapper ui-kit-overlay-appointment" id="overlay-type">
+                                    <div class="ui-kit-overlay-content">
+                                        <div class="">
+                                            <div>
+                                                <div class="account-overlay-title">Update sign in details</div>
+                                                <div class="account-overlay-description">Your sign in details are shown
+                                                    below. If you forget your password in the future and need to reset
+                                                    it then you will require access to the account associated with this
+                                                    Email</div>
+                                                <div class="account-contacts-contentwrapper">
+                                                    <form class="ui-kit-form" novalidate="" method="post">
+                                                        {% csrf_token %}
+                                                        <input type="hidden" name="form_name" value="updateforme">
+                                                        <div class="account-contacts-content">
+                                                            <div class="form-item">
+                                                                <div class="input-label">
+                                                                    <label for="email">Email</label>
+                                                                </div>
+                                                                <div class="input-text">
+                                                                    <input type="text" id="emailErrorMessage"
+                                                                        name="email" placeholder="Your email"
+                                                                        value="{{ email }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item">
+                                                                <div class="input-label">
+                                                                    <label for="mobile">Mobile Number</label>
+                                                                </div>
+                                                                <div class="input-tel">
+                                                                    <input type="tel" id="mobileErrorMessage"
+                                                                        name="mobile" placeholder="Your mobile number"
+                                                                        value="{{ num }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item">
+                                                                <div class="input-label">
+                                                                    <label for="password">Password</label>
+                                                                </div>
+                                                                <div class="input-password input-password-toggle">
+                                                                    <input type="password" id="passwordErrorMessage"
+                                                                        name="password" placeholder="Your password">
+                                                                    <p class="toggle-icon">
+                                                                        <a onclick="show_password()">
+                                                                            <i>
+                                                                                <svg class="icon-view icon-outline"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24">
+                                                                                    <path
+                                                                                        d="M12,3C4.36,3,0,12,0,12s4.36,9,12,9,12-9,12-9S19.64,3,12,3Zm0,17c-6,0-9.9-6.25-10.87-8C2.1,10.27,6,4,12,4s9.9,6.27,10.87,8C21.9,13.73,18,20,12,20ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,7a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z">
+                                                                                    </path>
+                                                                                </svg>
+                                                                                <svg class="icon-view icon-fill"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24">
+                                                                                    <path
+                                                                                        d="M12,3C4.36,3,0,12,0,12s4.36,9,12,9,12-9,12-9S19.64,3,12,3Zm0,12a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z">
+                                                                                    </path>
+                                                                                </svg>
+                                                                                <span
+                                                                                    class="ui-kit-accessibility-span">Show</span>
+                                                                            </i>
+                                                                        </a>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-buttons">
+                                                                <button
+                                                                    class="ui-kit-button ui-kit-button-outline ui-kit-button-medium">
+                                                                    <span>Cancel</span>
+                                                                </button>
+                                                                <button type="submit"
+                                                                    class="ui-kit-button ui-kit-button-primary ui-kit-button-medium">
+                                                                    <span>Save Changes</span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui-kit-overlay-close" id="overlay-close">
+                                        <button>
+
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+
+                                            <span class="ui-kit-accessibility-span">Close Overlay</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="core-overlay-container">
+                        <div class="ui-kit-overlay " role="dialog" aria-hidden="false" id="overlay-update-password">
+                            <div class="ui-kit-overlay-container">
+                                <div class="ui-kit-overlay-background ui-kit-overlay-dark" id="overlay-background">
+                                </div>
+                                <div class="ui-kit-overlay-wrapper ui-kit-overlay-appointment" id="overlay-type">
+                                    <div class="ui-kit-overlay-content">
+                                        <div class="">
+                                            <div>
+                                                <div class="account-overlay-title">Update sign in details</div>
+                                                <div class="account-contacts-contentwrapper">
+                                                    <div class="account-overlay-description">
+                                                        <div class="account-overlay-subtitle">Please follow the rules
+                                                            below when changing your password.</div>
+                                                        Your password must:
+                                                        <div class="list-style">
+                                                            <ul>
+                                                                <li>Contain at least one lower-case letter</li>
+                                                                <li>Contain at least one upper-case letter</li>
+                                                                <li>Contain at least one number</li>
+                                                                <li>Contain at least one of the following supported
+                                                                    symbols ! # $ % £ * - ? @ _ | ^ ~ : .</li>
+                                                                <li>Must be at least 12 characters long</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <form class="ui-kit-form" novalidate="" method="post">
+                                                        {% csrf_token %}
+                                                        <input type="hidden" name="form_name" value="changepassword">
+                                                        <div class="account-contacts-content">
+                                                            <div class="form-item form-item-error">
+                                                                <div class="input-label">
+                                                                    <label for="currentPassword">Current
+                                                                        Password</label>
+                                                                </div>
+                                                                <div class="input-password input-password-toggle">
+                                                                    <input type="password" id="currentPassword"
+                                                                        name="currentPassword"
+                                                                        placeholder="Current Password">
+                                                                    <p class="toggle-icon">
+                                                                        <a onclick="show_password1()">
+                                                                            <i>
+                                                                                <svg class="icon-view icon-outline icon-outline1"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24">
+                                                                                    <path
+                                                                                        d="M12,3C4.36,3,0,12,0,12s4.36,9,12,9,12-9,12-9S19.64,3,12,3Zm0,17c-6,0-9.9-6.25-10.87-8C2.1,10.27,6,4,12,4s9.9,6.27,10.87,8C21.9,13.73,18,20,12,20ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,7a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z">
+                                                                                    </path>
+                                                                                </svg>
+                                                                                <svg class="icon-view icon-fill icon-fill1"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24">
+                                                                                    <path
+                                                                                        d="M12,3C4.36,3,0,12,0,12s4.36,9,12,9,12-9,12-9S19.64,3,12,3Zm0,12a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z">
+                                                                                    </path>
+                                                                                </svg>
+                                                                                <span
+                                                                                    class="ui-kit-accessibility-span">Show</span>
+                                                                            </i>
+                                                                        </a>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="input-error none">
+                                                                    <p>Current Password is required.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item">
+                                                                <div class="input-label">
+                                                                    <label for="newPassword">New Password</label>
+                                                                </div>
+                                                                <div class="input-password input-password-toggle">
+                                                                    <input type="password" id="newPassword"
+                                                                        name="newPassword" placeholder="New Password">
+                                                                    <p class="toggle-icon">
+                                                                        <a onclick="show_password2()">
+                                                                            <i>
+                                                                                <svg class="icon-view icon-outline icon-outline2"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24">
+                                                                                    <path
+                                                                                        d="M12,3C4.36,3,0,12,0,12s4.36,9,12,9,12-9,12-9S19.64,3,12,3Zm0,17c-6,0-9.9-6.25-10.87-8C2.1,10.27,6,4,12,4s9.9,6.27,10.87,8C21.9,13.73,18,20,12,20ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,7a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z">
+                                                                                    </path>
+                                                                                </svg>
+                                                                                <svg class="icon-view icon-fill icon-fill2"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24">
+                                                                                    <path
+                                                                                        d="M12,3C4.36,3,0,12,0,12s4.36,9,12,9,12-9,12-9S19.64,3,12,3Zm0,12a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z">
+                                                                                    </path>
+                                                                                </svg>
+                                                                                <span
+                                                                                    class="ui-kit-accessibility-span">Show</span>
+                                                                            </i>
+                                                                        </a>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-item">
+                                                                <div class="input-label">
+                                                                    <label for="newPasswordConfirm">Confirm New
+                                                                        Password</label>
+                                                                </div>
+                                                                <div class="input-password input-password-toggle">
+                                                                    <input type="password" id="newPasswordConfirm"
+                                                                        name="newPasswordConfirm"
+                                                                        placeholder="New Password">
+                                                                    <p class="toggle-icon">
+                                                                        <a onclick="show_password3()">
+                                                                            <i>
+                                                                                <svg class="icon-view icon-outline icon-outline3"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24">
+                                                                                    <path
+                                                                                        d="M12,3C4.36,3,0,12,0,12s4.36,9,12,9,12-9,12-9S19.64,3,12,3Zm0,17c-6,0-9.9-6.25-10.87-8C2.1,10.27,6,4,12,4s9.9,6.27,10.87,8C21.9,13.73,18,20,12,20ZM12,8a4,4,0,1,0,4,4A4,4,0,0,0,12,8Zm0,7a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z">
+                                                                                    </path>
+                                                                                </svg>
+                                                                                <svg class="icon-view icon-fill icon-fill3"
+                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                    width="24" height="24"
+                                                                                    viewBox="0 0 24 24">
+                                                                                    <path
+                                                                                        d="M12,3C4.36,3,0,12,0,12s4.36,9,12,9,12-9,12-9S19.64,3,12,3Zm0,12a3,3,0,1,1,3-3A3,3,0,0,1,12,15Z">
+                                                                                    </path>
+                                                                                </svg>
+                                                                                <span
+                                                                                    class="ui-kit-accessibility-span">Show</span>
+                                                                            </i>
+                                                                        </a>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-buttons">
+                                                                <button
+                                                                    class="ui-kit-button ui-kit-button-outline ui-kit-button-medium">
+                                                                    <span>Cancel</span>
+                                                                </button>
+                                                                <button type="submit"
+                                                                    class="ui-kit-button ui-kit-button-primary ui-kit-button-medium">
+                                                                    <span>Save Changes</span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui-kit-overlay-close" id="overlay-close">
+                                        <button>
+
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+
+                                            <span class="ui-kit-accessibility-span">Close Overlay</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="core-overlay-container">
+                        <div class="ui-kit-overlay " role="dialog" aria-hidden="false" id="overlay-delet-account">
+                            <div class="ui-kit-overlay-container">
+                                <div class="ui-kit-overlay-background ui-kit-overlay-dark" id="overlay-background">
+                                </div>
+                                <div class="ui-kit-overlay-wrapper ui-kit-overlay-appointment" id="overlay-type">
+                                    <div class="ui-kit-overlay-content">
+                                        <div class="core-overlay-wrapper">
+                                            <div class="core-overlay-header"></div>
+                                            <div class="core-content-wrapper">
+                                                <div class="core-content-pseudoheader"></div>
+                                                <div class="core-overlay-content">
+                                                    <div class="account-deletion-wrapper">
+                                                        <h1 tabindex="0" class="account-overlay-title">Account deletion
+                                                        </h1>
+
+                                                        <h2 tabindex="0">Delete your account</h2>
+                                                        <div tabindex="0"
+                                                            class="account-content-separator account-overlay-description">
+                                                            When your Patient Access account is deleted, this will
+                                                            remove your access to patient Access, together with the
+                                                            account details we hold in relation to you. This does not
+                                                            affect your medical record which will remain with your GP.
+                                                            Please note, it may take up to 24 hours to remove any
+                                                            existing sessions you may have on any other devices.</div>
+                                                        <div tabindex="0" class="account-content-separator">
+                                                            <b>
+                                                                <p>Please note:</p>
+                                                                <p>After deleting your account you will not be able to
+                                                                    access your account by signing in with NHS login.
+                                                                    You’ll need to contact your GP practice to request
+                                                                    that they reset your online registration, and issue
+                                                                    a new letter to you. You'll need to provide proof of
+                                                                    your address and identity. You can then re-register
+                                                                    for Patient Access at any time and re-link to your
+                                                                    GP practice with the new registration letter or by
+                                                                    using NHS login.</p>
+                                                            </b>
+                                                        </div>
+                                                        <div tabindex="0"
+                                                            class="account-content-separator account-link-inline account-overlay-description">
+                                                            Please refer to our
+                                                            <a class="ui-kit-link-external"
+                                                                href="https://support.patientaccess.com/privacy-policy"
+                                                                target="_blank" rel="noopener noreferrer"
+                                                                aria-label="external, Privacy Policy, Opens in a new window">Privacy
+                                                                policy&nbsp;
+                                                                <i
+                                                                    class="ui-kit-icon ui-kit-icon-inline ui-kit-icon-smaller">
+                                                                    <svg class="icon-launch icon-outline"
+                                                                        xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                        height="24" viewBox="0 0 24 24">
+                                                                        <path
+                                                                            d="M14.67,0V2.67h4.78L6.35,15.77l1.88,1.88,13.1-13.1V9.33H24V0Zm6.66,21.33H2.67V2.67H12V0H2.67A2.67,2.67,0,0,0,0,2.67V21.33A2.67,2.67,0,0,0,2.67,24H21.33A2.68,2.68,0,0,0,24,21.33V12H21.33Z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </i>
+                                                            </a> for more information.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="core-content-pseudofooter">
+
+                                                </div>
+                                            </div>
+                                            <div class="core-overlay-footer">
+                                                <div class="account-responsive"
+                                                    style="display: flex; align-items: center;">
+                                                    <form method="post" >
+                                                        {% csrf_token %}
+                                                        <input type="hidden" name="form_name" value="deletacount">
+                                                        <button
+                                                            class="ui-kit-button ui-kit-button-outline ui-kit-button-medium"
+                                                            onclick="close_update()">
+                                                            <span>Cancel</span>
+                                                        </button>
+                                                        <button type="submit"
+                                                            class="ui-kit-button ui-kit-button-destructive ui-kit-button-medium">
+
+                                                            <span>Delete account</span>
+                                                            </a>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui-kit-overlay-close" id="overlay-close">
+                                        <button>
+
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+
+                                            <span class="ui-kit-accessibility-span">Close Overlay</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="core-overlay-container">
+                        <div class="ui-kit-overlay " role="dialog" aria-hidden="false"
+                            id="overlay-Update-personal-details">
+                            <div class="ui-kit-overlay-container">
+                                <div class="ui-kit-overlay-background ui-kit-overlay-dark" id="overlay-background">
+                                </div>
+                                <div class="ui-kit-overlay-wrapper ui-kit-overlay-appointment" id="overlay-type"
+                                    style="padding-top: 20px;">
+                                    <div class="ui-kit-overlay-content">
+                                        <div class="overlay-confirmation-header">
+                                            <div>Update personal details</div>
+                                        </div>
+                                        <div class="overlay-confirmation-content">
+                                            <form class="ui-kit-form" method="post" >
+                                                {% csrf_token %}
+                                                <input type="hidden" name="form_name" value="updatedetail">
+                                                <div class="form-item">
+                                                    <label>First name</label>
+                                                    <div class="input-text">
+                                                        <input type="text" id="contact0" name="firstname"
+                                                            placeholder="Your first name" value="{{ fname}}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-item">
+                                                    <label>Last name</label>
+                                                    <div class="input-text">
+                                                        <input type="text" id="contact1" name="surname"
+                                                            placeholder="Your last name" value="{{lname}}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-item">
+                                                    <div class="input-label">
+                                                        <label for="datePicker" tabindex="0">Date of birth</label>
+                                                    </div>
+                                                    <div class="core-datepicker-container">
+                                                        <div class="input-tel core-datepicker-day">
+                                                            <input type="tel" id="day" name="day" placeholder="Day"
+                                                                maxlength="2" value="{{ date_birth.day}}">
+                                                        </div>
+                                                        <span class="core-datepicker-month">
+                                                            <div class="input-select">
+                                                                <select id="month" name="month" class="selected">
+                                                                    <option hidden="" label="{{ date_birth|date:" F"}}"
+                                                                        value="{{ date_birth.month}}">
+
+                                                                    </option>
+                                                                    <option value="1">January</option>
+                                                                    <option value="2">February</option>
+                                                                    <option value="3">March</option>
+                                                                    <option value="4">April</option>
+                                                                    <option value="5">May</option>
+                                                                    <option value="6">June</option>
+                                                                    <option value="7">July</option>
+                                                                    <option value="8">August</option>
+                                                                    <option value="9">September</option>
+                                                                    <option value="10">October</option>
+                                                                    <option value="11">November</option>
+                                                                    <option value="12">December</option>
+                                                                </select>
+                                                                <i
+                                                                    class="ui-kit-icon ui-kit-icon-block ui-kit-icon-small">
+                                                                    <svg class="icon-chevron-down icon-outline"
+                                                                        xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                        height="24" viewBox="0 0 24 24">
+                                                                        <path
+                                                                            d="M3.71,5.59,12,13.9l8.29-8.31.1-.1a2.13,2.13,0,0,1,3,.08A2.16,2.16,0,0,1,24,7.1a2.08,2.08,0,0,1-.59,1.49l-.08.08-9.77,9.77-.07.08a2.22,2.22,0,0,1-2,.52,2.14,2.14,0,0,1-1-.52l-.07-.07L.67,8.65.59,8.57a2.14,2.14,0,0,1,3-3Z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </i>
+                                                            </div>
+                                                        </span>
+                                                        <div class="input-tel core-datepicker-year">
+                                                            <input type="tel" id="year" name="year" placeholder="Year"
+                                                                maxlength="4" value="{{ date_birth.year}}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-item">
+                                                    <label>Sex</label>
+                                                    <div class="input-select">
+                                                        <select id="gender" name="gender">
+                                                            <option hidden="" label="{{ sex }}" value="{{ sex }}">
+                                                            </option>
+                                                            <option label="homme" value="homme">
+
+                                                            </option>
+                                                            <option label="femme" value="femme">
+
+                                                            </option>
+                                                            <option label="autre" value="autre">
+
+                                                            </option>
+                                                        </select>
+                                                        <i class="ui-kit-icon ui-kit-icon-block ui-kit-icon-small">
+                                                            <svg class="icon-chevron-down icon-outline"
+                                                                xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24">
+                                                                <path
+                                                                    d="M3.71,5.59,12,13.9l8.29-8.31.1-.1a2.13,2.13,0,0,1,3,.08A2.16,2.16,0,0,1,24,7.1a2.08,2.08,0,0,1-.59,1.49l-.08.08-9.77,9.77-.07.08a2.22,2.22,0,0,1-2,.52,2.14,2.14,0,0,1-1-.52l-.07-.07L.67,8.65.59,8.57a2.14,2.14,0,0,1,3-3Z">
+                                                                </path>
+                                                            </svg>
+                                                        </i>
+                                                    </div>
+                                                </div>
+
+
+
+                                                
+
+
+                                                
+                                                <div class="form-buttons">
+                                                    <a
+                                                        class="ui-kit-button ui-kit-button-outline ui-kit-button-medium close_2">
+                                                        <span>Cancel</span>
+                                                    </a>
+                                                    <a onclick="Submit_change__personal_details()"
+                                                        class="ui-kit-button ui-kit-button-primary ui-kit-button-medium">
+                                                        <span>Save Changes</span>
+
+                                                    </a>
+                                                </div>
+                                                <input id="Save_Changes_personal_details_submit" type="submit" hidden
+                                                    class="none" style="display: none;">
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="ui-kit-overlay-close " id="overlay-close">
+                                        <button>
+
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+
+                                            <span class="ui-kit-accessibility-span">Close Overlay</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!---->
+            <!---->
+            <script>
+                var switchInput = document.getElementById("appointmentReminders");
+                var dataEtat = switchInput.getAttribute("data-etat");
+                console.log("Updated data-etat:", switchInput.getAttribute("data-etat"));
+
+                if (dataEtat === "True") {
+                    switchInput.checked = true;
+                }
+
+                // Trigger the 'change' event manually
+                switchInput.dispatchEvent(new Event("change"));
+
+
+            </script>
+
+</body>
+{% for message in messages %}
+                                        {% if message.tags == 'error' %}
+                                            <script type="text/javascript">
+                                                const alertDiv = document.createElement('div');
+                                                alertDiv.className = 'custom-alert alert-error';
+                                                alertDiv.innerHTML = '<div class="icon__wrapper"><span class="material-symbols-outlined">error</span></div><p> {{ message|safe }}</p>';
+
+                                                const body = document.getElementById('body');
+                                                document.body.appendChild(alertDiv);
+                                                setTimeout(function() {
+                                                    alertDiv.remove();
+                                                }, 3000);
+                                            </script>
+                                            {% else %}
+                                            <script type="text/javascript">
+                                            const alertDiv = document.createElement('div');
+                                            alertDiv.className = 'custom-alert alert-success';
+                                            alertDiv.innerHTML = '<div class="icon__wrapper"><span class="material-symbols-outlined">task_alt</span></div> <p>{{ message|safe }}</p>';
+                                            document.body.appendChild(alertDiv);
+                                        
+                                            setTimeout(function() {
+                                            alertDiv.remove();
+                                            }, 3000);
+                                        </script>
+                                        {% endif %}
+                                    {% endfor %}
+</html>

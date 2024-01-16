@@ -1,0 +1,455 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/homedashboard.css' %}" rel="stylesheet">
+	<link href="{% static 'css/libs.css' %}" rel="stylesheet">
+    <link href="{% static 'css/messages.css' %}" rel="stylesheet">
+    <!---->
+    <!---->
+    <!---->
+    <script  src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/homedashboard.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/infirmier/channel.js' %}"></script>
+    <script  src="{% static 'js/general/notification_pannel.js' %}"></script>
+    <!---->
+     <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+    <!---->
+    <script src="https://kit.fontawesome.com/4f846c2c5f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+    <title>Document</title>
+</head>
+<body onload="init()">
+    <div class="general-container">
+
+        <aside class="menu-panel" role="complementary">
+            <div class="hide-since-tablet" psi-proxy-user-popup="">
+                <a id="profile_head-secound" aria-label="profile menu"
+                    class="dark-link profile-link profile-menu profile-link--in-menu" role="link" tabindex="0">
+
+                    <ins class="nav-menu-icon nav-menu-icon--user">
+                        <span id="profile-circle" class=" material-symbols-outlined">
+                            account_circle
+                        </span>
+                    </ins>
+
+                    <div class="profile-link__user">{{ name }}</div>
+
+                    <!---->
+
+
+                    <ins class="profile-link__trigger">
+                        <span id="profile-arrow-2" class=" material-symbols-outlined">
+                            expand_more
+                        </span>
+                    </ins>
+                </a>
+
+
+
+                <div class="side-account-profil none">
+                    <ul class="contenait">
+                        <li>
+                            <a id="account" role="link" tabindex="0" href="{% url 'account_infermieur' %}">
+                                <ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+                                    {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+                                </ins>
+
+
+                                <div class="">account</div>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a id="sign_out" href="{% url 'logout' %}" role="link" tabindex="0">
+
+                                <ins class="">
+                                    <span class="material-symbols-outlined">
+                                        logout
+                                    </span>
+                                </ins>
+
+                                <div class="">sign out</div>
+
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="menu-panel__content">
+                <div class="menu-panel__content_header">
+                    <a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/" title="Homepage"
+                    href="{% url 'home' %}">
+                        <img alt="Logo"
+                            src="/media/image/logo sans bg.png"
+                            width="70" height="55">
+                    </a>
+                    <div>
+                        <a class="side-menu-logo-title" href="{% url 'home' %}">
+                            <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                data-animation-direction=""
+                                style="will-change: transform, opacity; animation-duration: 1000ms;">Quick </p>
+                            <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                data-lang-en="Lab" style="will-change: transform, opacity; animation-duration: 1000ms;">
+                                Lab</p>
+                        </a>
+                    </div>
+                </div>
+                <!---->
+                <p-panelmenu aria-label="Main Menu" aria-labelledby="Main Menu" role="navigation" tabindex="0"
+                    class="ng-tns-c15-13">
+                    <div class="ng-tns-c15-13 side-menu ui-panelmenu ui-widget">
+                        <!---->
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div
+                                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default ui-corner-top">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon ui-state-active"
+                                href="{% url 'homeinfirmier' %}">
+                                    <!---->
+                                    <!---->
+                
+                                    <span class="icons material-symbols-outlined">
+                                        home
+                                    </span>
+                
+                                    <span class="ui-menuitem-text">Home</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                       
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div
+                                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'liste_appointments' %}">
+                                    <!---->
+                                    <!---->
+                                    <span class="icons material-symbols-outlined">
+                                        calendar_month
+                                    </span>
+                                    <span class="ui-menuitem-text">List Appointments</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div
+                                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'results_inf' %}">
+                                    <!---->
+                                    <!---->
+                                    <span class=" icons material-symbols-outlined">
+                                        assignment
+                                    </span>
+                                    <span class="ui-menuitem-text"> Results</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13"
+                        style="background-color: #46807F;border:1px solid white ;border-radius: 15px;">
+                            <div
+                                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'channels_inf' %}" style="font-weight: 700;color: white;">
+                                    <!---->
+                                    <!---->
+                                    <span class="icons material-symbols-outlined">
+                                        chat
+                                    </span>
+                                    <span class="ui-menuitem-text">messages</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div class="ng-tns-c15-13 ui-menu-separator ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <a class="ng-tns-c15-13" href="#">
+                                    <!---->
+                                    <!---->
+                                    <span class="ui-menuitem-text"></span>
+                                </a>
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+
+                    </div>
+                </p-panelmenu>
+            </div>
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <div class="flex-push"></div> <!----><!----><!----><!----><!----><!----><!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <ul class="menu-panel__additional-info additional-info" role="contentinfo">
+                <div>
+                    <li class="additional-info__disc"></li>
+                    <li class="additional-info__item">
+                        <a psimsg="content.terms.menuTitle" rel="noopener" target="_blank" href="{% url 'term' %}">Terms of Use</a>
+                    </li>
+                    <li class="additional-info__disc"></li>
+                    <li class="additional-info__item">
+                        <a psimsg="content.privacy.menuTitle" rel="noopener" target="_blank" href="{% url 'privecy' %}">Privacy Policy</a>
+                    </li>
+                </div>
+            </ul>
+        </aside>
+        <div psi-menu-overlay="">
+            <div class="menu-panel-overlay">
+
+            </div>
+        </div>
+
+        <section class="content-panel" role="main">
+
+            <header class="header hide-on-print">
+                <div class="header-wrapper">
+                    <div class="header__panel">
+                        <ul class="header-menu-bar">
+
+                            <li class="header-menu-bar__item hide-since-desktop hide-on-print" psi-menu-trigger="">
+                                <a id="menu-link_button" class="profile-link hamburger-link hide-since-desktop">
+
+                                    <ins class="nav-menu-icon nav-menu-icon--hamburger">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+                                            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                            class="icon-svg icon-svg__size--24 " xml:space="preserve">
+                                            <g>
+                                                <path
+                                                    d="M85 341l342 0c11,0 21,10 21,22l0 0c0,11 -10,21 -21,21l-342 0c-11,0 -21,-10 -21,-21l0 0c0,-12 10,-22 21,-22z">
+                                                </path>
+                                                <path
+                                                    d="M85 235l342 0c11,0 21,9 21,21l0 0c0,12 -10,21 -21,21l-342 0c-11,0 -21,-9 -21,-21l0 0c0,-12 10,-21 21,-21z">
+                                                </path>
+                                                <path
+                                                    d="M85 128l342 0c11,0 21,10 21,21l0 0c0,12 -10,22 -21,22l-342 0c-11,0 -21,-10 -21,-22l0 0c0,-11 10,-21 21,-21z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </ins>
+
+                                    <h6>Menu</h6>
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <!---->
+                            </li>
+
+                            <!---->
+                            <p-tabmenu>
+                                <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+                                    <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
+                                        role="tablist">
+                                        <!---->
+                                    </ul>
+                                </div>
+                            </p-tabmenu>
+                        </ul>
+                    </div>
+                    <div class="header__panel header__panel--spacer hide-on-print"></div>
+                    <div class="header__panel hide-on-print">
+                        <ul class="header-menu-bar header-menu-bar--main">
+                           
+                            <li id="profile-info-1"
+                                class="header-menu-bar__item header-menu-bar__item--main hide-up-to-tablet"
+                                psi-proxy-user-popup="" psieventtracker="">
+                                <a id="profile_head-main" aria-label="profile menu"
+                                    class="dark-link profile-link profile-menu" role="link" tabindex="0">
+
+                                    <ins class="nav-menu-icon nav-menu-icon--user">
+                                        <span id="profile-circle" class=" material-symbols-outlined">
+                                            account_circle
+                                        </span>
+                                    </ins>
+
+                                    <div class="profile-link__user">{{ name }}</div>
+
+                                    <!---->
+
+                                    <ins class="profile-link__trigger">
+                                        <span id="profile-arrow" class=" material-symbols-outlined">
+                                            expand_more
+                                        </span>
+                                    </ins>
+
+                                </a>
+
+                                <p-overlaypanel>
+
+                                </p-overlaypanel>
+
+                                <!---->
+                            </li>
+                            <!---->
+                            <li id="notification" class="header-menu-bar__item header-menu-bar__item--main header-menu-bar__item--last"
+						psi-alert-popup="" psieventtracker="">
+					
+					
+						<span class="notifications-overlay-arrow__hidden"></span>
+						<a>
+							<ins class="nav-menu-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px"
+									y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+									class="icon-svg icon-svg__size--24 icon-svg__color--darker-blue" xml:space="preserve">
+									<path
+										d="M483,433l-38-86V181C445,81,361,0,256,0C152,0,67,81,67,181v166l-38,85c-2,4-2,9,1,12c2,4,6,6,11,6h131 c7,36,40,62,78,62s70-26,77-62h144c5,0,9-2,11-6C485,441,485,436,483,433z M250,487c-24,0-45-15-51-37h101C294,472,273,487,250,487z ">
+									</path>
+								</svg>
+							</ins>
+							<!---->
+							  <span class="notification-bubble" id="notification-bubble">
+                                0
+                </span>
+						</a>
+					</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="notification_panel"
+									class="  notifications-overlay false ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow"
+									style=" z-index: 1007; visibility: visible; top: 180.719px; left: 703.333px; opacity: 1.048;    transform: scale(0)">
+									<div class="ui-overlaypanel-content">
+								
+										<h6 class="linked-heading indent-bottom">
+											<span psimsg="alert.title">Recent Notifications</span>
+											<a class="text-style--bold" psimsg="alert.showAll" href="{% url 'notification_receptioniste' %}">show All</a>
+										
+										</h6>
+										<ul style="position: relative;" id="notification_dashboard" data-patient="0nlbop5f1e">
+											<!---->
+								
+								
+										</ul>
+								
+								
+									</div>
+									<!---->
+								</div>
+
+                <div id="user-menu" class="user-menu">
+
+                    <!---->
+                    <div class="">
+                        <div class="profile-pane">
+                            <ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+                                {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+                            </ins>
+
+                            <div class="profile-pane__data">
+                                <div class="profile-pane__user">{{ name }}</div>
+
+                                <!----><a class="link--blue text-style--bold proxy-user-account-link"
+                                    psimsg="proxyUser.accountLink" role="link" tabindex="0"
+                                    aria-label="abd el madjid kahoul account" href="{% url 'account_infermieur' %}">Account</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---->
+
+                    <!---->
+                    <p-accordion styleclass="ui-accordion-user-menu" class="">
+                        <div class="ui-accordion-user-menu ui-accordion ui-widget ui-helper-reset">
+
+
+                            <!---->
+
+                            <!---->
+
+                            <!---->
+
+
+                        </div>
+                    </p-accordion>
+
+                    <div class="user-menu__item">
+                        <a class="user-menu__control" psimsg="proxyUser.logout" tabindex="0" href="{% url 'logout' %}">Sign Out</a>
+                    </div>
+
+                </div>
+            </header>
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <div id="main_element" class="content content--dashboard">
+                <div class="content__wrapper">
+                    <!---->
+                    <!---->
+                    <!---->
+                    
+
+                    <div class="grid__row grid__row--dashboard hide-on-print">
+                        <div id="messages_dashboard" class="   messages_dashboard grid__column grid__column--dashboard grid__column--12" psi-dashboard-helpdesk="">
+                       
+                            <!---->
+                            <!---->
+                            
+                            <!---->
+                            <!---->
+                       
+                    </div>
+
+
+</div>
+
+
+
+
+                    <!---->
+                    <!---->
+                    <!---->
+                    
+                </div>
+            </div>
+            <!---->
+
+            <!-- Code injected by live-server -->
+            
+</body>
+        </html>
+
+
+
+
+
+
+
+

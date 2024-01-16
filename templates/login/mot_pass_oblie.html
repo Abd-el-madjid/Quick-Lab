@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="{% static 'js/jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/mot_pass_oblie.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/login/sms.css' %}">
+   <script src="{% static 'js/mot_pass_oblie.js' %}"></script>
+    
+    <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="content content--for-thin content-auth">
+        <div class="info_center info_content_start">
+            <div class="info_centre_adjust ">
+                <div class="info_content_mobile_initial info_content_title content__wrapper--thin heading-center">
+                    <h1 class="line-medium-text-larger" id="mobile_verify_header">
+                        Forgot your Password?</h1>
+                </div>
+                <div class="info_content_wrapper">
+                    <div class="info_box_mobile_content content__wrapper--thin auth_content__wrapper--white-box">
+                        <form class="ui-kit-form" id="mobileverifyform" method="post" action="{% url 'Forgot_Password' %}">
+                            {% csrf_token %}
+                            <div>
+                               
+                                                <div class="h5 modal-title">
+                                                    <h6 class="mt-1 mb-0 opacity-8">
+                                                        <span>Use the form below to recover it.</span>
+                                                        <ul class="conseig">
+                                                            <li>
+                                                                Entrez l’adresse e-mail associée à votre compte ci-dessous.
+                                                            </li>
+                                                            <li>
+                                                                Si votre adresse e-mail est vérifiée, vous recevrez un e-mail. Cliquez sur le lien pour choisir un
+                                                                nouveau mot de passe.
+                                                            <li>
+                                                                Après la validation de votre nouveau mot de passe, vous êtes connecté(e) à votre compte !
+                                                            </li>
+                                                        </ul>
+                                                    </h6>
+                                                </div>
+                                <div class="form-item">
+                                    <div class="input-label input-label-small">
+                                        <label class="line-small-text-small">Email</label>
+                                    </div>
+                                    <div class="input-tel">
+                                        <input  type="email" placeholder="Email here..." id="email" name="email" value="">
+
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="input-label input-label-small">
+                                     
+                                        <a class="line-small-text-small"href="{% url 'signin' %}"> Sign in existing account</a>
+                                    </div>
+                                 
+                                </div>
+                                <div class="form-buttons-mobile">
+                                    <button onclick="show_next()" type="submit" class="ui-kit-button ui-kit-button-primary ui-kit-button-full ui-kit-button-medium section-validate line-cumedium-text-medium">Recover Password</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="info_content_last content__wrapper--thin form-buttons heading-center">
+                    <a class="line-cumedium-text-medium" href="{% url 'signin' %}" id="mobile_verify_skip">Skip for now
+                        and return</a>
+                </div>
+            </div>
+
+            <div class="etape2_container_oblie_mdp none">
+
+                <div class="dl-card dl-card-bg-white dl-card-variant-default dl-margin-16" data-design-system="oxygen" data-design-system-component="Card" style="width: 470px;">
+                    <div class="dl-card-content">
+                        <div role="status" class="dl-flex-column dl-flex-column dl-text-center dl-justify-between">
+                            <div class="dl-margin-b dl-flex-grow">
+                                <img src="https://lh3.googleusercontent.com/_dAVuc2NXyqfKVNtbMUNiAW2Z3TYZN72sV-WL1ptGyWXIqQ7hVXq_9xPkql3r1vLy1Q6WoT1-dfDfU8LtacneXVj0k48lYu7jtbpZq705VAjSDMBg0X8z2F2dcmV7axZyyjYqKdjEA=w2400" width="200" alt="" class="dl-image" >
+                                <h3 class="dl-text dl-text-title dl-text-bold dl-text-s dl-margin-y-16" data-design-system="oxygen" data-design-system-component="Text">Si un compte est lié à cette adresse, vous recevrez un email</h3>
+                                <span class="dl-text dl-text-body dl-text-regular dl-text-s" data-design-system="oxygen" data-design-system-component="Text">Cliquez sur le lien dans le email, vous pourrez réinitialiser votre mot de passe.</span>
+                            </div>
+                            <div>
+                                <span class="dl-text dl-text-body dl-text-regular dl-text-s dl-text-neutral-090" data-design-system="oxygen" data-design-system-component="Text">
+                                    La réception du mail peut se faire dans les minutes qui suivent, pensez également à vérifier vos spams. Si vous n'avez rien reçu, vous pouvez
+         
+            </span><a href="{% url 'signin' %}" > 
+                <button src="login.html" class="Tappable-inactive dl-button-primary dl-margin-t-16 dl-button dl-button-block dl-button-size-medium btn" type="submit" data-design-system="oxygen"  style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;">
+                 <span >J'ai compris</span>
+                </button></a> 
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+</body>
+{% for message in messages %}
+                                        {% if message.tags == 'error' %}
+                                            <script type="text/javascript">
+                                                const alertDiv = document.createElement('div');
+                                                alertDiv.className = 'custom-alert alert-error';
+                                                alertDiv.innerHTML = '<div class="icon__wrapper"><span class="material-symbols-outlined">error</span></div><p> {{ message|safe }}</p>';
+
+                                                const body = document.getElementById('body');
+                                                document.body.appendChild(alertDiv);
+                                                setTimeout(function() {
+                                                    alertDiv.remove();
+                                                }, 3000);
+                                            </script>
+                                            {% else %}
+                                            <script type="text/javascript">
+                                            const alertDiv = document.createElement('div');
+                                            alertDiv.className = 'custom-alert alert-success';
+                                            alertDiv.innerHTML = '<div class="icon__wrapper"><span class="material-symbols-outlined">task_alt</span></div> <p>{{ message|safe }}</p>';
+                                            document.body.appendChild(alertDiv);
+                                        
+                                            setTimeout(function() {
+                                            alertDiv.remove();
+                                            }, 3000);
+                                        </script>
+                                        {% endif %}
+                                    {% endfor %}
+</html>

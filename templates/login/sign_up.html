@@ -1,0 +1,382 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+    <!-- jquery cdn link  -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" media="screen">
+    <link href="{% static 'css/homedashboard.css' %}" rel="stylesheet">
+
+    <script src="{% static 'js/login.js' %}"></script>
+    <link href="{% static 'css/general/icons_google.css' %}" rel="stylesheet">
+    <script type="text/javascript" async=""
+        src="https://sdk.privacy-center.org/sdk.ca5e5165e57751a50d217e6d3189d370b73f3d63.js" charset="utf-8"></script>
+    <link rel="stylesheet" id="main-style-css" href="{% static 'css/app_info.min.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+
+</head>
+
+<body id='body'>
+    <div class="subNav-item">
+
+        <section class="hero heroHomepageV2 padding-none" data-section-type="Hero Rolling Tagline" data-view="viewed">
+            <div id="home" class=" heroHomepageV2__backgroundDesktop">
+                <img class="heroHomepageV2__dotsDesktop"
+                    src="https://lh3.googleusercontent.com/hJQe1xOX32-LN4y0R0yeM8KmgF8ZhoM7_azam_mronGx4-N4X4sGSkAg1eKSinigerSvE3SrHqwlOoTTafjlMX6zsBddXzVtOk0Pkw4XHoyoxiZ8ZfKiBr2dLDE2FVDGx2DIfa644A=w2400"
+                    alt="La nouvelle génération de solutions pour les praticiens" loading="lazy">
+            </div>
+            <div class="heroHomepageV2__container">
+                <div id="sidetext" class="heroHomepageV2__contentTXT contentTXT">
+                    <div class="heroHomepageV2__background">
+                        <div class="contentTXT__container">
+                            <div>
+                                 <div class="menu-panel__content_header">
+                                    <a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/"
+                                        title="Homepage" href="{% url 'home' %}">
+                                        <img alt="Logo"
+                                            src="/media/image/logo sans bg.png"
+                                            width="110" height="100">
+                                    </a>
+                                    <div>
+                                        <a class="side-menu-logo-title" href="{% url 'home' %}">
+                                            <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+                                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                                data-animation-direction=""
+                                                style="will-change: transform, opacity; animation-duration: 1000ms;">
+                                                Quick </p>
+                                            <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+                                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                                data-lang-en="Lab"
+                                                style="will-change: transform, opacity; animation-duration: 1000ms;">Lab
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <h1 class="contentTXT__title">The new generation of solutions for practitioners</h1>
+                            <div class="contextTXT__sliderText sliderText">
+                                <p class="contentTXT__subtitle sliderText__preText">Equip yourself with QuickLab and</p>
+                                <div class="sliderText__changeHidden" style="display: none;">
+                                    <div class="sliderText__items">
+                                        <div class="sliderText__item">Save time in your daily routine</div>
+                                        <div class="sliderText__item">Increase your work comfort</div>
+                                        <div class="sliderText__item">Enhance patient care</div>
+                                        <div class="sliderText__item">Grow your business</div>
+                                        <div class="sliderText__item sliderText__last">Save time in your daily routine
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contentTXT__listContainer ">
+                                <ul class="contentTXT__bulletlist bulletlist">
+                                    <li class="bulletPoint">Save time in your daily routine</li>
+                                    <li class="bulletPoint">Increase your work comfort</li>
+                                    <li class="bulletPoint">Enhance patient care</li>
+                                    <li class="bulletPoint">Grow your business</li>
+                                    <li class="bulletPoint ">Save time in your daily routine</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="heroHomepageV2__form  ">
+                    <div class="heroHomepageV2__imgDesktopContainer">
+                        <picture>
+                            <source media="(max-width: 767px)"
+                                srcset="https://lh3.googleusercontent.com/_xekjGM3vuKRC_5XymJ1iwtEhp3i0pcmLDlnQpn5wCj9GQXiFBGBb0rHzF5Y6Ec-HOg6ph48iy3dyzjacC41xpYeczQnntk9boX_U7SSOj2zWR02TKW_LQ6L-cqGt2J-gXsrdG5_QA=w2400">
+                            <source media="(max-width: 1023px)"
+                                srcset="https://lh3.googleusercontent.com/_xekjGM3vuKRC_5XymJ1iwtEhp3i0pcmLDlnQpn5wCj9GQXiFBGBb0rHzF5Y6Ec-HOg6ph48iy3dyzjacC41xpYeczQnntk9boX_U7SSOj2zWR02TKW_LQ6L-cqGt2J-gXsrdG5_QA=w2400">
+                            <img class="heroHomepageV2__"
+                                src="/media/image/imgonline-com-ua-ReplaceColor-tR6iEcNuisYaSz-removebg-preview.png"
+                                alt="professionnels-de-sante-illustration" loading="lazy">
+                        </picture>
+                    </div>
+                    <div id="login" class="column column_form login">
+                        <div class="hero_form form-background white ">
+<div class="form-wrapper registration">
+    <h3>sign up </h3>
+    <div>
+
+       
+    <form class="form-b2b registration_form" method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+        <div class="user-details">
+            <div class="flex-rows-break"></div>
+            <div class="field-wrapper">
+                <input type="text" class="email js-autocomplete-email" name="Nom" placeholder="Nom *" required="true"
+                    aria-required="true" required>
+                <label class="label-and-placeholder">Last name  *</label>
+            </div>
+            <div class="field-wrapper">
+                <input type="text" class="email js-autocomplete-email" name="Prenom" placeholder="Prenom *"
+                    required="true" aria-required="true" required>
+                <label class="label-and-placeholder">First name *</label>
+            </div>
+            <div class="field-wrapper" data-step="true" data-row="1">
+                <select name="gender" class="gender" required>
+                    <option value="" selected disabled>Gender *</option>
+                    <option value="homme">Male</option>
+                    <option value="femme">female</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+            <div class="field-wrapper">
+                <input  class="email js-autocomplete-email no-spinner" name="telephone" 
+                    required="true" aria-required="true" required      type="number" data-validate-field="mobilenumber" placeholder="e.g. 07687965753" required
+                    maxlength="30" data-val="true"
+                    data-val-length="The field PhoneNumber must be a string with a maximum length of 30."
+                    data-val-length-max="30" data-val-regex="Invalid Mobile Number."
+                    data-val-regex-pattern="^0\d{9}$"
+                    data-val-required="The PhoneNumber format invalid must be  e.g. 07687965753." id="PhoneNumber"
+                   >
+                <label class="label-and-placeholder">Phone number *</label>
+            </div>
+            <div class="field-wrapper">
+                <input type="date" class="email js-autocomplete-email" name="date"
+                    placeholder="Votre date de naissance *" required>
+                <label class="label-and-placeholder">Votre date of birth *</label>
+            </div>
+            <div class="field-wrapper">
+                <input type="text" class="email js-autocomplete-email" name="lieu" placeholder="Nom *" required="true"
+                    aria-required="true" required>
+                <label class="label-and-placeholder">Place of birth *</label>
+            </div>
+            <div class="field-wrapper">
+                <input type="number" class="email js-autocomplete-email no-spinner" name="id" placeholder="Prenom *" required="true"
+                    aria-required="true" required>
+                <label class="label-and-placeholder "> Nationale carte number *</label>
+            </div>
+            <div class="field-wrapper">
+                <input type="email" class="email js-autocomplete-email" name="email" placeholder="Adresse email *"
+                    required>
+                <label class="label-and-placeholder"> Email *</label>
+            </div>
+            <div class="field-wrapper">
+                <input type="text" class="email js-autocomplete-email" name="username"
+                    placeholder="confermi Adresse email *" required>
+                <label class="label-and-placeholder">User name *</label>
+            </div>
+            <div class="field-wrapper">
+                <input id="password" type="password" class="email js-autocomplete-email" name="pass1"  data-val-required="Your Password Must: Contain At Least One Lower-Case Letter, Contain At Least One Upper-Case Letter, Contain At Least One Number, Contain At Least One Of The Following Supported Symbols ! # $ % £ * - ? @ _ | ^ ~ : ., Must Be At Least 12 Characters Long" 
+                                            
+                    placeholder="Choisissez un mot de passe *" required aria-required="true">
+                <label class="label-and-placeholder">password *</label>
+            </div>
+            <div class="field-wrapper">
+                <input id="password" type="password" class="email js-autocomplete-email" name="pass2"
+                    placeholder="Choisissez un mot de passe *" required aria-required="true"  data-val-required="Your Password Must: Contain At Least One Lower-Case Letter, Contain At Least One Upper-Case Letter, Contain At Least One Number, Contain At Least One Of The Following Supported Symbols ! # $ % £ * - ? @ _ | ^ ~ : ., Must Be At Least 12 Characters Long" >
+                    
+                <label class="label-and-placeholder">Password confimation *</label>
+            </div>
+        </div>
+        <p class="simple-reg-terms" style="margin:12px 0px 12px 0px;">
+            <label>
+                <span class="checkbox"><input title="Please tick" name="{{ form.accept_terms.html_name }}"
+                        type="checkbox" class="required" id="{{ form.accept_terms.auto_id }}" required /></span>
+                <span title="Please tick">I accept the </span><a target="_blank" href="{% url 'term' %}"
+                    title="Opens in a new tab">terms &amp; conditions</a>
+            </label>
+        </p>
+        <div class="flex-rows-break"></div>
+        <div class="flex-rows-break"></div>
+        <div class="power_form_input">
+            <input type="submit" value="registration" class="btn">
+        </div>
+    </form>
+
+
+
+
+    <div class="sign_methode">
+
+        <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1"><span>already member</span>
+        </p>
+
+    </div>
+    <div class="sign_up">
+        <p class="text-center">have account? <a id="sign_in" href="{% url 'signin' %}">Sign in</a></p>
+    </div>
+</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="heroHomepageV2__imgMobileContainer">
+                <picture>
+                    <source media="(max-width: 767px)"
+                        srcset="https://lh3.googleusercontent.com/_xekjGM3vuKRC_5XymJ1iwtEhp3i0pcmLDlnQpn5wCj9GQXiFBGBb0rHzF5Y6Ec-HOg6ph48iy3dyzjacC41xpYeczQnntk9boX_U7SSOj2zWR02TKW_LQ6L-cqGt2J-gXsrdG5_QA=w2400">
+                    <source media="(max-width: 1023px)"
+                        srcset="https://lh3.googleusercontent.com/_xekjGM3vuKRC_5XymJ1iwtEhp3i0pcmLDlnQpn5wCj9GQXiFBGBb0rHzF5Y6Ec-HOg6ph48iy3dyzjacC41xpYeczQnntk9boX_U7SSOj2zWR02TKW_LQ6L-cqGt2J-gXsrdG5_QA=w2400">
+                    <img class="heroHomepageV2__imgMobile"
+                        src="https://lh3.googleusercontent.com/_xekjGM3vuKRC_5XymJ1iwtEhp3i0pcmLDlnQpn5wCj9GQXiFBGBb0rHzF5Y6Ec-HOg6ph48iy3dyzjacC41xpYeczQnntk9boX_U7SSOj2zWR02TKW_LQ6L-cqGt2J-gXsrdG5_QA=w2400"
+                        alt="La nouvelle génération de solutions pour les praticiens" loading="lazy">
+                </picture>
+            </div>
+    </div>
+    </section>
+    </div>
+    <section>
+        <div class='air air1'></div>
+        <div class='air air2'></div>
+        <div class='air air3'></div>
+        <div class='air air4'></div>
+    </section>
+    <!-- jquery cdn link  -->
+    <script>
+
+
+        var inputFields = document.querySelectorAll("input[data-val-required]");
+
+         inputFields.forEach(function (inputField) {
+             var inputErrorDiv = document.createElement("div");
+             inputErrorDiv.className = "input-error";
+             var errorMessage = document.createElement("p");
+             errorMessage.innerHTML = ""; // Clear existing content
+             inputErrorDiv.appendChild(errorMessage);
+
+             inputField.addEventListener("input", function () {
+                 var password = inputField.value;
+                 var requirements = inputField.getAttribute("data-val-required").split(", ");
+                 var invalidRequirements = [];
+
+                 requirements.forEach(function (requirement) {
+                     if (requirement === "Contain At Least One Lower-Case Letter" && !/[a-z]/.test(password)) {
+                         invalidRequirements.push(requirement);
+                     } else if (requirement === "Contain At Least One Upper-Case Letter" && !/[A-Z]/.test(password)) {
+                         invalidRequirements.push(requirement);
+                     } else if (requirement === "Contain At Least One Number" && !/[0-9]/.test(password)) {
+                         invalidRequirements.push(requirement);
+                     } else if (requirement === "Contain At Least One Of The Following Supported Symbols ! # $ % £ * - ? @ _ | ^ ~ : ." && !/[!#$%£*-?@_|^~:.]/.test(password)) {
+                         invalidRequirements.push(requirement);
+                     } else if (requirement === "Must Be At Least 12 Characters Long" && password.length < 12) {
+                         invalidRequirements.push(requirement);
+                     }
+                 });
+
+                 if (invalidRequirements.length > 0) {
+                     // Input is invalid
+                     inputField.classList.remove("js-validate-success-field");
+                     inputField.classList.add("js-validate-error-field");
+                     inputField.style.border = "1px solid rgb(224, 25, 55)";
+                     // Display error message with the invalid requirements as a bulleted list
+                     var errorList = "<ul>";
+                     invalidRequirements.forEach(function (requirement) {
+                         errorList += "<li>" + requirement + "</li>";
+                     });
+                     errorList += "</ul>";
+                     errorMessage.innerHTML = "Invalid password. Please ensure the following requirements are met: " + errorList;
+                     if (inputField.nextElementSibling !== inputErrorDiv) {
+                         inputField.parentNode.appendChild(inputErrorDiv, null);
+                     }
+                 } else {
+                     // Input is valid
+                     inputField.classList.remove("js-validate-error-field");
+                     inputField.classList.add("js-validate-success-field");
+                     inputField.style.border = "1px solid #4CAF50";
+                     inputField.parentNode.removeChild(inputErrorDiv);
+                     // Remove or hide any error message displayed
+                     if (inputField.nextElementSibling === inputErrorDiv) {
+                         inputField.parentNode.removeChild(inputErrorDiv);
+                     }
+                 }
+             });
+         });
+
+
+
+
+
+
+
+
+
+
+         var inputField = document.getElementById("PhoneNumber");
+         var inputErrorDiv = document.createElement("div");
+         inputErrorDiv.className = "input-error";
+         var errorMessage = document.createElement("p");
+         errorMessage.textContent = inputField.getAttribute("data-val-required");
+         inputErrorDiv.appendChild(errorMessage);
+ 
+         inputField.addEventListener("input", function () {
+             var phoneNumber = inputField.value;
+             var regexPattern = inputField.getAttribute("data-val-regex-pattern");
+             var regexErrorMessage = inputField.getAttribute("data-val-regex");
+ 
+             var regex = new RegExp(regexPattern);
+             var isValid = regex.test(phoneNumber);
+ 
+             if (isValid) {
+                 // Input is valid
+                 inputField.classList.remove("js-validate-error-field");
+                 inputField.classList.add("js-validate-success-field");
+                 inputField.style.border = "1px solid #4CAF50";
+                 // Remove or hide any error message displayed
+                 if (inputField.nextElementSibling === inputErrorDiv) {
+                     inputField.parentNode.removeChild(inputErrorDiv);
+                 }
+             } else {
+                 // Input is invalid
+                 inputField.classList.remove("js-validate-success-field");
+                 inputField.classList.add("js-validate-error-field");
+                 inputField.style.border = "1px solid rgb(224, 25, 55)";
+                 // Display error message or add the error message div if not present
+                 errorMessage.textContent = inputField.getAttribute("data-val-required");
+                 if (inputField.nextElementSibling !== inputErrorDiv) {
+                     inputField.parentNode.insertBefore(inputErrorDiv, inputField.nextElementSibling);
+                 }
+             }
+         });
+</script>
+
+
+{% for message in messages %}
+                                        {% if message.tags == 'error' %}
+                                            <script type="text/javascript">
+                                                const alertDiv = document.createElement('div');
+                                                alertDiv.className = 'custom-alert alert-error';
+                                                alertDiv.innerHTML = '<div class="icon__wrapper"><span class="material-symbols-outlined">error</span></div><p> {{ message|safe }}</p>';
+
+                                                const body = document.getElementById('body');
+                                                document.body.appendChild(alertDiv);
+                                                setTimeout(function() {
+                                                    alertDiv.remove();
+                                                }, 3000);
+                                            </script>
+                                            {% else %}
+                                            <script type="text/javascript">
+                                            const alertDiv = document.createElement('div');
+                                            alertDiv.className = 'custom-alert alert-success';
+                                            alertDiv.innerHTML = '<div class="icon__wrapper"><span class="material-symbols-outlined">task_alt</span></div> <p>{{ message|safe }}</p>';
+                                            document.body.appendChild(alertDiv);
+                                        
+                                            setTimeout(function() {
+                                            alertDiv.remove();
+                                            }, 3000);
+                                        </script>
+                                        {% endif %}
+                                    {% endfor %}
+
+    
+   
+
+
+</body>
+
+</html>

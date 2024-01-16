@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+      <!-- jquery cdn link  -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link   rel="stylesheet"  href="https://demos.pixinvent.com/modern-html-admin-template/app-assets/css/bootstrap.min.css ">
+    <link rel="stylesheet" href="{% static 'css/login/login.css' %}" media="screen">
+    <script src="{% static 'js/login/login.js' %}"></script>
+    <script type="text/javascript" async="" src="https://sdk.privacy-center.org/sdk.ca5e5165e57751a50d217e6d3189d370b73f3d63.js" charset="utf-8"></script>
+    <link rel="stylesheet" id="main-style-css" href="{% static 'css/login/app_info.min.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+   <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+
+</head>
+<body >
+    <div class="subNav-item" style="display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;">
+        
+        <section class="hero heroHomepageV2 padding-none" data-section-type="Hero Rolling Tagline" data-view="viewed">
+        
+            <div class="heroHomepageV2__container">
+               
+                <div  class="heroHomepageV2__form  " >
+                    <div class="heroHomepageV2__imgDesktopContainer">
+                       
+                                </div>
+                                <div id="login" class="column column_form login">
+                                    <h3></h3>
+                                    <div class="hero_form form-background white ">
+                                        
+                                        <div  class="form-wrapper">
+                                            <h3>sign in  </h3>
+                                          
+                                            <form class="form-b2b" data-form-id="341" data-user-validation="true" data-hide-fields="false" data-enhancer="true" data-form-type="Standard" data-redirect="https://info.QuickLab.fr/thank-you" data-two-step="true" novalidate="novalidate" data-view="viewed"method="post">
+                                                {% csrf_token %}
+                                            <input type="hidden" name="hosting_site_id" value="35046">
+                                            
+                                            
+                                            <input type="hidden" value="contact_form" name="origin_label">
+                                            
+                                            
+                                            
+
+
+
+
+                                            
+                                            <div class="flex-rows-break"></div>
+                                            <div class="field_info">
+                                            <div class="field-wrapper" data-step="true" data-row="1">
+                                                
+                                                <input type="email" class="email js-autocomplete-email" name="username" placeholder="Adresse email *" required="">
+                                                <label class="label-and-placeholder">Adresse email *</label>
+                                                <div class="block-autocomplete">
+                                                    <ul class="auto-list" style="display: none;"></ul>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="field-wrapper" data-step="true" data-row="1">
+                                                
+                                                <input id="password" type="password" class="email js-autocomplete-email" name="password" placeholder="password *" required="">
+                                               
+                                                <label class="label-and-placeholder">Password *</label>
+                                                <div class="block-autocomplete">
+                                                    <ul class="auto-list" style="display: none;"></ul>
+                                                </div>
+                                            </div>
+</div>
+
+                                            
+                                            <div class="flex-rows-break"></div>
+                                            
+                                            
+                                            <div class="flex-rows-break"></div>
+                                            
+                                            
+                                            
+                                            
+                                            <div class="form-group row forget_p ">
+                                                <div class="col-sm-6 col-12 text-center text-sm-left pr-0 text-white d-none none">
+                                                  <fieldset>
+                                                    <div class="icheckbox_square-blue" style="position: relative;"><input type="checkbox" id="remember-me" class="chk-remember" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                    <label for="remember-me" class=""> Remember Me</label>
+                                                  </fieldset>
+                                                </div>
+                                              </div>
+                                            
+                                            
+                                            <div class="power_form_input">
+                                                 <input type="submit" value="login" class="btn">
+                                                
+                                                
+                                            </div>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                        </form>
+                                        
+                                    
+                                 </div>
+                                </div>
+                                
+                            </div>
+                         
+                        </div>
+           
+                      
+                                </div>
+                            </section>
+                        </div>
+                      
+                     <!-- jquery cdn link  -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                    </body>
+                    </html>

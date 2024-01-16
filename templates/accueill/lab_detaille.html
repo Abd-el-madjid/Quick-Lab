@@ -1,0 +1,1680 @@
+{% load static %} {% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib1.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib2.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib3.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib4.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib5.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib6.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib7.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib8.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib9.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib10.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib11.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib12.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib13.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/doctolib14.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/native_form.css ' %}" />
+    <link rel="stylesheet" href="{% static 'css/form.css ' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'css/general/map.css' %}"
+      type="text/css"
+    />
+    <script src="{% static 'js/general/map.js' %}"></script>
+
+    <script src="{% static 'js/accueil/home.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/accueil/header2.css' %}" />
+    <script
+      type="text/javascript"
+      charset="utf-8"
+      async=""
+      src="{% static 'js/general/homedashboard.js' %}"
+    ></script>
+    <script src="{% static 'js/general/jquery.min.js' %}"></script>
+
+    <link
+      href="{% static 'css/accueil/head_accueill.css' %}"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/4f846c2c5f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+     <script src="{% static 'js/general/notification_pannel.js' %}"></script>
+    <script src="{% static 'js/general/notification.js' %}"></script>
+    <script src="{% static 'js/accueil/accueil.js' %}"></script>
+        <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+
+    <script src="https://global.localizecdn.com/localize.js"></script>
+<script>!function(a){if(!a.Localize){a.Localize={};for(var e=["translate","untranslate","phrase","initialize","translatePage","setLanguage","getLanguage","getSourceLanguage","detectLanguage","getAvailableLanguages","untranslatePage","bootstrap","prefetch","on","off","hideWidget","showWidget"],t=0;t<e.length;t++)a.Localize[e[t]]=function(){}}}(window);</script>
+
+<script>
+  Localize.initialize({
+    key: 'MOQ1JfoVDeKhB',
+    rememberLanguage: true,
+  });
+</script>
+  </head>
+
+  <body onload="init()">
+    <aside class="menu-panel" role="complementary">
+      <div class="hide-since-tablet" psi-proxy-user-popup="">
+        <a
+          id="profile_head-secound"
+          aria-label="profile menu"
+          class="dark-link profile-link profile-menu profile-link--in-menu"
+          role="link"
+          tabindex="0"
+        >
+          <ins class="nav-menu-icon nav-menu-icon--user">
+            <span id="profile-circle" class="material-symbols-outlined">
+              account_circle
+            </span>
+          </ins>
+
+          <div class="profile-link__user">{{ name }}</div>
+
+          <!---->
+
+          <ins class="profile-link__trigger">
+            <span id="profile-arrow-2" class="material-symbols-outlined">
+              expand_more
+            </span>
+          </ins>
+        </a>
+
+        <div class="side-account-profil none">
+          <ul class="contenait">
+            <li>
+              <a
+                id="account"
+                role="link"
+                tabindex="0"
+                href="{% url 'account_all' %}"
+              >
+                <ins
+                  class="initials initials--big"
+                  style="background-color: rgb(15, 46, 76)"
+                >
+                  {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+                </ins>
+
+                <div class="">account</div>
+              </a>
+            </li>
+            <li>
+              <a
+                id="sign_out"
+                role="link"
+                tabindex="0"
+                href="{% url 'logout' %}"
+              >
+                <ins class="">
+                  <span class="material-symbols-outlined"> logout </span>
+                </ins>
+
+                <div class="">sign out</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="menu-panel__content">
+        <div class="menu-panel__content_header">
+          <a
+            class="side-menu-logo hide-up-to-tablet"
+            role="banner"
+            routerlink="/"
+            title="Homepage"
+            href="{% url 'home' %}"
+          >
+            <img
+              alt="Logo"
+              src="/media/image/logo sans bg.png"
+              width="70"
+              height="55"
+            />
+          </a>
+          <div>
+            <a class="side-menu-logo-title" href="{% url 'home' %}">
+              <p
+                class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+                data-animation-name="customAnimationIn"
+                data-animation-duration="1000"
+                data-animation-direction=""
+                style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                "
+              >
+                Quick
+              </p>
+              <p
+                class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+                data-animation-name="customAnimationIn"
+                data-animation-duration="1000"
+                data-lang-en="Lab"
+                style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                "
+              >
+                Lab
+              </p>
+            </a>
+          </div>
+        </div>
+        <!---->
+        <p-panelmenu
+          aria-label="Main Menu"
+          aria-labelledby="Main Menu"
+          role="navigation"
+          tabindex="0"
+          class="ng-tns-c15-13"
+        >
+          <div class="ng-tns-c15-13 side-menu ui-panelmenu ui-widget">
+            <!---->
+
+            <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+              <div
+                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default ui-corner-top"
+              >
+                <!---->
+                <!---->
+                <a
+                  class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon ui-state-active"
+                  href="{% url 'home' %}"
+                >
+                  <!---->
+                  <!---->
+
+                  <span class="ui-menuitem-text">Home</span>
+                </a>
+              </div>
+              <!---->
+            </div>
+            {% comment %} <div
+              class="menu-element ui-panelmenu-panel ng-tns-c15-13 hover_drop"
+            >
+              <div
+                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+              >
+                <!---->
+                <!---->
+                <a
+                  class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"
+                  href="{% url 'signup_labo' %}"
+                >
+                  <!---->
+                  <!---->
+
+                  <span class="ui-menuitem-text">Partnerships</span>
+                </a>
+              </div>
+              <!---->
+            </div> {% endcomment %}
+            <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+              <div
+                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+              >
+                <a
+                  class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"
+                  href="{% url 'home' %}#sec-ae92"
+                >
+                  <span class="ui-menuitem-text">services </span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="menu-element ui-panelmenu-panel ng-tns-c15-13 hover_drop"
+            >
+              <div
+                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+              >
+                <!---->
+                <!---->
+                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon">
+                  <!---->
+                  <!---->
+
+                  <span class="ui-menuitem-text">about</span>
+                </a>
+                <div class="dropdown">
+                  <ul
+                    id="dropdown-menu_container"
+                    class="dropdown-menu"
+                    data-popper-placement="bottom-end"
+                    style="margin: 0px"
+                  >
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center edit-item-btn"
+                        href="{% url 'history' %}"
+                        >histsory</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center remove-item-btn"
+                        href="{% url 'about-us' %}"
+                        >about us</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!---->
+            </div>
+            <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+              <div
+                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+              >
+                <!---->
+                <!---->
+                <a
+                  class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"
+                  href="{% url 'laboratoire-list' %}"
+                >
+                  <!---->
+                  <!---->
+
+                  <span class="ui-menuitem-text">our partner</span>
+                </a>
+              </div>
+              <!---->
+            </div>
+            <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+              <div
+                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+              >
+                <!---->
+                <!---->
+                <a
+                  class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"
+                  href="{% url 'home' %}#sec-08f1"
+                >
+                  <!---->
+                  <!---->
+
+                  <span class="ui-menuitem-text">contact</span>
+                </a>
+              </div>
+              <!---->
+            </div>
+            
+          </div>
+        </p-panelmenu>
+      </div>
+      <!---->
+      <!---->
+      <!---->
+      <!---->
+      <div class="flex-push"></div>
+      <!----><!----><!----><!----><!----><!----><!---->
+      <!---->
+      <!---->
+      <!---->
+      <!---->
+    </aside>
+
+    <div psi-menu-overlay="">
+      <div class="menu-panel-overlay"></div>
+    </div>
+
+    {%if name is None %}
+    <header class="header header-scroll header_origin">
+      <div class="wrapper header-wrapper">
+        <div class="logo_only">
+          <a
+            class=""
+            role="banner"
+            routerlink="/"
+            title="Homepage"
+            href="{% url 'home' %}"
+          >
+            <img
+              alt="Logo"
+              src="/media/image/logo sans bg.png"
+              width="55"
+              height="55"
+            />
+          </a>
+        </div>
+
+        <div class="menu-panel__content_header origin_header">
+          <a
+            class="side-menu-logo hide-up-to-tablet"
+            role="banner"
+            routerlink="/"
+            title="Homepage"
+            href="{% url 'home' %}"
+          >
+            <img
+              alt="Logo"
+              src="/media/image/logo sans bg.png"
+              width="70"
+              height="55"
+            />
+          </a>
+          <div>
+            <a class="side-menu-logo-title" href="{% url 'home' %}">
+              <p
+                class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 customAnimationIn-played"
+              >
+                Quick
+              </p>
+              <p
+                class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 customAnimationIn-played"
+              >
+                Lab
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <div class="header-links">
+          <ul class="link-section">
+            <li class="head-link">
+              <a href="{% url 'signup_labo' %}">Partnerships</a>
+            </li>
+
+            <li class="head-link"><a href="{% url 'home' %}">home</a></li>
+            <li class="head-link">
+              <a href="accueil/home.html#sec-ae92">services</a>
+            </li>
+
+            <li class="head-link hover_drop">
+              about
+              <div class="dropdown">
+                <ul
+                  id="dropdown-menu_container"
+                  class="dropdown-menu"
+                  data-popper-placement="bottom-end"
+                  style="margin: 0px"
+                >
+                  <li>
+                    <a
+                      class="dropdown-item d-flex align-items-center edit-item-btn"
+                      href="{% url 'history' %}"
+                      >history</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item d-flex align-items-center remove-item-btn"
+                      href="{% url 'about-us' %}"
+                      >about us</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="head-link"><a href="{% url 'home' %}#sec-08f1">contact</a></li>
+            <li class="head-link">
+              <a href="{% url 'laboratoire-list' %}">our partner</a>
+            </li>
+
+            <li class="head-link li-button">
+              <a href="{% url 'signin' %}" rel="noopener noreferrer">
+                <div
+                  class="ui-kit-button ui-kit-button-outline ui-kit-button-medium valign_middle"
+                >
+                  Sign in
+                </div>
+              </a>
+            </li>
+            <li class="head-link li-button">
+              <a href="{% url 'signup' %}" rel="noopener noreferrer">
+                <div
+                  class="ui-kit-button ui-kit-button-blueline ui-kit-button-medium valign_middle"
+                >
+                  Register
+                </div>
+              </a>
+            </li>
+       
+          </ul>
+        </div>
+        <button
+          type="button"
+          class="hamb"
+          aria-label="hamburger"
+          id="button_menu"
+        >
+          <svg
+            version="1.1"
+            id="hamb"
+            onclick="nav()"
+            class="show"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 53 53"
+            xml:space="preserve"
+          >
+            <path
+              d="M2,13.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,13.5,2,13.5z"
+            ></path>
+            <path
+              d="M2,28.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,28.5,2,28.5z"
+            ></path>
+            <path
+              d="M2,43.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,43.5,2,43.5z"
+            ></path>
+          </svg>
+          <svg
+            id="close"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 212.982 212.982"
+            xml:space="preserve"
+            onclick="nav();"
+            class=""
+          >
+            <path
+              style="fill-rule: evenodd; clip-rule: evenodd"
+              d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312
+                                     c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312
+                                     l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937
+                                     c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    {%else %}
+    <header id="header-scroll" class="header header-scroll hide-on-print">
+      <div class="header-wrapper wrapper">
+        <div class="header__panel">
+          <ul class="header-menu-bar">
+            <li
+              class="header-menu-bar__item hide-since-desktop hide-on-print"
+              psi-menu-trigger=""
+            >
+              <a
+                id="menu-link_button"
+                class="profile-link hamburger-link hide-since-desktop"
+              >
+                <ins class="nav-menu-icon nav-menu-icon--hamburger">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    version="1.1"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 512 512"
+                    style="enable-background: new 0 0 512 512"
+                    class="icon-svg icon-svg__size--24"
+                    xml:space="preserve"
+                  >
+                    <g>
+                      <path
+                        d="M85 341l342 0c11,0 21,10 21,22l0 0c0,11 -10,21 -21,21l-342 0c-11,0 -21,-10 -21,-21l0 0c0,-12 10,-22 21,-22z"
+                      ></path>
+                      <path
+                        d="M85 235l342 0c11,0 21,9 21,21l0 0c0,12 -10,21 -21,21l-342 0c-11,0 -21,-9 -21,-21l0 0c0,-12 10,-21 21,-21z"
+                      ></path>
+                      <path
+                        d="M85 128l342 0c11,0 21,10 21,21l0 0c0,12 -10,22 -21,22l-342 0c-11,0 -21,-10 -21,-22l0 0c0,-11 10,-21 21,-21z"
+                      ></path>
+                    </g>
+                  </svg>
+                </ins>
+
+                <h6>Menu</h6>
+              </a>
+            </li>
+
+            <li>
+              <!---->
+            </li>
+
+            <!---->
+            <p-tabmenu>
+              <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+                <ul
+                  class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
+                  role="tablist"
+                >
+                  <!---->
+                </ul>
+              </div>
+            </p-tabmenu>
+          </ul>
+        </div>
+
+        <div class="menu-panel__content_header">
+          <a
+            class="side-menu-logo hide-up-to-tablet"
+            role="banner"
+            routerlink="/"
+            title="Homepage"
+            href="{% url 'home' %}"
+          >
+            <img
+              alt="Logo"
+              src="/media/image/logo sans bg.png"
+              width="70"
+              height="55"
+            />
+          </a>
+          <div>
+            <a class="side-menu-logo-title" href="{% url 'home' %}">
+              <p
+                class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+                data-animation-name="customAnimationIn"
+                data-animation-duration="1000"
+                data-animation-direction=""
+                style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                "
+              >
+                Quick
+              </p>
+              <p
+                class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+                data-animation-name="customAnimationIn"
+                data-animation-duration="1000"
+                data-lang-en="Lab"
+                style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                "
+              >
+                Lab
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <div class="header__panel header__panel--spacer hide-on-print"></div>
+        <div class="header__panel hide-on-print">
+          <ul class="header-menu-bar header-menu-bar--main">
+            <li
+              id="profile-info-1"
+              class="header-menu-bar__item header-menu-bar__item--main hide-up-to-tablet"
+              psi-proxy-user-popup=""
+              psieventtracker=""
+            >
+              <a
+                id="profile_head-main"
+                aria-label="profile menu"
+                class="dark-link profile-link profile-menu"
+                role="link"
+                tabindex="0"
+              >
+                <ins class="nav-menu-icon nav-menu-icon--user">
+                  <span id="profile-circle" class="material-symbols-outlined">
+                    account_circle
+                  </span>
+                </ins>
+
+                <div class="profile-link__user">{{ name }}</div>
+
+                <!---->
+
+                <ins class="profile-link__trigger">
+                  <span id="profile-arrow" class="material-symbols-outlined">
+                    expand_more
+                  </span>
+                </ins>
+              </a>
+
+              <p-overlaypanel> </p-overlaypanel>
+
+              <!---->
+            </li>
+            <!---->
+            <li
+              id="notification"
+              class="header-menu-bar__item header-menu-bar__item--main header-menu-bar__item--last"
+              psi-alert-popup=""
+              psieventtracker=""
+            >
+              <span class="notifications-overlay-arrow__hidden"></span>
+              <a>
+                <ins class="nav-menu-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    version="1.1"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 512 512"
+                    style="enable-background: new 0 0 512 512"
+                    class="icon-svg icon-svg__size--24 icon-svg__color--darker-blue"
+                    xml:space="preserve"
+                  >
+                    <path
+                      d="M483,433l-38-86V181C445,81,361,0,256,0C152,0,67,81,67,181v166l-38,85c-2,4-2,9,1,12c2,4,6,6,11,6h131 c7,36,40,62,78,62s70-26,77-62h144c5,0,9-2,11-6C485,441,485,436,483,433z M250,487c-24,0-45-15-51-37h101C294,472,273,487,250,487z "
+                    ></path>
+                  </svg>
+                </ins>
+                <!---->
+                <span class="notification-bubble" id="notification-bubble">
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        id="notification_panel"
+        class="notifications-overlay false ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow"
+        style="
+          z-index: 1007;
+          visibility: visible;
+          top: 180.719px;
+          left: 703.333px;
+          opacity: 1.048;
+          transform: scale(0);
+        "
+      >
+        <div class="ui-overlaypanel-content">
+          <h6 class="linked-heading indent-bottom">
+            <span psimsg="alert.title">Recent Notifications</span>
+            <a
+              class="text-style--bold"
+              psimsg="alert.showAll"
+              href="{% url 'show_all_notification' %}"
+              >show All</a
+            >
+          </h6>
+          <ul
+            style="position: relative"
+            id="notification_dashboard"
+            data-patient="0nlbop5f1e"
+          >
+            <!---->
+          </ul>
+        </div>
+        <!---->
+      </div>
+
+      <div id="user-menu" class="user-menu">
+        <!---->
+        <div class="">
+          <div class="profile-pane">
+            <ins
+              class="initials initials--big"
+              style="background-color: rgb(15, 46, 76)"
+            >
+              {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+            </ins>
+
+            <div class="profile-pane__data">
+              <div class="profile-pane__user">
+                <a href="{% url 'signin' %}">{{ name }}</a>
+              </div>
+
+              <!----><a
+                class="link--blue text-style--bold proxy-user-account-link"
+                psimsg="proxyUser.accountLink"
+                role="link"
+                tabindex="0"
+                aria-label="abd el madjid kahoul account"
+                href="{% url 'account_all' %}"
+                >Account</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!---->
+
+        <!---->
+        <p-accordion styleclass="ui-accordion-user-menu" class="">
+          <div
+            class="ui-accordion-user-menu ui-accordion ui-widget ui-helper-reset"
+          >
+            <!---->
+
+            <!---->
+
+            <!---->
+          </div>
+        </p-accordion>
+
+        <div class="user-menu__item">
+          <a
+            class="user-menu__control"
+            href="{% url 'logout' %}"
+            psimsg="proxyUser.logout"
+            tabindex="0"
+            >Sign Out</a
+          >
+        </div>
+      </div>
+    </header>
+    {% endif %}
+
+
+    <div class="dl-profile-bg dl-profile">
+      <div class="dl-profile-header">
+        <div class="dl-profile-overlay">
+          <div class="dl-profile-wrapper dl-profile-header-wrapper">
+            <div class="dl-profile-header-photo mr-24 my-16">
+                <ins
+                  class="initials initials--big"
+                  style="    background-color: rgb(15, 46, 76);
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;"
+                >
+                 {{ laboratoire.nom |slice:":1" }}{{ laboratoire.nom |slice:"1:2" }}
+                </ins>
+            </div>
+            <div class="dl-profile-header-name-speciality">
+              <h1 class="dl-profile-header-name">
+                <span itemprop="name">Laboratory {{ laboratoire.nom }}</span>
+              </h1>
+              <h2 class="dl-profile-header-speciality">
+                <div class="dl-profile-organization-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M19 16.42c0 .32-.26.58-.58.58H12V7h6.42c.32 0 .58.26.58.58v8.84zM8 17v-4a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v4H1.76a.76.76 0 0 1-.76-.76V1.76c0-.42.34-.76.76-.76h8.47c.42 0 .76.34.76.76V17H8zM18.42 6H12V1.76A1.76 1.76 0 0 0 10.24 0H1.76A1.76 1.76 0 0 0 0 1.76v14.48C0 17.212.788 18 1.76 18h16.66A1.58 1.58 0 0 0 20 16.42V7.58A1.58 1.58 0 0 0 18.42 6z"
+                    ></path>
+                    <path
+                      d="M3.39 5h1.22a.39.39 0 0 1 .39.39v2.23a.39.39 0 0 1-.39.39H3.39A.39.39 0 0 1 3 7.62V5.39A.39.39 0 0 1 3.39 5m4 0h1.22a.39.39 0 0 1 .39.39v2.23a.39.39 0 0 1-.39.39H7.39A.39.39 0 0 1 7 7.62V5.39A.39.39 0 0 1 7.39 5m9.11 5H16v-.5a.5.5 0 0 0-1 0v.5h-.5a.5.5 0 0 0 0 1h.5v.5a.5.5 0 0 0 1 0V11h.5a.5.5 0 0 0 0-1"
+                    ></path>
+                  </svg>
+                </div>
+                {{branch.branche_nom}}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav
+        class="dl-profile-nav dl-profile-nav-hide-on-resize"
+        data-walkme="profile-sticky-bar"
+      >
+        <div class="dl-profile-wrapper">
+          <ul
+            class="dl-profile-nav-links dl-overflow-hidden dl-full-height flex-wrap js-profile-navbar"
+          >
+            <li
+              class="dl-profile-nav-link js-profile-navbar-item dl-profile-nav-link-selected"
+            >
+              <a href="#about">essential </a>
+            </li>
+            <li
+              class="dl-profile-nav-link js-profile-navbar-item"
+              data-tracking-details='{"device_category":"desktop","country":"fr","speciality_id":null,"ssid":"c109000win-UBXF846uQILY","esid":"lpdPvx4mx1tSwLWXm-NsfZLa","profile_type":"organization","profile_id":317333,"city":"Chambourcy"}'
+              data-tracking-name="practitioner_page_display_location_information"
+              data-tracking-on="click"
+              data-tracking-user-type="Account"
+            >
+              <a href="#location">card</a>
+            </li>
+            <li
+              class="dl-profile-nav-link js-profile-navbar-item"
+              data-tracking-details='{"device_category":"desktop","country":"fr","speciality_id":null,"ssid":"c109000win-UBXF846uQILY","esid":"lpdPvx4mx1tSwLWXm-NsfZLa","profile_type":"organization","profile_id":317333}'
+              data-tracking-name="practitioner_page_display_presentation"
+              data-tracking-on="click"
+              data-tracking-user-type="Account"
+            >
+              <a href="#presentation">presentation</a>
+            </li>
+            <li
+              class="dl-profile-nav-link js-profile-navbar-item"
+              data-tracking-details='{"device_category":"desktop","country":"fr","speciality_id":null,"ssid":"c109000win-UBXF846uQILY","esid":"lpdPvx4mx1tSwLWXm-NsfZLa","profile_type":"organization","profile_id":317333}'
+              data-tracking-name="practitioner_page_display_hours_info"
+              data-tracking-on="click"
+              data-tracking-user-type="Account"
+            >
+              <a href="#opening_hours">schedule</a>
+            </li>
+            {%if name is not None %}
+            <li class="dl-profile-nav-link js-profile-navbar-item">
+              <a href=""
+                ><form method="post">
+                  {% csrf_token %}
+                  <input
+                    type="text"
+                    name="form_name"
+                    class="custom-submit"
+                    value="message"
+                 hidden />
+                  <input
+                    type="text"
+                    class="custom-submit"
+                    value="{{branch.id}}"
+                 hidden   name="branch_id"
+                  />
+                  <input style=" appearance: none;
+                  -webkit-appearance: none;
+                  -moz-appearance: none;
+                  border: none;
+                  margin: 0;
+                  padding: 0;
+                  background: none;
+                  color: inherit;
+                  font: inherit;
+                  text-align: inherit;
+                  text-decoration: none;
+                  cursor: pointer;
+                  outline: none;"
+                    type="submit"
+                    class="custom-submit"
+                    value="message"
+                  /></form
+              ></a>
+            </li>
+            <li
+              class="dl-profile-nav-link js-profile-navbar-item"
+              onclick="complain_form_toggle();"
+            >
+              <a>complain</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+      <div
+        class="dl-profile-wrapper dl-profile-responsive-wrapper dl-profile-wrapper-gap"
+      >
+        <div class="dl-profile-booking-card-wrapper mt-8">
+          <div
+            class="js-profile-booking-entrypoint-module"
+            data-props='{"place":{"id":219560,"zipcode":"78240","city":"Chambourcy","elevator":false,"handicap":true,"created_at":"2021-11-05T14:44:32.328+01:00","updated_at":"2023-03-03T06:16:06.763+01:00","floor":null,"intercom":"","code1":"","code2":"","note":"","latitude":48.9045777,"longitude":2.0416927,"address":"2 Grande Rue","deleted_at":null,"fax_number":"","organization_id":139511,"formal_name":"Laboratoire Eurofins Biolab - Chambourcy","visible_on_profile":true,"profile_description":null,"station_ids":["53916","53906","53911"],"parking_id":null,"note_en":null,"establishment_id":null,"external_id":null,"opening_hours":[{"day":1,"ranges":[["07:30","17:30"]],"enabled":true},{"day":2,"ranges":[["07:30","17:30"]],"enabled":true},{"day":3,"ranges":[["07:30","17:30"]],"enabled":true},{"day":4,"ranges":[["07:30","17:30"]],"enabled":true},{"day":5,"ranges":[["07:30","17:30"]],"enabled":true},{"day":6,"ranges":[["08:00","12:00"]],"enabled":true},{"day":0,"ranges":[["09:00","13:00"]],"enabled":false}],"emergency_number":"15","emergency_number_type":"samu","private_parking":"free","hide_phone_number":true,"short_name":null,"official_identifier":null,"employment_status":null},"profile":{"id":317333,"owner_id":139511,"searchable":true,"name":"Laboratoire Eurofins Biolab Chambourcy","first_name":null,"created_at":"2021-11-05T14:46:00.522+01:00","updated_at":"2023-03-03T06:16:06.828+01:00","language_ids":[""],"speciality_id":null,"city":"Chambourcy","owner_type":"Organization","slug":"laboratoire-eurofins-biolab-chambourcy","bio":"Notre laboratoire appartient au réseau Eurofins Biolab, acteur majeur en Ile-de-France avec près de 60 laboratoires répartis sur les départements du 78, 91, 92. Nos équipes médicales (secrétaires, infirmières, techniciens et biologistes) prennent en charge quotidiennement plus de 4 000 patients.\n\nNotre expertise, reconnue par notre accréditation selon la norme 15189, couvre l&apos;ensemble des domaines de la biologie médicale. Notre organisation vise à offrir à nos patients un service de haute qualité alliant proximité, réactivité et fiabilité analytique.  \n\nPour toute information ou question en lien avec vos analyses, n&apos;hésitez pas à joindre notre secrétariat par mail : contact.chambourcy@eurofins-biologie.com.","physician_identifier":null,"AGA_member":null,"legal_status":{},"business_name":null,"RPPS":null,"RCS":null,"business_identifier":null,"head_office":null,"legal_form":null,"share_capital":null,"website_url":"","installed_on":null,"churned_on":null,"install_expected_on":"2021-11-05","content_management_comment":null,"short_name_for_sms":null,"created_by":12547608,"title":null,"all_agendas":false,"agenda_ids":[550379],"additional_organization_ids":[],"deleted_at":null,"country":"fr","gender":null,"profile_ids":[],"external_id":null,"ADELI":null,"searchable_only_by_name":false,"organization_status_id":11,"trombinoscope_hidden":false,"team_chief_ids":[],"identity_verification_status":"verification_not_needed","onfido_applicant_id":null,"all_agendas_hidden":false,"freemium_matching_speciality_ids":[],"right_to_practice_updated_at":null,"right_to_practice":"verification_needed","lanr":null,"identity_verification_requested_at":null},"profilePatientRequestPath":false,"profilePath":"/laboratoire/chambourcy/laboratoire-eurofins-biolab-chambourcy","trackingDetails":{"profile_id":317333,"speciality_id":null,"profile_type":"organization"},"fees":[],"telehealthIsConfigured":false,"isDirectoryEstablishment":false}'
+          >
+            <div
+              class="dl-card dl-card-bg-white dl-card-variant-shadow-3 !p-0 min-w-[328px] mt-16"
+              data-design-system="oxygen"
+              data-design-system-component="Card"
+            >
+              <div class="dl-card-content">
+                <div class="p-16">
+                  <h3
+                    class="dl-text dl-text-title dl-text-bold dl-text-s"
+                    data-design-system="oxygen"
+                    data-design-system-component="Text"
+                  >
+                    in summary
+                  </h3>
+                </div>
+                <hr
+                  class="dl-divider dl-divider-neutral-030"
+                  aria-hidden="true"
+                  data-design-system="oxygen"
+                  data-design-system-component="Divider"
+                />
+                <div class="p-16">
+                  <div class="-mt-8">
+                    <div class="mt-8 flex items-start" data-test="new-patient">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="dl-icon mr-8 mt-4 dl-icon-xsmall"
+                        data-icon-name="regular/user"
+                        data-design-system="oxygen"
+                        data-design-system-component="Icon"
+                      >
+                        <path
+                          d="M9.125 9.125h-2.25A4.116 4.116 0 0 0 2.75 13.25c0 .422.328.75.75.75h9c.398 0 .75-.328.75-.75a4.131 4.131 0 0 0-4.125-4.125Zm-5.25 3.75a3.016 3.016 0 0 1 3-2.625h2.25a3.01 3.01 0 0 1 2.977 2.625H3.875ZM8 8c1.64 0 3-1.336 3-3 0-1.64-1.36-3-3-3-1.664 0-3 1.36-3 3 0 1.664 1.336 3 3 3Zm0-4.875A1.88 1.88 0 0 1 9.875 5 1.866 1.866 0 0 1 8 6.875 1.851 1.851 0 0 1 6.125 5c0-1.031.82-1.875 1.875-1.875Z"
+                        ></path>
+                      </svg>
+                      <div>
+                        <p
+                          class="dl-text dl-text-body dl-text-regular dl-text-s dl-text-neutral-130"
+                          data-design-system="oxygen"
+                          data-design-system-component="Text"
+                        >
+                          Accepts new patients on QuickLab
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-8 flex items-start" data-test="location">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="dl-icon mr-8 mt-4 dl-icon-xsmall"
+                        data-icon-name="regular/location-dot"
+                        data-design-system="oxygen"
+                        data-design-system-component="Icon"
+                      >
+                        <path
+                          d="M9.875 6.5A1.866 1.866 0 0 1 8 8.375 1.851 1.851 0 0 1 6.125 6.5c0-1.031.82-1.875 1.875-1.875A1.88 1.88 0 0 1 9.875 6.5ZM8 5.75a.755.755 0 0 0-.75.75c0 .422.328.75.75.75.398 0 .75-.328.75-.75A.771.771 0 0 0 8 5.75Zm4.5.75c0 2.063-2.742 5.695-3.96 7.219a.707.707 0 0 1-1.102 0C6.218 12.195 3.5 8.563 3.5 6.5 3.5 4.016 5.492 2 8 2c2.484 0 4.5 2.016 4.5 4.5ZM8 3.125A3.376 3.376 0 0 0 4.625 6.5c0 .305.094.75.352 1.36.234.562.585 1.218.984 1.874A35.858 35.858 0 0 0 8 12.594c.563-.75 1.336-1.781 2.016-2.86.398-.656.75-1.312.984-1.875.258-.609.375-1.054.375-1.359A3.391 3.391 0 0 0 8 3.125Z"
+                        ></path>
+                      </svg>
+                      <div>
+                        <p
+                          class="dl-text dl-text-body dl-text-regular dl-text-s dl-text-neutral-130"
+                          data-design-system="oxygen"
+                          data-design-system-component="Text"
+                        >
+                          Laboratory {{ laboratoire.nom }} -
+                          {{branch.branche_nom}}
+                        </p>
+                        <p
+                          class="dl-text dl-text-body dl-text-regular dl-text-s dl-text-neutral-130"
+                          data-design-system="oxygen"
+                          data-design-system-component="Text"
+                        >
+                          {{ branch.address }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <a
+                    class="Tappable-inactive dl-button-primary !mt-16 dl-button dl-button-block dl-button-size-medium"
+                    type="button"
+                    href="{% url 'check_patient' %}"
+                    aria-label="Prendre rendez-vous"
+                    data-design-system="oxygen"
+                    data-design-system-component="Button"
+                    style="
+                      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                      user-select: none;
+                      cursor: pointer;
+                    "
+                    ><span class="dl-button-label"
+                      ><svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="dl-icon dl-button-left-icon dl-icon-xsmall"
+                        data-icon-name="regular/calendar-day"
+                        data-design-system="oxygen"
+                        data-design-system-component="Icon"
+                      >
+                        <path
+                          d="M7.625 8c.188 0 .375.188.375.375v2.25c0 .21-.188.375-.375.375h-2.25A.37.37 0 0 1 5 10.625v-2.25C5 8.187 5.164 8 5.375 8h2.25ZM5.75 2a.57.57 0 0 1 .563.563V3.5h3.375v-.938c0-.304.234-.562.562-.562a.57.57 0 0 1 .563.563V3.5h.937c.82 0 1.5.68 1.5 1.5v7.5c0 .844-.68 1.5-1.5 1.5h-7.5a1.48 1.48 0 0 1-1.5-1.5V5c0-.82.656-1.5 1.5-1.5h.938v-.938c0-.304.234-.562.562-.562Zm6.375 4.5h-8.25v6c0 .21.164.375.375.375h7.5a.385.385 0 0 0 .375-.375v-6Z"
+                        ></path></svg
+                      >Book Appointment</span
+                    ></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dl-profile-body-wrapper mt-8">
+          <div class="js-booking-unavailable-warning"></div>
+          <div class="js-patient-request-marketing-card"></div>
+          <div class="mt-16 js-block-new-patient-message"></div>
+          <div class="mt-16">
+            <div
+              class="js-awareness-card"
+              data-props='{"doctor":{"id":317333,"name_with_title":"Laboratoire Eurofins Biolab Chambourcy","slug":"laboratoire-eurofins-biolab-chambourcy"},"telehealth_is_configured":false,"vaccination_center_with_pfizer_moderna":false}'
+            ></div>
+          </div>
+          <div class="dl-profile-anchor" id="about"></div>
+          <div class="dl-profile-card">
+            <div class="dl-profile-card-section" id="payment_means">
+              <div class="dl-profile-row-content">
+                <div class="dl-profile-card-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="20"
+                    viewBox="0 0 17 20"
+                  >
+                    <path
+                      d="M6.08 9.06v1.74h4.8c.78 0 1.32.3 1.63.85.4.57.4 1.13 0 1.7-.3.56-.8.85-1.6.85H6.8c.4.9.88 1.48 1.47 1.76.6.28 1.45.42 2.54.42 1.5 0 2.5-.46 3.1-1.38.5-.62 1-.87 1.7-.74.7.14 1.1.48 1.4 1.03.3.5.28 1.1-.02 1.7-1.16 2-3.2 3-6.1 3-4.16 0-6.7-2-7.6-5.9H1.9c-.77 0-1.3-.3-1.63-.9-.3-.6-.3-1.1 0-1.7.3-.6.86-.9 1.63-.9h.52V9h-.6C1.06 9 .5 8.75.2 8.2c-.3-.5-.3-1.03 0-1.56.3-.58.9-.8 1.68-.8h1.2a6.69 6.69 0 0 1 2.74-4.3A8.77 8.77 0 0 1 10.8 0c1.04 0 2.08.25 3.13.74a5.1 5.1 0 0 1 2.3 1.94c.4.62.46 1.22.13 1.78-.33.57-.8.87-1.38.9-.6.03-1.1-.2-1.56-.67-.23-.4-.64-.6-1.22-.8-.58-.2-1.1-.3-1.53-.3-.98 0-1.78.2-2.38.6-.7.4-1.1.7-1.2 1.1-.2.3-.3.5-.2.5h3.9c.7 0 1.3.2 1.6.8.3.5.3 1 0 1.5s-.9.8-1.6.8H6z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="dl-profile-card-content dl-profile-card-content-column"
+                >
+                  <h3 class="dl-profile-card-subtitle">Rates and Refunds</h3>
+                  <div class="dl-profile-text">
+                    <div>Contract establishment</div>
+                    <div>
+                      Life Card accepted<br />Paying third party: Social
+                      security
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dl-profile-row-content">
+                <div class="dl-profile-row-section">
+                  <div class="dl-profile-card-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="14"
+                      viewBox="0 0 20 14"
+                    >
+                      <path
+                        d="M18 0c.55 0 1.02.2 1.4.6.4.38.6.85.6 1.4v10c0 .55-.2 1.02-.6 1.4-.38.4-.85.6-1.4.6H2c-.5 0-.97-.2-1.4-.6-.4-.38-.6-.85-.6-1.4V2C0 1.44.2.97.6.6A2 2 0 0 1 2 0h16zm0 12V6H2v6h16zm0-8V2H2v2h16zM3.98 8.13h.63v.6H4v-.6zM7.62 9.3h.58v-.58h.6v-.6H10v.6h-.6v.6h-.6v.6H7.6v-.6zm2.38.63h-.6V9.3h.6v.63zm-3 0H5.77V9.3h1.2v.63zm.62-1.2v.58H7V8.15h1.2v.6h-.58zM5.2 9.3v.63H3.98V9.3h.63v-.58h.6v-.6h1.2v.6h-.6v.6h-.6z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="dl-profile-card-content">
+                    <h3 class="dl-profile-card-subtitle">Moyens de paiement</h3>
+                    <div class="dl-profile-text">
+                      Chèques, espèces et carte bancaire
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dl-profile-anchor" id="location"></div>
+          <div class="dl-profile-card">
+            <div class="dl-profile-card-section">
+              <div class="dl-profile-card-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="20"
+                  viewBox="0 0 16 20"
+                >
+                  <path
+                    d="M16 7.5c0-1-.2-2-.7-3-.3-.8-1-1.6-1.7-2.3A8.69 8.69 0 0 0 8 0C7 0 6 .2 5 .6c-1 .4-2 1-2.7 1.6C1.6 3 1 3.7.7 4.6a6.4 6.4 0 0 0 0 5.8c0 .4.4 1 .8 1.4l5.2 7.5c.4.5.8.7 1.3.7s1-.2 1.3-.7l5.2-7.5c.4-.5.7-1 .8-1.4.5-1 .7-2 .7-3zm-6 2c-.5.5-1.2.8-2 .8s-1.5-.3-2-1c-.7-.4-1-1-1-1.8s.3-1.4 1-2c.5-.5 1.2-.8 2-.8s1.5.3 2 .8c.7.6 1 1.2 1 2 0 .7-.3 1.4-1 2z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="dl-profile-card-content">
+                <h3 class="dl-profile-card-title">
+                  Carte et informations d'accès
+                </h3>
+                <div class="dl-profile-text">
+                  <div>
+                    <div class="dl-profile-practice-name">
+                      Laboratoire {{ laboratoire.nom }} - {{branch.branche_nom}}
+                    </div>
+                    {{branch.address}}
+                  </div>
+                </div>
+
+                <div class="dl-profile-text">
+                  <h4 class="dl-profile-card-subtitle">
+                    Informations pratiques
+                  </h4>
+                  <span>handicap access<br />free parking</span>
+                </div>
+              </div>
+              <div class="dl-profile-doctor-place-map">
+                <div
+                  class="dl-profile-doctor-place-map-container js-load-google-maps"
+                >
+                  <div class="js-maps-doctor-map">
+                    <div class="dl-p-simple-map">
+                      <div
+                        class="map-container dl-border-radius-inherit dl-full-height snapshot-black"
+                      >
+                        <div
+                          class="dl-full-width dl-full-height dl-position-absolute dl-border-radius-inherit"
+                          style="overflow: hidden"
+                        >
+                          <div
+                            style="
+                              height: 100%;
+                              width: 100%;
+                              position: absolute;
+                              top: 0px;
+                              left: 0px;
+                              background-color: rgb(229, 227, 223);
+                            "
+                          >
+                            <div
+                              class="gm-style"
+                              style="
+                                position: absolute;
+                                z-index: 0;
+                                left: 0px;
+                                top: 0px;
+                                height: 100%;
+                                width: 100%;
+                                padding: 0px;
+                                border-width: 0px;
+                                margin: 0px;
+                              "
+                            >
+                              <div
+                                id="map"
+                                class="map"
+                                data-map-lat="{{ branch.localisation|split_string:','|first }}"
+                                data-map-lon="{{ branch.localisation|split_string:','|last }}"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dl-profile-anchor" id="presentation"></div>
+          <div class="dl-profile-card">
+            <div class="dl-profile-card-section">
+              <div class="dl-profile-card-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="14"
+                  viewBox="0 0 20 14"
+                >
+                  <path
+                    d="M0 0h12v2H0V0zm14 0h6v2h-6V0zM0 4h17v2H0V4zm0 4h4v2H0V8zm5 0h15v2H5V8zm-5 4h11v2H0v-2z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="dl-profile-card-content">
+                <h3 class="dl-profile-card-title">
+                  presentation of the establishment
+                </h3>
+                <div
+                  class="dl-profile-text js-bio dl-profile-bio"
+                  style="overflow: inherit; max-height: inherit"
+                >
+                  <p>
+                    Our laboratory belongs to the Eurofins Biolab network, major
+                    player in Ile-de-France with nearly 60 laboratories
+                    departments of 78, 91, 92. Our teams medical (secretaries,
+                    nurses, technicians and biologists) handle daily more than 4
+                    000 patients. Our expertise, recognized by our accreditation
+                    according to 15189, covers all areas of medical biology. Our
+                    organization aims to offer our patients a high quality
+                    service combining proximity, responsiveness and analytical
+                    reliability. For information or question related to your
+                    analyses, do not hesitate not to contact our secretariat
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dl-profile-anchor" id="opening_hours"></div>
+          <div class="dl-profile-card">
+            <div class="dl-profile-card-section" id="openings_and_contact">
+              <div class="dl-profile-card-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 0c2.8 0 5 1 7 3s3 4.2 3 7-1 5-3 7-4.2 3-7 3-5-1-7-3-3-4.2-3-7 1-5 3-7 4-3 7-3m0 17.8c2.2 0 4-.7 5.5-2.3a7.8 7.8 0 0 0 2.3-5.5c0-2.2-.7-4-2.3-5.5A7.47 7.47 0 0 0 10 2.2c-2 0-4 .7-5.5 2.3A7.47 7.47 0 0 0 2.2 10c0 2 .7 4 2.3 5.5a7.8 7.8 0 0 0 5.5 2.3m.8-13.5v5.4L14 13l-1 1-3.7-3.7v-6h1.5"
+                  ></path>
+                </svg>
+              </div>
+              <div class="dl-profile-card-content">
+                <h3 class="dl-profile-card-title">Schedules and contacts</h3>
+                <div class="dl-profile-row-content">
+                  <div class="dl-profile-box">
+                    <h4 class="dl-profile-card-subtitle">opening hours</h4>
+                    <div
+                      class="js-opening-hours"
+                      data-props='{"openingHours":[{"day":1,"ranges":[["07:30","17:30"]],"enabled":true},{"day":2,"ranges":[["07:30","17:30"]],"enabled":true},{"day":3,"ranges":[["07:30","17:30"]],"enabled":true},{"day":4,"ranges":[["07:30","17:30"]],"enabled":true},{"day":5,"ranges":[["07:30","17:30"]],"enabled":true},{"day":6,"ranges":[["08:00","12:00"]],"enabled":true}],"profile_id":317333,"speciality_id":null}'
+                    >
+                      <div data-test="opening-hours" data-design-system="base">
+                        {% for day_hours in day_hours_list %}
+                        <time
+                          itemprop="openingHours"
+                          content="{{ day_hours.day }} {{ day_hours.start_time }}-{{ day_hours.end_time }}"
+                          class="dl-openings-day"
+                          data-design-system="base"
+                        >
+                          <div class="dl-openings-day-label">
+                            {{ day_hours.day }}:
+                          </div>
+                          <div class="dl-openings-day-slots">
+                            <span
+                              >{{ day_hours.start_time }} -
+                              {{day_hours.end_time}}</span
+                            >
+                          </div>
+                        </time>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dl-profile-box">
+                    <h4 class="dl-profile-card-subtitle">emergency contact</h4>
+                    <div>In case of emergency, contact 15 (Samu)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="js-profile-faq-card"
+            style="display: none"
+            data-props='{"profileId":317333,"currentPlaceId":"practice-219560"}'
+          >
+            <div
+              class="dl-card dl-card-bg-white dl-card-variant-default dl-padding-0 dl-margin-y-16"
+              data-design-system="oxygen"
+              data-design-system-component="Card"
+              data-test="doctor-faq-card"
+            >
+              <div class="dl-card-content">
+                <span
+                  data-test="doctor-faq-card-toggle"
+                  class="Tappable-inactive"
+                  style="
+                    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                    user-select: none;
+                    cursor: pointer;
+                  "
+                >
+                  <div
+                    class="dl-card-section dl-flex-grow-auto"
+                    data-design-system="base"
+                  >
+                    <div
+                      class="dl-card-section-icon dl-flex-center"
+                      aria-hidden="true"
+                      data-design-system="base"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 16 16"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="dl-icon dl-icon-neutral-090 dl-icon-xsmall"
+                        data-icon-name="regular/info-circle"
+                        data-design-system="oxygen"
+                        data-design-system-component="Icon"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M8 14.2A6.2 6.2 0 1 0 8 1.8a6.2 6.2 0 0 0 0 12.4zM8 13c-2.763 0-5-2.236-5-5 0-2.762 2.237-5 5-5 2.762 0 5 2.237 5 5s-2.236 5-5 5zm0-6.35a1.05 1.05 0 1 0 0-2.1 1.05 1.05 0 0 0 0 2.1zm1.1 4.55a.3.3 0 0 0 .3-.3v-.6a.3.3 0 0 0-.3-.3h-.3V7.5a.3.3 0 0 0-.3-.3H6.9a.3.3 0 0 0-.3.3v.6a.3.3 0 0 0 .3.3h.3V10h-.3a.3.3 0 0 0-.3.3v.6a.3.3 0 0 0 .3.3h2.2z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="dl-card-section-content">
+                      <h4
+                        class="dl-card-section-title"
+                        data-design-system="base"
+                      >
+                        FAQ
+                      </h4>
+                    </div>
+                    <div
+                      class="dl-card-section-icon dl-flex-center"
+                      aria-hidden="true"
+                      data-design-system="base"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="dl-icon dl-icon-neutral-040 dl-icon-xsmall"
+                        data-icon-name="regular/chevron-down"
+                        data-design-system="oxygen"
+                        data-design-system-component="Icon"
+                      >
+                        <path
+                          d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.575.575 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796Z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </span>
+                <div
+                  class="dl-accordion-item profile-faq-card-accordion-item"
+                  data-design-system="oxygen"
+                  data-design-system-component="StatelessAccordionItem"
+                >
+                  <div class="dl-flex-row">
+                    <button
+                      id=":r2:button"
+                      type="button"
+                      class="dl-accordion-item-title undefined"
+                      name="Quelle est l'adresse de Laboratoire Eurofins Biolab Chambourcy ?"
+                      aria-expanded="false"
+                      aria-controls=":r2:content"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="dl-icon dl-accordion-item-title-icon dl-icon-xsmall"
+                        data-icon-name="regular/chevron-down"
+                        data-design-system="oxygen"
+                        data-design-system-component="Icon"
+                      >
+                        <path
+                          d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.575.575 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796Z"
+                        ></path>
+                      </svg>
+                      <div
+                        class="dl-text dl-text-title dl-text-bold dl-text-s dl-accordion-item-title-text"
+                        data-design-system="oxygen"
+                        data-design-system-component="Text"
+                      >
+                        Quelle est l'adresse de Laboratoire Eurofins Biolab
+                        Chambourcy ?
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <hr
+                  class="dl-divider dl-divider-neutral-030 !mx-16"
+                  aria-hidden="true"
+                  data-design-system="oxygen"
+                  data-design-system-component="Divider"
+                />
+                <div
+                  class="dl-accordion-item profile-faq-card-accordion-item"
+                  data-design-system="oxygen"
+                  data-design-system-component="StatelessAccordionItem"
+                >
+                  <div class="dl-flex-row">
+                    <button
+                      id=":r3:button"
+                      type="button"
+                      class="dl-accordion-item-title undefined"
+                      name="Quels sont les horaires d'ouverture de Laboratoire Eurofins Biolab Chambourcy ?"
+                      aria-expanded="false"
+                      aria-controls=":r3:content"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="dl-icon dl-accordion-item-title-icon dl-icon-xsmall"
+                        data-icon-name="regular/chevron-down"
+                        data-design-system="oxygen"
+                        data-design-system-component="Icon"
+                      >
+                        <path
+                          d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.575.575 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796Z"
+                        ></path>
+                      </svg>
+                      <div
+                        class="dl-text dl-text-title dl-text-bold dl-text-s dl-accordion-item-title-text"
+                        data-design-system="oxygen"
+                        data-design-system-component="Text"
+                      >
+                        Quels sont les horaires d'ouverture de Laboratoire
+                        Eurofins Biolab Chambourcy ?
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <hr
+                  class="dl-divider dl-divider-neutral-030 !mx-16"
+                  aria-hidden="true"
+                  data-design-system="oxygen"
+                  data-design-system-component="Divider"
+                />
+                <div
+                  class="dl-accordion-item profile-faq-card-accordion-item"
+                  data-design-system="oxygen"
+                  data-design-system-component="StatelessAccordionItem"
+                >
+                  <div class="dl-flex-row">
+                    <button
+                      id=":r4:button"
+                      type="button"
+                      class="dl-accordion-item-title undefined"
+                      name="Quels sont les moyens de paiement acceptés par Laboratoire Eurofins Biolab Chambourcy ?"
+                      aria-expanded="false"
+                      aria-controls=":r4:content"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="dl-icon dl-accordion-item-title-icon dl-icon-xsmall"
+                        data-icon-name="regular/chevron-down"
+                        data-design-system="oxygen"
+                        data-design-system-component="Icon"
+                      >
+                        <path
+                          d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.575.575 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796Z"
+                        ></path>
+                      </svg>
+                      <div
+                        class="dl-text dl-text-title dl-text-bold dl-text-s dl-accordion-item-title-text"
+                        data-design-system="oxygen"
+                        data-design-system-component="Text"
+                      >
+                        Quels sont les moyens de paiement acceptés par
+                        Laboratoire Eurofins Biolab Chambourcy ?
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <hr
+                  class="dl-divider dl-divider-neutral-030 !mx-16"
+                  aria-hidden="true"
+                  data-design-system="oxygen"
+                  data-design-system-component="Divider"
+                />
+                <div
+                  class="dl-accordion-item profile-faq-card-accordion-item"
+                  data-design-system="oxygen"
+                  data-design-system-component="StatelessAccordionItem"
+                >
+                  <div class="dl-flex-row">
+                    <button
+                      id=":r5:button"
+                      type="button"
+                      class="dl-accordion-item-title undefined"
+                      name="Est-ce que Laboratoire Eurofins Biolab Chambourcy accepte la carte Vitale ?"
+                      aria-expanded="false"
+                      aria-controls=":r5:content"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="dl-icon dl-accordion-item-title-icon dl-icon-xsmall"
+                        data-icon-name="regular/chevron-down"
+                        data-design-system="oxygen"
+                        data-design-system-component="Icon"
+                      >
+                        <path
+                          d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.575.575 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796Z"
+                        ></path>
+                      </svg>
+                      <div
+                        class="dl-text dl-text-title dl-text-bold dl-text-s dl-accordion-item-title-text"
+                        data-design-system="oxygen"
+                        data-design-system-component="Text"
+                      >
+                        Est-ce que Laboratoire Eurofins Biolab Chambourcy
+                        accepte la carte Vitale ?
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <hr
+                  class="dl-divider dl-divider-neutral-030 !mx-16"
+                  aria-hidden="true"
+                  data-design-system="oxygen"
+                  data-design-system-component="Divider"
+                />
+                <div
+                  class="dl-accordion-item profile-faq-card-accordion-item"
+                  data-design-system="oxygen"
+                  data-design-system-component="StatelessAccordionItem"
+                >
+                  <div class="dl-flex-row">
+                    <button
+                      id=":r6:button"
+                      type="button"
+                      class="dl-accordion-item-title undefined"
+                      name="Est-ce que Laboratoire Eurofins Biolab Chambourcy accepte des nouveaux patients ?"
+                      aria-expanded="false"
+                      aria-controls=":r6:content"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        focusable="false"
+                        class="dl-icon dl-accordion-item-title-icon dl-icon-xsmall"
+                        data-icon-name="regular/chevron-down"
+                        data-design-system="oxygen"
+                        data-design-system-component="Icon"
+                      >
+                        <path
+                          d="m12.852 6.523-4.477 4.29c-.14.117-.281.187-.422.187a.575.575 0 0 1-.375-.14L3.102 6.57c-.235-.234-.235-.586-.024-.797.211-.234.563-.234.797-.023l4.078 3.89 4.125-3.937a.56.56 0 0 1 .797.024c.21.234.21.585-.023.796Z"
+                        ></path>
+                      </svg>
+                      <div
+                        class="dl-text dl-text-title dl-text-bold dl-text-s dl-accordion-item-title-text"
+                        data-design-system="oxygen"
+                        data-design-system-component="Text"
+                      >
+                        Est-ce que Laboratoire Eurofins Biolab Chambourcy
+                        accepte des nouveaux patients ?
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="form_reclamation" class="none">
+      <div class="help_container">
+        <div class="background_term_bluer"></div>
+        <div class="form-container-global">
+          <div class="container">
+            <div class="title">Complain</div>
+            <button
+              class="delet_form_button_container"
+              style="
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                user-select: none;
+                cursor: pointer;
+              "
+              onclick="complain_form_toggle()"
+            >
+              <div class="delet_form_button">
+                <span class="material-symbols-outlined"> close </span>
+              </div>
+            </button>
+            <div class="content_form">
+              <form method="post">
+                {% csrf_token %}
+                <div class="user-details">
+                  <div class="input-box">
+                    <input type="text" name="form_name" value="Complain"  hidden/>
+                    <span class="details">Complain object</span>
+                    <input type="text" name="Complain_object" />
+                    <input
+                      type="text"
+                      name="branche_id"
+                      value="{{branch.id}}"
+                      hidden
+                    />
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Complain text</span>
+                    <textarea
+                      placeholder="Enter your message"
+                      rows="4"
+                      cols="50"
+                      id="message-3b9a"
+                      name="Complain_text"
+                      class=""
+                      required=""
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="button">
+                  <input
+                    type="text"
+                    name="reclamation_id_reply"
+                    placeholder="Enter your name"
+                    hidden
+                  />
+                  <input type="submit" value="submit" />
+                  <input
+                    type="button"
+                    value="cancel  "
+                    onclick="complain_form_toggle()"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/accueil/lab_detaille.js' %}"></script>
+  </body>
+</html>

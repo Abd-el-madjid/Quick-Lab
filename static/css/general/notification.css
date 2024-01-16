@@ -1,0 +1,174 @@
+.k {
+
+    width: 79.01px;
+    height: 0px;
+    left: 947.74px;
+    top: 99.01px;
+
+    border: 0.5px solid #000000;
+    transform: rotate(-90deg);
+}
+
+.notifications_dashboard {}
+
+
+.notification_dashboard {
+    background: linear-gradient(124.96deg, #F4FFFF 0.22%, rgba(255, 255, 255, 0) 100%);
+    filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+    backdrop-filter: blur(28px);
+    background: #E1F8F8;
+    display: flex;
+    flex-direction: row;
+    padding: 20px 5px;
+    margin: 12px 0;
+    text-align: center;
+    border-radius: 15px;
+    /* background-color: #a0d1d1; */
+    box-shadow: 0 5px 8px 0 rgba(64, 66, 154, .08);
+    /* min-height: 100px; */
+}
+
+
+
+.notification_dashboard__title {
+    width: 80%;
+    max-width: 90%;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    display: inline-block;
+    line-height: 30px
+}
+
+.notification_dashboard__title.app-download {
+    font-size: 16px
+}
+
+.notification_dashboard__button {
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    height: 2.25rem;
+    border-radius: 18px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background .3s;
+    white-space: nowrap;
+    width: 100%;
+    line-height: 2.25rem;
+    background: #f7f7fa;
+    margin-top: 15px;
+    padding: 0 50px;
+    display: inline-block;
+    color: #32325d;
+    width: auto
+}
+
+
+
+.notification_dashboard__button:active,
+.notification_dashboard__button:hover {
+    color: #32325d;
+    background-color: #d3e9fd
+}
+
+.notification_dashboard__button.app-download {
+    background: #E61F57;
+    color: #f6f7f9
+}
+
+.notification_dashboard__button i {
+    margin-left: 3px;
+    margin-bottom: 1px;
+    -ms-transform: rotate(315deg);
+    transform: rotate(315deg);
+    -webkit-transform: rotate(315deg);
+    border: solid #f6f7f9;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2.5px
+}
+
+.notification_dashboard__close {
+    cursor: pointer;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 28px;
+    margin-top: -24px;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHNoYXBlLXJlbmRlcmluZz0iZ2VvbWV0cmljUHJlY2lzaW9uIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDE0NTEuMyAxNDUxLjMiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE0NTEuMyAxNDUxLjM7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojRkZGRkZGO308L3N0eWxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMjY5LjksMjkybC0xMTAuNi0xMTAuNkw3MjUuNyw2MTUuMUwyOTIsMTgxLjRMMTgxLjQsMjkybDQzMy43LDQzMy43bC00MzMuNyw0MzMuN0wyOTIsMTI2OS45bDQzMy43LTQzMy43bDQzMy43LDQzMy43bDExMC42LTExMC42TDgzNi4yLDcyNS43TDEyNjkuOSwyOTJ6Ii8+PC9zdmc+);
+    background-size: 14px 14px
+}
+
+.lign_vertical {
+    /* top: -29px; */
+    right: -4%;
+    position: relative;
+    min-height: 50px;
+    max-height: 100px;
+    /* left: 90%; */
+    /* top: 99.01px; */
+    border: 0.3px solid #000000;
+    MARGIN: 0PX 10PX 0PX 10PX;
+}
+
+.notification_dashboard__close>.fa {
+    display: none
+}
+
+.notification_dashboard__delet_button {
+    right: -4%;
+    width: 40px;
+    cursor: pointer;
+    padding: 5px;
+    position: relative;
+}
+
+.notification_dashboard__delet_button span {
+
+    font-size: xx-large;
+
+    font-weight: 300;
+}
+
+
+@media (min-width: 768px) {
+    .notification_dashboard {
+        /* min-height: 72px; */
+        display: flex;
+        padding: 15px 20px 15px 20px;
+        text-align: left;
+        margin: 30px 0;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .notification_dashboard__button {
+        float: right;
+        margin: 0
+    }
+}
+
+@media (max-width: 767px) {
+    .lign_vertical {
+        display: none;
+    }
+
+    .notification_dashboard__delet_button {
+        display: none;
+    }
+
+    .notification_dashboard:hover .notification_dashboard__delet_button {
+        display: flex;
+    }
+
+    .notification_dashboard__title {
+        max-width: 85%;
+        font-size: 14px;
+    }
+
+}

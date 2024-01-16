@@ -1,0 +1,484 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/homedashboard.css' %}" rel="stylesheet">
+    <link href="{% static 'css/Your_Appointments.css' %}" rel="stylesheet">
+
+	<link href="{% static 'css/libs.css' %}" rel="stylesheet">
+
+	<link href="{% static 'css/form.css' %}" rel="stylesheet">
+
+    <!---->
+     <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+    <script  src="{% static 'js/jquery.min.js' %}"></script>
+    <!---->
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/homedashboard.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/Your_Appointments.js' %}"></script>
+    <!---->
+    <!---->
+    <script src="https://kit.fontawesome.com/4f846c2c5f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+   
+    <link href="{% static 'css/mobiscroll.javascript.min.css' %}" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/mobiscroll.javascript.min.js' %}"></script>
+  
+
+    <title>Document</title>
+</head>
+<body onload="init()">
+    
+    
+    <div id="main_element" class="content content--dashboard">
+        <!---->
+        <div class="content__wrapper">
+            <!---->
+            <!---->
+            <div id="rdvs_container" class="rdvs_container ">
+                    <div class="empty_resultat_container none">
+                    <div class="empty_resultat">
+                        <div class="empty_resultat_img">
+                            <img src="https://lh3.googleusercontent.com/qB2SizgrtgzQL5Wa6K71-PsV3MZRzj-LlWAydhysxCjL4hSA6iK3VQr0wLHtOaiRirGe6RnmDBDZNItqkPlrRa5VMpZ56C8MUgSh8bdyeE_j_yZT2x9d3O-tkQVas3vpbGiWEIpaOg=w2400" alt="" srcset="">
+                        </div>
+                        <div class="empty_resultat_text">
+                            <p><strong>Gérez vos documents médicaux</strong></p>
+                            <p>Aucun resultat à trouve prendre rendez-vous</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+            <div id="rdv_detaille_container " class="rdv_detaille_container">
+                
+                <div class="rdv_detaille">
+                    
+                    <div class="rendez-vous">
+                        <div class="rendez-vous_head">
+                            <div class="rendez-vous_head_date">
+                                <span class="material-symbols-outlined">
+                                    date_range
+                                </span>
+                                <span> {{ rdv.date|date:"l" }} {{ rdv.date }}</span>
+                            </div>
+                            <div class="rendez-vous_head_time">
+                                <span class="material-symbols-outlined">
+                                    schedule
+                                </span>
+                                <span>{{ rdv.heur }}</span>
+                            </div>
+                            <div class="rendez-vous_head_status">
+                                <span class="material-symbols-outlined">
+                                    restart_alt
+                                </span>
+                                <p> {{ rdv.etat }}</p>
+                            </div>
+                            
+                        </div>
+                        <div class="rendez-vous_body">
+                            <div  id="rdv_info_general" class=" rdv_info_general">
+                                
+                                <div class="rdv_info_general-profile rdv_info_general-profile2 ">
+                                    <ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+                                        {{ rdv.branche.labo.nom |slice:":1" }}{{ rdv.branche.labo.nom |slice:"1:2" }}
+                                    </ins>
+                                </div>
+                                <div class="rdv_info_general_labo">
+                                    <p><strong>laboratory {{rdv.branche.labo.nom}} </strong></p>
+                                    <div class="rdv_info_general_labo_type">
+                                        <span class="material-symbols-outlined">
+                                            home_health
+                                        </span>
+                                        <p><small>laboratory</small></p>
+                                    </div>
+                                    <div class="rdv_info_general_labo_lieu">
+                                        <span class="material-symbols-outlined">
+                                            where_to_vote
+                                        </span>
+                                        <p><small>{{ rdv.branche.branche_nom }} {{ rdv.branche.localisation }}</small></p>
+                        
+                                    </div>
+                                    <div class="rdv_info_general_labo_lieu">
+                                        <span class="material-symbols-outlined">
+                                            call
+                                        </span>
+                                        <p><small>{{rdv.branche.num_telephone}}</small></p>
+                        
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            
+                            <div class="line_vertical2"></div>
+                            <div class="info_patient_rdv">
+                                <div class="nom">
+                                    <span class="material-symbols-outlined">
+                                        person
+                                    </span>
+                                    <div class="nom_detaille">
+                                        <p><strong>le nom de la patient</strong></p>
+                                        <p><small>{{name_user}}</small></p>
+                                    </div>
+                                </div>
+                                <div class="phone">
+                                    <span class="material-symbols-outlined">
+                                        call
+                                    </span>
+                                    <div class="phone_detaille">
+                                        <p><strong>phone</strong></p>
+                                        <p><small>{{tel}}</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <div class="line_vertical2"></div>
+                            <div class="analyse_choisis">
+                                <p><strong>analyse choisis</strong> </p>
+                                <ul>
+                                    {% for name_ana in name_analyses %}
+                                    <li>{{name_ana.nom}}</li>
+                                     {% endfor %}
+                                </ul>
+                            </div>
+                            {% if rdv.purpose == "blood test" %}
+                            <div class="line_vertical2"></div>
+                            <div class="cost_rdv">
+
+                                <div class="cost_detaile_rdv">
+                                    <div class="cost_detaile_rdv_head">
+                                        <p class="neaon">cost detaile :</p>
+                                        <p>prix</p>
+                                    </div>
+                                    <div class="cost_detaile_rdv_body">
+                                        <ul>
+                                            {% for name_ana in name_analyses %}
+                                            {% for prix_analyse in name_ana.prixanalyse_set.all %}
+                                            <li>
+                                                <div class="type_analyse">
+                                                    
+                                                    <p>{{name_ana.nom}}</p>
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                                <div class="type_analyse_prix">
+                                                    
+                                                    <p>{{ prix_analyse.prix }}</p>
+                                                    <span class="material-symbols-outlined">
+                                                        attach_money
+                                                    </span>
+                                                    
+                                    
+                                                    
+                                                </div>
+                                                
+                                            </li>
+                                            {% endfor %}
+                                                {% endfor %}
+                                                {% if rdv.type_rdv == "domicile" %}
+                                                <li>
+                                                    <div class="type_analyse">
+                                                        
+                                                        <p>travel tax</p>
+                                                        
+                                                        
+                                                        
+                                                    </div>
+                                                    <div class="type_analyse_prix">
+                                                        
+                                                        <p>50</p>
+                                                        <span class="material-symbols-outlined">
+                                                            attach_money
+                                                        </span>
+                                                        
+                                        
+                                                        
+                                                    </div>
+                                                    
+                                                </li>
+                                                {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="cost_total">
+                                    <div class="cost_total_titre">
+                                        <span class="neaon material-symbols-outlined">
+                                            calculate
+                                        </span>
+                                        <p class="neaon">total cost  :</p>
+                                    </div>
+                                    <div class="cost_total_prix">
+                                        <p>{{prix}}</p>
+                                        <span class="material-symbols-outlined">
+                                            attach_money
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line_vertical2"></div>
+                            <div class="methode_payment">
+                                <div class="methode_payment_titre">
+                                    <span class="neaon material-symbols-outlined">
+                                        credit_card
+                                    </span>
+                                    <p class="neaon">methode de payment</p>
+                                </div>
+                                <div class="methode_payment_methode">
+                                    <p class="neaon">
+                                        carte debit
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            {% endif %}
+                            <div class="line_vertical2"></div>
+                            <div class="conseign" onclick="show_conseign()">
+                                <div class="icon_1">
+                                    <span class=" neaon material-symbols-outlined">
+                                        error
+                                    </span>
+                                </div>
+                                <div class="conseign_titre">
+                                    <p class="neaon">conseign et information</p>
+                                </div>
+                                <div class="conseign_flesh">
+                                    <span class="neaon material-symbols-outlined">
+                                        arrow_forward_ios
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="modifie_rdv_form" class="none">
+                <div class="modifie_form_container">
+                <div class="background_term_bluer"></div>
+                <div class="form-container-global">
+                        <div class="container">
+                            <div class="title">modifier rdv</div>
+                            <button  class="delet_form_button_container"  style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;" onclick="modifier_button_rdv()">
+                                <div class="delet_form_button">
+                                  <span class="material-symbols-outlined">
+                                    close
+                                  </span>
+                                </div>
+                              </button>
+                            <div class="content_form">
+                                <form action="#" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="form_name" value="updaterdv">
+                                    <div class="user-details">
+                                        
+                                          <div class="input-box" onclick="handleDropdown()">
+                                            <span class="details">Date & Time</span>
+                                            <p class="p p_date_time" > </p>
+                                           
+
+                                                                        <div class="dropdown">
+                                                                      <input name="time" type="time" hidden id="rdv_time">
+                                            <input name="date" type="date" hidden id="rdv_date">   
+                                                                            
+                                                                            <ul id="dropdown-menu_container" class="dropdown-menu " data-popper-placement="bottom-end" style="position: absolute;
+                                                                                                    inset: 0px 0px auto auto;
+                                                                                                    margin: -30px 0 0 0;
+                                                                                                    transform: translate3d(0px, 34px, 0px);">
+                                                                                <li>
+                                                                                    <div class="carte_laboratiore_calendre">
+                                                                                        <div class="calendre_availabile">
+                                                                                            <!---->
+                                                                                            <!---->
+                                                                                            <div class="arrow arrow-left">
+                                                                                                <div id="prev-day">
+                                                                                                    <span class="material-symbols-outlined">
+                                                                                                        chevron_left 
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!---->
+                                                                                    
+                                                                                            <div class="calendar-days" id="calendar-days" data-appointmenthour="{{branch.num_rdv}}"
+                                                                                                data-workdays="{{branch.jour_heur_tarvail}}"
+                                                                                                data-appointment="{{rdv_booked|join:'$'}}">
+                                                                                            </div>
+                                                                                    
+                                                                                            <!---->
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                            <div class="arrow arrow-right">
+                                                                                                <div id="next-day">
+                                                                                                    <span class="material-symbols-outlined">
+                                                                                                        chevron_right
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!---->
+                                                                                            <!---->
+                                                                                        </div>
+                                                                                        <!---->
+                                                                                        <!---->
+                                                                                        <div class="line_vertical"></div>
+                                                                                        <!---->
+                                                                                        <!---->
+                                                                                        <div class="horaires_buttons">
+                                                                                            <!---->
+                                                                                            <div id="Morning" class="Morning horaires_button selected">
+                                                                                                <a>
+                                                                                                    <span class="material-symbols-outlined">
+                                                                                                        brightness_5
+                                                                                                    </span>
+                                                                                                    <p>Morning (AM)</p>
+                                                                                                </a>
+                                                                                            </div>
+                                                                                            <!---->
+                                                                                            <!---->
+                                                                                            <div id="Afternoon" class="Afternoon horaires_button">
+                                                                                                <a>
+                                                                                                    <span class="material-symbols-outlined">
+                                                                                                        dark_mode
+                                                                                                    </span>
+                                                                                                    <p>Afternoon (PM)</p>
+                                                                                                </a>
+                                                                                            </div>
+                                                                                            <!---->
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </li>
+                                                                               
+                                                                            </ul>
+                                                                        
+                                                                        </div>
+                                                                        
+                                          </div>
+                                      
+                                    </div>
+                                    <div class="button">
+                                      <input type="button" value="cancel change " onclick="modifier_button_rdv()">
+                                      <input type="submit" value="Change Appointment">
+                                    </div>
+                                  </form>
+                            </div>
+                          </div>
+                        </div>
+                </div>
+            </div>
+            <div id="delet_rdv_form" class="none">
+                <div class="delet_form_container">
+                <div class="background_term_bluer"></div>
+                <div class="form-container-global">
+                    <div class="container">
+                      <div class="title">Cancel Appointment</div>
+                      <button  class="delet_form_button_container"  style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;" onclick="delet_button_rdv()">
+                        <div class="delet_form_button">
+                          <span class="material-symbols-outlined">
+                            close
+                          </span>
+                        </div>
+                      </button>
+                      <div class="content_form">
+                        <form method="post">
+                            {% csrf_token %}
+                                <input type="hidden" name="form_name" value="deletrdv">
+                            <div class="policy">
+                                <input type="hidden" id="id_rdv" name="id_rdv" value="">
+                                <p>If you cancel your appointment:</p>
+                                <ul>
+                                  <li>You will receive a refund of 85% of the total cost paid.</li>
+                                  <li>The remaining 15% will be retained as a cancellation fee.</li>
+                                </ul>
+                                <p>Please note that if you cancel your appointment, you will not receive a full refund. You will only receive 85% of the total cost paid. The remaining 15% will be retained as a cancellation fee.</p>
+                              </div>
+                          <div class="button">
+                            
+                            <input type="cancel" value="Go back to Appointment" onclick="delet_button_rdv()">
+                            <input type="submit" value="annulue Appointment">
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div id="QR_code" class="none">
+                <div class="delet_form_container">
+                    <div class="background_term_bluer"></div>
+                    <div class="form-container-global">
+                        <div class="container">
+                         
+                            <button class="delet_form_button_container"
+                                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;"
+                                onclick="show_QR()">
+                                <div class="delet_form_button">
+                                    <span class="material-symbols-outlined">
+                                        close
+                                    </span>
+                                </div>
+                            </button>
+                            <div class="content_form">
+                                <img  class="qr_img" src="data:image/png;base64,{{ qr_code_image_base64 }}" alt="QR Code" width="200" height="150" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</div>
+<div id="conseign" class="none">
+<div class="delet_form_container">
+    <div class="background_term_bluer"></div>
+    <div class="form-container-global">
+        <div class="container">
+<div class="title">conseign et information</div>
+            <button class="delet_form_button_container"
+                style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;"
+                onclick="show_conseign()">
+                <div class="delet_form_button">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </div>
+            </button>
+    <div class="terms_contains" style="padding-top: 10px;">
+        <p>Pour la réalisation des cartes de groupe sanguin, vous devez
+            présenter un document d'identité officiel avec une photographie.
+        </p>
+<ul style="list-style: none;margin: 0 0px 0px 20px;">
+{% for conseille in conseilles %}
+<li style=" padding: 5px;">{{conseille.conseille}}</li>
+{% endfor %}
+
+
+</ul>
+    </div>
+        </div>
+    </div>
+</div>
+</div>
+        </div>
+        
+    </div>
+
+        </body>
+        </html>
+
+
+
+
+
+
+
+

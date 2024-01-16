@@ -1,0 +1,699 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="{% static 'css/general/homedashboard.css' %}" rel="stylesheet">
+    
+    <link href="{% static 'css/general/form.css' %}" rel="stylesheet">
+    <link href="{% static 'css/general/native_form.css' %}" rel="stylesheet">
+    
+    <link href="{% static 'css/directeur/reclamation.css' %}" rel="stylesheet">
+    <link href="{% static 'css/general/portal.css' %}" rel="stylesheet">
+	<link href="{% static 'css/general/table_analyse.css' %}" rel="stylesheet">
+	<!---->
+	 <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+	<link href="{% static 'css/general/libs.css' %}" rel="stylesheet">
+	<!---->
+	<!---->
+	
+	<!---->
+	<!---->
+    <script  src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/general/notification_pannel.js' %}"></script>
+	<script src="https://kit.fontawesome.com/4f846c2c5f.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		
+		<script type="text/javascript" charset="utf-8" async="" src="{% static 'js/general/homedashboard.js' %}"></script>
+		
+		<script type="text/javascript" charset="utf-8" async="" src="{% static 'js/directeur/Reclamation.js' %}"></script>
+
+	
+	<title>Document</title>
+</head>
+
+<body onload="init()">
+	
+	<!---->
+	
+		<div class="general-container">
+			
+				<aside class="menu-panel" role="complementary">
+					<div class="hide-since-tablet" psi-proxy-user-popup="">
+						<a id="profile_head-secound" aria-label="profile menu" class="dark-link profile-link profile-menu profile-link--in-menu" role="link" tabindex="0">
+
+							<ins class="nav-menu-icon nav-menu-icon--user">
+								<span id="profile-circle" class=" material-symbols-outlined">
+									account_circle
+									</span>
+							</ins>
+
+							<div class="profile-link__user">{{name}}</div>
+
+							<!---->
+
+
+							<ins class="profile-link__trigger">
+								<span id="profile-arrow-2" class=" material-symbols-outlined">
+									expand_more
+									</span>
+							</ins>
+						</a>
+				
+
+						
+						<div class="side-account-profil none">
+							<ul class="contenait">
+								<li>
+						<a id="account" role="link" tabindex="0" href="{% url 'account_directeur' %}">
+							<ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+								{{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+							</ins>
+							
+
+							<div class="">account</div>
+
+						</a>
+					</li>
+						<li>
+						<a id="sign_out" href="{% url 'logout' %}" role="link" tabindex="0" >
+
+							<ins class="">
+								<span class="material-symbols-outlined">
+									logout
+									</span>
+							</ins>
+
+							<div class="">sign out</div>
+
+		
+						</a>
+					</li>
+					</ul>
+					</div>
+					</div> 
+					
+
+					<div class="menu-panel__content">
+						<div class="menu-panel__content_header">
+						<a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/" title="Homepage" href="{% url 'home' %}">
+							<img alt="Logo" src="/media/image/logo sans bg.png"  width="70" height="55">
+						</a>
+						<div >
+							<a class="side-menu-logo-title" href="{% url 'home' %}">
+						<p class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="" style="will-change: transform, opacity; animation-duration: 1000ms;">Quick </p>
+						<p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1000" data-lang-en="Lab" style="will-change: transform, opacity; animation-duration: 1000ms;">Lab</p>
+						</a>
+					</div>
+					   </div>
+						<!---->
+						<p-panelmenu aria-label="Main Menu" aria-labelledby="Main Menu" role="navigation" tabindex="0" class="ng-tns-c15-13">
+							<div class="ng-tns-c15-13 side-menu ui-panelmenu ui-widget">
+								<!---->
+								<div class="menu-element ui-panelmenu-panel ng-tns-c15-13" >
+																<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default ui-corner-top">
+																	<!---->
+																	<!---->
+																	<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon ui-state-active"   href="{% url 'homedirecteur' %}">
+																		<!---->
+																		<!---->
+																		
+																		<span class="icons material-symbols-outlined">
+																			home
+																			</span>
+																		
+																		<span class="ui-menuitem-text">Home</span>
+																	</a>
+																</div>
+																<!---->
+															</div>
+                                                            <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                                                                <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default" onclick="toggleDropdown(this)">
+                                                                    <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"  href="{% url 'gestionemp' %}">
+										
+                                                                        <span class="icons material-symbols-outlined">
+                                                                            manage_accounts
+                                                                            </span>
+                                                                  <span class="ui-menuitem-text">employes management</span>
+                                                                </a>
+                                                                </div>
+                                                                <div class="dropdown-menu">
+                                                                  
+                                                                  <!-- Add more links here as needed -->
+                                                                  
+                                                                  
+                                                                </div>
+                                                              </div>
+								<div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+									<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+										<!---->
+										<!---->
+										<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'gestclient' %}" >
+											<!---->
+											<!---->
+											<span class="icons material-symbols-outlined">
+                                                stress_management
+                                                </span>
+											<span class="ui-menuitem-text">client management</span>
+										</a>
+									</div>
+									<!---->
+								</div>
+								<div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+									<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+										<!---->
+										<!---->
+										<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'gestanalyse' %}">
+											<!---->
+											<!---->
+											<span class="icons material-symbols-outlined">
+                                                folder_managed
+                                                </span>
+											<span class="ui-menuitem-text">analyse management</span>
+										</a>
+									</div>
+									<!---->
+								</div>
+								<div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+									<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+										<!---->
+										<!---->
+										<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'gestbranch' %}">
+											<!---->
+											<!---->
+											<span class="material-symbols-outlined">
+                                                account_tree
+                                                </span>
+											<span class="ui-menuitem-text">Branche management</span>
+										</a>
+									</div>
+									<!---->
+								</div>
+                                <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+									<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+									style="background-color: #46807F;border:1px solid white ;border-radius: 15px;">
+										<!---->
+										<!---->
+										<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'reclamation' %}"  style="font-weight: 700;color: white;">
+											<!---->
+											<!---->
+											<span class="icons material-symbols-outlined">
+                                                mark_as_unread
+                                                </span>
+											<span class="ui-menuitem-text">Reclamation</span>
+										</a>
+									</div>
+									<!---->
+								</div>
+								<div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+									<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+										<!---->
+										<!---->
+										<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'blood_bank' %}">
+											<!---->
+											<!---->
+											<span class="icons material-symbols-outlined">
+												bloodtype
+												</span>
+											<span class="ui-menuitem-text">blood bank</span>
+										</a>
+									</div>
+									<!---->
+								</div>
+                                <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+									<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+										<!---->
+										<!---->
+										<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'statistique' %}">
+											<!---->
+											<!---->
+											<span class="icons material-symbols-outlined">
+                                                monitoring
+                                                </span>
+											<span class="ui-menuitem-text">statistique</span>
+										</a>
+									</div>
+									<!---->
+								</div>
+								<div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+									<div class="ng-tns-c15-13 ui-menu-separator ui-widget ui-panelmenu-header ui-state-default">
+										<!---->
+										<a class="ng-tns-c15-13" href="#">
+											<!---->
+											<!---->
+											<span class="ui-menuitem-text"></span>
+										</a>
+										<!---->
+									</div>
+									<!---->
+								</div>
+							
+							</div>
+						</p-panelmenu>
+					</div>
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<div class="flex-push"></div> <!----><!----><!----><!----><!----><!----><!---->
+				    <!---->
+				    <!---->
+					<!---->
+					<!---->
+					<ul class="menu-panel__additional-info additional-info" role="contentinfo">
+						
+						<div>
+							<li class="additional-info__disc"></li>
+							<li class="additional-info__item">
+								<a psimsg="content.terms.menuTitle" rel="noopener" target="_blank" href="{% url 'term' %}">Terms of Use</a>
+							</li>
+							<li class="additional-info__disc"></li>
+							<li class="additional-info__item">
+								<a psimsg="content.privacy.menuTitle" rel="noopener" target="_blank" href="{% url 'privecy' %}">Privacy Policy</a>
+							</li>
+						</div>
+					</ul>
+				</aside>
+				<div psi-menu-overlay="">
+					<div class="menu-panel-overlay">
+
+					</div>
+				</div>
+			
+			<section class="content-panel" role="main">
+				
+					<header class="header hide-on-print">
+					<div class="header-wrapper">
+						<div class="header__panel">
+							<ul class="header-menu-bar">
+
+								<li class="header-menu-bar__item hide-since-desktop hide-on-print" psi-menu-trigger="">
+									<a id="menu-link_button" class="profile-link hamburger-link hide-since-desktop">
+
+										<ins class="nav-menu-icon nav-menu-icon--hamburger">
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" class="icon-svg icon-svg__size--24 " xml:space="preserve">
+												<g>
+													<path d="M85 341l342 0c11,0 21,10 21,22l0 0c0,11 -10,21 -21,21l-342 0c-11,0 -21,-10 -21,-21l0 0c0,-12 10,-22 21,-22z"></path>
+													<path d="M85 235l342 0c11,0 21,9 21,21l0 0c0,12 -10,21 -21,21l-342 0c-11,0 -21,-9 -21,-21l0 0c0,-12 10,-21 21,-21z"></path><path d="M85 128l342 0c11,0 21,10 21,21l0 0c0,12 -10,22 -21,22l-342 0c-11,0 -21,-10 -21,-22l0 0c0,-11 10,-21 21,-21z"></path>
+												</g>
+											</svg>
+										</ins>
+
+										<h6>Menu</h6>
+									</a>
+								</li>
+
+
+								<li>
+									<!---->
+								</li>
+
+								<!---->
+								<p-tabmenu>
+									<div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+										<ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+											<!---->
+										</ul>
+									</div>
+								</p-tabmenu>
+							</ul>
+						</div>
+						<div class="header__panel header__panel--spacer hide-on-print"></div>
+						<div class="header__panel hide-on-print">
+							<ul class="header-menu-bar header-menu-bar--main">
+								
+								<li id="profile-info-1" class="header-menu-bar__item header-menu-bar__item--main hide-up-to-tablet" psi-proxy-user-popup="" psieventtracker="">
+									<a id="profile_head-main" aria-label="profile menu" class="dark-link profile-link profile-menu" role="link" tabindex="0">
+
+									<ins class="nav-menu-icon nav-menu-icon--user">
+										<span id="profile-circle" class=" material-symbols-outlined">
+											account_circle
+											</span>
+								</ins>
+
+								<div class="profile-link__user">{{name}}</div>
+
+								<!---->
+
+								<ins class="profile-link__trigger">
+									<span id="profile-arrow" class=" material-symbols-outlined">
+										expand_more
+										</span>
+								</ins>
+
+							</a>
+
+							<p-overlaypanel>
+
+							</p-overlaypanel>
+
+							<!---->
+						</li>
+							<!---->
+							<li id="notification"
+                                                            class="header-menu-bar__item header-menu-bar__item--main header-menu-bar__item--last"
+                                                            psi-alert-popup="" psieventtracker="">
+                                        
+                                        
+                                                            <span class="notifications-overlay-arrow__hidden"></span>
+                                                            <a>
+                                                                <ins class="nav-menu-icon">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        version="1.1" x="0px" y="0px" viewBox="0 0 512 512"
+                                                                        style="enable-background:new 0 0 512 512;"
+                                                                        class="icon-svg icon-svg__size--24 icon-svg__color--darker-blue" xml:space="preserve">
+                                                                        <path
+                                                                            d="M483,433l-38-86V181C445,81,361,0,256,0C152,0,67,81,67,181v166l-38,85c-2,4-2,9,1,12c2,4,6,6,11,6h131 c7,36,40,62,78,62s70-26,77-62h144c5,0,9-2,11-6C485,441,485,436,483,433z M250,487c-24,0-45-15-51-37h101C294,472,273,487,250,487z ">
+                                                                        </path>
+                                                                    </svg>
+                                                                </ins>
+                                                                <!---->
+                                                                <span class="notification-bubble" id="notification-bubble">
+                                                                    0
+                                                                </span>
+                                                            </a>
+                                                        </li>
+						</ul>
+					</div>
+				</div>
+
+				<div id="notification_panel"
+                                                class="  notifications-overlay false ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow"
+                                                style=" z-index: 1007; visibility: visible; top: 180.719px; left: 703.333px; opacity: 1.048;    transform: scale(0)">
+                                                <div class="ui-overlaypanel-content">
+                                        
+                                                    <h6 class="linked-heading indent-bottom">
+                                                        <span psimsg="alert.title">Recent Notifications</span>
+                                                        <a class="text-style--bold" psimsg="alert.showAll" href="{% url 'notification_directeur' %}">show All</a>
+                                                      
+                                        
+                                                    </h6>
+                                                    <ul style="position: relative;" id="notification_dashboard" data-patient="0nlbop5f1e">
+                                                        <!---->
+                                        
+                                        
+                                                    </ul>
+                                        
+                                        
+                                                </div>
+                                                <!---->
+                                            </div>
+
+				<div id="user-menu" class="user-menu">
+
+					<!---->
+					<div class="">
+						<div class="profile-pane">
+							<ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+								{{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+							</ins>
+				
+							<div class="profile-pane__data">
+								<div class="profile-pane__user">{{name}}</div>
+				
+								<!----><a class="link--blue text-style--bold proxy-user-account-link" psimsg="proxyUser.accountLink" role="link" tabindex="0" aria-label="abd el madjid kahoul account" href="{% url 'account_directeur' %}">Account</a>
+							</div>
+						</div>
+					</div>
+				
+					<!---->
+				
+					<!---->
+					<p-accordion styleclass="ui-accordion-user-menu" class="">
+						<div class="ui-accordion-user-menu ui-accordion ui-widget ui-helper-reset">
+							
+				
+						<!---->
+				
+						<!---->
+				
+						<!---->
+				
+					
+						</div>
+					</p-accordion>
+				
+					<div class="user-menu__item">
+						<a href="{% url 'logout' %}" class="user-menu__control" psimsg="proxyUser.logout" tabindex="0">Sign Out</a>
+					</div>
+				
+				</div>
+			</header>
+			<!---->
+			<!---->
+			<!---->
+			<!---->
+			<div id="main_element" class="content content--dashboard">
+				<div class="content__wrapper">
+					<!---->
+
+                   
+					<!---->
+<!--//table worker-->
+
+ 
+
+
+
+
+             
+
+            
+					<!---->
+                    
+               
+                    
+                   
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="app-card shadow-sm mb-4 border-left-decoration">
+                                        <div class="inner">
+                                            <div class="app-card-body p-4">
+                                                
+                                                    <div class="col-auto">
+                                                        <div class="page-utilities">
+                                                           <div class=" flex-sm-nowrap flex-sm-row d-sm-flex row g-2 justify-content-start justify-content-md-end align-items-center">
+                                                               <div class="col-auto" style="
+                    max-width: 100%;
+                    min-width: 78%;
+                ">
+                                                                   <div class="table-search-form row gx-1 align-items-center" style="
+                    max-width: 100%;
+                ">
+                                                                       <div class="col-auto" style="
+                    max-width: 100%;
+                    min-width: 84%;
+                ">
+                                                                           <input type="text" id="search-orders" name="searchorders" class="form-control search-orders" placeholder="Search">
+                                                                       </div>
+                                                                       <div class="col-auto">
+                                                                           <button type="submit"  id="search_button"  class="btn app-btn-secondary">Search</button>
+                                                                       </div>
+                                                                    </div>
+                                                                   
+                                                               </div><!--//col-->
+                                                               
+                                                              
+                                                           </div><!--//row-->
+                                                       </div><!--//table-utilities-->
+                                                   </div>
+                                                
+                        
+                                            </div><!--//app-card-body-->
+                                            
+                                        </div><!--//inner-->
+                                    </div>
+
+
+                    <div class="account-tabs" id="account-tabs">
+                        <div class="RRT__container">
+                            <div class="RRT__tabs" role="navigation" tabindex="0" >
+                                <div role="tab" class="RRT__tab RRT__tab--first RRT__tab--selected" id="tab-0" aria-selected="true" aria-expanded="true" aria-disabled="false" aria-controls="panel-0" tabindex="0">
+                                   Complains
+                                </div>
+                              
+                              
+                             
+                            </div>
+                            <div class="RRT__panel" role="tabpanel" id="panel-0" aria-labelledby="tab-0" aria-hidden="false" style="transform: scale(1);">
+                                <div class="account-settingswrapper">
+                                   <div class="resultat_file">
+									<div class="table-container">
+										<table >
+											<thead >
+												<tr class="table-row_container" >
+													<th class="id" hidden="">#</th>
+													<th >complain sender </th>
+													<th >complain object</th>
+													<th >complain text</th>
+													
+													<th >action</th>
+												</tr>
+											</thead>
+											<tbody>
+                                                {% for reclamation in reclamations %}
+                                                
+                                                
+												<tr class="table-row_container" >
+													<td class="id" hidden="">{{reclamation.rec_id}}</td>
+													<td class="name">{{reclamation.prenom}} {{reclamation.nom}}</td>
+													<td class="object">{{reclamation.object}}</td>
+													<td class="text">{{reclamation.text}}</td>
+													<td class="action">
+														<div class="dropdown">
+														<input type="submit" id="button_action" class="button button_action" value="Action" onclick="handleDropdown()">
+														<ul id="dropdown-menu_container" class="dropdown-menu" data-popper-placement="bottom-end"
+															style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 34px, 0px) ;">
+															<li><a class="dropdown-item d-flex align-items-center edit-item-btn" href="#!"
+																	onclick="reclamation_id(event);reclamation_info(event)">reply</a></li>
+															<li><a class="dropdown-item d-flex align-items-center remove-item-btn"
+																	onclick="reclamation_id(event)">Delete</a></li>
+														</ul>
+													</div></td>
+												</tr>
+                                                {% endfor %}
+										
+										
+											</tbody>
+										</table>
+                                    </div>
+                                        </div>    
+                                </div>
+                            </div>
+                         
+                            
+                    
+                    
+                    
+                            <div id="form_reply" class="none">
+                                <div class="help_container">
+                                <div class="background_term_bluer"></div>
+                                <div class="form-container-global">
+                                        <div class="container">
+                                            <div class="title">Complain Reply</div>
+                                            <button  class="delet_form_button_container"  style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;" onclick="toggleForm()">
+                                                <div class="delet_form_button">
+                                                  <span class="material-symbols-outlined">
+                                                    close
+                                                  </span>
+                                                </div>
+                                              </button>
+                                            <div class="content_form">
+                                                <form method="post">
+                                                    {% csrf_token %}
+                                                    <input type="hidden" name="form_name" value="reply">
+                                                <div class="user-details">
+                                                  <div class="input-box">
+                                                    <span class="details">Complain object</span>
+                                                    <p class="reclamation_object p"> </p>
+                                                    </div>
+                                                  <div class="input-box">
+                                                    <span class="details">Complain text</span>
+                                                    <p class="reclamation_text p"> </p>
+                                                  </div>
+                                                  <div class="input-box">
+                                                    <span class="details">answer</span>
+                                                 
+                            
+                                                    <textarea placeholder="Enter your message" rows="4" cols="50" id="message-3b9a" name="message_reply" class="" required=""></textarea>
+                                                  </div>
+                                                 
+                                                </div>
+                                                <div class="button">
+                                                    <input type="text"  name="reclamation_id_reply" placeholder="Enter your name" hidden>
+                                                    <input type="button" value="cancel Reply " onclick="toggleForm()">
+                                                  <input type="submit" value="Reply">
+                                                  
+                                                </div>
+                                              </form>
+                                            </div>
+                                          </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div id="form_delete" class="none">
+                                <div class="delet_form_container">
+                                <div class="background_term_bluer"></div>
+                                <div class="form-container-global">
+                                    <div class="container">
+                                      <div class="title">Delete Complain</div>
+                                      <button  class="delet_form_button_container"  style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;" onclick="toggleForm()">
+                                        <div class="delet_form_button">
+                                          <span class="material-symbols-outlined">
+                                            close
+                                          </span>
+                                        </div>
+                                      </button>
+                                      <div class="content_form">
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="form_name" value="delet_rec">
+                                            <div class="policy" style="margin: 2rem 10px 2rem 10px;">
+                                                <p>are you sure you want to delet this Complain from your  feild</p>
+                                                
+                                                 </div>
+                                          <div class="button">
+                                            <input type="text" name="reclamation_id_delet" id="reclamation_id_delet" hidden >
+                                            <input  value="cancel" onclick="toggleForm()">
+                                            <input type="submit" value="yes,delete it" >
+                                          </div>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+
+        
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<!---->
+            
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/directeur/Reclamation.js' %}"></script>
+
+</body>
+	</html>
+
+
+
+
+
+
+
+

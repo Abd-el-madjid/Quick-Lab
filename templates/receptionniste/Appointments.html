@@ -1,0 +1,1066 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/homedashboard.css' %}" rel="stylesheet">
+	<link href="{% static 'css/libs.css' %}" rel="stylesheet">
+    <link href="{% static 'css/form.css' %}" rel="stylesheet">
+        <link href="{% static 'css/portal.css' %}" rel="stylesheet">
+    <link href="{% static 'css/receptionniste/Appointments.css' %}" rel="stylesheet">
+    <!---->
+     <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+    <!---->
+    
+	<script  src="{% static 'js/general/notification_pannel.js' %}"></script>
+	<script  src="{% static 'js/receptionniste/Appointments.js' %}"></script>
+    <!---->
+    <script  src="{% static 'js/jquery.min.js' %}"></script>
+	<script type="text/javascript" charset="utf-8" async="" src="{% static 'js/homedashboard.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/homedashboard.js' %}"></script>
+
+    <!---->
+    <!---->
+    <script src="https://kit.fontawesome.com/4f846c2c5f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="{% static 'css/mobiscroll.javascript.min.css' %}" rel="stylesheet">
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/mobiscroll.javascript.min.js' %}"></script>
+
+
+
+    
+    <title>Document</title>
+</head>
+
+<body onload="init()">
+
+    <!---->
+
+    <div class="general-container">
+
+        <aside class="menu-panel" role="complementary">
+            <div class="hide-since-tablet" psi-proxy-user-popup="">
+                <a id="profile_head-secound" aria-label="profile menu"
+                    class="dark-link profile-link profile-menu profile-link--in-menu" role="link" tabindex="0">
+
+                    <ins class="nav-menu-icon nav-menu-icon--user">
+                        <span id="profile-circle" class=" material-symbols-outlined">
+                            account_circle
+                        </span>
+                    </ins>
+
+                    <div class="profile-link__user">{{ name }}</div>
+
+                    <!---->
+
+
+                    <ins class="profile-link__trigger">
+                        <span id="profile-arrow-2" class=" material-symbols-outlined">
+                            expand_more
+                        </span>
+                    </ins>
+                </a>
+
+
+
+                <div class="side-account-profil none">
+                    <ul class="contenait">
+                        <li>
+                            <a id="account" role="link" tabindex="0" href="{% url 'account_rec' %}">
+                                <ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+                                    {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+                                </ins>
+
+
+                                <div class="">account</div>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a id="sign_out" role="link" href="{% url 'logout' %}" tabindex="0">
+
+                                <ins class="">
+                                    <span class="material-symbols-outlined">
+                                        logout
+                                    </span>
+                                </ins>
+
+                                <div class="">sign out</div>
+
+
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="menu-panel__content">
+                <div class="menu-panel__content_header">
+                    <a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/" title="Homepage"
+                        href="{% url 'home' %}">
+                        <img alt="Logo"
+                            src="/media/image/logo sans bg.png"
+                            width="70" height="55">
+                    </a>
+                    <div>
+                        <a class="side-menu-logo-title" href="{% url 'home' %}">
+                            <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                data-animation-direction=""
+                                style="will-change: transform, opacity; animation-duration: 1000ms;">Quick </p>
+                            <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                data-lang-en="Lab" style="will-change: transform, opacity; animation-duration: 1000ms;">
+                                Lab</p>
+                        </a>
+                    </div>
+                </div>
+                <!---->
+                <p-panelmenu aria-label="Main Menu" aria-labelledby="Main Menu" role="navigation" tabindex="0" class="ng-tns-c15-13">
+                    <div class="ng-tns-c15-13 side-menu ui-panelmenu ui-widget">
+                        <!---->
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div
+                                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default ui-corner-top">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon ui-state-active"
+                                href="{% url 'homereceptionniste' %}" >
+                                    <!---->
+                                    <!---->
+                
+                                    <span class="icons material-symbols-outlined">
+                                        home
+                                    </span>
+                
+                                    <span class="ui-menuitem-text">Home</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                      
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13" 
+                            style="background-color: #46807F;border:1px solid white ;border-radius: 15px;">
+                            <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'appointment' %}" style="font-weight: 700;color: white;">
+                                    <!---->
+                                    <!---->
+                                    <span class="icons material-symbols-outlined">
+                                        calendar_month
+                                    </span>
+                                    <span class="ui-menuitem-text"> Appointments</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'results_res' %}">
+                                    <!---->
+                                    <!---->
+                                    <span class=" icons material-symbols-outlined">
+                                        assignment
+                                    </span>
+                                    <span class="ui-menuitem-text"> Results</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <!---->
+                                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'channels_receptionniste' %}">
+                                    <!---->
+                                    <!---->
+                                    <span class="icons material-symbols-outlined">
+                                        chat
+                                    </span>
+                                    <span class="ui-menuitem-text">messages</span>
+                                </a>
+                            </div>
+                            <!---->
+                        </div>
+                        <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                            <div class="ng-tns-c15-13 ui-menu-separator ui-widget ui-panelmenu-header ui-state-default">
+                                <!---->
+                                <a class="ng-tns-c15-13" href="#">
+                                    <!---->
+                                    <!---->
+                                    <span class="ui-menuitem-text"></span>
+                                </a>
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+                
+                    </div>
+                </p-panelmenu>
+            </div>
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <div class="flex-push"></div> <!----><!----><!----><!----><!----><!----><!---->
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <ul class="menu-panel__additional-info additional-info" role="contentinfo">
+                <div>
+                    <li class="additional-info__disc"></li>
+                    <li class="additional-info__item">
+                        <a psimsg="content.terms.menuTitle" rel="noopener" target="_blank" href="">Terms of Use</a>
+                    </li>
+                    <li class="additional-info__disc"></li>
+                    <li class="additional-info__item">
+                        <a psimsg="content.privacy.menuTitle" rel="noopener" target="_blank" href="">Privacy Policy</a>
+                    </li>
+                </div>
+             
+            </ul>
+        </aside>
+        <div psi-menu-overlay="">
+            <div class="menu-panel-overlay">
+
+            </div>
+        </div>
+
+        <section class="content-panel" role="main">
+
+            <header class="header hide-on-print">
+                <div class="header-wrapper">
+                    <div class="header__panel">
+                        <ul class="header-menu-bar">
+
+                            <li class="header-menu-bar__item hide-since-desktop hide-on-print" psi-menu-trigger="">
+                                <a id="menu-link_button" class="profile-link hamburger-link hide-since-desktop">
+
+                                    <ins class="nav-menu-icon nav-menu-icon--hamburger">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+                                            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                            class="icon-svg icon-svg__size--24 " xml:space="preserve">
+                                            <g>
+                                                <path
+                                                    d="M85 341l342 0c11,0 21,10 21,22l0 0c0,11 -10,21 -21,21l-342 0c-11,0 -21,-10 -21,-21l0 0c0,-12 10,-22 21,-22z">
+                                                </path>
+                                                <path
+                                                    d="M85 235l342 0c11,0 21,9 21,21l0 0c0,12 -10,21 -21,21l-342 0c-11,0 -21,-9 -21,-21l0 0c0,-12 10,-21 21,-21z">
+                                                </path>
+                                                <path
+                                                    d="M85 128l342 0c11,0 21,10 21,21l0 0c0,12 -10,22 -21,22l-342 0c-11,0 -21,-10 -21,-22l0 0c0,-11 10,-21 21,-21z">
+                                                </path>
+                                            </g>
+                                        </svg>
+                                    </ins>
+
+                                    <h6>Menu</h6>
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <!---->
+                            </li>
+
+                            <!---->
+                            <p-tabmenu>
+                                <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+                                    <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
+                                        role="tablist">
+                                        <!---->
+                                    </ul>
+                                </div>
+                            </p-tabmenu>
+                        </ul>
+                    </div>
+                    <div class="header__panel header__panel--spacer hide-on-print"></div>
+                    <div class="header__panel hide-on-print">
+                        <ul class="header-menu-bar header-menu-bar--main">
+                          
+                            <li id="profile-info-1"
+                                class="header-menu-bar__item header-menu-bar__item--main hide-up-to-tablet"
+                                psi-proxy-user-popup="" psieventtracker="">
+                                <a id="profile_head-main" aria-label="profile menu"
+                                    class="dark-link profile-link profile-menu" role="link" tabindex="0">
+
+                                    <ins class="nav-menu-icon nav-menu-icon--user">
+                                        <span id="profile-circle" class=" material-symbols-outlined">
+                                            account_circle
+                                        </span>
+                                    </ins>
+
+                                    <div class="profile-link__user">{{ name }}</div>
+
+                                    <!---->
+
+                                    <ins class="profile-link__trigger">
+                                        <span id="profile-arrow" class=" material-symbols-outlined">
+                                            expand_more
+                                        </span>
+                                    </ins>
+
+                                </a>
+
+                                <p-overlaypanel>
+
+                                </p-overlaypanel>
+
+                                <!---->
+                            </li>
+                            <!---->
+                          <li id="notification"
+                                                            class="header-menu-bar__item header-menu-bar__item--main header-menu-bar__item--last"
+                                                            psi-alert-popup="" psieventtracker="">
+                                        
+                                        
+                                                            <span class="notifications-overlay-arrow__hidden"></span>
+                                                            <a>
+                                                                <ins class="nav-menu-icon">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        version="1.1" x="0px" y="0px" viewBox="0 0 512 512"
+                                                                        style="enable-background:new 0 0 512 512;"
+                                                                        class="icon-svg icon-svg__size--24 icon-svg__color--darker-blue" xml:space="preserve">
+                                                                        <path
+                                                                            d="M483,433l-38-86V181C445,81,361,0,256,0C152,0,67,81,67,181v166l-38,85c-2,4-2,9,1,12c2,4,6,6,11,6h131 c7,36,40,62,78,62s70-26,77-62h144c5,0,9-2,11-6C485,441,485,436,483,433z M250,487c-24,0-45-15-51-37h101C294,472,273,487,250,487z ">
+                                                                        </path>
+                                                                    </svg>
+                                                                </ins>
+                                                                <!---->
+                                                                <span class="notification-bubble" id="notification-bubble">
+                                                                    0
+                                                                </span>
+                                                            </a>
+                                                        </li>
+                        </ul>
+                    </div>
+                </div>
+
+             <div id="notification_panel"
+                                                class="  notifications-overlay false ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow"
+                                                style=" z-index: 1007; visibility: visible; top: 180.719px; left: 703.333px; opacity: 1.048;    transform: scale(0)">
+                                                <div class="ui-overlaypanel-content">
+                                        
+                                                    <h6 class="linked-heading indent-bottom">
+                                                        <span psimsg="alert.title">Recent Notifications</span>
+                                                        <a class="text-style--bold" psimsg="alert.showAll" href="{% url 'notification_receptioniste' %}">show All</a>
+                                                      
+                                        
+                                                    </h6>
+                                                    <ul style="position: relative;" id="notification_dashboard" data-patient="0nlbop5f1e">
+                                                        <!---->
+                                        
+                                        
+                                                    </ul>
+                                        
+                                        
+                                                </div>
+                                                <!---->
+                                            </div>
+
+                <div id="user-menu" class="user-menu">
+
+                    <!---->
+                    <div class="">
+                        <div class="profile-pane">
+                            <ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+                                {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+                            </ins>
+
+                            <div class="profile-pane__data">
+                                <div class="profile-pane__user">{{ name }}</div>
+
+                                <!----><a class="link--blue text-style--bold proxy-user-account-link"
+                                    psimsg="proxyUser.accountLink" role="link" tabindex="0"
+                                    aria-label="abd el madjid kahoul account" href="{% url 'account_rec' %}">Account</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---->
+
+                    <!---->
+                    <p-accordion styleclass="ui-accordion-user-menu" class="">
+                        <div class="ui-accordion-user-menu ui-accordion ui-widget ui-helper-reset">
+
+
+                            <!---->
+
+                            <!---->
+
+                            <!---->
+
+
+                        </div>
+                    </p-accordion>
+
+                    <div class="user-menu__item">
+                        <a class="user-menu__control" psimsg="proxyUser.logout" tabindex="0" href="{% url 'logout' %}">Sign Out</a>
+                    </div>
+
+                </div>
+            </header>
+            <!---->
+            <!---->
+            <!---->
+            <!---->
+            <div id="main_element" class="content content--dashboard">
+                <!---->
+                <div class="content__wrapper">
+                    <!---->
+                    <!---->
+                    <div id="rdvs_container" class="rdvs_container ">
+
+<div class="app-card shadow-sm mb-4 border-left-decoration">
+						<div class="inner">
+							<div class="app-card-body p-4">
+								
+									<div class="col-auto">
+										<div class="page-utilities">
+										   <div class=" flex-sm-nowrap flex-sm-row d-sm-flex row g-2 justify-content-start justify-content-md-end align-items-center" style="
+    width: 100%;
+">
+											   <div class="col-auto justify-content-md-between" style="
+    display: flex;
+    width: 100%;
+">
+                                                    <div class="col-auto align-items-md-center  justify-content-md-center  d-md-flex" style="min-width: 15%;">
+                                                    <div class="date_search_bar justify-content-md-between d-md-flex align-items-md-center">
+                                                        <input id="date_search_bar_input" name="date_search_bar_input" type="date">
+                                                        <input type="submit" name="" id="date_search_bar_button" onclick="send_date()" hidden>
+                                                    
+                                                    
+                                                        <span class="material-symbols-outlined " style="cursor: pointer;"  onclick="send_date()">
+                                                            search
+                                                        </span>
+                                                    </div>
+                                                       
+                                                    </div>
+                                                    <div class="col-auto align-items-md-center  justify-content-md-center  d-md-flex" style="min-width: 15%;">
+												   
+                                                        <a href="{% url 'addappointment' %}"> <button id="add_analyse" type="submit" class="btn app-btn-secondary">add appointment</button></a>
+                                                              
+                                                     </div>
+												   
+											   </div><!--//col-->
+											 
+											  
+										   </div><!--//row-->
+									   </div><!--//table-utilities-->
+								   </div>
+								
+		
+							</div><!--//app-card-body-->
+							
+						</div><!--//inner-->
+					</div>
+
+
+
+
+
+                        <div class="rdvs_main">
+                           
+                          
+                            
+                           
+                            <div class="body_rdvs">
+                                
+
+                            {% block content %}
+                                
+                                    {% if appointment_data %}
+                                        {% for appointment in appointment_data %}
+                                            <div class="rendez-vous_container" id="rendez-vous_container">
+                                                <div id="rendez-vous" class="rendez-vous">
+                                                    <div class="rendez-vous_head">
+                                                        <div class="rendez-vous_head_date">
+                                                            <span class="material-symbols-outlined">
+                                                                date_range
+                                                            </span>
+                                                            <span>{{ appointment.date|date:"l" }}</span>
+                                                            <span class="rdv_date">{{ appointment.date }}</span>
+                                                        </div>
+                                                        <div class="rendez-vous_head_time">
+                                                            <span class="material-symbols-outlined">
+                                                                schedule
+                                                            </span>
+                                                            <span>{{ appointment.heur|time:"H:i" }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="rendez-vous_body">
+                                                        <div id="rdv_info_general" class="rdv_info_general">
+                                                            <div class="rdv_info_general-profile">
+                                                                <ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+                                                                    {{ appointment.patient_prenom|first }}{{ appointment.patient_nom|first }}
+                                                                </ins>
+                                                            </div>
+                                                            <div class="rdv_info_general_labo">
+                                                                <p><strong>patient national ID number :</strong> {{ appointment.id_patinet }}</p>
+                                                                <p><strong>patient name:</strong> {{ appointment.patient_name }}</p>
+                                                                <p><strong>patient age:</strong> {{ appointment.age }}</p>
+                                                                <p><strong>purpose:</strong> {{ appointment.purpose }}</p>
+                                                            </div>
+                                                            <div class="rdv_info_general_status">
+                                                                <span class="material-symbols-outlined">
+                                                                    restart_alt
+                                                                </span>
+                                                                <select name="status" id="status-select-{{ appointment.id }}" onchange="submitForm({{ appointment.id }}, this.value)">
+                                                                    <option value="delay" {% if appointment.etat == 'delay' %}selected{% endif %}>delay </option>
+                                                                    <option value="urgent" {% if appointment.etat == 'urgent' %}selected{% endif %}>urgent</option>
+                                                                    <option value="normal" {% if appointment.etat == 'normal' %}selected{% endif %}>normal</option>
+                                                                </select>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% else %}
+                                        <p>No appointments found.</p>
+                                    {% endif %}
+                                </div>
+                            {% endblock %}
+
+                                
+
+                            </div>
+
+                        </div>
+                        
+                    </div>
+<div id="empty_resultat_container" class="empty_resultat_container none">
+                            <div class="empty_resultat">
+                                <div class="empty_resultat_img">
+                                    <img src="https://lh3.googleusercontent.com/qB2SizgrtgzQL5Wa6K71-PsV3MZRzj-LlWAydhysxCjL4hSA6iK3VQr0wLHtOaiRirGe6RnmDBDZNItqkPlrRa5VMpZ56C8MUgSh8bdyeE_j_yZT2x9d3O-tkQVas3vpbGiWEIpaOg=w2400"
+                                        alt="" srcset="">
+                                </div>
+                                <div class="empty_resultat_text">
+                                    <p><strong>Gérez vos documents médicaux</strong></p>
+                                    <p>Aucun resultat à trouve prendre rendez-vous</p>
+                                </div>
+                            </div>
+                        </div>
+                    <div id="rdv_detaille_container " class="rdv_detaille_container none">
+
+                        <div class="rdv_detaille">
+                            <div class="etape_precedant">
+                                <a>
+                                    <span class="material-symbols-outlined">
+                                        arrow_back
+                                    </span>
+                                    <h4>previous step</h4>
+                                </a>
+                            </div>
+                            <div class="rendez-vous">
+                                <div class="rendez-vous_head">
+                                    <div class="rendez-vous_head_date">
+                                        <span class="material-symbols-outlined">
+                                            date_range
+                                        </span>
+                                        <span> sunday 28 mars </span>
+                                    </div>
+                                    <div class="rendez-vous_head_time">
+                                        <span class="material-symbols-outlined">
+                                            schedule
+                                        </span>
+                                        <span>09:10</span>
+                                    </div>
+                                    <div class="rendez-vous_head_status">
+                                        <span class="material-symbols-outlined">
+                                            restart_alt
+                                        </span>
+                                        <p> status</p>
+                                    </div>
+                                    <div class="rendez-vous_head_code_QR" onclick="show_QR()">
+                                        <span class="material-symbols-outlined">
+                                            qr_code_scanner
+                                        </span>
+                                        <p> carte</p>
+                                    </div>
+                                </div>
+                                <div class="rendez-vous_body">
+                                    <div id="rdv_info_general" class=" rdv_info_general">
+
+                                        <div class="rdv_info_general-profile rdv_info_general-profile2 ">
+                                            <ins class="initials initials--big"
+                                                style="background-color: rgb(15, 46, 76);">
+                                                ae
+                                            </ins>
+                                        </div>
+                                        <div class="rdv_info_general_labo">
+                                            <p><strong>laboratory ibn sina </strong></p>
+                                            <div class="rdv_info_general_labo_type">
+                                                <span class="material-symbols-outlined">
+                                                    home_health
+                                                </span>
+                                                <p><small>laboratory</small></p>
+                                            </div>
+                                            <div class="rdv_info_general_labo_lieu">
+                                                <span class="material-symbols-outlined">
+                                                    where_to_vote
+                                                </span>
+                                                <p><small>13 Rue Alfred Dubois, 91460 Marcoussis</small></p>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="line_vertical2"></div>
+                                    <div class="rdv_mdf_sp">
+                                        <div id="delet_button_rdv" class="delet_button_rdv"
+                                            onclick="delet_button_rdv()">
+                                            <span class="neaon material-symbols-outlined">
+                                                event_busy
+                                            </span>
+                                            <p class="neaon">annulue rendez-vous</p>
+                                        </div>
+                                        <div id="modifier_button_rdv" class="modifier_button_rdv"
+                                            onclick="modifier_button_rdv()">
+                                            <span class=" neaon material-symbols-outlined">
+                                                edit_calendar
+                                            </span>
+                                            <p class="neaon">edit rendez-vous</p>
+                                        </div>
+                                    </div>
+                                    <div class="line_vertical2"></div>
+                                    <div class="info_patient_rdv">
+                                        <div class="nom">
+                                            <span class="material-symbols-outlined">
+                                                person
+                                            </span>
+                                            <div class="nom_detaille">
+                                                <p><strong>le nom de la patient</strong></p>
+                                                <p><small>kahoul abd el madjid</small></p>
+                                            </div>
+                                        </div>
+                                        <div class="phone">
+                                            <span class="material-symbols-outlined">
+                                                call
+                                            </span>
+                                            <div class="phone_detaille">
+                                                <p><strong>phone</strong></p>
+                                                <p><small>06-58-63-99-17</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="line_vertical2"></div>
+                                    <div class="motif_rdv">
+                                        <p> <strong>Motif de consultation :</strong></p>
+                                        <ul>
+                                            <li>
+                                                <p> <small>Prise de sang adulte</small></p>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="line_vertical2"></div>
+                                    <div class="analyse_choisis">
+                                        <p><strong>analyse choisis</strong> </p>
+                                        <ul>
+                                            <li>analyse name</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="line_vertical2"></div>
+                                    <div class="cost_rdv">
+
+                                        <div class="cost_detaile_rdv">
+                                            <div class="cost_detaile_rdv_head">
+                                                <p class="neaon">cost detaile :</p>
+                                                <p>prix</p>
+                                            </div>
+                                            <div class="cost_detaile_rdv_body">
+                                                <ul>
+                                                    <li>
+                                                        <div class="type_analyse">
+                                                            <p>analyse name</p>
+                                                        </div>
+                                                        <div class="type_analyse_prix">
+                                                            <p>100</p>
+                                                            <span class="material-symbols-outlined">
+                                                                attach_money
+                                                            </span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="cost_total">
+                                            <div class="cost_total_titre">
+                                                <span class="neaon material-symbols-outlined">
+                                                    calculate
+                                                </span>
+                                                <p class="neaon">total cost :</p>
+                                            </div>
+                                            <div class="cost_total_prix">
+                                                <p>100</p>
+                                                <span class="material-symbols-outlined">
+                                                    attach_money
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="line_vertical2"></div>
+                                    <div class="methode_payment">
+                                        <div class="methode_payment_titre">
+                                            <span class="neaon material-symbols-outlined">
+                                                credit_card
+                                            </span>
+                                            <p class="neaon">methode de payment</p>
+                                        </div>
+                                        <div class="methode_payment_methode">
+                                            <p class="neaon">
+                                                carte debit
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="line_vertical2"></div>
+                                    <div class="conseign" onclick="show_conseign()">
+                                        <div class="icon_1">
+                                            <span class=" neaon material-symbols-outlined">
+                                                error
+                                            </span>
+                                        </div>
+                                        <div class="conseign_titre">
+                                            <p class="neaon">conseign et information</p>
+                                        </div>
+                                        <div class="conseign_flesh">
+                                            <span class="neaon material-symbols-outlined">
+                                                arrow_forward_ios
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div id="modifie_rdv_form" class="none">
+                        <div class="modifie_form_container">
+                            <div class="background_term_bluer"></div>
+                            <div class="form-container-global">
+                                <div class="container">
+                                    <div class="title">modifier rdv</div>
+                                    <button class="delet_form_button_container"
+                                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;"
+                                        onclick="modifier_button_rdv()">
+                                        <div class="delet_form_button">
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+                                        </div>
+                                    </button>
+                                    <div class="content_form">
+                                        <form action="#">
+                                            <div class="user-details" onclick="hideDropdown()">
+                                                <div class="input-box">
+                                                    <span class="details">Full Name</span>
+                                                    <input type="text" placeholder="Enter your name" required>
+                                                </div>
+                                                <div class="input-box">
+                                                    <span class="details">Date</span>
+                                                    <input type="date" required>
+                                                </div>
+                                                <div class="input-box" onclick="handleDropdown()">
+                                                    <span class="details">Date & Time</span>
+                                                    <p class="p p_date_time"> hahah</p>
+
+
+                                                    <div class="dropdown">
+                                                        <input type="time" hidden id="rdv_time">
+                                                        <input type="date" hidden id="rdv_date">
+
+                                                        <ul id="dropdown-menu_container" class="dropdown-menu "
+                                                            data-popper-placement="bottom-end"
+                                                            style="position: absolute;
+                                                                        							inset: 0px 0px auto auto;
+                                                                        							margin: -30px 0 0 0;
+                                                                        							transform: translate3d(0px, 34px, 0px);">
+                                                            <li>
+                                                                <div class="carte_laboratiore_calendre">
+                                                                    <div class="calendre_availabile">
+                                                                        <!---->
+                                                                        <!---->
+                                                                        <div class="arrow arrow-left">
+                                                                            <div id="prev-day">
+                                                                                <span class="material-symbols-outlined">
+                                                                                    chevron_left
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!---->
+
+                                                                        <div class="calendar-days" id="calendar-days"
+                                                                            data-appointmenthour="6"
+                                                                            data-workdays="Monday>08:00>15:00$Tuesday>09:00>17:00$Wednesday>10:00>18:00$Thursday>08:00>15:00$Saturday>10:00>14:00$Sunday>>"
+                                                                            data-appointment="2023-05-03>07:30$2023-05-03>08:30$2023-05-05>14:30$2023-05-05>10:00">
+                                                                        </div>
+
+                                                                        <!---->
+
+
+
+                                                                        <div class="arrow arrow-right">
+                                                                            <div id="next-day">
+                                                                                <span class="material-symbols-outlined">
+                                                                                    chevron_right
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!---->
+                                                                        <!---->
+                                                                    </div>
+                                                                    <!---->
+                                                                    <!---->
+                                                                    <div class="line_vertical"></div>
+                                                                    <!---->
+                                                                    <!---->
+                                                                    <div class="horaires_buttons">
+                                                                        <!---->
+                                                                        <div id="Morning"
+                                                                            class="Morning horaires_button selected">
+                                                                            <a>
+                                                                                <span class="material-symbols-outlined">
+                                                                                    brightness_5
+                                                                                </span>
+                                                                                <p>Morning (AM)</p>
+                                                                            </a>
+                                                                        </div>
+                                                                        <!---->
+                                                                        <!---->
+                                                                        <div id="Afternoon"
+                                                                            class="Afternoon horaires_button">
+                                                                            <a>
+                                                                                <span class="material-symbols-outlined">
+                                                                                    dark_mode
+                                                                                </span>
+                                                                                <p>Afternoon (PM)</p>
+                                                                            </a>
+                                                                        </div>
+                                                                        <!---->
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                        </ul>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="input-box">
+                                                    <span class="details">Type of Appointment</span>
+                                                    <div>
+                                                        <label>
+                                                            <input mbsc-input id="demo-multiple-select-input"
+                                                                placeholder="Please select..." data-dropdown="true"
+                                                                data-input-style="outline" data-label-style="stacked"
+                                                                data-tags="true" />
+                                                        </label>
+                                                        <select id="demo-multiple-select" multiple>
+                                                            <option value="1">Blood Test</option>
+                                                            <option value="2">Urine Test</option>
+                                                            <option value="3">MRI Scan</option>
+                                                            <option value="4">X-ray</option>
+                                                            <option value="5">CT Scan</option>
+                                                            <option value="6">Ultrasound</option>
+                                                            <option value="7">Endoscopy</option>
+                                                            <option value="8">Colonoscopy</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="input-box">
+                                                    <span class="details">Type of Appointment</span>
+                                                    <select required>
+                                                        <option value="">Select an option</option>
+                                                        <option value="routine">Routine checkup</option>
+                                                        <option value="followup">Follow-up visit</option>
+                                                        <option value="diagnosis">Diagnosis appointment</option>
+                                                        <option value="treatment">Treatment session</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="button">
+                                                <input type="submit" value="change Appointment">
+                                                <input type="button" value="cancel change "
+                                                    onclick="modifier_button_rdv()">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="delet_rdv_form" class="none">
+                        <div class="delet_form_container">
+                            <div class="background_term_bluer"></div>
+                            <div class="form-container-global">
+                                <div class="container">
+                                    <div class="title">Cancel Appointment</div>
+                                    <button class="delet_form_button_container"
+                                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;"
+                                        onclick="delet_button_rdv()">
+                                        <div class="delet_form_button">
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+                                        </div>
+                                    </button>
+                                    <div class="content_form">
+                                        <form action="#">
+
+                                            <div class="policy">
+                                                <p>If you cancel your appointment:</p>
+                                                <ul>
+                                                    <li>You will receive a refund of 85% of the total cost paid.</li>
+                                                    <li>The remaining 15% will be retained as a cancellation fee.</li>
+                                                </ul>
+                                                <p>Please note that if you cancel your appointment, you will not receive
+                                                    a full refund. You will only receive 85% of the total cost paid. The
+                                                    remaining 15% will be retained as a cancellation fee.</p>
+                                            </div>
+                                            <div class="button">
+                                                <input type="submit" value="Cancel Appointment">
+                                                <input type="cancel" value="Go back to Appointment"
+                                                    onclick="delet_button_rdv()">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="QR_code" class="none">
+                        <div class="delet_form_container">
+                            <div class="background_term_bluer"></div>
+                            <div class="form-container-global">
+                                <div class="container">
+
+                                    <button class="delet_form_button_container"
+                                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;"
+                                        onclick="show_QR()">
+                                        <div class="delet_form_button">
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+                                        </div>
+                                    </button>
+                                    <div class="content_form">
+                                        <img class="qr_img"
+                                            src="https://lh3.googleusercontent.com/Qr8Qm_a8vnLQfQPAfMHxbP7wcwShVKXNLOY8G7TZtROkIghqy-hadIxQRcZjyNbBCeqG4HVJiUyUcRhfxqFwIzOSiTtFtDzgSJU3q8ZxrM54k7ykJo8TDCy0XZaT-orAuNl2U_Zoqw=w2400"
+                                            alt="" width="200" height="150">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="conseign" class="none">
+                        <div class="delet_form_container">
+                            <div class="background_term_bluer"></div>
+                            <div class="form-container-global">
+                                <div class="container">
+                                    <div class="title">conseign et information</div>
+                                    <button class="delet_form_button_container"
+                                        style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;"
+                                        onclick="show_conseign()">
+                                        <div class="delet_form_button">
+                                            <span class="material-symbols-outlined">
+                                                close
+                                            </span>
+                                        </div>
+                                    </button>
+                                    <div class="terms_contains" style="padding-top: 10px;">
+                                        <p>Pour la réalisation des cartes de groupe sanguin, vous devez
+                                            présenter un document d'identité officiel avec une photographie.
+                                        </p>
+                                        <ul style="list-style: none;margin: 0 0px 0px 20px;">
+                                            <li style=" padding: 5px;">réalisation</li>
+                                            <li style=" padding: 5px;">réalisation</li>
+                                            <li style=" padding: 5px;">réalisation</li>
+                                            <li style=" padding: 5px;">réalisation</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form method="POST" hidden>
+                    {% csrf_token %}
+                    <!-- form fields go here -->
+                  </form>
+            </div>
+            <script>mobiscroll.setOptions({
+                locale: mobiscroll.localeAr,
+                theme: 'ios',
+                themeVariant: 'light'
+            });
+    
+            mobiscroll.select('#demo-multiple-select', {
+                inputElement: document.getElementById('demo-multiple-select-input')
+            });
+            
+            function submitForm(appointment_id, status) {
+                var form = document.createElement('form');
+                form.method = 'POST';
+              
+                var csrfmiddlewaretoken = document.getElementsByName('csrfmiddlewaretoken')[0].value;
+                var input_csrfmiddlewaretoken = document.createElement('input');
+                input_csrfmiddlewaretoken.type = 'hidden';
+                input_csrfmiddlewaretoken.name = 'csrfmiddlewaretoken';
+                input_csrfmiddlewaretoken.value = csrfmiddlewaretoken;
+              
+                var input_appointment_id = document.createElement('input');
+                input_appointment_id.type = 'hidden';
+                input_appointment_id.name = 'appointment_id';
+                input_appointment_id.value = appointment_id;
+              
+                var input_status = document.createElement('input');
+                input_status.type = 'hidden';
+                input_status.name = 'status';
+                input_status.value = status;
+              
+                form.appendChild(input_csrfmiddlewaretoken);
+                form.appendChild(input_appointment_id);
+                form.appendChild(input_status);
+                document.body.appendChild(form);
+              
+                form.submit();
+              }
+              
+              
+                
+        </script>
+
+</body>
+
+</html>

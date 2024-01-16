@@ -1,0 +1,87 @@
+  table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+
+  th,
+  td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+  }
+   thead {
+      background: #46807F;
+      color: white;
+   }
+
+  .prediction {
+      display: none;
+  }
+tbody tr:hover {
+    background-color: #eb477667;
+    color: white;
+}
+  @media screen and (max-width: 600px) {
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+          display: block;
+      }
+
+      thead tr {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+      }
+
+      td {
+          border: none;
+          position: relative;
+          padding-left: 50%;
+      }
+
+      td:before {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          width: 45%;
+          padding-right: 10px;
+          white-space: nowrap;
+      }
+
+      td:nth-of-type(1):before {
+          content: "Test Name";
+      }
+
+      td:nth-of-type(2):before {
+          content: "In Range";
+      }
+
+      td:nth-of-type(3):before {
+          content: "Out Range";
+      }
+
+      td:nth-of-type(4):before {
+          content: "Reference Range";
+      }
+
+      .prediction {
+          display: block;
+      }
+
+      .prediction td:nth-of-type(1) {
+          display: none;
+      }
+
+          tfoot tr     td:nth-of-type(1):before {
+              content: " ";
+          }
+                   tfoot tr td {
+                      padding-left: 5px;
+                   }
+  }
+

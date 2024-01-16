@@ -1,0 +1,680 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .invoice_pages {
+            margin: 0px auto;
+        }
+        
+        .invoice_page {
+            height: 297mm;
+            -moz-box-shadow: 3px 3px 3px #cccccc;
+            /* -webkit-box-shadow: 3px 3px 3px #cccccc; */
+            /* box-shadow: 5px 5px 5px #cccccc; */
+            /* border: 1px solid black; */
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+        
+        .invoice_pages {
+            font-family: 'open_sansregular';
+            width: 210mm;
+            color: black;
+            -webkit-font-smoothing: antialiased;
+            font-size: 14px;
+            font-weight: normal;
+            position: relative;
+        }
+        
+        .invoice_pages .state {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 1000;
+        }
+        
+        .invoice_pages strong {
+            font-family: 'open_sansregular';
+            font-weight: 600;
+        }
+        
+        .invoice_pages p {
+            margin-bottom: 10px;
+            margin-top: 0px;
+            line-height: 26px;
+        }
+        
+        .invoice_pages .invoice_number p {
+            margin-bottom: 0px;
+            margin-top: 0px;
+            line-height: 20px;
+        }
+        
+        .invoice_pages ul li,
+        .invoice_pages ol li {
+            line-height: 1.42857;
+        }
+        
+        .invoice_pages hr {
+            display: none;
+        }
+        
+        .invoice_pages .text-right {
+            text-align: right !important;
+        }
+        
+        .invoice_pages .invoice_head {
+            font-size: 1em;
+            position: relative;
+            height: 390px;
+            margin-bottom: 50px;
+        }
+        
+        .invoice_pages .invoice_head .to_address {
+            white-space: nowrap;
+            position: absolute;
+            height: 150px;
+            top: 45mm;
+            left: 15mm;
+        }
+        
+        .invoice_pages .invoice_head .to_address ul li,
+        .invoice_pages .invoice_head .to_address p {
+            font-size: 1.21em;
+        }
+        
+        .invoice_pages .invoice_head .to_address p {
+            line-height: 1.45em;
+        }
+        
+        .invoice_pages .invoice_head .from_address {
+            white-space: nowrap;
+            text-align: right;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        
+        .invoice_pages .invoice_head .from_address p {
+            line-height: 1.36em;
+        }
+        
+        .invoice_pages .invoice_head.to_address_right_logo .from_address,
+        .invoice_pages .invoice_head.to_address_right_no_logo .from_address {
+            top: 130px;
+            right: auto;
+            left: 0px;
+            text-align: left;
+        }
+        
+        .invoice_pages .invoice_head.to_address_right_logo .to_address,
+        .invoice_pages .invoice_head.to_address_right_no_logo .to_address {
+            right: 130px;
+            left: auto;
+            text-align: left;
+        }
+        
+        .invoice_pages .invoice_head.to_address_right_no_logo .from_address {
+            top: 0px;
+        }
+        
+        .invoice_pages .invoice_head .from_address ul,
+        .invoice_pages .invoice_head .to_address ul {
+            padding: 0px;
+            margin: 0px;
+            list-style-type: none;
+        }
+        
+        .invoice_pages .invoice_head .invoice_number {
+            position: absolute;
+            left: 0px;
+            bottom: 10px;
+            /* white-space: nowrap; */
+        }
+        
+        .invoice_pages .invoice_head .invoice_number ul {
+            padding: 0px;
+            margin: 0px;
+            list-style-type: none;
+        }
+        
+        .invoice_pages .invoice_head .invoice_number ul li {
+            font-size: 1em;
+            /* font-weight: 600; */
+            list-style-type: none;
+        }
+        
+        .invoice_pages .invoice_head .invoice_number ul li .concept {
+            color: #999;
+        }
+        
+        .invoice_pages .invoice_head .title_description {
+            position: absolute;
+            bottom: 0px;
+            height: 15px;
+            font-size: 1em;
+            margin-top: 5px;
+            font-weight: normal;
+            width: 100%;
+        }
+        
+        .invoice_pages .invoice_head .invoice_date {
+            position: absolute;
+            bottom: -12px;
+            right: 80px;
+            text-align: left;
+        }
+        
+        .payment_date {
+            position: absolute;
+            bottom: -20px;
+            left: 0px;
+            text-align: left;
+        }
+        
+        .invoice_pages .invoice_head .invoice_date ul {
+            padding: 0px;
+            margin: 0px;
+            list-style-type: none;
+        }
+        
+        .invoice_pages .invoice_head .invoice_date ul li {
+            text-align: right;
+        }
+        
+        .invoice_pages .invoice_head .invoice_date p {
+            line-height: 24px;
+            margin-bottom: 0px;
+        }
+        
+        .payment_date p {
+            line-height: 1.2em;
+            margin-bottom: 0px;
+        }
+        
+        .invoice_pages span.currency {
+            white-space: nowrap;
+        }
+        
+        .invoice_pages .introduction-divider {
+            margin-bottom: 30px;
+        }
+        
+        .invoice_pages .introduction-divider.without-description {
+            margin-top: -50px;
+        }
+        
+        .invoice_pages .introduction-divider.with-description {
+            margin-top: -30px;
+        }
+        
+        .invoice_pages table.lines {
+            position: relative;
+            z-index: 10;
+            margin-top: 20px;
+            cell-spacing: 0;
+            cell-padding: 0;
+            border-spacing: 0;
+            width: 100%;
+        }
+        
+        .invoice_pages table.lines th,
+        .invoice_pages table.lines td {
+            font-size: 1em;
+            color: black;
+            text-align: left;
+        }
+        
+        .invoice_pages table.lines tr:not(.invoice_line_with_extended_description) {
+            height: 2.85em;
+        }
+        
+        .invoice_pages table.lines tr.header th {
+            border-bottom: 1px solid black;
+            font-weight: normal;
+        }
+        
+        .invoice_pages table.lines tr.header th.amt_orders {
+            width: 50px;
+        }
+        
+        .invoice_pages table.lines tr.header th.product_code {
+            width: 50px;
+        }
+        
+        .invoice_pages table.lines tr.header th.amt {
+            width: 120px;
+        }
+        
+        .invoice_pages table.lines tr.header th.vat {
+            width: 120px;
+        }
+        
+        .invoice_pages table.lines tr.header th.total {
+            width: 90px;
+        }
+        
+        .invoice_pages table.lines tr.subtotal td {
+            border-top: 1px solid black;
+        }
+        
+        .invoice_pages table.lines tr.total td {
+            border-top: 1px solid black;
+            font-weight: 600;
+            padding-left: 3px;
+        }
+        
+        .invoice_pages table.lines tr.invoice_line td {
+            vertical-align: top;
+            padding-top: 10px;
+        }
+        
+        .invoice_pages table.lines tr.invoice_line td.product_code {
+            padding-top: 13px;
+            font-size: 10px;
+            display: inline-block;
+            margin-right: 10px;
+            min-width: 60px;
+        }
+        
+        .invoice_pages table.lines tr.invoice_line_extended_description {
+            height: auto !important;
+        }
+        
+        .invoice_pages table.lines tr.invoice_line_extended_description p {
+            line-height: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .invoice_pages table.lines tr.invoice_line_extended_description .extended_description {
+            font-size: 0.87em;
+        }
+        
+        .invoice_pages table.lines.compact tr.header th.total,
+        .invoice_pages table.lines.compact tr.header th.price_per_unit,
+        .invoice_pages table.lines.compact tr.header th.vat,
+        .invoice_pages table.lines.compact tr.header th.date {
+            width: 90px;
+        }
+        
+        .invoice_pages table.lines.compact tr.invoice_line {
+            height: 20px;
+        }
+        
+        .invoice_pages table.lines.compact tr.invoice_line td {
+            padding-top: 5px;
+        }
+        
+        .invoice_pages table.lines.compact tr.invoice_line:not(.invoice_line_with_extended_description) td {
+            padding-bottom: 5px;
+        }
+        
+        .invoice_pages table.lines.compact tr {
+            height: 30px;
+        }
+        
+        .invoice_pages .due_date {
+            margin-top: 3.57em;
+            font-size: 1em;
+            position: relative;
+        }
+        
+        .invoice_pages .iban {
+            white-space: nowrap;
+        }
+        
+        .invoice_pages .clear {
+            clear: both;
+            margin-bottom: 10px;
+        }
+        
+        .invoice_pages .quotation_acceptance_customer {
+            float: right;
+        }
+        
+        .invoice_pages .quotation_acceptance_owner {
+            float: left;
+        }
+        
+        .invoice_pages .quotation_acceptance_customer,
+        .invoice_pages .quotation_acceptance_owner {
+            font-size: 1em;
+            margin-top: 50px;
+        }
+        
+        .invoice_pages .quotation_acceptance_customer .acceptance_line,
+        .invoice_pages .quotation_acceptance_owner .acceptance_line {
+            text-align: left;
+            clear: both;
+            height: 30px;
+        }
+        
+        .invoice_pages .quotation_acceptance_customer .acceptance_line .field,
+        .invoice_pages .quotation_acceptance_owner .acceptance_line .field {
+            font-weight: unset;
+            vertical-align: top;
+            width: 100px;
+            padding-top: 9px;
+        }
+        
+        .invoice_pages .quotation_acceptance_customer .acceptance_line .input_line,
+        .invoice_pages .quotation_acceptance_owner .acceptance_line .input_line {
+            padding-top: 8px;
+            width: 200px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .invoice_pages .currency {
+            white-space: nowrap;
+        }
+        
+        .invoice_pages small,
+        .invoice_pages .small {
+            font-size: 0.87;
+        }
+        
+        .invoice_pages .invoice_page {
+            width: 210mm;
+            position: relative;
+            max-height: 297mm;
+            height: 297mm;
+            box-sizing: border-box;
+            page-break-after: always;
+            overflow: hidden;
+        }
+        
+        .invoice_pages .invoice_footer {
+            font-size: 0.78em;
+            position: absolute;
+            top: 282mm;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .invoice_pages .invoice_background {
+            position: absolute;
+            top: 0px;
+            height: 297mm;
+            width: 210mm;
+            z-index: -10;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: white;
+        }
+        
+        .invoice_pages .invoice_content {
+            z-index: 10;
+            padding: 15mm;
+        }
+        
+        .invoice_pages .logo_holder {
+            position: absolute;
+            top: 0mm;
+            bottom: 0mm;
+            left: 0px;
+            right: 0px;
+            overflow: hidden;
+        }
+        
+        .invoice_pages .logo_holder img {
+            position: absolute;
+        }
+        
+        .invoice_pages .invoice_content {}
+        
+        .invoice_pages .invoice_page_rest .invoice_content {}
+        
+        .invoice_pages .invoice_head .to_address {
+            left: 406px;
+            right: 0px;
+            top: 140px;
+            bottom: 100px;
+            max-width: none;
+            max-height: none;
+            height: 108px;
+            width: 272px;
+            font-size: 12px;
+        }
+        
+        .invoice_pages .invoice_head .from_address {
+            left: 0px;
+            right: 418px;
+            top: 140px;
+            bottom: 150px;
+            max-width: none;
+            max-height: none;
+            width: 341px;
+            height: 143px;
+            text-align: left;
+        }
+        
+        .invoice_pages .invoice_head .invoice_date {}
+        
+        .invoice_pages .invoice_head .invoice_number {}
+        
+        .invoice_pages .invoice_head .title_description {}
+        
+        .invoice_pages .introduction-block {}
+        
+        .invoice_pages .invoice_page_0 .lines {}
+        
+        .invoice_pages .notes {}
+        
+        .invoice_pages .invoice_footer {}
+        
+        .invoice_pages .invoice_logo {
+            left: 40px;
+            right: 451px;
+            top: 60px;
+            bottom: -126px;
+        }
+        
+        .invoice_pages .invoice_logo_1 {
+            left: 500px;
+            right: 95px;
+            top: 80px;
+            bottom: -229px;
+            max-width: none;
+            max-height: none;
+            width: 235px;
+            height: 50px;
+        }
+        
+        .invoice_pages .invoice_logo_2 {}
+        
+        .invoice_pages .due_date {
+            margin-top: 0px;
+        }
+        
+        .invoice_pages .quotation_acceptance {}
+        
+        .invoice_pages .quotation_acceptance_text {}
+        
+        .invoice_pages {
+            font-family: 'Custom Arial' !important;
+        }
+        
+        .invoice_pages strong {
+            font-family: 'Custom Arial Bold' !important;
+        }
+        
+        .invoice_pages {
+            font-size: 14px !important;
+        }
+        .signature{
+            /* border: 1px solid; */
+            /* right: 43px; */
+            /* position: absolute; */
+            position: absolute;
+            /* bottom: -12px; */
+            right: 80px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+<div class="invoice_pages" style="transform: scale(1);transform-origin: 0% 0%;">
+    <div class="invoice_page invoice_page_0">
+        <div class="invoice_content">
+            <div class="logo_holder" style="bottom: auto; overflow: visible; z-index: 1000;">
+                <img class="invoice_logo"
+                    src="https://d2lrgha3750i0i.cloudfront.net/system/templates/logos/000/138/524/original/969bb25a5b7b3d6ad24b56f1977792b120230516-57-uq6oa5.png?1684269022"
+                   >
+                <img class="invoice_logo_1"
+                    src="http://localhost:8000/{{barcode_image}}">
+                <style nonce="">
+                    .invoice_logo,
+                    .invoice_logo_1,
+                    .invoice_logo_2 {
+                        max-width: 300px;
+                        max-height: 150px;
+                        left: 15mm;
+                        top: 15mm;
+                    }
+                </style>
+            </div>
+            <div class="invoice_head">
+                <div class="to_address">
+                    <ul>
+                        <li>
+                            <strong> 
+                                patient national id: {{patient.id}}
+                               </strong>
+                            </li>
+                            <li>
+                           <strong> 
+                            patient name: 
+                           </strong>
+                           {{patient.name}}
+                        </li>
+                        <li>
+                            telephone: {{patient.tel}}
+                        </li>
+                       <li>
+
+                        email: {{patient.email}}
+                       </li>
+                    </ul>
+                </div>
+                <div class="from_address">
+                    <p><strong _msttexthash="213564" _msthash="136">labo name: {{ Laboratory.labo_name }}</strong></p>
+
+                    <p _msttexthash="4906746" _msthash="137"> adress: {{ branch.localisation }}<br
+                            _istranslated="1"> Tel.: +213 {{branch.tel}}<br _istranslated="1"> E-mail: {{ branch.email }} <br _istranslated="1"> <br _istranslated="1"> <span class="iban"
+                            _istranslated="1"></span><br _istranslated="1"> <br _istranslated="1"> </p>
+
+                </div>
+                <div class="invoice_date">
+                    <strong _msttexthash="451568" _msthash="139"> appointment ID: <span class="concept" _istranslated="1"> {{rdv.id}}
+                        </span> </strong>
+                    <p _msttexthash="1120314" _msthash="138">appointment date: {{rdv.date}} <br _istranslated="1"></p>
+                            <p _msttexthash="1120314" _msthash="138">appointment time: {{rdv.time}} <br _istranslated="1"></p>
+                </div>
+                <div class="invoice_number">
+                    <ul>
+                        <li>
+                            <strong _msttexthash="451568" _msthash="139"> transaction ID: <span class="concept"
+                                    _istranslated="1"> {{transaction}}
+                                     </span> </strong>
+                        </li>
+                        <li>
+                            <p>Payment type: <span>On Ligne</span> </p>
+                        </li>
+                        <li>
+<p>Full payement made on: <span>{{f.date}}</span></p>
+                        </li>
+                    </ul>
+                </div>
+              
+               
+                
+            </div>
+            <div class="introduction-divider with-description"></div>
+            <div class="introduction-block divided-over-pages-child-0">
+                <p _msttexthash="462202" _msthash="141"><strong>table tarif</strong> </p>
+            </div>
+            <div class="partial_payments_holder">
+
+            </div>
+            <table class="lines compact">
+                <thead>
+                    <tr class="header">
+                        <th class="product_code">
+                            <small _msttexthash="42471" _msthash="142"> Code <br _istranslated="1"> <br
+                                    _istranslated="1"> </small>
+                        </th>
+                        <th class="description">
+                            <small _msttexthash="183612" _msthash="143"> Description <br _istranslated="1"> <br
+                                    _istranslated="1"> </small>
+                        </th>
+                        <th></th>
+                        <th class="price_per_unit text-right">
+                        </th>
+                        <th></th>
+                        <th class="total text-right">
+                            <small _msttexthash="228137" _msthash="144"> Amount <br _istranslated="1"> excl. VAT <br
+                                    _istranslated="1"> </small>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for name_ana in name_analyses %}
+                {% for prix_analyse in name_ana.prixanalyse_set.all %}
+                    <tr class="invoice_line">
+                        <td class="product_code">
+                            {{name_ana.code}}
+                        </td>
+                        <td _msttexthash="383045" _msthash="145"> {{name_ana.nom}} </td>
+                        <td></td>
+                        <td class="currency text-right">
+                            
+                        </td>
+                        <td></td>
+                        <td class="currency text-right" _msttexthash="1041547" _msthash="146"> {{ prix_analyse.prix }} $ </td>
+                    </tr>
+                    {% endfor %}
+                {% endfor %}
+
+
+                    {% if hometarif %}
+                    <tr>
+                        <td class="text-right" colspan="5" _msttexthash="155012" _msthash="736"> Home tarif (HT)
+                             </td>
+                        <td class="currency text-right" _msttexthash="1032486" _msthash="737"> {{hometarif}} $ </td>
+                    </tr>
+                    {% endif %}
+                    <tr class="total">
+                        <td class="currency text-right" colspan="5">
+                            <strong _msttexthash="379314" _msthash="738">Total amount </strong>
+                        </td>
+                        <td class="currency text-right">
+                            <strong _msttexthash="1041989" _msthash="739">{{total}}</strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table><br>
+            <div class="notes divided-over-pages-child-0">
+                <p _msttexthash="234377" _msthash="740">Standard notes</p>
+            </div>
+            <div class="due_date pay_before">
+                <p _msttexthash="10078965" _msthash="744">Please note this is  the only copie you can get  <span class="currency"
+                        _istranslated="1">if there is any mistake about this document  contact us</span>  <span class="iban"
+                        _istranslated="1">
+
+            </div>
+        </div>
+        <div class="invoice_background"></div>
+        <canvas class="signature"  _mstvisible="9" width="300" height="150"></canvas>
+    </div>
+</div>
+    
+</body>
+</html>

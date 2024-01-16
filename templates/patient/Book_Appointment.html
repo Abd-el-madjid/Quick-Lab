@@ -1,0 +1,1302 @@
+{% load static %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{% static 'css/homedashboard.css' %}" rel="stylesheet">
+	<link href="{% static 'css/libs.css' %}" rel="stylesheet">
+    <link href="{% static 'css/general/portal.css' %}" rel="stylesheet">
+  <link href="{% static 'css/Book_Appointment.css' %}" rel="stylesheet">
+  <!---->
+  <!---->
+  <!---->
+  <script  src="{% static 'js/jquery.min.js' %}"></script>
+  <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/homedashboard.js' %}"></script>
+  <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/Book_Appointment.js' %}"></script>
+  <!---->
+  <link href="{% static 'css/general/icons_google.css' %}" rel="stylesheet">
+   <!---->
+    <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+  <script src="https://kit.fontawesome.com/4f846c2c5f.js" crossorigin="anonymous"></script>
+  <!-- jquery cdn link  -->
+  
+
+
+  <link href="{% static 'css/mobiscroll.javascript.min.css' %}" rel="stylesheet">
+  <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/mobiscroll.javascript.min.js' %}"></script>
+
+
+  <link href="{% static 'css/mobiscroll.javascript.min2.css' %}" rel="stylesheet">
+  <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/mobiscroll.javascript.min2.js' %}"></script>
+
+	<script  src="{% static 'js/general/notification_pannel.js' %}"></script>
+	<script  src="{% static 'js/general/notification.js' %}"></script>
+ 
+  <title>Document</title>
+</head>
+<body onload="init()">
+  
+  <!---->
+  
+  <div class="general-container">
+    
+  <aside class="menu-panel" role="complementary">
+					<div class="hide-since-tablet" psi-proxy-user-popup="">
+						<a id="profile_head-secound" aria-label="profile menu" class="dark-link profile-link profile-menu profile-link--in-menu" role="link" tabindex="0">
+
+							<ins class="nav-menu-icon nav-menu-icon--user">
+								<span id="profile-circle" class=" material-symbols-outlined">
+									account_circle
+									</span>
+							</ins>
+
+							<div class="profile-link__user">{{ name }}</div>
+
+							<!---->
+
+
+							<ins class="profile-link__trigger">
+								<span id="profile-arrow-2" class=" material-symbols-outlined">
+									expand_more
+									</span>
+							</ins>
+						</a>
+				
+
+						
+						<div class="side-account-profil none">
+							<ul class="contenait">
+								<li>
+						<a id="account" role="link" tabindex="0" href="{% url 'account' %}">
+							<ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+								{{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+							</ins>
+							
+
+							<div class=""> account</div>
+
+						</a>
+					</li>
+						<li>
+						<a id="sign_out" href="{% url 'logout' %}"  role="link" tabindex="0">
+
+							<ins class="">
+								<span class="material-symbols-outlined">
+									logout
+									</span>
+							</ins>
+
+							<div class="">  sign out</div>
+
+		
+						</a>
+					</li>
+					</ul>
+					</div>
+					</div> 
+					
+
+					<div class="menu-panel__content">
+						<div class="menu-panel__content_header">
+						<a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/" title="Homepage" href="{% url 'home' %}">
+							<img alt="Logo" src="/media/image/logo sans bg.png"  width="70" height="55">
+						</a>
+						<div >
+							<a class="side-menu-logo-title" href="{% url 'home' %}">
+						<p class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="" style="will-change: transform, opacity; animation-duration: 1000ms;">Quick </p>
+						<p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1000" data-lang-en="Lab" style="will-change: transform, opacity; animation-duration: 1000ms;">Lab</p>
+						</a>
+					</div>
+					   </div>
+						<!---->
+						<p-panelmenu aria-label="Main Menu" aria-labelledby="Main Menu" role="navigation" tabindex="0" class="ng-tns-c15-13">
+							<div class="ng-tns-c15-13 side-menu ui-panelmenu ui-widget">
+								<!---->
+								<div class="menu-element ui-panelmenu-panel ng-tns-c15-13" >
+																<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default ui-corner-top">
+																	<!---->
+																	<!---->
+																	<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon ui-state-active" href="{% url 'homepatient' %}" >
+																		<!---->
+																		<!---->
+																		
+																		<span class="icons material-symbols-outlined">
+																			home
+																			</span>
+																		
+																		<span class="ui-menuitem-text">Home</span>
+																	</a>
+																</div>
+																<!---->
+															</div>
+								<div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+									<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+										<!---->
+										<!---->
+										<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'book_appointment' %}">
+											<!---->
+											<!---->
+											<span class="icons material-symbols-outlined">
+												calendar_add_on
+												</span>
+											<span class="ui-menuitem-text">Book Appointment</span>
+										</a>
+									</div>
+									<!---->
+								</div>
+								<div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+									<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+										<!---->
+										<!---->
+										<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'your_appointments' %}">
+											<!---->
+											<!---->
+											<span class="icons material-symbols-outlined">
+												calendar_month
+												</span>
+											<span class="ui-menuitem-text">Your Appointments</span>
+										</a>
+									</div>
+									<!---->
+								</div>
+								<div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+									<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+										<!---->
+										<!---->
+										<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'your_results' %}">
+											<!---->
+											<!---->
+											<span class=" icons material-symbols-outlined">
+												assignment
+												</span>
+											<span class="ui-menuitem-text">your results</span>
+										</a>
+									</div>
+									<!---->
+								</div>
+								<div class="menu-element ui-panelmenu-panel ng-tns-c15-13" >
+                                                    <div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                                                        <!---->
+                                                        <!---->
+                                                        <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'predection' %}" >
+                                                            <!---->
+                                                            <!---->
+                                                            <span class="icons material-symbols-outlined">
+                                                                labs
+                                                            </span>
+                                                            <span class="ui-menuitem-text">predection</span>
+                                                        </a>
+                                                    </div>
+                                                    <!---->
+                                                </div>
+								<div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+									<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+										<!---->
+										<!---->
+										<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'channels_patient' %}">
+											<!---->
+											<!---->
+											<span class="icons material-symbols-outlined">
+												chat
+												</span>
+											<span class="ui-menuitem-text">messages</span>
+										</a>
+									</div>
+									<!---->
+								</div>
+								
+							
+							</div>
+						</p-panelmenu>
+					</div>
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<div class="flex-push"></div> <!----><!----><!----><!----><!----><!----><!---->
+				    <!---->
+				    <!---->
+					<!---->
+					<!---->
+					<ul class="menu-panel__additional-info additional-info" role="contentinfo">
+						<div>
+							<li class="additional-info__disc"></li>
+							<li class="additional-info__item">
+								<a psimsg="content.terms.menuTitle" rel="noopener" target="_blank" href="{% url 'term' %}">Terms of Use</a>
+							</li>
+							<li class="additional-info__disc"></li>
+							<li class="additional-info__item">
+								<a psimsg="content.privacy.menuTitle" rel="noopener" target="_blank" href="{% url 'privecy' %}">Privacy Policy</a>
+							</li>
+						</div>
+				
+					</ul>
+				</aside>
+    <div psi-menu-overlay="">
+      <div class="menu-panel-overlay">
+
+      </div>
+    </div>
+    
+    <section class="content-panel" role="main">
+      
+      <header class="header hide-on-print">
+        <div class="header-wrapper">
+          <div class="header__panel">
+            <ul class="header-menu-bar">
+
+              <li class="header-menu-bar__item hide-since-desktop hide-on-print" psi-menu-trigger="">
+                <a id="menu-link_button" class="profile-link hamburger-link hide-since-desktop">
+
+                  <ins class="nav-menu-icon nav-menu-icon--hamburger">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" class="icon-svg icon-svg__size--24 " xml:space="preserve">
+                      <g>
+                        <path d="M85 341l342 0c11,0 21,10 21,22l0 0c0,11 -10,21 -21,21l-342 0c-11,0 -21,-10 -21,-21l0 0c0,-12 10,-22 21,-22z"></path>
+                        <path d="M85 235l342 0c11,0 21,9 21,21l0 0c0,12 -10,21 -21,21l-342 0c-11,0 -21,-9 -21,-21l0 0c0,-12 10,-21 21,-21z"></path><path d="M85 128l342 0c11,0 21,10 21,21l0 0c0,12 -10,22 -21,22l-342 0c-11,0 -21,-10 -21,-22l0 0c0,-11 10,-21 21,-21z"></path>
+                      </g>
+                    </svg>
+                  </ins>
+
+                  <h6>Menu</h6>
+                </a>
+              </li>
+
+
+              <li>
+                <!---->
+              </li>
+
+              <!---->
+              <p-tabmenu>
+                <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+                  <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                    <!---->
+                  </ul>
+                </div>
+              </p-tabmenu>
+            </ul>
+          </div>
+          <div class="header__panel header__panel--spacer hide-on-print"></div>
+          <div class="header__panel hide-on-print">
+            <ul class="header-menu-bar header-menu-bar--main">
+             
+              <li id="profile-info-1" class="header-menu-bar__item header-menu-bar__item--main hide-up-to-tablet" psi-proxy-user-popup="" psieventtracker="">
+                <a id="profile_head-main" aria-label="profile menu" class="dark-link profile-link profile-menu" role="link" tabindex="0">
+
+                  <ins class="nav-menu-icon nav-menu-icon--user">
+                    <span id="profile-circle" class=" material-symbols-outlined">
+                      account_circle
+                    </span>
+                  </ins>
+
+                  <div class="profile-link__user"> {{name}}</div>
+
+                  <!---->
+
+                  <ins class="profile-link__trigger">
+                    <span id="profile-arrow" class=" material-symbols-outlined">
+                      expand_more
+                    </span>
+                  </ins>
+
+                </a>
+
+                <p-overlaypanel>
+
+                </p-overlaypanel>
+
+                <!---->
+              </li>
+              <!---->
+              <li id="notification" class="header-menu-bar__item header-menu-bar__item--main header-menu-bar__item--last"
+                psi-alert-popup="" psieventtracker="">
+              
+              
+                <span class="notifications-overlay-arrow__hidden"></span>
+                <a>
+                  <ins class="nav-menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+                      viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                      class="icon-svg icon-svg__size--24 icon-svg__color--darker-blue" xml:space="preserve">
+                      <path
+                        d="M483,433l-38-86V181C445,81,361,0,256,0C152,0,67,81,67,181v166l-38,85c-2,4-2,9,1,12c2,4,6,6,11,6h131 c7,36,40,62,78,62s70-26,77-62h144c5,0,9-2,11-6C485,441,485,436,483,433z M250,487c-24,0-45-15-51-37h101C294,472,273,487,250,487z ">
+                      </path>
+                    </svg>
+                  </ins>
+                  <!---->
+                  <span class="notification-bubble" id="notification-bubble">
+                    0
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="notification_panel"
+          class="  notifications-overlay false ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow"
+          style=" z-index: 1007; visibility: visible; top: 180.719px; left: 703.333px; opacity: 1.048;    transform: scale(0)">
+          <div class="ui-overlaypanel-content">
+        
+            <h6 class="linked-heading indent-bottom">
+              <span psimsg="alert.title">Recent Notifications</span>
+              <a class="text-style--bold" psimsg="alert.showAll" href="{% url 'notification_patient' %}">show All</a>
+        
+        
+            </h6>
+            <ul style="position: relative;" id="notification_dashboard" data-patient="0nlbop5f1e">
+              <!---->
+        
+        
+            </ul>
+        
+        
+          </div>
+          <!---->
+        </div>
+        <div id="user-menu" class="user-menu">
+
+          <!---->
+          <div class="">
+            <div class="profile-pane">
+              <ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+                {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+              </ins>
+              
+              <div class="profile-pane__data">
+                <div class="profile-pane__user">{{name}}</div>
+                
+                <!----><a class="link--blue text-style--bold proxy-user-account-link" psimsg="proxyUser.accountLink" role="link" tabindex="0" aria-label="abd el madjid kahoul account" href="{% url 'account' %}">Account</a>
+              </div>
+            </div>
+          </div>
+          
+          <!---->
+          
+          <!---->
+          <p-accordion styleclass="ui-accordion-user-menu" class="">
+            <div class="ui-accordion-user-menu ui-accordion ui-widget ui-helper-reset">
+              
+              
+              <!---->
+              
+              <!---->
+              
+              <!---->
+              
+              
+            </div>
+          </p-accordion>
+          
+          <div class="user-menu__item">
+            <a class="user-menu__control" psimsg="proxyUser.logout" tabindex="0" href="{% url 'logout' %}">Sign Out</a>
+          </div>
+          
+        </div>
+      </header>
+      <div id="main_element" class="content content--dashboard">
+        <!---->
+        <div class="content__wrapper">
+          <!---->
+          <!---->
+          <div id="etape1" class="etape1  ">
+              <div class="app-card shadow-sm mb-4 border-left-decoration">
+                <div class="inner">
+                  <div class="app-card-body p-4">
+              
+                    <div class="col-auto">
+                      <div class="page-utilities">
+                        <div
+                          class=" flex-sm-nowrap flex-sm-row d-sm-flex row g-2 justify-content-start justify-content-md-end align-items-center">
+                          <div class="col-auto" style="
+                                          max-width: 100%;
+                                          min-width: 78%;
+                                      ">
+                            <div class="table-search-form row gx-1 align-items-center" style="
+                                          max-width: 100%;
+                                      ">
+                              <div class="col-auto" style="
+                                          max-width: 100%;
+                                          min-width: 84%;
+                                      ">
+                                <input type="number" id="search-orders" name="searchorders" class="form-control search-orders"
+                                  placeholder="Search">
+                              </div>
+                              <div class="col-auto">
+                                <button type="submit" id="search_button" class="btn app-btn-secondary"
+                                  onclick="performSearch();">Search</button>
+                              </div>
+                            </div>
+              
+                          </div><!--//col-->
+              
+              
+                        </div><!--//row-->
+                      </div><!--//table-utilities-->
+                    </div>
+              
+              
+                  </div><!--//app-card-body-->
+              
+                </div><!--//inner-->
+              </div>
+            <!---->
+            <div class="filter_bar">
+              <!---->
+			 
+              <div class="action_filter" >
+				 <!---->
+        <div class="btn_filtrage">
+          <a onclick="show_list('type_analyse_selected')" >
+            <span class="material-symbols-outlined">
+              assignment
+            </span>
+            <p>type analyse</p>
+          </a>
+          <label style="position: absolute; z-index: -10000;">
+        
+            <input mbsc-input id="type_analyse_selected-input" class="type_analyse_selected-input"
+              placeholder="Please select..." data-dropdown="true" data-input-style="outline" data-label-style="stacked"
+              data-tags="true" />
+          </label>
+          <select id="type_analyse_selected-list" multiple>
+            {% for analyse in analyses %}
+        
+        
+            <option value="{{analyse.code}}">{{analyse.nom}}</option>
+            {% endfor %}
+          </select>
+        
+        </div>
+				  <!---->
+                <!---->
+                <div class="btn_filtrage">
+                  <a onclick="filtre()" >
+                    <span class="material-symbols-outlined">
+                      filter_alt
+                    </span>
+                    <p >filtre</p>
+                  </a>
+                </div>
+                <!---->
+				
+              </div>
+              
+              <!---->
+            </div>
+            <form action="" class="filtre_form none " id="filtre_form">
+              <input type="text" id="purpose_filtre">
+              <input type="text" id="disponibilite_filtre">
+              <input type="text" id="type_analyse_filtre" autocomplete="off">
+              <input type="text" id="methode_payment_filtre">
+              <input type="submit" name="" id="filtre_form_rdv_button">
+            </form>
+            <!---->
+            <!---->
+            <!---->
+            <div class="cartes_laboratiore">
+              {% for lab in lab_info %}
+              <div class="carte_laboratiore">
+                <div class="carte_laboratiore_profile">
+                  <div class="carte_laboratiore_profile-info_main">
+                    <!---->
+                    <div class="carte_laboratiore_profile-info">
+                      <div class="carte_laboratiore_profile-info_avatar">
+                        <ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+                          {{ lab.laboratoire.nom |slice:":1" }}{{ lab.laboratoire.nom |slice:"1:2" }}
+                        </ins>
+                      </div>  
+                      <!---->
+                      
+                      <div class="carte_laboratiore_profile-info_title">
+                        <a href="/">{{ lab.laboratoire.nom }}</a>
+                      </div>
+                    </div>
+                    <!---->
+                    <!---->
+                    <!---->
+                    <div class="carte_laboratiore_profile-place">
+                      <!---->
+                      <div class="carte_laboratiore_profile-place_rue"><span>{{ lab.branch.branche_nom }} </span></div>
+                      <!---->
+                      <div class="carte_laboratiore_profile-place_city"><span>{{ lab.branch.address  }}</span></div>
+                      <div class="carte_laboratiore_profile-place_city"><span>{{ lab.branch.code_postal   }}</span></div>
+                      <input type="text" name="code_postal" id="" class="code_postal" value="{{ lab.branch.code_postal   }}" hidden>
+                      <div class="carte_laboratiore_profile-place_city"><span>{{ lab.branch.email  }}</span></div>
+                      <div class="carte_laboratiore_profile-place_city"><span>{{ lab.branch.num  }}   </div>
+                      
+                      <!---->
+                    </div>
+                    <!---->
+                    <!---->
+                  </div>
+                  <!---->
+                  <div id="Book_Appointment_etape1" onclick="go_to_etape2({{ lab.branch.id }},'{{ lab.laboratoire.nom |slice:":1" }}{{ lab.laboratoire.nom |slice:"1:2" }}','{{ lab.laboratoire.nom }} {{ lab.branch.branche_nom }}'); type_analyse_selected_submit(); " class="carte_laboratiore_profile-button">
+                    <a   class="Book_Appointment_etape1">
+                      <span class=" material-symbols-outlined">
+                        calendar_add_on
+                      </span>
+                      <p>Book Appointment</p>
+                    </a>
+                  </div>
+                  <!---->
+                </div>
+                <!---->
+                <!---->
+                <!---->
+                <!---->
+                <div class="carte_laboratiore_calendre">
+                  <div class="calendre_availabile">
+                    <!---->
+                    <!---->
+                    <div class="arrow arrow-left">
+                      <button id="prev-day">
+                        <span class="material-symbols-outlined">
+                          chevron_left
+                        </span>
+                      </button>
+                    </div>
+                    <!---->
+
+                     <div class="calendar-days" id="calendar-days" data-appointmenthour="{{lab.branch.num_rdv}}"
+                    data-workdays="{{lab.branch.jour_heur_tarvail}}"
+                    data-appointment="{{lab.branch_rdv_details}}">
+                </div> 
+                    <!---->
+                    
+
+
+                    <div class="arrow arrow-right">
+                      <button id="next-day">
+                        <span class="material-symbols-outlined">
+                          chevron_right
+                        </span>
+                      </button>
+                    </div>
+                    <!---->
+                    <!---->
+                  </div>
+                  <!---->
+                  <!---->
+                  <div class="line_vertical"></div>
+                  <!---->
+                  <!---->
+                  <div class="horaires_buttons">
+                    <!---->
+                    <div id="Morning" class="Morning horaires_button selected">
+                      <a >
+                        <span class="material-symbols-outlined">
+                          brightness_5
+                        </span>
+                        <p>Morning (AM)</p>
+                      </a>
+                    </div>
+                    <!---->
+                    <!---->
+                    <div id="Afternoon" class="Afternoon horaires_button">
+                      <a >
+                        <span class="material-symbols-outlined">
+                          dark_mode
+                        </span>
+                        <p>Afternoon (PM)</p>
+                      </a>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              
+             
+            </div>
+          </div>
+          <div id="etape2" class="etape2 none ">
+            <div style="/*min-width: 420px; */  display: flex;gap: 10px;  flex-direction: column;padding-top: 20px;align-items: center;">
+              <h4 class="etape2_titre">
+                <span>Fill in the following information</span>
+              </h4>
+              <div class="etape2_contonait">
+                <div class="type_rendez-vous">
+                  <div class="etape_precedant" onclick="back_to_etape1();">
+                    <a >
+                      <span class="material-symbols-outlined">
+                        arrow_back
+                      </span>
+                      <h4>previous step</h4>
+                    </a>
+                  </div>
+                  <div class="type_rendez-vous_type">
+                    <h4 class="type_rendez-vous_type_titre">Choose type of consultation</h4>
+                    <div class="type_rendez-vous_type_containe">
+                      <ul id="analyse_type">
+                        <li onclick="send_info_carte(event); go_to_etape_type_rdv();">in the laboratory</li>
+                        <li onclick="send_info_carte(event); go_to_etape_type_analyse_home();">at home</li>
+                      </ul>
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="k">
+                  <div class="progression">
+                    <div class="progression_info_general">
+                      <div class="progression_info_general_img">
+                        <ins class="initials initials--big" id="logo_labo" style="background-color: rgb(15, 46, 76);">
+                          ae
+                        </ins>
+                      </div>
+                      <div class="progression_info_general_side">
+                        
+                        <p class="progression_info_general_side_name">
+                        Laboratoire Maymat - Montluçon</p>
+                        <div class="progression_info_general_side_type">
+                          <span class="material-symbols-outlined">
+                            home_health
+                          </span>
+                          <p>Laboratoire</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="line_vertical"></div>
+                    <div class="progression_info_detaile">
+                      <p >Votre rendez-vous en détail</p>
+                      <ul>
+                        <li class="none detaile_container">
+                          <div class="detaile">
+                          <span class="material-symbols-outlined">
+                            done
+                          </span>
+                          <p class=" date_and_time">Analyse médicale</p>
+                        </div>
+                      </li>
+                      <li class="none detaile_container">
+                          <div class="detaile">
+                            <span class="material-symbols-outlined">
+                              done
+                            </span>
+                            <p class="lieu">Rue Lucien Sampaix, 03100 Montluçon</p>
+                          </div>
+                        </li>
+                        <li class="none detaile_container">
+                          <div class="detaile none">
+                          <span class="material-symbols-outlined">
+                            done
+                          </span>
+                          <p class=" visite_purpose">Analyse médicale</p>
+                        </div>
+                      </li>
+                      <li class="none detaile_container">
+                        <div class="detaile ">
+                        <span class="material-symbols-outlined">
+                          done
+                        </span>
+                        <p class=" analyse_choicse">Analyse médicale</p>
+                      </div>
+                    </li>
+                      </ul>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+         
+       <div  id="type-rdv" class="type-rdv none ">
+        <div style=" display: flex;gap: 10px;  flex-direction: column;padding-top: 20px;align-items: center;">
+          <h4 class="etape2_titre">
+            <span>Fill in the following information</span>
+          </h4>
+          <div class="etape2_contonait">
+            <div class="type_rendez-vous">
+              <div class="etape_precedant" onclick="back_to_etape2()">
+                <a >
+                  <span class="material-symbols-outlined">
+                    arrow_back
+                  </span>
+                  <h4>previous step</h4>
+                </a>
+              </div>
+              <div class="type_rendez-vous_type">
+                <h4 class="type_rendez-vous_type_titre">Choose your consultation purpose</h4>
+                <div class="type_rendez-vous_type_containe">
+                  <ul id="analyse_type">
+                    <li onclick="send_analyse_type_info(event); go_to_etape_type_analyse();"> blood test</li>
+                    
+                    <li onclick="send_analyse_type_info(event); go_to_etape3();"> blood donation</li>
+                  </ul>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="k">
+              <div class="progression">
+                <div class="progression_info_general">
+                  <div class="progression_info_general_img">
+                    <ins class="initials initials--big" id="logo_labo" style="background-color: rgb(15, 46, 76);">
+                      ae
+                    </ins>
+                  </div>
+                  <div class="progression_info_general_side">
+                    
+                    <p class="progression_info_general_side_name">
+                    Laboratoire Maymat - Montluçon</p>
+                    <div class="progression_info_general_side_type">
+                      <span class="material-symbols-outlined">
+                        home_health
+                      </span>
+                      <p>Laboratoire</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="line_vertical"></div>
+                <div class="progression_info_detaile">
+                  <p >Votre rendez-vous en détail</p>
+                  <ul>
+                    <li class="none detaile_container">
+                      <div class="detaile">
+                      <span class="material-symbols-outlined">
+                        done
+                      </span>
+                      <p class=" date_and_time">Analyse médicale</p>
+                    </div>
+                  </li>
+                  <li class="none detaile_container">
+                      <div class="detaile">
+                        <span class="material-symbols-outlined">
+                          done
+                        </span>
+                        <p class="lieu">Rue Lucien Sampaix, 03100 Montluçon</p>
+                      </div>
+                    </li>
+                    <li class="none detaile_container">
+                      <div class="detaile none">
+                      <span class="material-symbols-outlined">
+                        done
+                      </span>
+                      <p class=" visite_purpose">Analyse médicale</p>
+                    </div>
+                  </li>
+                  <li class="none detaile_container">
+                    <div class="detaile ">
+                    <span class="material-symbols-outlined">
+                      done
+                    </span>
+                    <p class=" analyse_choicse">Analyse médicale</p>
+                  </div>
+                </li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        
+     </div>
+     <div  > 
+            <div id="type-analyse " class="type-analyse none ">
+              <div style="/*min-width: 420px; */  display: flex;gap: 10px;  flex-direction: column;padding-top: 20px;align-items: center;">
+                <h4 class="etape_type-analyse_titre">
+                  <span>Fill in the following information</span>
+                </h4>
+                <div class="etape_type-analyse_contonait">
+                  <div class="type_rendez-vous_analyse">
+                    <div class="etape_precedant" onclick="back_to_etape_type_rdv()">
+                      <a >
+                        <span class="material-symbols-outlined">
+                          arrow_back
+                        </span>
+                        <h4>previous step</h4>
+                      </a>
+                    </div>
+                    <div class="type_rendez-vous_analyse_select">
+                      <h4 class="type_rendez-vous_analyse_select_titre">Choose consultation analysis</h4>
+                      <div class="analyse_list_containe">
+                        <div class="analyse_list_head">
+                          <div class="analyse_list_form">
+                           
+                              <label class="selected_analyse_container_label" for="selected_input_analyse">
+                              <span class="selected_analyse_container_span">
+                                <input id="selected_input_analyse" type="text" placeholder="Please select..." data-tags="true" data-input-style="outline" data-label-style="stacked"  />
+                                <span class="element-selected-container">
+                                  
+                                </span>
+                              </span>
+                            
+                            
+                            </label>
+                            
+                               <div class="analyse_list_form_button" onclick="type_analyse_selected_list_submit()">
+                              <span>done</span>
+                              
+                            </div>
+                           
+                          </div>
+                        </div>
+                        <div class="analyse_list_body">
+                          <div id="type_analyse_list" class="type_analyse_list">
+                            <div class="checkbox-type_analyse_list">
+                              
+                              
+                              
+                            </div>
+                          </div>
+                        </div>
+  
+  
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="k">
+                    <div class="progression">
+                      <div class="progression_info_general">
+                        <div class="progression_info_general_img">
+                          <ins class="initials initials--big" id="logo_labo" style="background-color: rgb(15, 46, 76);">
+                            ae
+                          </ins>
+                        </div>
+                        <div class="progression_info_general_side">
+                          
+                          <p class="progression_info_general_side_name">
+                          Laboratoire Maymat - Montluçon</p>
+                          <div class="progression_info_general_side_type">
+                            <span class="material-symbols-outlined">
+                              home_health
+                            </span>
+                            <p>Laboratoire</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="line_vertical"></div>
+                      <div class="progression_info_detaile">
+                        <p >Votre rendez-vous en détail</p>
+                        <ul>
+                          <li class="none detaile_container">
+                            <div class="detaile">
+                            <span class="material-symbols-outlined">
+                              done
+                            </span>
+                            <p class=" date_and_time">Analyse médicale</p>
+                          </div>
+                        </li>
+                        <li class="none detaile_container">
+                            <div class="detaile">
+                              <span class="material-symbols-outlined">
+                                done
+                              </span>
+                              <p class="lieu">Rue Lucien Sampaix, 03100 Montluçon</p>
+                            </div>
+                          </li>
+                          <li class="none detaile_container">
+                            <div class="detaile none">
+                            <span class="material-symbols-outlined">
+                              done
+                            </span>
+                            <p class=" visite_purpose">Analyse médicale</p>
+                          </div>
+                        </li>
+                        <li class="none detaile_container">
+                          <div class="detaile ">
+                          <span class="material-symbols-outlined">
+                            done
+                          </span>
+                          <p class=" analyse_choicse">Analyse médicale</p>
+                        </div>
+                      </li>
+                        </ul>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+           
+          </div>
+          </div>
+          <div id="etape3" class="etape3 none">
+            <h4 class="etape3_titre">
+              <span>Fill in the following information</span>
+            </h4>
+            <div class="etape3_contonait">
+              <div class="type_rendez-vous">
+                <div class="etape_precedant" onclick="back_from_etape3()">
+                  <a >
+                    <span class="material-symbols-outlined">
+                      arrow_back
+                    </span>
+                    <h4>previous step</h4>
+                  </a>
+                </div>
+                <div class="type_rendez-vous_type">
+                  <h4 class="type_rendez-vous_type_titre">Confirm appointment time</h4>
+                  <div class="type_rendez-vous_type_containe_confirmation">
+                    <p class="type_rendez-vous_type_containe_confirmation_p">Vous avez sélectionné le jeudi 2 mars 2023 à 07:00</p>
+                    <div id="continuer_etape3" class="type_rendez-vous_type_containe_button" onclick="go_to_etape4()">
+                      <a >
+                        <p>continuer</p>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="k">
+                <div class="progression">
+                  <div class="progression_info_general">
+                    <div class="progression_info_general_img">
+                      <ins class="initials initials--big" id="logo_labo" style="background-color: rgb(15, 46, 76);">
+                        ae
+                      </ins>
+                    </div>
+                    <div class="progression_info_general_side">
+                      
+                      <p class="progression_info_general_side_name">
+                      Laboratoire Maymat - Montluçon</p>
+                      <div class="progression_info_general_side_type">
+                        <span class="material-symbols-outlined">
+                          home_health
+                        </span>
+                        <p>Laboratoire</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="line_vertical"></div>
+                  <div class="progression_info_detaile">
+                    <p >Votre rendez-vous en détail</p>
+                    <ul>
+                      <li class="none detaile_container">
+                        <div class="detaile">
+                        <span class="material-symbols-outlined">
+                          done
+                        </span>
+                        <p class=" date_and_time">Analyse médicale</p>
+                      </div>
+                    </li>
+                    <li class="none detaile_container">
+                        <div class="detaile">
+                          <span class="material-symbols-outlined">
+                            done
+                          </span>
+                          <p class="lieu">Rue Lucien Sampaix, 03100 Montluçon</p>
+                        </div>
+                      </li>
+                      <li class="none detaile_container">
+                        <div class="detaile none">
+                        <span class="material-symbols-outlined">
+                          done
+                        </span>
+                        <p class=" visite_purpose">Analyse médicale</p>
+                      </div>
+                    </li>
+                    <li class="none detaile_container">
+                      <div class="detaile ">
+                      <span class="material-symbols-outlined">
+                        done
+                      </span>
+                      <p class=" analyse_choicse">Analyse médicale</p>
+                    </div>
+                  </li>
+                    </ul>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="etape4" class="etape4 none ">
+            <div class="etape4_container ">
+              <div class="background_term_bluer"></div>
+              <div class="form_container">
+                <div class="form">
+                  <div class="head_form">
+                    <div>Read before making an appointment</div>
+                  </div>
+                  <button id="delet_form_button_container" class="delet_form_button_container "  style=" display:none;    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;" onclick="etape4_closed()">
+                    <div class="delet_form_button ">
+                      <span class="material-symbols-outlined">
+                        close
+                      </span>
+                    </div>
+                  </button>
+                  <div class=" other_form">
+                    <div class="other_form_body">
+                      <div class="motif">
+                        <p  >
+                          <span >
+                            Reason for Consultation: <br> 
+                            <strong class="motif_selected">Prise de sang adulte</strong>
+                          </span>
+                        </p>
+                      </div>
+                      <div class="line_vertical"></div>
+                      <div class="terms"> 
+                        <div class="terms_contains">
+                          <p>To make blood type cards, you must present an official identity document with a photograph.</p>
+                          <ul style=" list-style: inside;" id="conseille_liste">
+                            
+                          </ul>
+                        </div>
+                        <div class="button_form">
+                          <div class="button_div">
+                            <button id="button_form1" >I accept</button>
+                            <div id="check_form1" class="none">
+                              <span  class=" check_form  material-symbols-outlined">
+                                check
+                              </span>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div  class="button_form2 ">
+                    <button id="button_form2" class="none" onclick="go_to_etape5()"> 
+                      <span >I have read and accept the instruction</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div id="etape5" class="etape5 none ">
+            <h4 class="etape5_titre">
+              <span>Fill in the following information</span>
+            </h4>
+            <div class="etape5_contonait">
+              <div class=" payment_carte">
+                {% comment %} <div class="etape_precedant" onclick="back_to_etape4()">
+                  <a >
+                    <span class="material-symbols-outlined">
+                      arrow_back
+                    </span>
+                    <h4>previous step</h4>
+                  </a>
+                </div> {% endcomment %}
+                <div class="payment_carte_head">
+                  <div class="payment_carte_head_titre">
+                    <p> 
+                      <strong>  montant is: </strong>
+                    </p>
+                  </div>
+                  <div class="payment_carte_head_p" id="payment_carte_head_p"> 
+                  </div>
+                </div>
+                <div class="line_vertical2"></div>
+                <div class="payment_carte_body">
+                  <div class="image_payment_carte_body">
+                     <img src="/media/image/vecteezy_master-card-editorial-logo_19550737-removebg-preview.png" alt="">
+                                <img src="/media/image/vecteezy_visa-logo-company-providing-services-of-payment-operations_9469638-removebg-preview.png" alt="">
+                                <img src="/media/image/vector-cirrus-removebg-preview.png" alt="">
+                           </div>
+                  <div class="carte_debit_info">
+                    <form action="">
+                      <div class="numero_de_carte">
+                        <label for="num_carte">credit card number</label>
+                        <input type="text" name="num_carte" id="num_carte">
+                      </div>
+                      <div class="date_code_carte_pay">
+                        <div class="date_expiration">
+                          <label for="date_exp">expiry date</label>
+                          <input name="date_exp" id="date_exp"  type="month"  min="2000-01" max="2500-01">
+                          
+                        </div>
+                        <div class="code_securite">
+                          <label for="code_s">security code</label>
+                          <input type="password" name="code_s" id="code_s">
+                        </div>
+                      </div>
+                      <input id="payment_submit" type="submit" class="none">
+                    </form>
+                  </div>
+                  
+                </div>
+                <div class="line_vertical2 "></div>
+                <div class="button_c_p" onclick="payment_submit_showing(); wait_rdv()" id="payment_submit_showing" >
+                  
+                  
+                  <a  >
+                    <span class="material-symbols-outlined">
+                      lock
+                    </span>
+                    <span>confirm the appointment</span>
+                  </a>
+                  
+                </div>
+              </div>
+              <div class="k">
+                <div class="progression">
+                  <div class="progression_info_general">
+                    <div class="progression_info_general_img">
+                      <ins class="initials initials--big" id="logo_labo" style="background-color: rgb(15, 46, 76);">
+                        ae
+                      </ins>
+                    </div>
+                    <div class="progression_info_general_side">
+                      
+                      <p class="progression_info_general_side_name">
+                      Laboratoire Maymat - Montluçon</p>
+                      <div class="progression_info_general_side_type">
+                        <span class="material-symbols-outlined">
+                          home_health
+                        </span>
+                        <p>Laboratoire</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="line_vertical"></div>
+                  <div class="progression_info_detaile">
+                    <p >Votre rendez-vous en détail</p>
+                    <ul>
+                      <li class="none detaile_container">
+                        <div class="detaile">
+                        <span class="material-symbols-outlined">
+                          done
+                        </span>
+                        <p class=" date_and_time">Analyse médicale</p>
+                      </div>
+                    </li>
+                    <li class="none detaile_container">
+                        <div class="detaile">
+                          <span class="material-symbols-outlined">
+                            done
+                          </span>
+                          <p class="lieu">Rue Lucien Sampaix, 03100 Montluçon</p>
+                        </div>
+                      </li>
+                      <li class="none detaile_container">
+                        <div class="detaile none">
+                        <span class="material-symbols-outlined">
+                          done
+                        </span>
+                        <p class=" visite_purpose">Analyse médicale</p>
+                      </div>
+                    </li>
+                    <li class="none detaile_container">
+                      <div class="detaile ">
+                      <span class="material-symbols-outlined">
+                        done
+                      </span>
+                      <p class=" analyse_choicse">Analyse médicale</p>
+                    </div>
+                  </li>
+                    </ul>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          {% comment %} <div id="etape6" class="etape6  none ">
+            <h4 class="etape6_titre">
+              <span>Fill in the following information</span>
+              <span>Renseignez les informations suivantes</span>
+            </h4>
+            <div class="etape6_contonait" style="display: flex; flex-direction: column;">
+              <div class="notification_confirmation_rdv">
+                <span  class=" check_form  material-symbols-outlined">
+                  check
+                </span>
+                
+                <span >le renez-vous est conferme</span>
+                
+              </div>
+              <div class="rendez-vous_final">
+                <div class="rendez-vous_final_head">
+                  <div class="vous_final_head_date">
+                    <span class="material-symbols-outlined">
+                      date_range
+                    </span>
+                    <span> sunday 28 mars </span>
+                  </div>
+                  <div class="vous_final_head_time">
+                    <span class="material-symbols-outlined">
+                      schedule
+                    </span>
+                    <span>09:10</span>
+                  </div>
+                </div>
+                <div class="rendez-vous_final_body">
+                  <div  id="rdv_info_general" class=" rdv_info_general">
+                    
+                    <div class="rdv_info_general-profile">
+                      <ins class="initials initials--big" id="logo_labo" style="background-color: rgb(15, 46, 76);">
+                        ae
+                      </ins>
+                    </div>
+                    <div class="rdv_info_general_labo">
+                      <p><strong>laboratory ibn sina </strong></p>
+                      <p><small>laboratory</small></p>
+                    </div>
+                    <div class="rdv_info_general_arrow">
+                      <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                      </span>
+                    </div>
+                  </div>
+                  <div class="line_vertical2"></div>
+                  <div class="analyse_choisis">
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="button_final">
+                <a href="">
+                  
+                  <span >show more</span>
+                  
+                </a>
+              </div>
+              
+            </div>
+          </div> {% endcomment %}
+          <div class="form_information  none" >
+            <form  id="myForm" action="">
+              <input type="text" name="id_branch" id="id_branch">
+              <input type="text" name="rdv_purpose" id="rdv_purpose">
+              <input type="text" name="type_analyse" id="type_analyse">
+              <input type="date" name="rdv_date" id="rdv_date">
+              <input type="time" name="rdv_time" id="rdv_time">
+              <input type="text" name="rdv_type" id="rdv_type">
+              <input type="text" name="num_card_b" id="num_carte_b">
+              <input type="month"  min="2000-01" max="2500-01" name="date_exp_b" id="date_exp_b">
+              <input type="text" name="code_s_b" id="code_s_b">
+              <input type="submit" name="" id="submit_information_rdv" >
+            </form>
+          </div>
+        </div>
+        
+        
+            <script type="text/javascript">
+            function wait_rdv(){
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'custom-alert alert-success';
+            alertDiv.innerHTML = '<div class="icon__wrapper"><span class="material-symbols-outlined">pending</span></div> <p>The process is in progress, please wait. </p>';
+            document.body.appendChild(alertDiv);
+            setTimeout(function() {
+              alertDiv.remove();
+              }, 6000);
+            }
+            
+        </script>
+        
+
+
+      </body>
+      </html>

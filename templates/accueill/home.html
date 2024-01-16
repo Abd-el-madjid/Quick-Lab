@@ -1,0 +1,1565 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html style="font-size: 16px" lang="fr">
+
+<head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+    <title>Quick Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="keywords"
+        content="Med center, Medical Services, Common Lab Tests, Lab Tests Online, ​Why Choose Our Clinic?, 24/7, ​Medical Center System, Our Services, 001-234-5678​001-987-7654" />
+    <meta name="description" content="" />
+    <title>home</title>
+       <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+
+           <link id="u-theme-google-font" rel="stylesheet" href="{% static 'css/accueil/family=Outfit.css' %}">
+    <link id="u-page-google-font" rel="stylesheet" href="{% static 'css/accueil/family=Lato.css' %}">
+
+    <link href="{% static 'css/accueil/doctolib16.css' %}" rel="stylesheet" />
+
+    <link href="{% static 'css/accueil/head_accueill.css' %}" rel="stylesheet" />
+
+    <link rel="stylesheet" href="{% static 'css/accueil/header2.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/accueil/nicepage.css' %}" media="screen" />
+    <link rel="stylesheet" href="{% static 'css/accueil/nicepage_2.css' %}" media="screen" />
+    <link rel="stylesheet" href="{% static 'css/accueil/home.css' %}" media="screen" />
+
+    <link id="u-theme-google-font" rel="stylesheet" href="{% static 'css/accueil/family=Outfit.css' %}" />
+    <link id="u-page-google-font" rel="stylesheet" href="{% static 'css/accueil/family=Lato.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/accueil/labo_sign_up_option.css' %}" />
+
+    
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/homedashboard.js' %}"></script>
+
+    <script class="u-script" type="text/javascript" src="{% static 'js/accueil/jquery-3.5.1.min.js' %}"
+        defer=""></script>
+
+    <script src="{% static 'js/login/sign_up_labo.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'js/accueil/home.js' %}" />
+
+    <script src="{% static 'js/accueil/nicepage.js' %}"></script>
+
+
+    <script src="{% static 'js/general/notification_pannel.js' %}"></script>
+    <script src="{% static 'js/general/notification.js' %}"></script>
+
+
+
+
+    <script src="{% static 'js/accueil/accueil.js' %}"></script>
+    <script src="https://global.localizecdn.com/localize.js"></script>
+    <script>!function (a) { if (!a.Localize) { a.Localize = {}; for (var e = ["translate", "untranslate", "phrase", "initialize", "translatePage", "setLanguage", "getLanguage", "getSourceLanguage", "detectLanguage", "getAvailableLanguages", "untranslatePage", "bootstrap", "prefetch", "on", "off", "hideWidget", "showWidget"], t = 0; t < e.length; t++)a.Localize[e[t]] = function () { } } }(window);</script>
+
+    <script>
+        Localize.initialize({
+            key: 'MOQ1JfoVDeKhB',
+            rememberLanguage: true,
+        });
+    </script>
+</head>
+
+<body data-home-page="" data-home-page-title="home" class="u-body u-xl-mode" data-lang="fr" onload="init()">
+    <aside class="menu-panel" role="complementary">
+        <div class="hide-since-tablet" psi-proxy-user-popup="">
+            <a id="profile_head-secound" aria-label="profile menu"
+                class="dark-link profile-link profile-menu profile-link--in-menu" role="link" tabindex="0">
+                <ins class="nav-menu-icon nav-menu-icon--user">
+                    <span id="profile-circle" class="material-symbols-outlined">
+                        account_circle
+                    </span>
+                </ins>
+
+                <div class="profile-link__user">{{ name }}</div>
+
+                <!---->
+
+                <ins class="profile-link__trigger">
+                    <span id="profile-arrow-2" class="material-symbols-outlined">
+                        expand_more
+                    </span>
+                </ins>
+            </a>
+
+            <div class="side-account-profil none">
+                <ul class="contenait">
+                    <li>
+                        <a id="account" role="link" tabindex="0" href="{% url 'account_all' %}">
+                            <ins class="initials initials--big" style="background-color: rgb(15, 46, 76)">
+                                {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+                            </ins>
+
+                            <div class="">account</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="sign_out" role="link" tabindex="0" href="{% url 'logout' %}">
+                            <ins class="">
+                                <span class="material-symbols-outlined"> logout </span>
+                            </ins>
+
+                            <div class="">sign out</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-panel__content">
+            <div class="menu-panel__content_header">
+                <a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/" title="Homepage"
+                    href="{% url 'home' %}">
+                    <img alt="Logo" src="/media/image/logo sans bg.png" width="70" height="55" />
+                </a>
+                <div>
+                    <a class="side-menu-logo-title" href="{% url 'home' %}">
+                        <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+                            data-animation-name="customAnimationIn" data-animation-duration="1000"
+                            data-animation-direction="" style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                ">
+                            Quick
+                        </p>
+                        <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+                            data-animation-name="customAnimationIn" data-animation-duration="1000" data-lang-en="Lab"
+                            style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                ">
+                            Lab
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <!---->
+            <p-panelmenu aria-label="Main Menu" aria-labelledby="Main Menu" role="navigation" tabindex="0"
+                class="ng-tns-c15-13">
+                <div class="ng-tns-c15-13 side-menu ui-panelmenu ui-widget">
+                    <!---->
+
+                    <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                        <div
+                            class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default ui-corner-top">
+                            <!---->
+                            <!---->
+                            <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon ui-state-active"
+                                href="{% url 'home' %}">
+                                <!---->
+                                <!---->
+
+                                <span class="ui-menuitem-text">Home</span>
+                            </a>
+                        </div>
+                        <!---->
+                    </div>
+                    {% comment %} <div class="menu-element ui-panelmenu-panel ng-tns-c15-13 hover_drop">
+                        <div
+                            class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                            <!---->
+                            <!---->
+                            <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'signup_labo' %}">
+                                <!---->
+                                <!---->
+
+                                <span class="ui-menuitem-text">Partnerships</span>
+                            </a>
+                        </div>
+                        <!---->
+                    </div> {% endcomment %}
+                    <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                        <div
+                            class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                            <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="accueil/home.html#sec-ae92">
+                                <span class="ui-menuitem-text">services </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-element ui-panelmenu-panel ng-tns-c15-13 hover_drop">
+                        <div
+                            class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                            <!---->
+                            <!---->
+                            <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon">
+                                <!---->
+                                <!---->
+
+                                <span class="ui-menuitem-text">about</span>
+                            </a>
+                            <div class="dropdown">
+                                <ul id="dropdown-menu_container" class="dropdown-menu"
+                                    data-popper-placement="bottom-end" style="margin: 0px">
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center edit-item-btn"
+                                            href="{% url 'history' %}">histsory</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center remove-item-btn"
+                                            href="{% url 'about-us' %}">about us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                        <div
+                            class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                            <!---->
+                            <!---->
+                            <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"
+                                href="{% url 'laboratoire-list' %}">
+                                <!---->
+                                <!---->
+
+                                <span class="ui-menuitem-text">our partner</span>
+                            </a>
+                        </div>
+                        <!---->
+                    </div>
+                    <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+                        <div
+                            class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+                            <!---->
+                            <!---->
+                            <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="#sec-08f1">
+                                <!---->
+                                <!---->
+
+                                <span class="ui-menuitem-text">contact</span>
+                            </a>
+                        </div>
+                        <!---->
+                    </div>
+
+                </div>
+            </p-panelmenu>
+        </div>
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <div class="flex-push"></div>
+        <!----><!----><!----><!----><!----><!----><!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+    </aside>
+
+    <div psi-menu-overlay="">
+        <div class="menu-panel-overlay"></div>
+    </div>
+
+    {%if name is None %}
+    <header class="header header-scroll header_origin">
+        <div class="wrapper header-wrapper">
+            <div class="logo_only">
+                <a class="" role="banner" routerlink="/" title="Homepage" href="{% url 'home' %}">
+                    <img alt="Logo" src="/media/image/logo sans bg.png" width="55" height="55" />
+                </a>
+            </div>
+
+            <div class="menu-panel__content_header origin_header">
+                <a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/" title="Homepage"
+                    href="{% url 'home' %}">
+                    <img alt="Logo" src="/media/image/logo sans bg.png" width="70" height="55" />
+                </a>
+                <div>
+                    <a class="side-menu-logo-title" href="{% url 'home' %}">
+                        <p
+                            class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 customAnimationIn-played">
+                            Quick
+                        </p>
+                        <p
+                            class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 customAnimationIn-played">
+                            Lab
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="header-links">
+                <ul class="link-section">
+                    <li class="head-link">
+                        <a href="{% url 'signup_labo' %}">Partnerships</a>
+                    </li>
+
+                    <li class="head-link"><a href="{% url 'home' %}">home</a></li>
+                    <li class="head-link">
+                        <a href="accueil/home.html#sec-ae92">services</a>
+                    </li>
+
+                    <li class="head-link hover_drop">
+                        about
+                        <div class="dropdown">
+                            <ul id="dropdown-menu_container" class="dropdown-menu" data-popper-placement="bottom-end"
+                                style="margin: 0px">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center edit-item-btn"
+                                        href="{% url 'history' %}">history</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center remove-item-btn"
+                                        href="{% url 'about-us' %}">about us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="head-link"><a href="#sec-08f1">contact</a></li>
+                    <li class="head-link">
+                        <a href="{% url 'laboratoire-list' %}">our partner</a>
+                    </li>
+
+                    <li class="head-link li-button">
+                        <a href="{% url 'signin' %}" rel="noopener noreferrer">
+                            <div class="ui-kit-button ui-kit-button-outline ui-kit-button-medium valign_middle">
+                                Sign in
+                            </div>
+                        </a>
+                    </li>
+                    <li class="head-link li-button">
+                        <a href="{% url 'signup' %}" rel="noopener noreferrer">
+                            <div class="ui-kit-button ui-kit-button-blueline ui-kit-button-medium valign_middle">
+                                Register
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <button type="button" class="hamb" aria-label="hamburger" id="button_menu">
+                <svg version="1.1" id="hamb" onclick="nav()" class="show" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 53 53" xml:space="preserve">
+                    <path d="M2,13.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,13.5,2,13.5z">
+                    </path>
+                    <path d="M2,28.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,28.5,2,28.5z">
+                    </path>
+                    <path d="M2,43.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,43.5,2,43.5z">
+                    </path>
+                </svg>
+                <svg id="close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                    y="0px" viewBox="0 0 212.982 212.982" xml:space="preserve" onclick="nav();" class="">
+                    <path style="fill-rule: evenodd; clip-rule: evenodd" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312
+                                     c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312
+                                     l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937
+                                     c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </header>
+    {%else %}
+    <header id="header-scroll" class="header header-scroll hide-on-print">
+        <div class="header-wrapper wrapper">
+            <div class="header__panel">
+                <ul class="header-menu-bar">
+                    <li class="header-menu-bar__item hide-since-desktop hide-on-print" psi-menu-trigger="">
+                        <a id="menu-link_button" class="profile-link hamburger-link hide-since-desktop">
+                            <ins class="nav-menu-icon nav-menu-icon--hamburger">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    version="1.1" x="0px" y="0px" viewBox="0 0 512 512"
+                                    style="enable-background: new 0 0 512 512" class="icon-svg icon-svg__size--24"
+                                    xml:space="preserve">
+                                    <g>
+                                        <path
+                                            d="M85 341l342 0c11,0 21,10 21,22l0 0c0,11 -10,21 -21,21l-342 0c-11,0 -21,-10 -21,-21l0 0c0,-12 10,-22 21,-22z">
+                                        </path>
+                                        <path
+                                            d="M85 235l342 0c11,0 21,9 21,21l0 0c0,12 -10,21 -21,21l-342 0c-11,0 -21,-9 -21,-21l0 0c0,-12 10,-21 21,-21z">
+                                        </path>
+                                        <path
+                                            d="M85 128l342 0c11,0 21,10 21,21l0 0c0,12 -10,22 -21,22l-342 0c-11,0 -21,-10 -21,-22l0 0c0,-11 10,-21 21,-21z">
+                                        </path>
+                                    </g>
+                                </svg>
+                            </ins>
+
+                            <h6>Menu</h6>
+                        </a>
+                    </li>
+
+                    <li>
+                        <!---->
+                    </li>
+
+                    <!---->
+                    <p-tabmenu>
+                        <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+                            <ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
+                                role="tablist">
+                                <!---->
+                            </ul>
+                        </div>
+                    </p-tabmenu>
+                </ul>
+            </div>
+
+            <div class="menu-panel__content_header">
+                <a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/" title="Homepage"
+                    href="{% url 'home' %}">
+                    <img alt="Logo" src="/media/image/logo sans bg.png" width="70" height="55" />
+                </a>
+                <div>
+                    <a class="side-menu-logo-title" href="{% url 'home' %}">
+                        <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+                            data-animation-name="customAnimationIn" data-animation-duration="1000"
+                            data-animation-direction="" style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                ">
+                            Quick
+                        </p>
+                        <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+                            data-animation-name="customAnimationIn" data-animation-duration="1000" data-lang-en="Lab"
+                            style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                ">
+                            Lab
+                        </p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="header__panel header__panel--spacer hide-on-print"></div>
+            <div class="header__panel hide-on-print">
+                <ul class="header-menu-bar header-menu-bar--main">
+                    <li id="profile-info-1" class="header-menu-bar__item header-menu-bar__item--main hide-up-to-tablet"
+                        psi-proxy-user-popup="" psieventtracker="">
+                        <a id="profile_head-main" aria-label="profile menu" class="dark-link profile-link profile-menu"
+                            role="link" tabindex="0">
+                            <ins class="nav-menu-icon nav-menu-icon--user">
+                                <span id="profile-circle" class="material-symbols-outlined">
+                                    account_circle
+                                </span>
+                            </ins>
+
+                            <div class="profile-link__user">{{ name }}</div>
+
+                            <!---->
+
+                            <ins class="profile-link__trigger">
+                                <span id="profile-arrow" class="material-symbols-outlined">
+                                    expand_more
+                                </span>
+                            </ins>
+                        </a>
+
+                        <p-overlaypanel> </p-overlaypanel>
+
+                        <!---->
+                    </li>
+                    <!---->
+                    <li id="notification"
+                        class="header-menu-bar__item header-menu-bar__item--main header-menu-bar__item--last"
+                        psi-alert-popup="" psieventtracker="">
+                        <span class="notifications-overlay-arrow__hidden"></span>
+                        <a>
+                            <ins class="nav-menu-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    version="1.1" x="0px" y="0px" viewBox="0 0 512 512"
+                                    style="enable-background: new 0 0 512 512"
+                                    class="icon-svg icon-svg__size--24 icon-svg__color--darker-blue"
+                                    xml:space="preserve">
+                                    <path
+                                        d="M483,433l-38-86V181C445,81,361,0,256,0C152,0,67,81,67,181v166l-38,85c-2,4-2,9,1,12c2,4,6,6,11,6h131 c7,36,40,62,78,62s70-26,77-62h144c5,0,9-2,11-6C485,441,485,436,483,433z M250,487c-24,0-45-15-51-37h101C294,472,273,487,250,487z ">
+                                    </path>
+                                </svg>
+                            </ins>
+                            <!---->
+                            <span class="notification-bubble" id="notification-bubble">
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="notification_panel"
+            class="notifications-overlay false ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow"
+            style="
+          z-index: 1007;
+          visibility: visible;
+          top: 180.719px;
+          left: 703.333px;
+          opacity: 1.048;
+          transform: scale(0);
+        ">
+            <div class="ui-overlaypanel-content">
+                <h6 class="linked-heading indent-bottom">
+                    <span psimsg="alert.title">Recent Notifications</span>
+                    <a class="text-style--bold" psimsg="alert.showAll" href="{% url 'show_all_notification' %}">show
+                        All</a>
+                </h6>
+                <ul style="position: relative" id="notification_dashboard" data-patient="0nlbop5f1e">
+                    <!---->
+                </ul>
+            </div>
+            <!---->
+        </div>
+
+        <div id="user-menu" class="user-menu">
+            <!---->
+            <div class="">
+                <div class="profile-pane">
+                    <ins class="initials initials--big" style="background-color: rgb(15, 46, 76)">
+                        {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+                    </ins>
+
+                    <div class="profile-pane__data">
+                        <div class="profile-pane__user">
+                            <a href="{% url 'signin' %}">{{ name }}</a>
+                        </div>
+
+                        <!----><a class="link--blue text-style--bold proxy-user-account-link"
+                            psimsg="proxyUser.accountLink" role="link" tabindex="0"
+                            aria-label="abd el madjid kahoul account" href="{% url 'account_all' %}">Account</a>
+                    </div>
+                </div>
+            </div>
+
+            <!---->
+
+            <!---->
+            <p-accordion styleclass="ui-accordion-user-menu" class="">
+                <div class="ui-accordion-user-menu ui-accordion ui-widget ui-helper-reset">
+                    <!---->
+
+                    <!---->
+
+                    <!---->
+                </div>
+            </p-accordion>
+
+            <div class="user-menu__item">
+                <a class="user-menu__control" href="{% url 'logout' %}" psimsg="proxyUser.logout" tabindex="0">Sign
+                    Out</a>
+            </div>
+        </div>
+    </header>
+    {% endif %}
+
+    <section class="u-clearfix u-image u-image-contain u-section-1" id="sec-0393" data-image-width="496"
+        data-image-height="503">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout" style="">
+                    <div class="u-layout-row" style="">
+                        <div class="u-align-left-lg u-align-left-md u-align-left-sm u-align-left-xs u-container-style u-layout-cell u-left-cell u-shape-rectangle u-size-27 u-size-xs-60 u-layout-cell-1"
+                            src="" data-animation-name="" data-animation-duration="0" data-animation-direction="">
+                            <div class="u-container-layout u-container-layout-1">
+                                <h2 class="u-align-left-xl u-text u-text-grey-50 u-text-1 animated customAnimationIn-played"
+                                    data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                    data-animation-direction="" data-animation-delay="750" style="
+                      will-change: transform, opacity;
+                      animation-duration: 1000ms;
+                    ">
+                                    Take control of your healthcare<br />
+                                    <br />
+                                </h2>
+                                <img class="u-image u-image-default u-preserve-proportions u-image-1 animated customAnimationIn-played"
+                                    src="/media/image/62a894774e255280a87f15a6_line (1).png" alt=""
+                                    data-image-width="205" data-image-height="17"
+                                    data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                    data-animation-delay="0" style="
+                      will-change: transform, opacity;
+                      animation-duration: 1000ms;
+                    " />
+                                <p class="u-align-center-xl u-text u-text-grey-60 u-text-2 animated customAnimationIn-played"
+                                    data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                    data-animation-direction="" style="
+                      will-change: transform, opacity;
+                      animation-duration: 1000ms;
+                    ">
+                                    Get accurate and convenient blood tests at QuickLab.
+                                    Schedule, provide a sample, and receive reliable results
+                                    securely. Trust QuickLab for your medical lab testing needs.
+                                </p>
+                                <a href="{% url 'history' %}"
+                                    class="u-active-none u-border-1 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-palette-1-base u-btn u-button-style u-hover-feature u-hover-palette-1-base u-palette-5-base u-text-hover-white u-text-palette-1-base u-btn-1 animated customAnimationIn-played"
+                                    data-animation-name="customAnimationIn" data-animation-duration="1250"
+                                    data-animation-direction="X" data-animation-delay="750" style="
+                      will-change: transform, opacity;
+                      animation-duration: 1250ms;
+                    ">
+                                    &nbsp;learn more</a>
+                                <div class="u-preserve-proportions u-shape u-shape-svg u-text-palette-3-base u-shape-1 animated customAnimationIn-played"
+                                    data-animation-name="customAnimationIn" data-animation-duration="1000" style="
+                      will-change: transform, opacity;
+                      animation-duration: 1000ms;
+                    ">
+                                    <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style="">
+                                        <use xlink:href="#svg-5c42"></use>
+                                    </svg>
+                                    <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-5c42">
+                                        <path d="M114.3,152.3l38-38C144.4,130.9,130.9,144.4,114.3,152.3z M117.1,9.1l-108,108c0.8,1.6,1.7,3.2,2.7,4.8l110-110
+	C120.3,10.9,118.7,10,117.1,9.1z M97.5,2L2,97.5c0.4,2,1,4,1.5,5.9l99.9-99.9C101.5,2.9,99.5,2.4,97.5,2z M80,160c2,0,4-0.1,5.9-0.2
+	l73.9-73.9c0.1-2,0.2-3.9,0.2-5.9c0-0.6,0-1.2,0-1.9L78.1,160C78.8,160,79.4,160,80,160z M34.9,146.1c1.5,1,3,2,4.6,2.9L149,39.5
+	c-0.9-1.6-1.9-3.1-2.9-4.6L34.9,146.1z M132.7,19.8L19.8,132.7c1.2,1.3,2.3,2.6,3.6,3.9L136.6,23.4C135.3,22.2,134,21,132.7,19.8z
+	 M59.6,157.4l97.8-97.8c-0.5-1.9-1.1-3.8-1.7-5.7L53.9,155.6C55.8,156.3,57.7,156.9,59.6,157.4z M7.6,45.9L45.9,7.6
+	C29.1,15.5,15.5,29.1,7.6,45.9z M80,0c-2.6,0-5.1,0.1-7.6,0.4l-72,72C0.1,74.9,0,77.4,0,80c0,0.1,0,0.2,0,0.2L80.2,0
+	C80.2,0,80.1,0,80,0z"></path>
+                                    </svg>
+                                </div>
+                                <a href="{% url 'check_patient' %}"
+                                    class="u-active-none u-border-1 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-palette-3-base u-btn u-button-style u-hover-feature u-hover-palette-5-base u-palette-3-base u-text-active-palette-4-base u-text-hover-palette-1-base u-btn-2 animated customAnimationIn-played"
+                                    data-animation-name="customAnimationIn" data-animation-duration="1250"
+                                    data-animation-direction="Left" data-animation-delay="500" style="
+                      will-change: transform, opacity;
+                      animation-duration: 1250ms;
+                    ">book&nbsp;appointment</a>
+                            </div>
+                        </div>
+                        <div class="u-align-center u-container-style u-hidden-sm u-hidden-xs u-image u-image-contain u-layout-cell u-right-cell u-size-33 u-size-xs-60 u-image-2 animated customAnimationIn-played"
+                            src="" data-image-width="1920" data-image-height="1920"
+                            data-animation-name="customAnimationIn" data-animation-duration="1000"
+                            data-animation-delay="500" style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                ">
+                            <div class="u-container-layout u-container-layout-2" src=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="u-align-center u-clearfix u-section-2 bg-white" id="sec-0b20">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h6 class="u-align-center u-text u-text-1">
+                The world’s trusted partner for clinically&nbsp;
+            </h6>
+            <div class="u-carousel u-expanded-width u-gallery u-gallery-slider u-layout-carousel u-lightbox u-no-transition u-show-text-none u-gallery-1"
+                id="carousel-8bf6" data-interval="5000" data-u-ride="carousel" data-pause="hover">
+                <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
+                    <li data-u-target="#carousel-8bf6" data-u-slide-to="0" class="u-active u-grey-70 u-shape-circle"
+                        style="width: 10px; height: 10px"></li>
+                    <li data-u-target="#carousel-8bf6" data-u-slide-to="1" class="u-grey-70 u-shape-circle"
+                        style="width: 10px; height: 10px"></li>
+                    <li data-u-target="#carousel-8bf6" data-u-slide-to="2" class="u-grey-70 u-shape-circle"
+                        style="width: 10px; height: 10px"></li>
+                    <li data-u-target="#carousel-8bf6" data-u-slide-to="3" class="u-grey-70 u-shape-circle"
+                        style="width: 10px; height: 10px"></li>
+                    <li data-u-target="#carousel-8bf6" data-u-slide-to="4" class="u-grey-70 u-shape-circle"
+                        style="width: 10px; height: 10px"></li>
+                    <li data-u-target="#carousel-8bf6" data-u-slide-to="5" class="u-grey-70 u-shape-circle"
+                        style="width: 10px; height: 10px"></li>
+                    <li data-u-target="#carousel-8bf6" data-u-slide-to="6" class="u-grey-70 u-shape-circle"
+                        style="width: 10px; height: 10px"></li>
+                </ol>
+                <div class="u-carousel-inner u-gallery-inner u-gallery-inner-1" role="listbox">
+                    <div class="u-active u-carousel-item u-gallery-item u-carousel-item-1">
+                        <div class="u-back-slide" data-image-width="315" data-image-height="315">
+                            <img class="u-back-image u-expanded u-image-contain u-back-image-1"
+                                src="/media/image/th (1).webp"
+                                alt="" />
+                        </div>
+                        <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-1">
+                            <h3 class="u-gallery-heading"></h3>
+                            <p class="u-gallery-text"></p>
+                        </div>
+                    </div>
+                    <div class="u-carousel-item u-gallery-item u-carousel-item-2">
+                        <div class="u-back-slide" data-image-width="267" data-image-height="225">
+                            <img class="u-back-image u-expanded u-image-contain"
+                                src="/media/image/th.webp" alt="" />
+                        </div>
+                        <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-2">
+                            <h3 class="u-gallery-heading"></h3>
+                            <p class="u-gallery-text"></p>
+                        </div>
+                    </div>
+                    <div class="u-carousel-item u-gallery-item u-carousel-item-3">
+                        <div class="u-back-slide" data-image-width="401" data-image-height="225">
+                            <img class="u-back-image u-expanded u-image-contain"
+                                src="/media/image/logo.jpg" alt="" />
+                        </div>
+                        <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-3">
+                            <h3 class="u-gallery-heading"></h3>
+                            <p class="u-gallery-text"></p>
+                        </div>
+                    </div>
+                    <div class="u-carousel-item u-gallery-item u-carousel-item-4">
+                        <div class="u-back-slide" data-image-width="190" data-image-height="101">
+                            <img class="u-back-image u-expanded u-image-contain"
+                                src="/media/image/8dd61aa2-7bd9-4396-82c0-d53b252bbd0b_partner_logo-labor-berlin.png" alt="" />
+                        </div>
+                        <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-4">
+                            <h3 class="u-gallery-heading"></h3>
+                            <p class="u-gallery-text"></p>
+                        </div>
+                    </div>
+                    <div class="u-carousel-item u-gallery-item u-carousel-item-5">
+                        <div class="u-back-slide" data-image-width="296" data-image-height="150">
+                            <img class="u-back-image u-expanded u-image-contain"
+                                src="/media/image/b6822a2a-54fd-40b9-82e1-3134cb54aeb8_MSD_logo_grey.png"
+                                alt="" />
+                        </div>
+                        <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-5">
+                            <h3 class="u-gallery-heading"></h3>
+                            <p class="u-gallery-text"></p>
+                        </div>
+                    </div>
+                    <div class="u-carousel-item u-gallery-item u-carousel-item-6">
+                        <div class="u-back-slide" data-image-width="970" data-image-height="959">
+                            <img class="u-back-image u-expanded u-image-contain"
+                                src="/media/image/244486842_1200299370462834_3798952635707152557_n.jpg"
+                                alt="" />
+                        </div>
+                        <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-6">
+                            <h3 class="u-gallery-heading"></h3>
+                            <p class="u-gallery-text"></p>
+                        </div>
+                    </div>
+                    <div class="u-carousel-item u-gallery-item u-carousel-item-7" data-image-width="291"
+                        data-image-height="150">
+                        <div class="u-back-slide">
+                            <img class="u-back-image u-expanded u-image-contain u-back-image-7"
+                                src="/media/image/311887955_518808373589250_3118763051576664267_n.jpg" />
+                        </div>
+                        <div class="u-align-center u-over-slide u-shading u-valign-bottom u-over-slide-7">
+                            <h3 class="u-gallery-heading"></h3>
+                            <p class="u-gallery-text"></p>
+                        </div>
+                        <style data-mode="XL" data-visited="true"></style>
+                        <style data-mode="LG" data-visited="true"></style>
+                        <style data-mode="MD" data-visited="true"></style>
+                        <style data-mode="SM" data-visited="true"></style>
+                        <style data-mode="XS"></style>
+                    </div>
+                </div>
+                <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-1"
+                    href="#carousel-8bf6" role="button" data-u-slide="prev">
+                    <span aria-hidden="true">
+                        <svg viewBox="0 0 451.847 451.847">
+                            <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+                        </svg>
+                    </span>
+                    <span class="sr-only">
+                        <svg viewBox="0 0 451.847 451.847">
+                            <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+                        </svg>
+                    </span>
+                </a>
+                <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-carousel-control-2"
+                    href="#carousel-8bf6" role="button" data-u-slide="next">
+                    <span aria-hidden="true">
+                        <svg viewBox="0 0 451.846 451.847">
+                            <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+                        </svg>
+                    </span>
+                    <span class="sr-only">
+                        <svg viewBox="0 0 451.846 451.847">
+                            <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="u-align-center u-clearfix u-section-3 bg-grey-lighter" id="sec-c3ae">
+        <div
+            class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
+            <h1 class="u-text u-text-default u-title u-text-1">How it Works</h1>
+            <p class="u-text u-text-default u-text-palette-1-base u-text-2">
+                Living healthy starts here
+            </p>
+            <div class="u-expanded-width u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                    <div class="u-align-center u-container-style u-hover-feature u-list-item u-repeater-item u-shape-rectangle u-list-item-2"
+                        data-animation-name="" data-animation-duration="0" data-animation-direction="">
+                        <div class="u-container-layout u-similar-container u-container-layout-2">
+                            <span
+                                class="u-border-2 u-border-palette-1-base u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-2 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                data-animation-delay="500" style="
+                    will-change: transform, opacity;
+                    animation-duration: 1000ms;
+                  "><img src="data:image/png;base64,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"
+                                    alt="" /></span>
+                            <h4 class="u-align-center u-text u-text-default u-text-5 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000" style="
+                    will-change: transform, opacity;
+                    animation-duration: 1000ms;
+                  ">
+                                Get Tested
+                            </h4>
+                            <p class="u-text u-text-6 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000" style="
+                    will-change: transform, opacity;
+                    animation-duration: 1000ms;
+                  ">
+                                Enter your zip code and choose<br />a lab or radiology center
+                                near you.
+                            </p>
+                            <div class="u-border-1 u-border-grey-dark-1 u-line u-line-horizontal u-line-2"></div>
+                        </div>
+                    </div>
+                    <div class="u-align-center u-container-style u-hover-feature u-list-item u-repeater-item u-shape-rectangle u-list-item-1"
+                        data-animation-name="" data-animation-duration="0" data-animation-direction="">
+                        <div class="u-container-layout u-similar-container u-container-layout-1">
+                            <span
+                                class="u-border-2 u-border-palette-1-base u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-1 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                data-animation-delay="500" style="
+                    will-change: transform, opacity;
+                    animation-duration: 1000ms;
+                  "><img src="data:image/png;base64,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"
+                                    alt="" /></span>
+                            <h4 class="u-align-center u-text u-text-default u-text-3 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000" style="
+                    will-change: transform, opacity;
+                    animation-duration: 1000ms;
+                  ">
+                                Select test
+                            </h4>
+                            <p class="u-text u-text-4 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000" style="
+                    will-change: transform, opacity;
+                    animation-duration: 1000ms;
+                  ">
+                                Choose one of 1,200<br />lab &amp; radiology tests available.
+                            </p>
+                            <div class="u-border-1 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
+                        </div>
+                    </div>
+
+                    <div class="u-align-center u-container-style u-hover-feature u-list-item u-repeater-item u-shape-rectangle u-list-item-3"
+                        data-animation-name="" data-animation-duration="0" data-animation-direction="">
+                        <div class="u-container-layout u-similar-container u-container-layout-3">
+                            <span
+                                class="u-border-2 u-border-palette-1-base u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-3 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                data-animation-delay="500" style="
+                    will-change: transform, opacity;
+                    animation-duration: 1000ms;
+                  "><img src="data:image/png;base64,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"
+                                    alt="" /></span>
+                            <h4 class="u-align-center u-text u-text-default u-text-7 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000" style="
+                    will-change: transform, opacity;
+                    animation-duration: 1000ms;
+                  ">
+                                View Results
+                            </h4>
+                            <p class="u-text u-text-8 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000" style="
+                    will-change: transform, opacity;
+                    animation-duration: 1000ms;
+                  ">
+                                Review your health information<br />anytime, anywhere.
+                            </p>
+                            <div class="u-border-1 u-border-grey-dark-1 u-line u-line-horizontal u-line-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="u-clearfix u-section-4" id="sec-ae92">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h1 class="u-align-center u-custom-font u-font-lato u-text u-text-palette-4-base u-text-1">
+                &nbsp;Services
+            </h1>
+            <p class="u-align-center u-text u-text-grey-50 u-text-2">
+                Our Center offers you and your family the complete range of healthcare
+                services.&nbsp;
+            </p>
+            <div class="u-expanded-width u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                    <div
+                        class="u-align-left u-border-1 u-border-palette-1-base u-container-style u-custom-item u-list-item u-radius-29 u-repeater-item u-shape-round u-list-item-1">
+                        <div class="u-container-layout u-similar-container u-container-layout-1">
+                            <span
+                                class="u-border-2 u-border-palette-3-base u-file-icon u-icon u-icon-circle u-palette-5-base u-text-palette-3-base u-icon-1"
+                                data-animation-name="slideIn" data-animation-duration="2000"
+                                data-animation-direction="Down"><img
+                                    src="data:image/png;base64,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"
+                                    alt="" /></span>
+                            <h5 class="u-text u-text-9">Online appointment scheduling</h5>
+                            <p class="u-text u-text-4">
+                                A user-friendly interface to schedule appointments online and
+                                avoid waiting in line
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="u-align-left u-border-1 u-border-palette-1-base u-container-style u-custom-item u-list-item u-radius-29 u-repeater-item u-shape-round u-list-item-2">
+                        <div class="u-container-layout u-similar-container u-container-layout-2">
+                            <span
+                                class="u-border-2 u-border-palette-3-base u-file-icon u-icon u-icon-circle u-palette-5-base u-text-palette-3-base u-icon-2"
+                                data-animation-name="slideIn" data-animation-duration="2000"
+                                data-animation-direction="Down"><img
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAADwZJREFUeF7tXU2MHEcVfjW7Sxw5MVyMsjP7F8VCkW2JICF+7gglBIEP2d2JjCAKwkjEiYI4wCESviLxIwgBYZETduzZRQoKIUZC3M0BESVxIguJ7Mzu7OaCABtkJ56dQj0zPVPT093vvapXPT2zPSd769Wr97731avq6qpqBcXvQCOgsvQ+aExn2aB0WxPvwCggfQLsLVcf1aB/BQAVadwOtj69o0Cdma/XrgxwyA+T+gTYXV7bBlALcsEK+nqmCUbOdGlNGrbLjdqSnVq/ZDEIsD7R2TkNXL8Q0sJarteEeoOsN3YEyEvnZtghCxst6KaUHAH4bWOdo1O+uzycAaQN9q2fC4tve3zr5/qbJJ+YAQoCcCAezS8FASL40QAZBdJX6qbZwyHBsKxv/XGW2WBVZIAektSMRwXZFwGo7VOpWxCASQAqsDgBpENJtWxYriCAVwIMHlOoGYYXRncSFQTwSoBBOMuNmsrjOngCATSU6xtCCxddEPCUyOO+q7Rve3zrd/U/rD+2DCDlgJQe6RRdEAB5DJQKnJSeggACK4FpUxL5l01Soe+8o3Z4WRNvR5EBIrjsLa8/okGft3vjyFj0T+RFgg4N21AqnSlvXfqjIKWc5zzu83uaN17nABQnfPcU3/oHMA97m127tEAnSXklQNAoRgLfQPnWnwTsuNrl0sE7ATCDkoDCiIPpDcvHFYhxtUvFRewxMDZQjOj5Biqqv1KvqSx2vvjwiwErkQdqsGcLM3h8ewYlJoBEPKzE4vb85W/hy3kOkOvHOKvACVaKeYzEOlS3dfk+zfWKPAeIOsRtaNrlowtJNAJkg0oazaaPAGMaMcZLAPtMYk0AqaVTLz3FwMOL/tSXW93Gpdu1D3F6lhkDAbJdMMEDYQdtoNesOd4MYD+UjIEAw8buLq/fBIB7wr+2W7OLC82LO/YuDWo2H6guqpZuGLpuluu1IxK6MWJh5RI2UHRg9B4/AZaqfwGlP2U4c6Xdmj3jSoJu8NvBu4eHQ90a4GqlXvssBTgsce4urw0tJxQZwBLV5tL600rBz8jVHSZ5GuDpSr32c3JbKYJYD8fKJWyQ0DG+DKAUgNbw92OP3HX4zpGrAPCQhEMpOl7/1+H2p0+8vfmBczsKYHcp/SANhQBD6RnL1c5GxysYHwEMe7YXViszM6VXTRII4/H6/n77i4s7m00pHLEAd8t9bwp19yYXBAjcuHZ89UMf+V/pDACcVgAnzYmhpZv/VaDebIN+6d+H2+dFer5hCI0AgwpSj82WWCRWQwkQ9sTupKcvDnl1KBUgwbRiEiBQG+BhzgrTCSJoSJzDDPUoAUL9GOOlmZlffbSFnknBa2IIsLf0+In5xqVreSEGFmCsPC9+kAgQCDUFNo3aOr23tL6qFbyklP7R/NbG96h6GJmQqrIvhwUYK2c36KkCiQBB2+NyKAw+AMwGdiilf8AhgSfcUDwk5kw+CRzikmsCNFeq60rrC2Hwe0a3Sm34xH3btbdGg5sFZN1WsQ6BlfsiJlevGAGkdgwFaywA+httVbq3G3w9azx9tLRSX6lsXa5xHcXleeTpLAQNHopGnoqmjwCow463jA0v8f4HAA5He/4g+Lxg4cHnS2ABxsr5LfqpIZYBoitffHNTF/n3AeBr5frGxcyvmkzgGhZgrJyPj10NrKu4E6DXgsctY73g1y7aQZBSC0MnpSoW4L3ldW0uDOVz4YyxKxhzGCvHgpdAIH/BHzKIzwTMX6wcwyOrckYGSF8KdnG4N9u/HHHa44TPHV7MX6zc3QIHDQbfGQRwf/0Zt5qX8KgHWqkqZ7YvNQSFqRoLoGt5DnaEdxiUTgCDKa4ON1eq55TWz4HWT5QbG8GzPUQXeUxOc8fMiSOAQweWrJpJBugF//s9w/cDEihQ7wfLu5FHvb5vBQHC/un3IJt3Ary3uH6yXYK/RZ/pe5HuLO/G/fJFgNE7k1wzomQvDnXxprJdae8ECIxLGucNEFrRTMAlgBugIQz03pZHAthgkAkBuuN99TGt9KWYlN951AOAzrwg/GVLAD50E0mAmBThlQDR9mJI0H/OxwDlpTd+QLk1MHuxcm57vp4avBIgzsndlbVToOF50EpDST9T3tr4XSDnDFjGDEm2t2uIsz9shthVYBMgxFn6IAQXMKnHPipsXH8xf6TenlLtH8gN32fQI4AC15MumMOYodz6k06Asd63YNxn4C0DYAHHyrFJ4OQTYLzfaArxZRMgaZYuHZCCAFgXMcpZx+W6wh4I4LghxPTXw82dDDhJotiQ5VqebITdbDfJHrEM4HYT6BCbvdzcSYoqQ6gDqNHzpCeJDFNIon4IYEfGgcGM+mLnAhhtpiHL6eFBk/OR7wbG1U83zc1wPwQgcc9dyPZcgHvLyRpMQKkBNrVhBJK2PSljiQ0B0gaH+sTPBbh1pL6bWADJ5awJnCXKMW2ITwJR0yyAj32JpKFV0knnAlArxATIAe61iM0RxAzrK0pnljgBpFa2Rs8FdE8E9X652SbmTgDBpyYue1wWgsK2Rhkt6hByLoDrsby8KwHEnpq4rkW+jyA2B5BeCIr4ldHuYPrtra4EiMYN08eNM1XfJBAgu+AzUMYAxsqniwDGpUlJbwvTsR19GdWTH1Pw8RkrFmCs3D8BaDe6eMsA2Fq+CUBxLoC6HwInZogrlYCZEqA4F5CcB6kBS8ukJj2o+vwToGfVdJwLCOHCd/xQA8DtsdRpStg+NiT7J0B3V3BwKKQ4F5ASPS5hMCJQ9XknwHScC+heA2eCjgGMlfufBKYf5QvbjyWA9MuN/J8LwPrTaDkWYKw81wQIjJNmfHEuYDiDHDgCBA67nAvA+ij9AWmgyaYOddJmlwESX+DcBoD3FMBVDfq38/XjLys4107DhNq+9zlAFG7bcwEuwcLIY1OO3QBCDUASoZDHvTe0bj9Zbmz+NUmO2n6GBEiHmWqwDWBmy7ZEkh4SsSGAQMpbWsGTla1a9GKNTlUqngQCdCHDFGLlmEPc+skvn/zssIglgMOeQAECBGHRUILfKNV+oXUH3lzc2bxFHaJSnwIkJoFYwLFybCnZ89vHEfPSMwD/+DhGALO9d1eeOHTX/u2ToOAsKP1V82IPDMewPAnPkQwQ/oGyidFsPD0g/F6JEiBybyEVCFs5sSEgYQyiZsDmytrjSqsXAeBuji84AdCLILE7ggQ3hByAcwGcDDAiu1j9JJT0rwHg41QS4ARAbgPHGCq2wyWyY2XIQdsZHBUlhhyGB1buQoCgroZzpb3ld04BqMcA9GeCnecAcCjJBe8EYGBnJSp2LiDSeiynCETDAozdJexKAAxEzD7RSSABL8ze1PK8nwuwmTSLEiAmAJkSwCm6yNUX4ucC3Izt144CXGF9M2jUCGrAqObj+rqsIawDdJvEFVJNo8vxvxdA1x0nyclkGB5YuWgGiHGG2r4YAfBzAbRHQbdzAZwQcmT5PZYagFAzJo+V2xJKjAD2N17EEmOKzwXEEy8uwKbkBBDAWCcILkoPPg0r9xvT7mDTgeHAYQHByrk9Vlqf6FNA3BxBLvaQg+BPyxAwmn1ShoCN4OvOibNe7tIoRoiEpeRcBp8yKfbVYzEc8TnFMAkE5wC0PWhxDvg4F0CZ4lFkkgDHAoyVU4YAn/Z5HwLilh6HVvN63h3Y7wVEGMAlDJYJqPoyywD+zgXE71dIAgjrVSFxMQBdyykZAAtyWnmsfTHOZ0KA4lzA6CZbVwJIEdA7Aab7XMBgDcN1UowFlEuYIX0aoNyI35XsnQCB4cW5gAOcAULmFucCGOcCUnos/pjXlUjKKNFpQCYZIIUE5O8FuEyIfNRNTNk9hKVTOtcHavuZEqDDTF/fC+Ai5CiPAYyVc8d0rrnU9jMnQN+RsOXeYmOywbSXJ1yAuPK8SR5+/b4cAWj4eN8SRmWc7coaBhg3oMPyxhvJ3nus6OejeAQYHYOjG0Ywf7Bd0bH+GlygxsNbBnALCH/W7NoeVp9OgPiFKSyg1IBhdlIniaFcQQAionQCpM/CpTIgZjaVUIIE8HMuAFu6xYDwVY4BjJUnDgG90QjLGJhf1PbFCJDJuQBs4MNQESzHAMbKTVOCIDSRcxlc06nt2xGAsFDBNXjS5DGAsXLuJDCqL3ZSyZkE9mTtCBBzg8ikBdDVXizAWLkrAbAhgtp+QQBLJmAAY+UFASyBz0s1LMBYefDlLp9b7vD2u0gWGcCSURjAWDk3A3DNpLYvQ4C8PqtxUWPIYwBj5fIE4GWUsH1rAjCwOhCi3IWiGALcBIB7On/XAHN33zpy9Porwd/Yv38eO33k/Tut4HBN+LtRrtc+HKfIiQCxHZ92AoztlPmNPn5l/zXsCdBfOr4OAB/r90zdPjHf2HzbxvLeLqw3jbrXy/Xag44EEFzps/Eqz3VibjThDwFrVwDUw303NTxbbtR+auP27kr126D1j426r5XrtUedCCC20mfjUZ7rJNxo0icAcWm3ubx+VgE8b7j61ny9/ZCCzWDTTPIvkoY1rM7sLZfeAIDj/WwC8NR8vfYL4//9Iz+JQwD2+jLPMYlzNN5ef7NXbgZoPlBdVC39LgDMDOxXZ+frl1/gYL27VH0GlDYzR6vdmr1/oXlxxykDcIyYflmcOFwCBJjtLq8HFz993cDvg7ZWX1hoXP7z4G/JbTeX1j6nlHoNAOb68grOl7dq30yKCXkSOP1Bjc8beKjjkbEhwPbCamVmpvQOANxrkkADfKdcb/8yaTjopP2lmadA6R8OBR/gxhzMPfjR+oW96AYX09vOv20MPjikoHnaJ4vxEa2wJrZ2H8o1F6tfUiX9MgCUIq1eA6VeLO3rP5Vut7eCsvah0kq7BJ/vZY3+mN+pp6GtQZ+qNDZ+n2Z9YgaguVxIURFII0A0y/TG8Z/EkIDaXFtreLbSqJmTyti6QwSwTXdUqw6yHDUDRDLBhchwQIHwRknD6fsatVcpwgYB8vGcP5UktLz5dO/Y6lHdUs8prb6lYegbynGxDb4fcHEO5r57tH5hjxL8QKZPgOI5nwoZUy7t5lOiqp3K6YWZ2f0va9DBYs79ALDQqxo82v1DAfxhvzX7StKjXvz0tvvXPgGIthRimSLgJx+aWkkE8GOGDyQnx1If3tvo/D9GCXFVrzAScQAAAABJRU5ErkJggg=="
+                                    alt="" /></span>
+                            <h5 class="u-text u-text-5">Test result access</h5>
+                            <p class="u-text u-text-6">
+                                Secure and convenient access to test results online, with
+                                options to download or print a copy.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="u-align-left u-border-1 u-border-palette-1-base u-container-style u-custom-item u-list-item u-radius-29 u-repeater-item u-shape-round u-list-item-3">
+                        <div class="u-container-layout u-similar-container u-container-layout-3">
+                            <span
+                                class="u-border-2 u-border-palette-3-base u-file-icon u-icon u-icon-circle u-palette-5-base u-text-palette-3-base u-icon-3"
+                                data-animation-name="slideIn" data-animation-duration="2000"
+                                data-animation-direction="Down"><img
+                                    src="data:image/png;base64,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"
+                                    alt="" /></span>
+                            <h5 class="u-text u-text-7">Patient support</h5>
+                            <p class="u-text u-text-8">
+                                Providing patient support through various means such as email,
+                                phone or live chat, to address any questions or concerns about
+                                the services provided.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="u-align-left u-border-1 u-border-palette-1-base u-container-style u-custom-item u-list-item u-radius-29 u-repeater-item u-shape-round u-list-item-4">
+                        <div class="u-container-layout u-similar-container u-container-layout-4">
+                            <span
+                                class="u-border-2 u-border-palette-3-base u-file-icon u-icon u-icon-circle u-palette-5-base u-text-palette-3-base u-icon-4"
+                                data-animation-name="slideIn" data-animation-duration="2000"
+                                data-animation-direction="Down"><img
+                                    src="data:image/png;base64,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"
+                                    alt="" /></span>
+                            <h5 class="u-text u-text-9">Convenient location finder</h5>
+                            <p class="u-text u-text-10">
+                                A tool that helps users locate the nearest testing center,
+                                with detailed information such as hours of operation and
+                                available tests. This helps to increase the accessibility of
+                                services for users.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="u-expanded-width u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                    <div
+                        class="u-align-left u-border-1 u-border-palette-1-base u-container-style u-custom-item u-list-item u-radius-29 u-repeater-item u-shape-round u-list-item-1">
+                        <div class="u-container-layout u-similar-container u-container-layout-1">
+                            <span
+                                class="u-border-2 u-border-palette-3-base u-file-icon u-icon u-icon-circle u-palette-5-base u-text-palette-3-base u-icon-1"
+                                data-animation-name="slideIn" data-animation-duration="2000"
+                                data-animation-direction="Down"><img
+                                    src="data:image/png;base64,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"
+                                    alt="" /></span>
+                            <h5 class="u-text u-text-9">home appointment scheduling</h5>
+                            <p class="u-text u-text-4">
+                                A user-friendly interface to schedule appointments online and
+                                avoid waiting in line
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="u-align-left u-border-1 u-border-palette-1-base u-container-style u-custom-item u-list-item u-radius-29 u-repeater-item u-shape-round u-list-item-2">
+                        <div class="u-container-layout u-similar-container u-container-layout-2">
+                            <span
+                                class="u-border-2 u-border-palette-3-base u-file-icon u-icon u-icon-circle u-palette-5-base u-text-palette-3-base u-icon-2"
+                                data-animation-name="slideIn" data-animation-duration="2000"
+                                data-animation-direction="Down"><img
+                                    src="data:image/png;base64,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"
+                                    alt="" /></span>
+                            <h5 class="u-text u-text-5">Track Your Results</h5>
+                            <p class="u-text u-text-6">
+                                Implement the personalized suggestions and track your levels
+                                to see your improvements.
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="u-align-left u-border-1 u-border-palette-1-base u-container-style u-custom-item u-list-item u-radius-29 u-repeater-item u-shape-round u-list-item-3">
+                        <div class="u-container-layout u-similar-container u-container-layout-3">
+                            <span
+                                class="u-border-2 u-border-palette-3-base u-file-icon u-icon u-icon-circle u-palette-5-base u-text-palette-3-base u-icon-3"
+                                data-animation-name="slideIn" data-animation-duration="2000"
+                                data-animation-direction="Down"><img
+                                    src="data:image/png;base64,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"
+                                    alt="" /></span>
+                            <h5 class="u-text u-text-7">Fully Understand Your Lab Tests</h5>
+                            <p class="u-text u-text-8">
+                                Understand everything you need to know about each marker and
+                                why your doctor likely ordered it.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-80" id="benifit">
+        <div class="container card card--large md:px-50 vcarousel">
+            <div class="w-full text-center mb-20">
+                <h2>QuickLab® Features</h2>
+            </div>
+            <div class="benefits_container">
+                <div class="vcarousel__menu w-full mb-20 md:mb-0 md:w-2/5 lg:w-1/3 md:pr-20"
+                    style="width: 39.33333% !important">
+                    <div class="vcarousel__menu_bar">
+                        <div class="vcarousel__menu_bar_indicator"></div>
+                    </div>
+                    <div class="vcarousel__menu_contents">
+                        <div class="w-full item">
+                            <h4 class="text-pink">from Any device</h4>
+                        </div>
+                        <div class="w-full item">
+                            <h4 class="">Appointment Reminders</h4>
+                        </div>
+                        <div class="w-full item">
+                            <h4 class="">Medical Record Management</h4>
+                        </div>
+                        <div class="w-full item">
+                            <h4 class="">Secure Online Payments</h4>
+                        </div>
+                        <div class="w-full item">
+                            <h4 class="">AI-driven Test Result Prediction</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="vcarousel__content w-full md:w-3/5 lg:w-2/3 md:px-20">
+                    <div class="vcarousel__content_item mt-10" style="min-height: 254px">
+                        <h3 class="mb-15">
+                            Our platform offers seamless accessibility from any device,
+                            allowing users to conveniently access and manage their
+                            information on smartphones, tablets, or computers. Stay
+                            connected and in control, no matter where you are.
+                        </h3>
+                    </div>
+                    <div class="vcarousel__content_item mt-10 hidden" style="min-height: 254px">
+                        <h3 class="mb-15">
+                            Never miss an appointment with our round-the-clock reminder
+                            service. Receive automated reminders via SMS, email, or
+                            notifications, ensuring you stay informed and prepared for your
+                            scheduled appointments at any time of the day.
+                        </h3>
+                    </div>
+                    <div class="vcarousel__content_item mt-10 hidden" style="min-height: 254px">
+                        <h3 class="mb-15">
+                            Our comprehensive medical record management system allows you to
+                            securely store and access your medical records anytime,
+                            anywhere. Easily view and manage your health information,
+                            including test results, diagnoses, treatments, and medications,
+                            all in one centralized platform. Stay organized and have your
+                            medical history readily available whenever you need it.
+                        </h3>
+                    </div>
+                    <div class="vcarousel__content_item mt-10 hidden" style="min-height: 254px">
+                        <h3 class="mb-15">
+                            The platform offers secure online payment options for test fees
+                            and other associated costs. &nbsp; Users can make payments
+                            directly through the platform using various payment methods,
+                            ensuring a convenient and hassle-free payment process.
+                        </h3>
+                    </div>
+                    <div class="vcarousel__content_item mt-10 hidden" style="min-height: 254px">
+                        <h3 class="mb-15">
+                            Our AI system accurately predicts test results for a wide range
+                            of medical tests, empowering healthcare professionals with
+                            valuable insights for diagnosis and treatment planning
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="u-clearfix u-section-6 bg-grey-lighter" id="sec-439e">
+        <div class="u-clearfix u-sheet">
+            <h2
+                class="u-align-center-lg u-align-center-md u-align-center-sm u-align-center-xs u-subtitle u-text u-text-1">
+                Making a difference every single day
+            </h2>
+            <div class="u-expanded-width u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                    <div
+                        class="u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-list-item-1">
+                        <div class="u-container-layout u-similar-container u-container-layout-1">
+                            <h1 class="u-align-center u-text u-title u-text-2" data-animation-name="counter"
+                                data-animation-event="scroll" data-animation-duration="3000">
+                                50+
+                            </h1>
+                            <h4 class="u-text u-text-default u-text-3">
+                                convenient locations across the world
+                            </h4>
+                        </div>
+                    </div>
+                    <div
+                        class="u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-list-item-2">
+                        <div class="u-container-layout u-similar-container u-container-layout-2">
+                            <h1 class="u-align-center u-text u-title u-text-4" data-animation-name="counter"
+                                data-animation-event="scroll" data-animation-duration="3000">
+                                1,12 K
+                            </h1>
+                            <h4 class="u-text u-text-default u-text-5">
+                                tests performed each year for patients of all ages
+                            </h4>
+                        </div>
+                    </div>
+                    <div
+                        class="u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-list-item-3">
+                        <div class="u-container-layout u-similar-container u-container-layout-3">
+                            <h1 class="u-align-center u-text u-title u-text-6" data-animation-name="counter"
+                                data-animation-event="scroll" data-animation-duration="3000">
+                                100
+                            </h1>
+                            <h4 class="u-text u-text-default u-text-7">
+                                lab tests available to help you find answers
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="u-clearfix u-section-8" id="sec-ad17">
+        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout" style="">
+                    <div class="u-layout-row" style="">
+                        <div class="u-align-center u-container-style u-layout-cell u-left-cell u-size-38-lg u-size-38-xl u-size-60-md u-size-60-sm u-size-60-xs u-size-xs-60 u-white u-layout-cell-1"
+                            src="">
+                            <div class="u-container-layout u-valign-bottom-xs u-container-layout-1">
+                                <span
+                                    class="u-border-2 u-border-palette-1-base u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-1"><img
+                                        src="data:image/png;base64,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"
+                                        alt="" /></span>
+                                <h2 class="u-text u-text-1">
+                                    you are laboratoire&nbsp;<br />
+                                </h2>
+                                <div
+                                    class="u-clearfix u-expanded-width-sm u-expanded-width-xs u-group-elements u-group-elements-1">
+                                    <h6 class="u-text u-text-2">
+                                        Free up medical time through online appointment scheduling and modern software
+                                    </h6>
+                                    <span class="u-file-icon u-icon u-icon-2" data-animation-name="customAnimationIn"
+                                        data-animation-duration="1000"><img
+                                            src="https://assets.nicepagecdn.com/dd61312e/4056373/images/492349.png"
+                                            alt="" /></span>
+                                </div>
+                                <div class="u-clearfix u-group-elements u-group-elements-2">
+                                    <span class="u-file-icon u-icon u-icon-3" data-animation-name="customAnimationIn"
+                                        data-animation-duration="1000"><img
+                                            src="https://assets.nicepagecdn.com/dd61312e/4056373/images/2330918.png"
+                                            alt="" /></span>
+                                    <h6 class="u-text u-text-3">
+                                        Expand your practice according to your needs by gaining better online visibility
+                                    </h6>
+                                </div>
+                                <div class="u-clearfix u-group-elements u-group-elements-3">
+                                    <span class="u-file-icon u-icon u-icon-4" data-animation-name="customAnimationIn"
+                                        data-animation-duration="1000"><img
+                                            src="https://assets.nicepagecdn.com/dd61312e/4056373/images/9967172.png"
+                                            alt="" /></span>
+                                    <h6 class="u-text u-text-4">
+                                        Gain daily work comfort by reducing phone calls to your office.
+                                    </h6>
+                                </div>
+                                <div class="u-clearfix u-group-elements u-group-elements-4">
+                                    <h6 class="u-text u-text-5">
+                                        Improve access to healthcare for your patients by offering them the best
+                                        experience
+                                    </h6>
+                                    <span class="u-file-icon u-icon u-icon-5" data-animation-name="customAnimationIn"
+                                        data-animation-duration="1000"><img
+                                            src="https://assets.nicepagecdn.com/dd61312e/4056373/images/817918.png"
+                                            alt="" /></span>
+                                </div>
+                                <a href="{% url 'signup_labo' %}"
+                                    class="u-active-none u-border-1 u-border-hover-palette-1-base u-border-palette-3-base u-btn u-button-style u-hover-palette-1-base u-palette-3-base u-radius-9 u-btn-1">join
+                                    us</a>
+                            </div>
+                        </div>
+                        <div class="u-align-center u-container-style u-image u-image-contain u-layout-cell u-right-cell u-size-22-lg u-size-22-xl u-size-60-md u-size-60-sm u-size-60-xs u-size-xs-60 u-image-1"
+                            src="" data-image-width="500" data-image-height="500">
+                            <div class="u-container-layout u-valign-middle u-container-layout-2" src=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="u-clearfix u-image u-image-contain u-section-9" id="sec-1d4e" data-image-width="496"
+        data-image-height="503">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+                            <div class="u-container-layout u-valign-middle u-container-layout-1">
+                                <div class="u-form u-form-1">
+                                    <form method="post" class="u-clearfix u-form-spacing-10 u-form-vertical"
+                                        style="padding: 10px" id="form_email">
+                                        {% csrf_token %}
+
+                                        <div class="u-form-email u-form-group u-label-none">
+                                            <label for="email-3b9a" class="u-label">Email</label>
+                                            <input type="email" placeholder="Enter a valid email address"
+                                                id="email-3b9a" name="email" class="u-input u-input-rectangle"
+                                                required="" />
+                                        </div>
+                                        <div class="u-form-group u-form-message u-label-none">
+                                            <label for="message-3b9a" class="u-label">Message</label>
+                                            <textarea placeholder="Enter your message" rows="4" cols="50"
+                                                id="message-3b9a" name="message" class="u-input u-input-rectangle"
+                                                required="true"></textarea>
+                                        </div>
+                                        <div class="u-align-left u-form-group u-form-submit">
+                                            <input type="submit" class="u-btn u-button-style" value="submit"
+                                                id="submit_email" onclick="submit(event);" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-2">
+                                <div class="u-expanded u-grey-10 u-map">
+                                    <div class="embed-responsive">
+                                        <iframe class="embed-responsive-item"
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102967.36394587519!2d6.5190225866346605!3d36.2460493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f1655aaa0d63ab%3A0xa80cc72a9da3c77b!2sUniversite%20Constantine%202%20Abdelhamid%20Mehri!5e0!3m2!1sfr!2sdz!4v1677856770506!5m2!1sfr!2sdz"
+                                            data-map="JTdCJTIycG9zaXRpb25UeXBlJTIyJTNBJTIybWFwLWVtYmVkJTIyJTJDJTIyYWRkcmVzcyUyMiUzQSUyMjM2JUMyJUIwMTUnMzAuNiU1QyUyMk4lMjA2JUMyJUIwMzYnMDEuNSU1QyUyMkUlMjIlMkMlMjJ6b29tJTIyJTNBbnVsbCUyQyUyMnR5cGVJZCUyMiUzQSUyMnJvYWQlMjIlMkMlMjJsYW5nJTIyJTNBbnVsbCUyQyUyMmFwaUtleSUyMiUzQW51bGwlMkMlMjJtYXJrZXJzJTIyJTNBJTVCJTVEJTJDJTIyZW1iZWQlMjIlM0ElMjJodHRwcyUzQSUyRiUyRnd3dy5nb29nbGUuY29tJTJGbWFwcyUyRmVtYmVkJTNGcGIlM0QhMW0xOCExbTEyITFtMyExZDEwMjk2Ny4zNjM5NDU4NzUxOSEyZDYuNTE5MDIyNTg2NjM0NjYwNSEzZDM2LjI0NjA0OTMhMm0zITFmMCEyZjAhM2YwITNtMiExaTEwMjQhMmk3NjghNGYxMy4xITNtMyExbTIhMXMweDEyZjE2NTVhYWEwZDYzYWIlMjUzQTB4YTgwY2M3MmE5ZGEzYzc3YiEyc1VuaXZlcnNpdGUlMjUyMENvbnN0YW50aW5lJTI1MjAyJTI1MjBBYmRlbGhhbWlkJTI1MjBNZWhyaSE1ZTAhM20yITFzZnIhMnNkeiE0djE2Nzc4NTY3NzA1MDYhNW0yITFzZnIhMnNkeiUyMiU3RA=="></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="u-align-left u-clearfix u-section-10" id="carousel_72e1">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h2 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1">
+                Facts &amp; Questions
+            </h2>
+            <p class="u-align-center u-text u-text-2">
+                Sample text. Click to select the text box. Click again or double click
+                to start editing the text.
+            </p>
+
+            <div class="u-accordion u-spacing-2 u-accordion-1" style="display: flex; gap: 25px; flex-direction: column">
+                <div class="u-accordion-item u-accordion-item-1 faq">
+                    <a class="u-accordion-link u-active-grey-5 u-button-style u-text-active-palette-1-base u-text-body-color u-accordion-link-1"
+                        id="link-accordion-7c0e" aria-controls="accordion-7c0e" aria-selected="false">
+                        <span class="u-accordion-link-text">How do I access my lab test results?</span><span
+                            class="u-accordion-link-icon u-active-white u-file-icon u-icon u-icon-circle u-text-active-white u-text-hover-white u-text-palette-1-base u-white u-icon-2"><img
+                                src="data:image/png;base64,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"
+                                alt="" /></span>
+                    </a>
+                    <div class="u-accordion-pane u-align-left u-container-style u-white u-accordion-pane-1"
+                        id="accordion-7c0e" aria-labelledby="link-accordion-7c0e">
+                        <div class="u-container-layout u-valign-top u-container-layout-1">
+                            <p class="u-text u-text-3">
+                                Lab results are delivered to your QuickLab® Patient™ portal
+                                account. Log in or register online. For more information, you
+                                may also see our Notice of Privacy Practices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-accordion-item u-accordion-item-2 faq">
+                    <a class="u-accordion-link u-active-grey-5 u-button-style u-text-active-palette-1-base u-text-body-color u-accordion-link-2"
+                        id="link-accordion-7c0e" aria-controls="accordion-7c0e" aria-selected="false">
+                        <span class="u-accordion-link-text">Can I view my past lab results on QuickLab® Patient™
+                            portal?</span><span
+                            class="u-accordion-link-icon u-active-white u-file-icon u-icon u-icon-circle u-text-active-white u-text-hover-white u-text-palette-1-base u-white u-icon-3"><img
+                                src="data:image/png;base64,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"
+                                alt="" /></span>
+                    </a>
+                    <div class="u-accordion-pane u-align-left u-container-style u-white u-accordion-pane-2"
+                        id="accordion-7c0e" aria-labelledby="link-accordion-7c0e">
+                        <div class="u-container-layout u-valign-top u-container-layout-2">
+                            <p class="u-text u-text-5">
+                                Yes, QuickLab® Patient™ portal allows you to access and view
+                                your past lab results. You can conveniently review your
+                                historical data and track any changes over time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-accordion-item u-accordion-item-3 faq">
+                    <a class="u-accordion-link u-active-grey-5 u-button-style u-text-active-palette-1-base u-text-body-color u-accordion-link-3"
+                        id="link-accordion-7c0e" aria-controls="accordion-7c0e" aria-selected="false">
+                        <span class="u-accordion-link-text">How long does it take for lab results to be available on
+                            QuickLab® Patient™ portal?</span><span
+                            class="u-accordion-link-icon u-active-white u-file-icon u-icon u-icon-circle u-text-active-white u-text-hover-white u-text-palette-1-base u-white u-icon-4"><img
+                                src="data:image/png;base64,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"
+                                alt="" /></span>
+                    </a>
+                    <div class="u-accordion-pane u-align-left u-container-style u-white u-accordion-pane-3"
+                        id="accordion-7c0e" aria-labelledby="link-accordion-7c0e">
+                        <div class="u-container-layout u-valign-top u-container-layout-3">
+                            <p class="u-text u-text-7">
+                                Lab results are typically delivered to your QuickLab® Patient™
+                                portal account within a specified timeframe. The turnaround
+                                time may vary depending on the type of test performed. If you
+                                have any specific concerns, please contact our support team
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-accordion-item u-accordion-item-4 faq">
+                    <a class="u-accordion-link u-active-grey-5 u-button-style u-text-active-palette-1-base u-text-body-color u-accordion-link-3"
+                        id="link-accordion-7c0e" aria-controls="accordion-7c0e" aria-selected="false">
+                        <span class="u-accordion-link-text">What should I do if I have trouble accessing my QuickLab®
+                            Patient™ portal account? </span><span
+                            class="u-accordion-link-icon u-active-white u-file-icon u-icon u-icon-circle u-text-active-white u-text-hover-white u-text-palette-1-base u-white u-icon-4"><img
+                                src="data:image/png;base64,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"
+                                alt="" /></span>
+                    </a>
+                    <div class="u-accordion-pane u-align-left u-container-style u-white u-accordion-pane-3"
+                        id="accordion-7c0e" aria-labelledby="link-accordion-7c0e">
+                        <div class="u-container-layout u-valign-top u-container-layout-3">
+                            <p class="u-text u-text-7">
+                                If you encounter any issues accessing your QuickLab® Patient™
+                                portal account, please reach out to our customer support team.
+                                They will be happy to assist you and provide any necessary
+                                guidance
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-accordion-item u-accordion-item-5 faq">
+                    <a class="u-accordion-link u-active-grey-5 u-button-style u-text-active-palette-1-base u-text-body-color u-accordion-link-3"
+                        id="link-accordion-7c0e" aria-controls="accordion-7c0e" aria-selected="false">
+                        <span class="u-accordion-link-text">What should I do if I have trouble accessing my QuickLab®
+                            Patient™ portal account? </span><span
+                            class="u-accordion-link-icon u-active-white u-file-icon u-icon u-icon-circle u-text-active-white u-text-hover-white u-text-palette-1-base u-white u-icon-4"><img
+                                src="data:image/png;base64,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"
+                                alt="" /></span>
+                    </a>
+                    <div class="u-accordion-pane u-align-left u-container-style u-white u-accordion-pane-3"
+                        id="accordion-7c0e" aria-labelledby="link-accordion-7c0e">
+                        <div class="u-container-layout u-valign-top u-container-layout-3">
+                            <p class="u-text u-text-7">
+                                If you encounter any issues accessing your QuickLab® Patient™
+                                portal account, please reach out to our customer support team.
+                                They will be happy to assist you and provide any necessary
+                                guidance
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-navy-opt text-white w-100" id="sec-08f1">
+        <div class="container flex flex-wrap py-30 px-10 md:px-0 border-b border-solid border-grey-lighter-trans"
+            style="padding: 5px !important">
+            <div class="w-full md:w-1/3 xl:w-1/4">
+                <div class="flex flex-row py-10" style="padding: 5px !important">
+                    <a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/" title="Homepage"
+                        href="{% url 'home' %}">
+                        <img alt="Logo" src="/media/image/logo sans bg.png" width="70" height="55" />
+                    </a>
+                    <div>
+                        <a class="side-menu-logo-title" href="{% url 'home' %}">
+                            <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                data-animation-direction="" style="
+                    will-change: transform, opacity;
+                    animation-duration: 1000ms;
+                  ">
+                                Quick
+                            </p>
+                            <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                data-lang-en="Lab" style="
+                    will-change: transform, opacity;
+                    animation-duration: 1000ms;
+                  ">
+                                Lab
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-2/3 xl:w-3/4 flex flex-wrap text-14" style="padding: 5px !important">
+                <ul class="navigation-list flex-wrap w-full md:justify-end" style="padding: 5px !important">
+                    <li class="navigation-list__item w-1/2 md:w-auto">
+                        <a href="#sec-1d4e" class="navigation__link navigation__link--main">Contact us</a>
+                    </li>
+                    <li class="navigation-list__item w-1/2 md:w-auto">
+                        <a href="{% url 'privecy' %}" class="navigation__link navigation__link--main">Privacy policy</a>
+                    </li>
+                    <li class="navigation-list__item w-1/2 md:w-auto">
+                        <a href="{% url 'term' %}" class="navigation__link navigation__link--main md:pr-0">Terms &amp;
+                            conditions</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="container flex flex-wrap py-30 px-10 md:px-0 border-b border-solid border-grey-lighter-trans sm:hidden block">
+            <div class="w-full">
+                <div class="sm:w-1/3 mr-auto">
+                    <ul class="navigation-list flex-wrap w-full sm:w-auto">
+                        <span
+                            class="font-montserrat text-13 font-medium text-navy-lighter py-10 px-15 md:px-0 w-full">Follow
+                            us</span>
+                        <li class="navigation-list__item">
+                            <a href="https://www.linkedin.com/showcase/myhealth1st"
+                                class="navigation__link navigation__link--main md:ml-0 px-15"><img
+                                    src="/media/image/linkedin.png" /></a>
+                        </li>
+                        <li class="navigation-list__item">
+                            <a href="https://www.facebook.com/pages/category/Health-Beauty/QuickLab®-951485194984427/"
+                                class="navigation__link navigation__link--main px-15"><img
+                                    src="/media/image/facebook.png" /></a>
+                        </li>
+                        <li class="navigation-list__item">
+                            <a href="https://twitter.com/myhealth1st"
+                                class="navigation__link navigation__link--main px-15"><img
+                                    src="/media/image/twitter.png" /></a>
+                        </li>
+                        <li class="navigation-list__item">
+                            <a href="https://www.instagram.com/myhealth1st_official/"
+                                class="navigation__link navigation__link--main px-15"><img
+                                    src="/media/image/Instagram.png" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container flex flex-wrap py-30 px-10 md:px-0 items-start text-13 leading-18">
+            <div class="sm:w-1/3 mr-auto sm:block hidden">
+                <ul class="navigation-list flex-wrap w-full sm:w-auto">
+                    <span
+                        class="font-montserrat text-13 font-medium text-navy-lighter py-10 px-15 md:pl-0 w-full">Follow
+                        us</span>
+                    <li class="navigation-list__item">
+                        <a href="https://www.linkedin.com/showcase/myhealth1st"
+                            class="navigation__link navigation__link--main md:pl-0 px-15"><img
+                                src="/media/image/linkedin.png" /></a>
+                    </li>
+                    <li class="navigation-list__item">
+                        <a href="https://www.facebook.com/pages/category/Health-Beauty/QuickLab®-951485194984427/"
+                            class="navigation__link navigation__link--main px-15"><img
+                                src="/media/image/facebook.png" /></a>
+                    </li>
+                    <li class="navigation-list__item">
+                        <a href="https://twitter.com/myhealth1st"
+                            class="navigation__link navigation__link--main px-15"><img
+                                src="/media/image/twitter.png" /></a>
+                    </li>
+                    <li class="navigation-list__item">
+                        <a href="https://www.instagram.com/myhealth1st_official/"
+                            class="navigation__link navigation__link--main px-15"><img
+                                src="/media/image/Instagram.png" /></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-1/2 sm:w-1/3 md:w-auto">
+                <ul class="navigation-list navigation-list--upright">
+                    <span
+                        class="font-montserrat text-13 font-medium text-navy-lighter py-10 px-15 w-full">partner</span>
+                    <li class="navigation-list__item w-full">
+                        <a href="{% url 'home' %}" class="navigation__link navigation__link--main px-15">home</a>
+                    </li>
+
+                    <li class="navigation-list__item w-full">
+                        <a href="accueil/home.html#sec-ae92"
+                            class="navigation__link navigation__link--main px-15">services</a>
+                    </li>
+                    <li class="navigation-list__item w-full">
+                        <a href="{% url 'about-us' %}" class="navigation__link navigation__link--main px-15">About
+                            us</a>
+                    </li>
+                    <li class="navigation-list__item w-full">
+                        <a href="{% url 'history' %}" class="navigation__link navigation__link--main px-15">History</a>
+                    </li>
+
+                    <li class="navigation-list__item w-full">
+                        <a href="{% url 'laboratoire-list' %}" class="navigation__link navigation__link--main px-15">our
+                            Partner</a>
+                    </li>
+                    <li class="navigation-list__item w-full">
+                        <a href="{% url 'signin' %}" class="navigation__link navigation__link--main px-15">Account
+                            login</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-1/2 sm:w-1/3 md:w-auto">
+                <ul class="navigation-list navigation-list--upright">
+                    <span class="font-montserrat text-13 font-medium text-navy-lighter py-10 px-15 w-full">For
+                        Partner</span>
+                    <li class="navigation-list__item w-full">
+                        <a href="{% url 'signup_labo' %}" class="navigation__link navigation__link--main px-15">
+                            Benifit</a>
+                    </li>
+                    <li class="navigation-list__item w-full">
+                        <a href="{% url 'signup_labo' %}#services"
+                            class="navigation__link navigation__link--main px-15">
+                            Services</a>
+                    </li>
+                    <li class="navigation-list__item w-full">
+                        <a href="{% url 'signup_labo' %}#sign_up_partner"
+                            class="navigation__link navigation__link--main px-15">Join us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-full px-15 my-15">
+                <span class="font-montserrat text-13 font-regular text-navy-lighter">
+                    QuickLab® © All Rights Reserved. | © 1stGroup 2023.</span>
+            </div>
+        </div>
+    </footer>
+    <script></script>
+</body>
+{% for message in messages %}
+{% if message.tags == 'error' %}
+<script type="text/javascript">
+    const alertDiv = document.createElement('div');
+    alertDiv.className = 'custom-alert alert-error';
+    alertDiv.innerHTML = '<div class="icon__wrapper"><span class="material-symbols-outlined">error</span></div> {{ message|safe }}';
+
+    const body = document.getElementById('body');
+    document.body.appendChild(alertDiv);
+    setTimeout(function () {
+        alertDiv.remove();
+    }, 3000);
+</script>
+{% else %}
+<script type="text/javascript">
+    const alertDiv = document.createElement('div');
+    alertDiv.className = 'custom-alert alert-success';
+    alertDiv.innerHTML = '<div class="icon__wrapper"><span class="material-symbols-outlined">task_alt</span></div> {{ message|safe }}';
+    document.body.appendChild(alertDiv);
+
+    setTimeout(function () {
+        alertDiv.remove();
+    }, 3000);
+</script>
+{% endif %}
+{% endfor %}
+
+</html>

@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="{% static 'css/directeur/payment.css' %}" rel="stylesheet">
+     <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/general/portal.css' %}">
+    <link href="{% static 'css/general/libs.css' %}" rel="stylesheet">
+    <link href="{% static 'css/general/homedashboard.css' %}" rel="stylesheet">
+    <script src="https://unpkg.com/signature_pad"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}">
+</head>
+<body>
+    <div id="main_element" class="content content--dashboard" >
+        <div class="content__wrapper">
+            <div id="etape5" class="etape5  " style="
+            height: 40rem;
+        ">
+               
+                <div class="etape5_contonait">
+                    <div class=" payment_carte">
+                      
+                        <div class="payment_carte_head">
+                            <div class="payment_carte_head_titre">
+                                <p>
+                                    <strong> montant is {{prix}} $</strong>
+                                </p>
+                            </div>
+                            <div class="payment_carte_head_p">
+                                <!-- <p>Le montant exact sera validé avec Dr</p> -->
+                            </div>
+                        </div>
+                        <div class="line_vertical2"></div>
+                        <div class="payment_carte_body">
+                            <div class="image_payment_carte_body">
+                                <img src="/media/image/vecteezy_master-card-editorial-logo_19550737-removebg-preview.png" alt="">
+                                <img src="/media/image/vecteezy_visa-logo-company-providing-services-of-payment-operations_9469638-removebg-preview.png" alt="">
+                                <img src="/media/image/vector-cirrus-removebg-preview.png" alt="">
+                            </div>
+                            <div class="carte_debit_info">
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <div class="numero_de_carte">
+                                        <label for="num_carte">Numéro de carte bancaire</label>
+                                        <input type="text" name="num_carte" id="num_carte">
+                                    </div>
+                                    <div class="date_code_carte_pay">
+                                        <div class="date_expiration">
+                                            <label for="date_exp">Date d'expiration</label>
+                                            <input name="date_exp" id="date_exp" type="month" min="2000-01" max="2500-01">
+        
+                                        </div>
+                                        <div class="code_securite">
+                                            <label for="code_s">Code de sécurité</label>
+                                            <input type="password" name="code_s" id="code_s">
+                                        </div>
+                                        <input type="hidden" name="signature_image" id="signatureImage">
+                                    </div>
+                                    <input id="payment_submit" type="submit" class="none">
+                                </form>
+                            </div>
+        
+                        </div>
+                        <div class="line_vertical2 "></div>
+                        <div class="button_c_p" id="payment_submit_showing">
+        
+        
+                            <a>
+                                <span class="material-symbols-outlined">
+                                    lock
+                                </span>
+                                <span>CONFIRMER LE RENDEZ-VOUS</span>
+                            </a>
+        
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+
+
+    <div class="signature_container none" id="signatureContainer">
+        <div class="background_term_bluer "></div>
+        <div class="signature_main">
+            <button  class="delet_form_button_container"  id="close" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none; cursor: pointer;" onclick="toggleForm()">
+                <div class="delet_form_button">
+                  <span class="material-symbols-outlined">
+                    close
+                  </span>
+                </div>
+              </button>
+            <form action="">
+                <div id="signature_canvas_container" class="signature_canvas_container">
+                    <div class="line_vertical3 "></div>
+                    <canvas id="signatureCanvas" class="signature_canvas"></canvas>
+                </div>
+                <div class="button_container">
+                    <button type="button" class="button button--primary ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" id="payButton">Pay</button>
+                    <button type="button" class="button button--primary ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"  id="clearButton">Clear</button>
+                    <button type="button" class="button button--primary ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"  id="cancelButton">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+   // Initialize the signature pad
+   var canvas = document.getElementById('signatureCanvas');
+   var signaturePad = new SignaturePad(canvas);
+
+   // Get the signature container
+   var signatureContainer = document.getElementById('signatureContainer');
+   var payment_submit = document.getElementById('payment_submit');
+   // Function to handle the "Pay" button click
+
+// Function to handle the "Pay" button click
+// Function to handle the "Pay" button click
+// Function to handle the "Pay" button click
+document.getElementById('payButton').addEventListener('click', function() {
+    // Check if the signature is empty
+    if (signaturePad.isEmpty()) {
+        console.log('Please provide a signature.');
+        return; // Exit the function if the signature is empty
+    }
+
+    // Capture the signature
+    var signatureData = signaturePad.toDataURL();
+
+    // Set the value of the hidden input field
+    document.getElementById('signatureImage').value = signatureData;
+
+    // Create a link element to initiate the download
+    
+
+    // Set the download location and file name
+    
+
+    // Trigger the download
+
+    // Submit the form
+    payment_submit.click();
+
+    console.log('Payment processed successfully!');
+});
+
+
+  // Function to handle the "Clear" button click
+   document.getElementById('clearButton').addEventListener('click', function() {
+       // Clear the signature pad
+       signaturePad.clear();
+   });
+
+   // Function to handle the "Cancel" button click
+   document.getElementById('cancelButton').addEventListener('click', function() {
+       // Toggle the visibility of the signature container
+       signatureContainer.classList.toggle('none');
+       signaturePad.clear();
+   });
+   document.getElementById('close').addEventListener('click', function() {
+    // Toggle the visibility of the signature container
+    signatureContainer.classList.toggle('none');
+    signaturePad.clear();
+});
+   document.getElementById('payment_submit_showing').addEventListener('click', function() {
+    // Toggle the visibility of the signature container
+    signatureContainer.classList.toggle('none');
+
+});
+    </script>
+    
+</body>
+</html>

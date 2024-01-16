@@ -1,0 +1,249 @@
+
+.menu-element:nth-child(6){
+    background-color: #46807F;
+    border-radius: 15px;
+    
+    border: 1px solid white;
+    }
+    .menu-element:nth-child(6) .ui-panelmenu-headerlink-hasicon{
+    color:white;
+        font-weight: 700;
+    }
+    .message_dashboard{transform-origin: top right;transition: .2s linear;cursor: pointer;/* display: flex; *//* align-items: center; */background: white;/* padding: 15px; */border-radius: 15px;display: flex;padding: 15px 20px 15px 20px;text-align: left;margin: 30px 0;align-items: center;flex-direction: row;filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));}
+    .message_dashboard_pic-profile{
+    
+    margin: 0 10px;
+    }
+    .message_dashboard_discution{
+    
+    margin: 0 10px;
+    }
+    .message_dashboard_time_date{
+        
+    margin: 0 0 0 10%;
+        
+    height: max-content;
+    }
+    .message_dashboard_time_date p small{
+        font-size: 18px;
+       
+        }
+        .message_dashboard_time_date p span{
+        
+            margin: 0 0 0 10%;
+                
+            height: max-content;
+            }
+    
+    .discution_panel{max-height: 400px;transform-origin: top right;transition: .2s linear;/* margin: 10px 10px; */}
+    .discution_panel_head{display: flex;background: #46807F;padding: 10px;border-radius: 10px 10px 0 0;}
+    .discution_panel_main{
+        /* height: 10px; */
+        /* border: 1px solid; */
+        /* min-height: calc(100vh - 246px); */
+    }
+    .discution_panel_head   span{
+        cursor: pointer;
+    
+    color: rgba(85, 85, 85, 1);
+    
+    font-size: 22px;
+    
+    display: flex;
+    
+    flex-direction: row;
+    
+    justify-content: center;
+    
+    align-items: center;
+    
+    padding: 8px 10px;
+    
+    gap: 10px;
+    
+    width: 37px;
+    
+    height: 30px;
+    
+    background: #FFFFFF;
+    
+    border-radius: 20px;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    
+    order: 0;
+    
+    flex-grow: 0;
+    
+    margin: 0 10px 0 0px;
+    
+    }
+    .discution_panel_head   div{display: flex;align-items: center;color: white;margin: 0 0 0 20px;}
+    
+    
+    
+    .messages_screen{
+        background: white;
+        /* border: 1px solid; */
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        box-sizing: border-box;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        max-height: 62vh;
+        min-height: 61vh;
+
+        }
+    .typing_board{
+        display: flex;
+        box-sizing: border-box;
+        /* display: none; */
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 66px;
+        /* position: absolute; */
+        bottom: 0;
+        background-color: #eeeeee;
+        padding: 0 22px;
+    }
+    .typing_board .button_send{
+        width: 40px;
+        display: flex;
+        align-items: center;
+    }
+    .typing_board .button_send span{
+        color: #00838f;
+        cursor: pointer;
+        font-size: 35px;
+    }
+    .typing_board input{
+        flex-basis: 100%;
+        height: 44px;
+        margin: 0 22px;
+        padding: 0 11px;
+        border: none;
+        border-radius: 11px;
+        font-size: 12px;
+    }
+    
+    
+    .message_screen {
+        margin-bottom: 22px;
+        max-width: 75%;
+    }
+    
+    .messages_screen .message_screen i {
+        font-size: 33px;
+        color: #666666;
+    }
+    
+    .messages_screen .incoming-message_screen .timestamp {
+        margin-left: 44px;
+    }
+    
+    .messages_screen.outgoing-message_screen .timestamp {
+        margin-right: 44px;
+    }
+    
+    .messages_screen .outgoing-message_screen {
+        align-self: flex-end;
+        text-align: right;
+    }
+    .outgoing-message_screen .message-wrapper_screen {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    
+    .messages_screen .message-wrapper_screen {
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    .messages_screen .message-content_screen {
+        padding: 11px;
+        margin: 0px 11px;
+        text-align: left;
+    }
+    .message-content_screen {
+        max-width: 50%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        display: inline-block;
+      }
+    .messages_screen .incoming-message_screen .message-content_screen {
+        border-radius: 20px 20px 20px 5px;
+        background-color: #eeeeee;
+    }
+    
+    .messages_screen .outgoing-message_screen .message-content_screen {
+        background-color: #00838f;
+        border-radius: 20px 20px 5px 20px;
+        color: white;
+    }
+    
+    .messages_screen .message-content_screen h3 {
+        font-size: 14px;
+        color: #00838f;
+        margin-bottom: 11px;
+    }
+    
+    .messages_screen .message-content_screen p {
+        font-size: 14px;
+    }
+    
+    
+    @media (max-width: 1199px) {
+    
+        .discution_panel_main{
+            /* height: 10px; */
+            /* border: 1px solid; */
+            min-height: calc(100vh - 140px);
+        }
+    }
+    
+    
+    @media (max-width: 440px) {
+    
+        .message_dashboard {
+            
+            padding: 15px 10px 15px 10px;
+           
+            
+        }
+        .message_dashboard_pic-profile  ins{
+            margin: 0px 0px;
+        }
+        .message_dashboard_pic-profile {
+            margin: 0 10px 0 0;
+        }
+        .message_dashboard_discution {
+            margin: 0 0 0 10px;
+        }
+        .message_dashboard_time_date {
+            margin: 0 0 0 7%;
+        }
+        .message_dashboard_time_date p span {
+            font-size: 14px;
+            margin: 0 0 0 5%;
+        }
+        .message_dashboard_time_date p small {
+            font-size: 14px;
+        }
+    }
+    
+    
+    .active{
+        background-color: #46807F;
+        border-radius: 15px;
+        }
+    .active  a{
+            color: #fff;
+            font-weight: 700
+         }
+    

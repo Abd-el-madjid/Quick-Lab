@@ -1,0 +1,979 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="fr">
+
+<head>
+  <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords"
+    content="Med center, Medical Services, Common Lab Tests, Lab Tests Online, ​Why Choose Our Clinic?, 24/7, ​Medical Center System, Our Services, 001-234-5678​001-987-7654">
+  <meta name="description" content="">
+  <title>home</title>
+  <link href="{% static 'css/accueil/doctolib16.css' %}" rel="stylesheet">
+  
+  <link href="{% static 'css/accueil/head_accueill.css' %}" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="{% static 'css/accueil/header2.css' %}">
+  
+  
+  
+  <link rel="stylesheet" href="{% static 'css/accueil/nicepage.css' %}" media="screen">
+  <link rel="stylesheet" href="{% static 'css/accueil/nicepage_2.css' %}" media="screen">
+  <link rel="stylesheet" href="{% static 'css/accueil/history.css' %}" media="screen">
+  
+  
+  
+  <link id="u-theme-google-font" rel="stylesheet" href="{% static 'css/accueil/family=Outfit.css' %}">
+  <link id="u-page-google-font" rel="stylesheet" href="{% static 'css/accueil/family=Lato.css' %}">
+  
+  
+  
+  
+  <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'css/accueil/labo_sign_up_option.css' %}">
+  
+   
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  
+  <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/homedashboard.js' %}"></script>
+  
+  <script class="u-script" type="text/javascript" src="{% static 'js/accueil/jquery-3.5.1.min.js' %}" defer=""></script>
+  
+  <script src="{% static 'js/login/sign_up_labo.js' %}"></script>
+  
+  <link rel="stylesheet" href="{% static 'js/accueil/home.js' %}">
+  
+  <script src="{% static 'js/accueil/nicepage.js' %}"></script>
+ <script src="{% static 'js/general/notification_pannel.js' %}"></script>
+    <script src="{% static 'js/general/notification.js' %}"></script>
+
+    <script src="{% static 'js/accueil/accueil.js' %}"></script>
+    <script src="https://global.localizecdn.com/localize.js"></script>
+<script>!function(a){if(!a.Localize){a.Localize={};for(var e=["translate","untranslate","phrase","initialize","translatePage","setLanguage","getLanguage","getSourceLanguage","detectLanguage","getAvailableLanguages","untranslatePage","bootstrap","prefetch","on","off","hideWidget","showWidget"],t=0;t<e.length;t++)a.Localize[e[t]]=function(){}}}(window);</script>
+
+<script>
+  Localize.initialize({
+    key: 'MOQ1JfoVDeKhB',
+    rememberLanguage: true,
+  });
+</script>
+  </head>
+  <body class="u-body u-xl-mode" data-lang="fr">
+    
+
+    <aside class="menu-panel" role="complementary">
+      <div class="hide-since-tablet" psi-proxy-user-popup="">
+        <a
+          id="profile_head-secound"
+          aria-label="profile menu"
+          class="dark-link profile-link profile-menu profile-link--in-menu"
+          role="link"
+          tabindex="0"
+        >
+          <ins class="nav-menu-icon nav-menu-icon--user">
+            <span id="profile-circle" class="material-symbols-outlined">
+              account_circle
+            </span>
+          </ins>
+
+          <div class="profile-link__user">{{ name }}</div>
+
+          <!---->
+
+          <ins class="profile-link__trigger">
+            <span id="profile-arrow-2" class="material-symbols-outlined">
+              expand_more
+            </span>
+          </ins>
+        </a>
+
+        <div class="side-account-profil none">
+          <ul class="contenait">
+            <li>
+              <a id="account" role="link" tabindex="0" href="{% url 'account_all' %}">
+                <ins
+                  class="initials initials--big"
+                  style="background-color: rgb(15, 46, 76)"
+                >
+                  {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+                </ins>
+
+                <div class="">account</div>
+              </a>
+            </li>
+            <li>
+              <a
+                id="sign_out"
+                role="link"
+                tabindex="0"
+                href="{% url 'logout' %}"
+              >
+                <ins class="">
+                  <span class="material-symbols-outlined"> logout </span>
+                </ins>
+
+                <div class="">sign out</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="menu-panel__content">
+        <div class="menu-panel__content_header">
+          <a
+            class="side-menu-logo hide-up-to-tablet"
+            role="banner"
+            routerlink="/"
+            title="Homepage"
+            href="{% url 'home' %}"
+          >
+            <img
+              alt="Logo"
+              src="/media/image/logo sans bg.png"
+              width="70"
+              height="55"
+            />
+          </a>
+          <div>
+            <a class="side-menu-logo-title" href="{% url 'home' %}">
+              <p
+                class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+                data-animation-name="customAnimationIn"
+                data-animation-duration="1000"
+                data-animation-direction=""
+                style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                "
+              >
+                Quick
+              </p>
+              <p
+                class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+                data-animation-name="customAnimationIn"
+                data-animation-duration="1000"
+                data-lang-en="Lab"
+                style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                "
+              >
+                Lab
+              </p>
+            </a>
+          </div>
+        </div>
+        <!---->
+        <p-panelmenu
+          aria-label="Main Menu"
+          aria-labelledby="Main Menu"
+          role="navigation"
+          tabindex="0"
+          class="ng-tns-c15-13"
+        >
+          <div class="ng-tns-c15-13 side-menu ui-panelmenu ui-widget">
+            <!---->
+
+            <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+              <div
+                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default ui-corner-top"
+              >
+                <!---->
+                <!---->
+                <a
+                  class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon ui-state-active"
+                  href="{% url 'home' %}"
+                >
+                  <!---->
+                  <!---->
+
+                  <span class="ui-menuitem-text">Home</span>
+                </a>
+              </div>
+              <!---->
+            </div>
+            {% comment %} <div
+              class="menu-element ui-panelmenu-panel ng-tns-c15-13 hover_drop"
+            >
+              <div
+                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+              >
+                <!---->
+                <!---->
+                <a
+                  class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"
+                  href="{% url 'signup_labo' %}"
+                >
+                  <!---->
+                  <!---->
+
+                  <span class="ui-menuitem-text">Partnerships</span>
+                </a>
+              </div>
+              <!---->
+            </div> {% endcomment %}
+            <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+              <div
+                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+              >
+                <a
+                  class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"
+                  href="accueil/home.html#sec-ae92"
+                >
+                  <span class="ui-menuitem-text">services </span>
+                </a>
+              </div>
+            </div>
+            <div
+              class="menu-element ui-panelmenu-panel ng-tns-c15-13 hover_drop"
+            >
+              <div
+                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+              >
+                <!---->
+                <!---->
+                <a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon">
+                  <!---->
+                  <!---->
+
+                  <span class="ui-menuitem-text">about</span>
+                </a>
+                <div class="dropdown">
+                  <ul
+                    id="dropdown-menu_container"
+                    class="dropdown-menu"
+                    data-popper-placement="bottom-end"
+                    style="margin: 0px"
+                  >
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center edit-item-btn"
+                        href="{% url 'history' %}"
+                        >histsory</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item d-flex align-items-center remove-item-btn"
+                        href="{% url 'about-us' %}"
+                        >about us</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!---->
+            </div>
+            <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+              <div
+                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+              >
+                <!---->
+                <!---->
+                <a
+                  class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"
+                  href="{% url 'laboratoire-list' %}"
+                >
+                  <!---->
+                  <!---->
+
+                  <span class="ui-menuitem-text">our partner</span>
+                </a>
+              </div>
+              <!---->
+            </div>
+            <div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+              <div
+                class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default"
+              >
+                <!---->
+                <!---->
+                <a
+                  class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"
+                  href="#sec-08f1"
+                >
+                  <!---->
+                  <!---->
+
+                  <span class="ui-menuitem-text">contact</span>
+                </a>
+              </div>
+              <!---->
+            </div>
+          
+          </div>
+        </p-panelmenu>
+      </div>
+      <!---->
+      <!---->
+      <!---->
+      <!---->
+      <div class="flex-push"></div>
+      <!----><!----><!----><!----><!----><!----><!---->
+      <!---->
+      <!---->
+      <!---->
+      <!---->
+    </aside>
+
+    <div psi-menu-overlay="">
+      <div class="menu-panel-overlay"></div>
+    </div>
+
+    {%if name is None %}
+    <header class="header header-scroll header_origin">
+      <div class="wrapper header-wrapper">
+        <div class="logo_only">
+          <a
+            class=""
+            role="banner"
+            routerlink="/"
+            title="Homepage"
+            href="{% url 'home' %}"
+          >
+            <img
+              alt="Logo"
+              src="/media/image/logo sans bg.png"
+              width="55"
+              height="55"
+            />
+          </a>
+        </div>
+
+        <div class="menu-panel__content_header origin_header">
+          <a
+            class="side-menu-logo hide-up-to-tablet"
+            role="banner"
+            routerlink="/"
+            title="Homepage"
+            href="{% url 'home' %}"
+          >
+            <img
+              alt="Logo"
+              src="/media/image/logo sans bg.png"
+              width="70"
+              height="55"
+            />
+          </a>
+          <div>
+            <a class="side-menu-logo-title" href="{% url 'home' %}">
+              <p
+                class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 customAnimationIn-played"
+              >
+                Quick
+              </p>
+              <p
+                class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 customAnimationIn-played"
+              >
+                Lab
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <div class="header-links">
+          <ul class="link-section">
+            <li class="head-link">
+              <a href="{% url 'signup_labo' %}">Partnerships</a>
+            </li>
+
+            <li class="head-link"><a href="{% url 'home' %}">home</a></li>
+            <li class="head-link">
+              <a href="accueil/home.html#sec-ae92">services</a>
+            </li>
+
+            <li class="head-link hover_drop">
+              about
+              <div class="dropdown">
+                <ul
+                  id="dropdown-menu_container"
+                  class="dropdown-menu"
+                  data-popper-placement="bottom-end"
+                  style="margin: 0px"
+                >
+                  <li>
+                    <a
+                      class="dropdown-item d-flex align-items-center edit-item-btn"
+                      href="{% url 'history' %}"
+                      >history</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item d-flex align-items-center remove-item-btn"
+                      href="{% url 'about-us' %}"
+                      >about us</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="head-link"><a href="#sec-08f1">contact</a></li>
+            <li class="head-link">
+              <a href="{% url 'laboratoire-list' %}">our partner</a>
+            </li>
+
+            <li class="head-link li-button">
+              <a href="{% url 'signin' %}" rel="noopener noreferrer">
+                <div
+                  class="ui-kit-button ui-kit-button-outline ui-kit-button-medium valign_middle"
+                >
+                  Sign in
+                </div>
+              </a>
+            </li>
+            <li class="head-link li-button">
+              <a href="{% url 'signup' %}" rel="noopener noreferrer">
+                <div
+                  class="ui-kit-button ui-kit-button-blueline ui-kit-button-medium valign_middle"
+                >
+                  Register
+                </div>
+              </a>
+            </li>
+          
+          </ul>
+        </div>
+        <button
+          type="button"
+          class="hamb"
+          aria-label="hamburger"
+          id="button_menu"
+        >
+          <svg
+            version="1.1"
+            id="hamb"
+            onclick="nav()"
+            class="show"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 53 53"
+            xml:space="preserve"
+          >
+            <path
+              d="M2,13.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,13.5,2,13.5z"
+            ></path>
+            <path
+              d="M2,28.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,28.5,2,28.5z"
+            ></path>
+            <path
+              d="M2,43.5h49c1.104,0,2-0.896,2-2s-0.896-2-2-2H2c-1.104,0-2,0.896-2,2S0.896,43.5,2,43.5z"
+            ></path>
+          </svg>
+          <svg
+            id="close"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 212.982 212.982"
+            xml:space="preserve"
+            onclick="nav();"
+            class=""
+          >
+            <path
+              style="fill-rule: evenodd; clip-rule: evenodd"
+              d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312
+                                     c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312
+                                     l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937
+                                     c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+    {%else %}
+    <header id="header-scroll" class="header header-scroll hide-on-print">
+      <div class="header-wrapper wrapper">
+        <div class="header__panel">
+          <ul class="header-menu-bar">
+            <li
+              class="header-menu-bar__item hide-since-desktop hide-on-print"
+              psi-menu-trigger=""
+            >
+              <a
+                id="menu-link_button"
+                class="profile-link hamburger-link hide-since-desktop"
+              >
+                <ins class="nav-menu-icon nav-menu-icon--hamburger">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    version="1.1"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 512 512"
+                    style="enable-background: new 0 0 512 512"
+                    class="icon-svg icon-svg__size--24"
+                    xml:space="preserve"
+                  >
+                    <g>
+                      <path
+                        d="M85 341l342 0c11,0 21,10 21,22l0 0c0,11 -10,21 -21,21l-342 0c-11,0 -21,-10 -21,-21l0 0c0,-12 10,-22 21,-22z"
+                      ></path>
+                      <path
+                        d="M85 235l342 0c11,0 21,9 21,21l0 0c0,12 -10,21 -21,21l-342 0c-11,0 -21,-9 -21,-21l0 0c0,-12 10,-21 21,-21z"
+                      ></path>
+                      <path
+                        d="M85 128l342 0c11,0 21,10 21,21l0 0c0,12 -10,22 -21,22l-342 0c-11,0 -21,-10 -21,-22l0 0c0,-11 10,-21 21,-21z"
+                      ></path>
+                    </g>
+                  </svg>
+                </ins>
+
+                <h6>Menu</h6>
+              </a>
+            </li>
+
+            <li>
+              <!---->
+            </li>
+
+            <!---->
+            <p-tabmenu>
+              <div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+                <ul
+                  class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
+                  role="tablist"
+                >
+                  <!---->
+                </ul>
+              </div>
+            </p-tabmenu>
+          </ul>
+        </div>
+
+        <div class="menu-panel__content_header">
+          <a
+            class="side-menu-logo hide-up-to-tablet"
+            role="banner"
+            routerlink="/"
+            title="Homepage"
+            href="{% url 'home' %}"
+          >
+            <img
+              alt="Logo"
+              src="/media/image/logo sans bg.png"
+              width="70"
+              height="55"
+            />
+          </a>
+          <div>
+            <a class="side-menu-logo-title" href="{% url 'home' %}">
+              <p
+                class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+                data-animation-name="customAnimationIn"
+                data-animation-duration="1000"
+                data-animation-direction=""
+                style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                "
+              >
+                Quick
+              </p>
+              <p
+                class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+                data-animation-name="customAnimationIn"
+                data-animation-duration="1000"
+                data-lang-en="Lab"
+                style="
+                  will-change: transform, opacity;
+                  animation-duration: 1000ms;
+                "
+              >
+                Lab
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <div class="header__panel header__panel--spacer hide-on-print"></div>
+        <div class="header__panel hide-on-print">
+          <ul class="header-menu-bar header-menu-bar--main">
+            <li
+              id="profile-info-1"
+              class="header-menu-bar__item header-menu-bar__item--main hide-up-to-tablet"
+              psi-proxy-user-popup=""
+              psieventtracker=""
+            >
+              <a
+                id="profile_head-main"
+                aria-label="profile menu"
+                class="dark-link profile-link profile-menu"
+                role="link"
+                tabindex="0"
+              >
+                <ins class="nav-menu-icon nav-menu-icon--user">
+                  <span id="profile-circle" class="material-symbols-outlined">
+                    account_circle
+                  </span>
+                </ins>
+
+                <div class="profile-link__user">{{ name }}</div>
+
+                <!---->
+
+                <ins class="profile-link__trigger">
+                  <span id="profile-arrow" class="material-symbols-outlined">
+                    expand_more
+                  </span>
+                </ins>
+              </a>
+
+              <p-overlaypanel> </p-overlaypanel>
+
+              <!---->
+            </li>
+            <!---->
+            <li
+              id="notification"
+              class="header-menu-bar__item header-menu-bar__item--main header-menu-bar__item--last"
+              psi-alert-popup=""
+              psieventtracker=""
+            >
+              <span class="notifications-overlay-arrow__hidden"></span>
+              <a>
+                <ins class="nav-menu-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    version="1.1"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 512 512"
+                    style="enable-background: new 0 0 512 512"
+                    class="icon-svg icon-svg__size--24 icon-svg__color--darker-blue"
+                    xml:space="preserve"
+                  >
+                    <path
+                      d="M483,433l-38-86V181C445,81,361,0,256,0C152,0,67,81,67,181v166l-38,85c-2,4-2,9,1,12c2,4,6,6,11,6h131 c7,36,40,62,78,62s70-26,77-62h144c5,0,9-2,11-6C485,441,485,436,483,433z M250,487c-24,0-45-15-51-37h101C294,472,273,487,250,487z "
+                    ></path>
+                  </svg>
+                </ins>
+                <!---->
+                <span class="notification-bubble" id="notification-bubble">
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        id="notification_panel"
+        class="notifications-overlay false ui-overlaypanel ui-widget ui-widget-content ui-corner-all ui-shadow"
+        style="
+          z-index: 1007;
+          visibility: visible;
+          top: 180.719px;
+          left: 703.333px;
+          opacity: 1.048;
+          transform: scale(0);
+        "
+      >
+        <div class="ui-overlaypanel-content">
+          <h6 class="linked-heading indent-bottom">
+            <span psimsg="alert.title">Recent Notifications</span>
+            <a
+              class="text-style--bold"
+              psimsg="alert.showAll"
+              href="{% url 'show_all_notification' %}"
+             
+              >show All</a
+            >
+               </h6>
+          <ul
+            style="position: relative"
+            id="notification_dashboard"
+            data-patient="0nlbop5f1e"
+          >
+            <!---->
+          </ul>
+        </div>
+        <!---->
+      </div>
+
+      <div id="user-menu" class="user-menu">
+        <!---->
+        <div class="">
+          <div class="profile-pane">
+            <ins
+              class="initials initials--big"
+              style="background-color: rgb(15, 46, 76)"
+            >
+              {{ fname|slice:"0:1" }}{{ lname|slice:"0:1" }}
+            </ins>
+
+            <div class="profile-pane__data">
+              <div class="profile-pane__user">
+                <a href="{% url 'signin' %}">{{ name }}</a>
+              </div>
+
+              <!----><a
+                class="link--blue text-style--bold proxy-user-account-link"
+                psimsg="proxyUser.accountLink"
+                role="link"
+                tabindex="0"
+                aria-label="abd el madjid kahoul account"
+                href="{% url 'account_all' %}"
+                >Account</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!---->
+
+        <!---->
+        <p-accordion styleclass="ui-accordion-user-menu" class="">
+          <div
+            class="ui-accordion-user-menu ui-accordion ui-widget ui-helper-reset"
+          >
+            <!---->
+
+            <!---->
+
+            <!---->
+          </div>
+        </p-accordion>
+
+        <div class="user-menu__item">
+          <a
+            class="user-menu__control"
+            href="{% url 'logout' %}"
+            psimsg="proxyUser.logout"
+            tabindex="0"
+            >Sign Out</a
+          >
+        </div>
+      </div>
+    </header>
+    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="u-align-center u-clearfix u-section-1" id="carousel_4c48">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout" style="">
+            <div class="u-layout-row" style="">
+              <div class="u-align-left u-container-align-left u-container-style u-image u-layout-cell u-right-cell u-size-30 u-size-xs-60 u-image-1" data-image-width="496" data-image-height="503">
+                <div class="u-container-layout u-container-layout-1">
+                  <h2 class="u-align-left u-text u-text-1"> A global life sciences and healthcare company seeking answers </h2>
+                  <p class="u-align-left u-custom-font u-font-ubuntu u-text u-text-2"> We believe in harnessing science for human good. And so we work day and night, around the world, to deliver answers for all your health questions—because we know that knowledge has the potential to make life better for all.</p>
+                </div>
+              </div>
+              <div class="u-align-center u-container-align-center u-container-style u-image u-layout-cell u-left-cell u-size-30 u-size-xs-60 u-image-2" src="" data-image-width="500" data-image-height="500">
+                <div class="u-container-layout u-container-layout-2" src=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-b592">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout" style="">
+            <div class="u-layout-row" style="">
+              <div class="u-align-center u-container-style u-layout-cell u-left-cell u-shape-rectangle u-size-60 u-size-xs-60 u-layout-cell-1" src="">
+                <div class="u-container-layout u-container-layout-1">
+                  <img class="u-image u-image-default u-image-1" src="/media/image/62a894774e255280a87f15a6_line (1).png" alt="" data-image-width="205" data-image-height="17">
+                  <h2 class="u-text u-text-1">our ​History</h2>
+                  <p class="u-text u-text-2"> QuickLab has been in business since 2023 helping people to get the lab tests that they need. We have partnered with Quest Diagnostic, one of the nations’ best-known lab providers. Many peaple are not aware that they can purchase their own blood tests directly without having to see a doctor or get insurance approval first. While ​QuickLab is not intended to replace a patient’s primary care physician, we strive t to take greater control of their own healthcare decisions and make it easier to be proactive in managing their personal health. We put control of your health in your hands with direct access to 400+ blood and lab tests, available at more than 2300 locations nationwide.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+  <footer class="bg-navy-opt text-white w-100" id="sec-08f1">
+    <div class="container flex flex-wrap py-30 px-10 md:px-0 border-b border-solid border-grey-lighter-trans"
+      style="padding: 5px !important">
+      <div class="w-full md:w-1/3 xl:w-1/4">
+        <div class="flex flex-row py-10" style="padding: 5px !important">
+          <a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/" title="Homepage"
+            href="{% url 'home' %}">
+            <img alt="Logo" src="/media/image/logo sans bg.png" width="70" height="55" />
+          </a>
+          <div>
+            <a class="side-menu-logo-title" href="{% url 'home' %}">
+              <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+                data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="" style="
+                      will-change: transform, opacity;
+                      animation-duration: 1000ms;
+                    ">
+                Quick
+              </p>
+              <p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+                data-animation-name="customAnimationIn" data-animation-duration="1000" data-lang-en="Lab" style="
+                      will-change: transform, opacity;
+                      animation-duration: 1000ms;
+                    ">
+                Lab
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-2/3 xl:w-3/4 flex flex-wrap text-14" style="padding: 5px !important">
+        <ul class="navigation-list flex-wrap w-full md:justify-end" style="padding: 5px !important">
+          <li class="navigation-list__item w-1/2 md:w-auto">
+            <a href="#sec-1d4e" class="navigation__link navigation__link--main">Contact us</a>
+          </li>
+          <li class="navigation-list__item w-1/2 md:w-auto">
+            <a href="{% url 'privecy' %}" class="navigation__link navigation__link--main">Privacy policy</a>
+          </li>
+          <li class="navigation-list__item w-1/2 md:w-auto">
+            <a href="{% url 'term' %}" class="navigation__link navigation__link--main md:pr-0">Terms &amp;
+              conditions</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="container flex flex-wrap py-30 px-10 md:px-0 border-b border-solid border-grey-lighter-trans sm:hidden block">
+      <div class="w-full">
+        <div class="sm:w-1/3 mr-auto">
+          <ul class="navigation-list flex-wrap w-full sm:w-auto">
+            <span class="font-montserrat text-13 font-medium text-navy-lighter py-10 px-15 md:px-0 w-full">Follow
+              us</span>
+            <li class="navigation-list__item">
+              <a href="https://www.linkedin.com/showcase/myhealth1st"
+                class="navigation__link navigation__link--main md:ml-0 px-15"><img src="/media/image/linkedin.png" /></a>
+            </li>
+            <li class="navigation-list__item">
+              <a href="https://www.facebook.com/pages/category/Health-Beauty/QuickLab®-951485194984427/"
+                class="navigation__link navigation__link--main px-15"><img src="/media/image/facebook.png" /></a>
+            </li>
+            <li class="navigation-list__item">
+              <a href="https://twitter.com/myhealth1st" class="navigation__link navigation__link--main px-15"><img
+                  src="/media/image/twitter.png" /></a>
+            </li>
+            <li class="navigation-list__item">
+              <a href="https://www.instagram.com/myhealth1st_official/"
+                class="navigation__link navigation__link--main px-15"><img src="/media/image/Instagram.png" /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container flex flex-wrap py-30 px-10 md:px-0 items-start text-13 leading-18">
+      <div class="sm:w-1/3 mr-auto sm:block hidden">
+        <ul class="navigation-list flex-wrap w-full sm:w-auto">
+          <span class="font-montserrat text-13 font-medium text-navy-lighter py-10 px-15 md:pl-0 w-full">Follow
+            us</span>
+          <li class="navigation-list__item">
+            <a href="https://www.linkedin.com/showcase/myhealth1st"
+              class="navigation__link navigation__link--main md:pl-0 px-15"><img src="/media/image/linkedin.png" /></a>
+          </li>
+          <li class="navigation-list__item">
+            <a href="https://www.facebook.com/pages/category/Health-Beauty/QuickLab®-951485194984427/"
+              class="navigation__link navigation__link--main px-15"><img src="/media/image/facebook.png" /></a>
+          </li>
+          <li class="navigation-list__item">
+            <a href="https://twitter.com/myhealth1st" class="navigation__link navigation__link--main px-15"><img
+                src="/media/image/twitter.png" /></a>
+          </li>
+          <li class="navigation-list__item">
+            <a href="https://www.instagram.com/myhealth1st_official/"
+              class="navigation__link navigation__link--main px-15"><img src="/media/image/Instagram.png" /></a>
+          </li>
+        </ul>
+      </div>
+      <div class="w-1/2 sm:w-1/3 md:w-auto">
+        <ul class="navigation-list navigation-list--upright">
+          <span class="font-montserrat text-13 font-medium text-navy-lighter py-10 px-15 w-full">partner</span>
+          <li class="navigation-list__item w-full">
+            <a href="{% url 'home' %}" class="navigation__link navigation__link--main px-15">home</a>
+          </li>
+  
+          <li class="navigation-list__item w-full">
+            <a href="accueil/home.html#sec-ae92" class="navigation__link navigation__link--main px-15">services</a>
+          </li>
+          <li class="navigation-list__item w-full">
+            <a href="{% url 'about-us' %}" class="navigation__link navigation__link--main px-15">About
+              us</a>
+          </li>
+          <li class="navigation-list__item w-full">
+            <a href="{% url 'history' %}" class="navigation__link navigation__link--main px-15">History</a>
+          </li>
+  
+          <li class="navigation-list__item w-full">
+            <a href="{% url 'laboratoire-list' %}" class="navigation__link navigation__link--main px-15">our
+              Partner</a>
+          </li>
+          <li class="navigation-list__item w-full">
+            <a href="{% url 'signin' %}" class="navigation__link navigation__link--main px-15">Account
+              login</a>
+          </li>
+        </ul>
+      </div>
+      <div class="w-1/2 sm:w-1/3 md:w-auto">
+        <ul class="navigation-list navigation-list--upright">
+          <span class="font-montserrat text-13 font-medium text-navy-lighter py-10 px-15 w-full">For
+            Partner</span>
+          <li class="navigation-list__item w-full">
+            <a href="{% url 'signup_labo' %}" class="navigation__link navigation__link--main px-15">
+              Benifit</a>
+          </li>
+          <li class="navigation-list__item w-full">
+            <a href="{% url 'signup_labo' %}#services" class="navigation__link navigation__link--main px-15">
+              Services</a>
+          </li>
+          <li class="navigation-list__item w-full">
+            <a href="{% url 'signup_labo' %}#sign_up_partner" class="navigation__link navigation__link--main px-15">Join
+              us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="w-full px-15 my-15">
+        <span class="font-montserrat text-13 font-regular text-navy-lighter">
+          QuickLab® © All Rights Reserved. | © 1stGroup 2023.</span>
+      </div>
+    </div>
+  </footer>
+
+  
+</body></html>

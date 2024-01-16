@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script  src="{% static 'js/jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/login/sms.css' %}">
+     <style>
+   
+    </style>
+     <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+</head>
+
+<body>
+    <div class="content content--for-thin content-auth">
+        <div class="info_center info_content_start">
+            <div class="info_centre_adjust">
+                <div class="info_content_mobile_initial info_content_title content__wrapper--thin heading-center">
+                    <h1 class="line-medium-text-larger" id="mobile_verify_header">
+                        change password</h1>
+                </div>
+                <div class="info_content_wrapper">
+                    <div class="info_box_mobile_content content__wrapper--thin auth_content__wrapper--white-box">
+                        <form class="ui-kit-form" id="mobileverifyform" method="POST">
+                        {% csrf_token %}
+                            <div>
+                                <p class="line-medium-text-medium break_word mobileverify-p">
+                                    Set a new password for your account.
+                                </p>
+                                <div class="form-item">
+                                    <div class="input-label input-label-small">
+                                        <label class="line-small-text-small">New password</label>
+                                    </div>
+                                    <div class="input-tel">
+                                        <input name="pass1" type="password" id="New_Password" name="New_Password" value="">
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-item">
+                                    <div class="input-label input-label-small">
+                                        <label class="line-small-text-small">Confirm new password</label>
+                                    </div>
+                                    <div class="input-tel">
+                                        <input name="pass2" type="password" id="confirmation_Password" name="confirmation_Password"
+                                            value="">
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-buttons-mobile">
+                                    <button type="submit"
+                                        class="ui-kit-button ui-kit-button-primary ui-kit-button-full ui-kit-button-medium section-validate line-cumedium-text-medium">change</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+               
+            </div>
+         
+        </div>
+    </div>
+
+</body>
+
+</html>

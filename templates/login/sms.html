@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="{% static 'css/login/sms.css' %}">
+ <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+</head>
+<body>
+    <div class="content content--for-thin content-auth">
+        <div class="info_center info_content_start">
+            <div class="info_centre_adjust">
+                <div class="info_content_mobile_initial info_content_title content__wrapper--thin heading-center">
+                    <h1 class="line-medium-text-larger" id="mobile_verify_header">
+                        Please provide the digital number in your phone </h1>
+                </div>
+                <div class="info_content_wrapper">
+                    <div class="info_box_mobile_content content__wrapper--thin auth_content__wrapper--white-box">
+                        <form class="ui-kit-form" 
+                            method="POST" action="{% url 'verify_code' %}" >
+                           {% csrf_token %}
+    
+    
+    
+                            <div>
+                                <p class="line-medium-text-medium break_word mobileverify-p">
+                                   we send you a digit number  to your phone number please file the number to confirme  that is you  </p>
+                                <div class="form-item">
+                                    <div class="input-label input-label-small">
+                                        <label class="line-small-text-small">Mobile number</label>
+                                    </div>
+                                    <div class="input-tel">
+<div style="  display: grid; grid-template-columns: repeat(6, 1fr);  gap: 10px;">
+        <input class="digit-input no-spinner " type="number" maxlength="1" pattern="[0-9]" required autofocus>
+        <input class="digit-input no-spinner" type="number" maxlength="1" pattern="[0-9]" required>
+        <input class="digit-input no-spinner" type="number" maxlength="1" pattern="[0-9]" required>
+        <input class="digit-input no-spinner" type="number" maxlength="1" pattern="[0-9]" required>
+        <input class="digit-input no-spinner" type="number" maxlength="1" pattern="[0-9]" required>
+        <input class="digit-input no-spinner" type="number" maxlength="1"length="1"  pattern="[0-9]" required>
+       
+</div>
+ <input name="verification_code" id="combined-number" class="none" type="number" maxlength="6" pattern="[0-9]" >
+ <input name="user_id" id="combined-number" class="none" type="text" value="{{user_id}}">
+                                        
+                                    </div>
+                                </div>
+                                <div class="form-buttons-mobile">
+                                    
+                                    <button type="submit"  
+                                        class="ui-kit-button ui-kit-button-primary ui-kit-button-full ui-kit-button-medium section-validate line-cumedium-text-medium">Continue</button>
+                                </div>
+                            </div>
+  
+                        </form>
+                    </div>
+                </div>
+                <div class="info_content_last content__wrapper--thin form-buttons heading-center">
+                    <a class="line-cumedium-text-medium"
+                        href="{% url 'signin' %}"
+                        id="mobile_verify_skip">Skip for now and return </a>
+                </div>
+            </div>
+    
+            <div class="ui-kit-snackbar ui-kit-snackbar-bottom" data-show-snack="">
+                <div class="ui-kit-snackbar-close"><a class="ui-kit-link-icon snack_close"><i
+                            class="ui-kit-link-icon-smaller"><svg class="icon-close icon-outline"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.47.53h0a1.82,1.82,0,0,0-2.57,0L12,9.43,3.1.53A1.82,1.82,0,0,0,.53.53h0a1.82,1.82,0,0,0,0,2.57L9.43,12,.53,20.9a1.82,1.82,0,0,0,0,2.57h0a1.82,1.82,0,0,0,2.57,0l8.9-8.9,8.9,8.9a1.82,1.82,0,0,0,2.57,0h0a1.82,1.82,0,0,0,0-2.57l-3.81-3.81L14.57,12l8.9-8.9A1.82,1.82,0,0,0,23.47.53Z">
+                                </path>
+                            </svg></i><span class="ui-kit-accessibility-span">Close</span></a></div>
+                <div class="ui-kit-snackbar-content">
+                    <div class="snackbar-content">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        
+    var digits = document.querySelectorAll(".digit-input");
+    var combinedNumberInput = document.getElementById("combined-number");
+
+    for (var i = 0; i < digits.length; i++) {
+        digits[i].addEventListener("input", function () {
+            if (this.value.length >= this.maxLength) {
+                var nextInput = this.nextElementSibling;
+                if (nextInput !== null) {
+                    nextInput.focus();
+                }
+            }
+            updateCombinedNumber();
+        });
+    }
+
+    function updateCombinedNumber() {
+        var combinedNumber = "";
+        for (var i = 0; i < digits.length; i++) {
+            combinedNumber += digits[i].value;
+        }
+        combinedNumberInput.value = combinedNumber;
+    }
+
+    document.getElementById("mobileverifyform").addEventListener("submit", function (event) {
+        event.preventDefault();
+        updateCombinedNumber();
+    });
+
+        
+        
+        
+        
+        
+        
+        
+        var inputField = document.getElementById("PhoneNumber");
+        var inputErrorDiv = document.createElement("div");
+        inputErrorDiv.className = "input-error";
+        var errorMessage = document.createElement("p");
+        errorMessage.textContent = inputField.getAttribute("data-val-required");
+        inputErrorDiv.appendChild(errorMessage);
+
+        inputField.addEventListener("input", function () {
+            var phoneNumber = inputField.value;
+            var regexPattern = inputField.getAttribute("data-val-regex-pattern");
+            var regexErrorMessage = inputField.getAttribute("data-val-regex");
+
+            var regex = new RegExp(regexPattern);
+            var isValid = regex.test(phoneNumber);
+
+            if (isValid) {
+                // Input is valid
+                inputField.classList.remove("js-validate-error-field");
+                inputField.classList.add("js-validate-success-field");
+                inputField.style.border = "1px solid #4CAF50";
+                // Remove or hide any error message displayed
+                if (inputField.nextElementSibling === inputErrorDiv) {
+                    inputField.parentNode.removeChild(inputErrorDiv);
+                }
+            } else {
+                // Input is invalid
+                inputField.classList.remove("js-validate-success-field");
+                inputField.classList.add("js-validate-error-field");
+                inputField.style.border = "1px solid rgb(224, 25, 55)";
+                // Display error message or add the error message div if not present
+                errorMessage.textContent = inputField.getAttribute("data-val-required");
+                if (inputField.nextElementSibling !== inputErrorDiv) {
+                    inputField.parentNode.insertBefore(inputErrorDiv, inputField.nextElementSibling);
+                }
+            }
+        });
+    
+</script>
+</body>
+</html>

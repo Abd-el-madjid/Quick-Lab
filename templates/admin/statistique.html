@@ -1,0 +1,441 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="website icon" type="png" href="/media/image/logo sans bg.png">
+	<title>Quick Lab</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="{% static 'css/general/homedashboard.css' %}" rel="stylesheet">
+    <link href="{% static 'css/general/portal.css' %}" rel="stylesheet">
+	<!---->
+	<script src="{% static 'js/general/chart.js'%}"></script>
+	<script src="{% static 'js/general/chroma.min.js'%}"></script>
+	<style type="text/css">/* Chart.js */
+		
+		
+	</style>
+	 <script src="{% static 'js/general/font_awsom.js' %}"></script>
+    
+    <link rel="stylesheet" href="{% static 'css/general/icons_google.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'css/general/fonts.googleapis.Merriweather.css' %}" />
+
+	<!---->
+	<!---->
+	<script type="text/javascript" charset="utf-8" async="" src="{% static 'js/general/homedashboard.js' %}"></script>
+	<script type="text/javascript" charset="utf-8" async="" src="{% static 'js/general/account.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" async="" src="{% static 'js/general/statistique.js' %}"></script>
+	<!---->
+	<!---->
+	<script src="{% static 'js/general/fontawesome.js' %}" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<!-- jquery cdn link  -->
+		<script src="{% static 'js/general/jquery.min.js' %}"></script>
+
+	
+	<title>Document</title>
+</head>
+<body onload="init()">
+	
+	<!---->
+	
+		<div class="general-container">
+			
+			<aside class="menu-panel" role="complementary">
+				<div class="hide-since-tablet" psi-proxy-user-popup="">
+					<a id="profile_head-secound" aria-label="profile menu"
+						class="dark-link profile-link profile-menu profile-link--in-menu" role="link" tabindex="0">
+			
+						<ins class="nav-menu-icon nav-menu-icon--user">
+							<span id="profile-circle" class=" material-symbols-outlined">
+								account_circle
+							</span>
+						</ins>
+			
+						<div class="profile-link__user">abd el madjid kahoul</div>
+			
+						<!---->
+			
+			
+						<ins class="profile-link__trigger">
+							<span id="profile-arrow-2" class=" material-symbols-outlined">
+								expand_more
+							</span>
+						</ins>
+					</a>
+			
+			
+			
+					<div class="side-account-profil none">
+						<ul class="contenait">
+							
+							<li>
+								<a id="sign_out"href="{% url 'admin_logout' %}"  role="link" tabindex="0">
+			
+									<ins class="">
+										<span class="material-symbols-outlined">
+											logout
+										</span>
+									</ins>
+			
+									<div class="">sign out</div>
+			
+			
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			
+			
+				<div class="menu-panel__content">
+					<div class="menu-panel__content_header">
+						<a class="side-menu-logo hide-up-to-tablet" role="banner" routerlink="/" title="Homepage"
+							>
+							<img alt="Logo"
+								src="/media/image/logo sans bg.png"
+								width="70" height="55">
+						</a>
+						<div>
+							<a class="side-menu-logo-title" >
+								<p class="u-hidden-sm u-hidden-xs u-text u-text-palette-3-base u-text-1 animated customAnimationIn-played"
+									data-animation-name="customAnimationIn" data-animation-duration="1000"
+									data-animation-direction=""
+									style="will-change: transform, opacity; animation-duration: 1000ms;">Quick </p>
+								<p class="u-hidden-sm u-hidden-xs u-text u-text-palette-1-base u-text-2 animated customAnimationIn-played"
+									data-animation-name="customAnimationIn" data-animation-duration="1000" data-lang-en="Lab"
+									style="will-change: transform, opacity; animation-duration: 1000ms;">
+									Lab</p>
+							</a>
+						</div>
+					</div>
+					<!---->
+					<p-panelmenu aria-label="Main Menu" aria-labelledby="Main Menu" role="navigation" tabindex="0"
+						class="ng-tns-c15-13">
+						<div class="ng-tns-c15-13 side-menu ui-panelmenu ui-widget">
+							<!---->
+							
+							<div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+								<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+									<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon"  href="{% url 'lab_management' %}">
+			
+										<span class="icons material-symbols-outlined">
+											manage_accounts
+										</span>
+										<span class="ui-menuitem-text">Lab management</span>
+									</a>
+								</div>
+			
+							</div>
+							<div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+								<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+									<!---->
+									<!---->
+									<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'validation' %}"
+										>
+										<!---->
+										<!---->
+										<span class="icons material-symbols-outlined">
+											stress_management
+										</span>
+										<span class="ui-menuitem-text">request validation</span>
+									</a>
+								</div>
+								<!---->
+							</div>
+			
+			
+			
+							<div class="menu-element ui-panelmenu-panel ng-tns-c15-13" 
+								style="background-color: #46807F;border:1px solid white ;border-radius: 15px;">
+								<div class="ng-tns-c15-13 ui-panelmenu-directlink ui-widget ui-panelmenu-header ui-state-default">
+									<!---->
+									<!---->
+									<a class="ng-tns-c15-13 ui-panelmenu-headerlink-hasicon" href="{% url 'statistique_admin' %}" style="font-weight: 700;color: white;">
+										<!---->
+										<!---->
+										<span class="icons material-symbols-outlined">
+											monitoring
+										</span>
+										<span class="ui-menuitem-text">statistique</span>
+									</a>
+								</div>
+								<!---->
+							</div>
+							<div class="menu-element ui-panelmenu-panel ng-tns-c15-13">
+								<div class="ng-tns-c15-13 ui-menu-separator ui-widget ui-panelmenu-header ui-state-default">
+									<!---->
+									<a class="ng-tns-c15-13" >
+										<!---->
+										<!---->
+										<span class="ui-menuitem-text"></span>
+									</a>
+									<!---->
+								</div>
+								<!---->
+							</div>
+			
+						</div>
+					</p-panelmenu>
+				</div>
+				<!---->
+				<!---->
+				<!---->
+				<!---->
+				<div class="flex-push"></div> <!----><!----><!----><!----><!----><!----><!---->
+				<!---->
+				<!---->
+				<!---->
+				<!---->
+				<ul class="menu-panel__additional-info additional-info" role="contentinfo">
+				
+				</ul>
+			</aside>
+				<div psi-menu-overlay="">
+					<div class="menu-panel-overlay">
+
+					</div>
+				</div>
+			
+			<section class="content-panel" role="main">
+				
+				<header class="header hide-on-print">
+					<div class="header-wrapper">
+						<div class="header__panel">
+							<ul class="header-menu-bar">
+	
+								<li class="header-menu-bar__item hide-since-desktop hide-on-print" psi-menu-trigger="">
+									<a id="menu-link_button" class="profile-link hamburger-link hide-since-desktop">
+	
+										<ins class="nav-menu-icon nav-menu-icon--hamburger">
+											<svg xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px"
+												viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+												class="icon-svg icon-svg__size--24 " xml:space="preserve">
+												<g>
+													<path
+														d="M85 341l342 0c11,0 21,10 21,22l0 0c0,11 -10,21 -21,21l-342 0c-11,0 -21,-10 -21,-21l0 0c0,-12 10,-22 21,-22z">
+													</path>
+													<path
+														d="M85 235l342 0c11,0 21,9 21,21l0 0c0,12 -10,21 -21,21l-342 0c-11,0 -21,-9 -21,-21l0 0c0,-12 10,-21 21,-21z">
+													</path>
+													<path
+														d="M85 128l342 0c11,0 21,10 21,21l0 0c0,12 -10,22 -21,22l-342 0c-11,0 -21,-10 -21,-22l0 0c0,-11 10,-21 21,-21z">
+													</path>
+												</g>
+											</svg>
+										</ins>
+	
+										<h6>Menu</h6>
+									</a>
+								</li>
+	
+	
+								<li>
+									<!---->
+								</li>
+	
+								<!---->
+								<p-tabmenu>
+									<div class="ui-tabmenu ui-widget ui-widget-content ui-corner-all">
+										<ul class="ui-tabmenu-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all"
+											role="tablist">
+											<!---->
+										</ul>
+									</div>
+								</p-tabmenu>
+							</ul>
+						</div>
+						<div class="header__panel header__panel--spacer hide-on-print"></div>
+						<div class="header__panel hide-on-print">
+							<ul class="header-menu-bar header-menu-bar--main">
+							  
+								<li id="profile-info-1"
+									class="header-menu-bar__item header-menu-bar__item--main hide-up-to-tablet"
+									psi-proxy-user-popup="" psieventtracker="">
+									<a id="profile_head-main" aria-label="profile menu"
+										class="dark-link profile-link profile-menu" role="link" tabindex="0">
+	
+										<ins class="nav-menu-icon nav-menu-icon--user">
+											<span id="profile-circle" class=" material-symbols-outlined">
+												account_circle
+											</span>
+										</ins>
+	
+										<div class="profile-link__user">abd el madjid kahoul</div>
+	
+										<!---->
+	
+										<ins class="profile-link__trigger">
+											<span id="profile-arrow" class=" material-symbols-outlined">
+												expand_more
+											</span>
+										</ins>
+	
+									</a>
+	
+									<p-overlaypanel>
+	
+									</p-overlaypanel>
+	
+									<!---->
+								</li>
+								<!---->
+							
+							</ul>
+						</div>
+					</div>
+	
+				   
+	
+					<div id="user-menu" class="user-menu">
+	
+						<!---->
+						<div class="">
+							<div class="profile-pane">
+								<ins class="initials initials--big" style="background-color: rgb(15, 46, 76);">
+									ae
+								</ins>
+	
+								<div class="profile-pane__data">
+									<div class="profile-pane__user">abd el madjid kahoul</div>
+	
+								</div>
+							</div>
+						</div>
+	
+						<!---->
+	
+						<!---->
+						<p-accordion styleclass="ui-accordion-user-menu" class="">
+							<div class="ui-accordion-user-menu ui-accordion ui-widget ui-helper-reset">
+	
+	
+								<!---->
+	
+								<!---->
+	
+								<!---->
+	
+	
+							</div>
+						</p-accordion>
+	
+						<div class="user-menu__item">
+							<a class="user-menu__control" psimsg="proxyUser.logout" tabindex="0" href="{% url 'admin_logout' %}">Sign Out</a>
+						</div>
+	
+					</div>
+				</header>
+			<!---->
+			<!---->
+			<!---->
+			<!---->
+			<div id="main_element" class="content content--dashboard">
+				<div class="content__wrapper">
+					<!---->
+				
+					<!---->
+					<div class="row g-4 mb-4">
+						<div class="col-6 col-lg-3">
+							<div class="app-card app-card-stat shadow-sm h-100">
+								<div class="app-card-body p-3 p-lg-4">
+									<h4 class="stats-type mb-1">Total Sales</h4>
+									<div class="stats-figure">${{prix}}</div>
+									
+									<div class="stats-meta text-success">
+										</div>
+								</div><!--//app-card-body-->
+								<a class="app-card-link-mask" ></a>
+							</div><!--//app-card-->
+						</div><!--//col-->
+						
+						<div class="col-6 col-lg-3">
+							<div class="app-card app-card-stat shadow-sm h-100">
+								<div class="app-card-body p-3 p-lg-4">
+									<h4 class="stats-type mb-1">nember of laboratoire</h4>
+									<div class="stats-figure">{{nblab}}</div>
+									<div class="stats-meta text-success">
+										</div>
+								</div><!--//app-card-body-->
+								<a class="app-card-link-mask" ></a>
+							</div><!--//app-card-->
+						</div><!--//col-->
+						<div class="col-6 col-lg-3">
+							<div class="app-card app-card-stat shadow-sm h-100">
+								<div class="app-card-body p-3 p-lg-4">
+									<h4 class="stats-type mb-1">number of demende</h4>
+									<div class="stats-figure">{{demende}}</div>
+									<div class="stats-meta">
+										</div>
+								</div><!--//app-card-body-->
+								<a class="app-card-link-mask" ></a>
+							</div><!--//app-card-->
+						</div><!--//col-->
+						<div class="col-6 col-lg-3">
+							<div class="app-card app-card-stat shadow-sm h-100">
+								<div class="app-card-body p-3 p-lg-4">
+									<h4 class="stats-type mb-1">client</h4>
+									<div class="stats-figure">{{client}}</div>
+									<div class="stats-meta"></div>
+								</div><!--//app-card-body-->
+								<a class="app-card-link-mask" ></a>
+							</div><!--//app-card-->
+						</div><!--//col-->
+					</div>
+					<!---->
+					<div class="row g-4 mb-4 ">
+                        <div class="col-12 col-lg-6">
+                            <div class="app-card app-card-chart h-100 shadow-sm">
+                                <div class="app-card-header p-3 border-0">
+                                    <h4 class="app-card-title">Total sales in general</h4>
+                                </div><!--//app-card-header-->
+                                <div class="app-card-body p-4">					   
+                                    <div class="chart-container"
+									><div class="chartjs-size-monitor">
+										<div class="chartjs-size-monitor-expand">
+											<div class=""></div>
+										</div>
+										<div class="chartjs-size-monitor-shrink">
+											<div class=""></div></div></div>
+										<canvas id="chart-1" style="display: block; height: 191px; width: 100%;" width="573" height="286"
+											class="chartjs-render-monitor" data-chart1='{{data_chart1}}'data-name1='{{data_name1}}'></canvas>
+ </div>
+                                </div><!--//app-card-body-->
+                            </div><!--//app-card-->
+                        </div><!--//col-->
+                   
+                        <div class="col-12 col-lg-6">		        
+                            <div class="app-card app-card-chart h-100 shadow-sm">
+                                <div class="app-card-header p-3 border-0">
+                                    <h4 class="app-card-title">account laboratory status percentage</h4>
+                                </div><!--//app-card-header-->
+                                <div class="app-card-body p-4">					   
+                                    <div class="chart-container"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                        <canvas id="chart-2" width="573" height="286"data-chart2='[{{count_lab}}, {{count_lab_block}}]' style="display: block; height: 191px; width: 100%;" class="chartjs-render-monitor"></canvas>
+                                    </div>
+                                </div><!--//app-card-body-->
+                            </div><!--//app-card-->
+                        </div><!--//col-->
+                    </div>
+                    <!---->
+				
+				</div>
+			</div>
+			<!---->
+
+			<script src="{% static 'js/admin/charts-demo.js' %}"></script>
+            <script src="{% static 'js/general/chart.min.js' %}"></script>
+</body>
+	</html>
+
+
+
+
+
+
+
+

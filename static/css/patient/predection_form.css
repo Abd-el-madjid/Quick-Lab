@@ -1,0 +1,317 @@
+
+.vertical_tabs__content-compact-olLTc{
+  /* max-width: 800px; */
+  width: 100%;
+  /* background-color: #fff; */
+  padding: 25px 20px;
+  border-radius: 5px;
+  /* box-shadow: 0 5px 10px rgba(0,0,0,0.15); */
+}
+.vertical_tabs__content-compact-olLTc .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.vertical_tabs__content-compact-olLTc .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.vertical_tabs__content-compact-olLTc  form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  /* display: grid; */
+  /* grid-template-columns: repeat(2, 1fr); */
+  gap: 10px; /* Adjust as needed */
+  width: 100%;
+  padding: 0 20px;
+}
+.vertical_tabs__content-compact-olLTc form .user-details .input-box{
+  min-width: 50%;
+  flex: 1 0 50%;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.vertical_tabs__content-compact-olLTc form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.vertical_tabs__content-compact-olLTc .user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.vertical_tabs__content-compact-olLTc .user-details .input-box input:focus,
+.vertical_tabs__content-compact-olLTc .user-details .input-box input:valid{
+  border-color: #46807F;
+}
+.vertical_tabs__content-compact-olLTc form{
+width: 100%;
+}
+.vertical_tabs__content-compact-olLTc form .gender-details .gender-title,.vertical_tabs__content-compact-olLTc form .days-details .days-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ .vertical_tabs__content-compact-olLTc form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ .vertical_tabs__content-compact-olLTc form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ .vertical_tabs__content-compact-olLTc form .category label .dot{
+  height: 20px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #46807f;
+   border-color: #d9d9d9;
+ }
+ .vertical_tabs__content-compact-olLTc form input[type="radio"]{
+   display: none;
+ }
+ .vertical_tabs__content-compact-olLTc form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ .vertical_tabs__content-compact-olLTc form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: #46807F;
+   /* background: linear-gradient(135deg, #46807F,#E61F57); */
+ }
+ .vertical_tabs__content-compact-olLTc  form .button input:hover{
+  /* transform: scale(0.99); */
+  /* background: linear-gradient(-135deg, #46807F,#E61F57); */
+  }
+  .vertical_tabs__content-compact-olLTc  form .button{
+    width: 100%;
+    max-height: 10rem;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 100px;
+    flex-direction: row;
+ }
+ .vertical_tabs__content-compact-olLTc form .button input{
+   text-align: center;
+   height: 40px;
+   border-radius: 5px;
+   border: none;
+   font-size: 18px;
+   font-weight: 500;
+   }
+   .vertical_tabs__content-compact-olLTc form .button input:hover {
+  background:#E61F57;
+}
+.vertical_tabs__content-compact-olLTc select {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .vertical_tabs__content-compact-olLTc  select:focus,
+  .vertical_tabs__content-compact-olLTc  select:valid {
+    border-color: #46807F;
+  }
+  
+  .vertical_tabs__content-compact-olLTc select option {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  select option:checked {
+    background-color: #E61F57;
+    color: #fff;
+  }
+
+
+
+.input-box .p {
+  
+  /* width: 90%; */
+  color: #32325d;
+  border: 1px solid #a3abab;
+  border-radius: 12px;
+  background-color: #fff;
+  /* border: 1px solid #dedee3; */
+  padding: 0 20px;
+  width: 100%;
+  height: 40px;
+  line-height: 38px;
+  transition: all .3s;
+  -webkit-appearance: none;
+  font-size: inherit;
+  z-index: 1000000;
+}
+.input-box .symbole {
+  
+position: absolute;
+  
+/* right: 13px; */
+  
+margin-left: -30px;
+  
+margin-top: 7px;
+  
+z-index: 10000000000;
+  
+/* bottom: 22px; */
+}
+.input-box .symbole2 {position: absolute;/* right: 13px; */margin-left: -65px;margin-top: 7px;z-index: 000;/* bottom: 22px; */}
+
+
+  
+
+
+
+
+   @media(min-width: 1200px){
+  .vertical_tabs__content-compact-olLTc  form .user-details{
+/*  display: flex;
+  flex-wrap: wrap;*/
+   display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 10px; /* Adjust as needed */
+  width: 100%;
+  padding: 0 20px;
+ }
+
+
+ @media(max-width: 584px){
+  .form-container-global{
+    margin-top: 10rem;
+  }
+  .vertical_tabs__content-compact-olLTc form .days_work{
+    grid-template-columns: repeat(2, 1fr);
+  
+  }
+ .vertical_tabs__content-compact-olLTc{
+  max-width: 100%;
+  padding: 25px 5px;
+}
+.vertical_tabs__content-compact-olLTc form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+    min-width: 50%;
+  }
+  .vertical_tabs__content-compact-olLTc  form .category{
+    width: 100%;
+  }
+  .vertical_tabs__content-compact-olLTc .content_form_native form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .vertical_tabs__content-compact-olLTc .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+    .vertical_tabs__content-compact-olLTc form  .days_work{
+    
+      grid-template-columns: repeat(2, 1fr);
+     
+    }
+  .vertical_tabs__content-compact-olLTc .content_form_native .category{
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+.day_field{
+
+display: flex;
+
+flex-direction: column;
+
+align-items: flex-start;
+
+gap: 10px;
+}
+
+.time_field{
+  
+gap: 10px;
+  
+display: flex;
+  
+flex-direction: column;
+}
+
+
+.time_field_end{
+
+display: flex;
+
+gap: 7px;
+}
+.time_field_start{
+  
+display: flex;
+  
+gap: 10px;
+}
+
+.days_work{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  /* display: flex; */
+  /* gap: 10px; */
+  /* flex-direction: row; */
+}
+
+.vertical_tabs__content-compact-olLTc form .days-details{
+
+}
+
+
+
+
+
+

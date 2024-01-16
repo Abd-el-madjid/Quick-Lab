@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+.carte_laboratiore_profile {
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    /* min-width: 258px; */
+    /* width: auto; */
+    /* width: fit-content; */
+    display: flex;
+    flex-direction: column;
+}
+
+.carte_laboratiore_profile-info_main {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.carte_laboratiore_profile-info {
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    padding: 10px 5px;
+}
+
+.carte_laboratiore_profile-info_avatar {
+
+    align-self: flex-start;
+
+    overflow: hidden;
+
+    /* width: 96px; */
+}
+
+.carte_laboratiore_profile-info_avatar ins {
+
+    width: 75px;
+
+    height: 75px;
+
+    line-height: 75px;
+
+    margin: 0;
+
+    /* margin-right: 0px; */
+}
+
+.carte_laboratiore_profile-info_title {
+
+    padding: 0 10px;
+}
+
+.carte_laboratiore_profile-info_title a {
+
+    cursor: pointer;
+
+    font-weight: 550;
+
+    font-size: 20px;
+
+    text-transform: capitalize;
+}
+
+.carte_laboratiore_profile-place {
+
+    margin-left: 29%;
+
+    padding: 0 10px;
+}
+
+.carte_laboratiore_profile-place_city {}
+
+.carte_laboratiore_profile-place_city span {
+
+    font-size: 14px;
+
+    line-height: 24px;
+}
+
+.carte_laboratiore_profile-place_rue {}
+
+.carte_laboratiore_profile-place_rue span {
+
+    font-size: 14px;
+
+    line-height: 24px;
+}
+
+.carte_laboratiore_profile-button {
+
+    /* width: 120%; */
+
+    max-width: 317px;
+
+    padding: 0 5%;
+}
+
+.carte_laboratiore_profile-button a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 14px 20px;
+    gap: 10px;
+    background: #46807F;
+    border-radius: 15px;
+    color: white;
+    min-width: 184px;
+    justify-content: center;
+}
+
+.carte_laboratiore_profile-button a:hover,
+#continuer_etape3 a:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #E61F57;
+    color: #E61F57;
+    /* width: 185px; */
+}
+
+.carte_laboratiore_profile-button a span {}
+
+.carte_laboratiore_profile-button a p {}
+.chart{
+   display: flex;
+   box-sizing: border-box;
+   height: 182px;
+   width: 100%;
+   justify-content: center;
+}
+canvas{
+    width: 100%;
+    /* display: inline-block; */
+}
+
+.chart-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.container_rating_holder{
+    display: flex;
+    flex-direction: column;
+}
+.container_rating {
+    margin: 0px;
+    position: relative;
+    width: 100%;
+    /* background: #111; */
+    /* padding: 20px 30px; */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container_rating .post_rating {
+    display: none;
+}
+
+.container_rating .text {
+    font-size: 25px;
+    color: #666;
+    font-weight: 500;
+}
+
+.container_rating .edit {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.container_rating .edit:hover {
+    text-decoration: underline;
+}
+.container_rating .star-widget  {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+.container_rating .star-widget input{
+    display: none;
+}
+
+.star-widget label {
+    font-size: 22px;
+    color: #444;
+    padding: 5px;
+    float: right;
+    transition: all 0.2s ease;
+}
+
+
+
+#rate-1:checked~form header:before {
+    color: #E61F57;
+    content: "I just hate it ";
+    font-size: 16px;
+}
+
+#rate-1:checked~form .star-widget  {
+display: flex;
+align-items: flex-end
+    flex-direction: row;
+}
+#rate-2:checked~form header:before {
+    content: "I don't like it ";
+}
+
+#rate-3:checked~form header:before {
+    content: "It is awesome ";
+}
+
+#rate-4:checked~form header:before {
+    content: "I just like it ";
+}
+
+#rate-5:checked~form header:before {
+    content: "I just love it ";
+}
+
+.container_rating .star-widget_contenu {
+   display: flex;
+   flex-direction: row-reverse;
+   align-items: center;
+   justify-content: space-around;
+}
+
+
+
+form header {
+    /* position: relative; */
+    width: 100%;
+    font-size: 16px;
+    color: #E61F57;
+    font-weight: 500;
+    /* margin: 5px 0 5px 0; */
+    text-align: center;
+    transition: all 0.2s ease;
+    /* top: 10px; */
+    /* height: 13px; */
+}
+
+form .textarea {
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+form .textarea textarea {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #eee;
+    border: 1px solid #333;
+    background: #222;
+    padding: 10px;
+    font-size: 17px;
+    resize: none;
+}
+
+.textarea textarea:focus {
+    border-color: #444;
+}
+
+form .btn_rating {
+    height: 45px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+form .btn_rating input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #444;
+    outline: none;
+    background: #222;
+    color: #999;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form .btn_rating input:hover {
+    background: #1b1b1b;
+}
+
+
+
+@media (min-width: 768px) {
+.container_rating_holder {
+        display: flex;
+        flex-direction: column;
+    }
+}
