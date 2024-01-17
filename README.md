@@ -6,8 +6,9 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+- [Database Setup](#database-setup)
 - [Usage](#usage)
-- [Additional Tips](#Additional-Tips)
+- [Additional Tips](#additional-tips)
 - [License](#license)
 
 ## Introduction
@@ -75,6 +76,9 @@ Run the development server:
 
 python manage.py runserver
 ```
+## Database Setup
+The database script is provided in the "quicklab_database" file. Execute the script in MySQL Workbench. Ensure to change the password, username, and localhost in the code to access the database.
+
 ## Usage
 Open your web browser and go to http://127.0.0.1:8000/ to access QuickLab.
 Access the Django Admin Panel by going to http://127.0.0.1:8000/admin/ and log in with the superuser credentials.
