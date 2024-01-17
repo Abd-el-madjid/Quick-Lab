@@ -1,7 +1,7 @@
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'zakaria.bouraoui@univ-constantine2.dz'
-EMAIL_HOST_PASSWORD = 'zaki20032030mi'
+EMAIL_HOST_USER = 'YOUR MAIL'
+EMAIL_HOST_PASSWORD = 'passowrd'
 EMAIL_PORT = 587
 
 
