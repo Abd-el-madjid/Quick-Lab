@@ -79,7 +79,7 @@ python manage.py runserver
 Open your web browser and go to http://127.0.0.1:8000/ to access QuickLab.
 Access the Django Admin Panel by going to http://127.0.0.1:8000/admin/ and log in with the superuser credentials.
 ##Sample Result Photos
-For your convenience, we have provided sample result photos in the "dossier exemple" (example folder). These images can be referenced to understand the expected format and content of analysis results in QuickLab.
+For your convenience, we have provided sample result photos in the "exemple" (example folder). These images can be referenced to understand the expected format and content of analysis results in QuickLab.
 
 ### Accessing Sample Photos
 Navigate to the "dossier exemple" folder in the project repository to view and use the sample result photos.
